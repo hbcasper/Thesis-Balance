@@ -11,6 +11,7 @@ public class Imcolor : MonoBehaviour {
 	void Start () {
 
 	
+		//LOl
 	}
 	
 	// Update is called once per frame
