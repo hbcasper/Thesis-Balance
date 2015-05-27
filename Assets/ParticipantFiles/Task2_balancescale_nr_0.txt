@@ -1,0 +1,11 @@
+Date and time: 
+Participant #: 
+Day: 
+Age: 
+_____________________________________________________________________________________________________________________________________________________________________
+Trial#  , Correct , Button Correct , Button Pressed , Level, Score, #RedWeights, #YellowWeights , Decision Time, RedPos1, RedPos2, YellPos1, YellPos2
+_____________________________________________________________________________________________________________________________________________________________________
+ 1, 0, 0, 1, 1, 0, #ofRedWeights, #ofYellowWeights, 00:00:07.1485684
+ 2, 0, 0, 2, 1, 1, #ofRedWeights, #ofYellowWeights, 00:00:04.2216784
+ 3, 0, 2, 0, 1, 1, #ofRedWeights, #ofYellowWeights, 00:00:05.0190571
+ 4, 1, 0, 0, 1, 1, #ofRedWeights, #ofYellowWeights, 00:00:03.3459654
