@@ -20,7 +20,8 @@ public class ArduinoInput : MonoBehaviour {
 //
 //	}
 //	
-//	// Update is called once per frame
+//	// In update it has to recognize the position of the weights from the input
+
 //	void Update () {
 //
 //		Left1 = Red;
@@ -44,7 +45,10 @@ public class ArduinoInput : MonoBehaviour {
 //		Weight4 = "Red4right";
 //	
 //	}
-//
+
+
+//  when is called  the balance moves to the required weight
+
 //	void sendtothebalance (){
 //
 //
