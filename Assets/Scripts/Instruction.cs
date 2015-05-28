@@ -360,113 +360,181 @@ public class Instruction : MonoBehaviour
 		while (pnr1 == pnr2) {
 			pnr2 = Random.Range (1, 7);
 		}
-		
+
+
+		// --------------Cube 1
 		
 		if (pcolor1 < 2) {
 			colorname1 = "red";
-			LeftW1 = 1;
-			numberWeightsRed ++; 
-			positionRedCube1 = (pnl1*(-1));
-			
-		} else {
-			colorname1 = "yellow";
-			LeftW1 = 2;
-			numberWeightsYellow ++;
-			positionYellowCube1 = (pnl1*(-1));
-		}
-		
-		if (pcolor2 < 2) {
-			colorname2 = "red";
-			LeftW2 = 1;
-			numberWeightsRed ++; 
-			if (positionRedCube1 != 0){
-				positionRedCube2 = (pnl2*(-1));
-			}
-			else {
-				positionRedCube1 = (pnl2*(-1));
-			}
-			
-		} else {
 			colorname2 = "yellow";
+			LeftW1 = 1;
 			LeftW2 = 2;
-			numberWeightsYellow ++; 
+			numberWeightsRed ++; 
+			numberWeightsYellow ++;
+			positionRedCube1 = (pnl1*(-1));
+
+			// Gianna's code for cube of colorname2
+
 			if (positionYellowCube1 != 0){
 				positionYellowCube2 = (pnl2*(-1));
 			}
 			else {
 				positionYellowCube1 = (pnl2*(-1));
 			}
+
+			
+		} else {
+			colorname1 = "yellow";
+			colorname2 = "red";
+			LeftW1 = 2;
+			LeftW2 = 1;
+			numberWeightsYellow ++;
+			numberWeightsRed ++; 
+			positionYellowCube1 = (pnl1*(-1));
+
+			// Gianna's code for cube of colorname2
+
+			if (positionRedCube1 != 0){
+				positionRedCube2 = (pnl2*(-1));
+			}
+			else {
+				positionRedCube1 = (pnl2*(-1));
+			}
 		}
+
+		// --------------Cube 2
+
+//		if (pcolor2 < 2) {
+//			colorname2 = "red";
+//			LeftW2 = 1;
+//			numberWeightsRed ++; 
+//			if (positionRedCube1 != 0){
+//				positionRedCube2 = (pnl2*(-1));
+//			}
+//			else {
+//				positionRedCube1 = (pnl2*(-1));
+//			}
+//			
+//		} else {
+//			colorname2 = "yellow";
+//			LeftW2 = 2;
+//			numberWeightsYellow ++; 
+//			if (positionYellowCube1 != 0){
+//				positionYellowCube2 = (pnl2*(-1));
+//			}
+//			else {
+//				positionYellowCube1 = (pnl2*(-1));
+//			}
+//		}
+		// --------------Cube 3
 		
 		if (pcolor3 < 2) {
 			colorname3 = "red";
 			RightW1 = 1;
 			numberWeightsRed ++; 
-			if (positionRedCube1 != 0){
-				if (positionRedCube2 != 0){
+			if (positionRedCube1 != 0) {
+				if (positionRedCube2 != 0) {
 					positionRedCube3 = pnr1;
+				} else {
+					positionRedCube2 = pnr1;
 				}
-				else {positionRedCube2 = pnr1;
-				}
-			}
-			else {
+			} else {
 				positionRedCube1 = pnr1;
+			}
+
+			//affects colorname4
+
+			colorname4 = "yellow";
+			RightW2 = 2;
+			numberWeightsYellow ++; 
+			if (positionYellowCube1 != 0) {
+				if (positionYellowCube2 != 0) {
+					if (positionYellowCube3 != 0) {
+						positionYellowCube4 = pnr2;
+					} else {
+						positionYellowCube3 = pnr2;
+					}
+				} else {
+					positionYellowCube2 = pnr2;
+				}
+			} else {
+				positionYellowCube1 = pnr2;
 			}
 			
 		} else {
 			colorname3 = "yellow";
 			RightW1 = 2;
 			numberWeightsYellow ++; 
-			if (positionRedCube1 != 0){
-				if (positionYellowCube2 != 0){
+			if (positionRedCube1 != 0) {
+				if (positionYellowCube2 != 0) {
 					positionYellowCube3 = pnr1;
+				} else {
+					positionYellowCube2 = pnr1;
 				}
-				else {positionYellowCube2 = pnr1;
-				}
-			}
-			else {
+			} else {
 				positionYellowCube1 = pnr1;
 			}
-		}
-		
-		if (pcolor4 < 2) {
+
+			// affects to colorname4
+
 			colorname4 = "red";
 			RightW2 = 1;
 			numberWeightsRed ++; 
-			if (positionRedCube1 != 0){
-				if (positionRedCube2 != 0){
-					if (positionRedCube3 !=0){
-						positionRedCube4 = pnr2;}
-					else {
+			if (positionRedCube1 != 0) {
+				if (positionRedCube2 != 0) {
+					if (positionRedCube3 != 0) {
+						positionRedCube4 = pnr2;
+					} else {
 						positionRedCube3 = pnr2;
 					}
+				} else {
+					positionRedCube2 = pnr2;
 				}
-				else {positionRedCube2 = pnr2;
-				}
-			}
-			else {
+			} else {
 				positionRedCube1 = pnr2;
 			}
-			
-		} else {
-			colorname4 = "yellow";
-			RightW2 = 2;
-			numberWeightsYellow ++; 
-			if (positionYellowCube1 != 0){
-				if (positionYellowCube2 != 0){
-					if (positionYellowCube3 !=0){
-						positionYellowCube4 = pnr2;}
-					else {
-						positionYellowCube3 = pnr2;
-					}
-				}
-				else {positionYellowCube2 = pnr2;
-				}
-			}
-			else {
-				positionYellowCube1 = pnr2;
-			}
 		}
+
+		// cube of color name 4
+
+//		if (pcolor4 < 2) {
+//			colorname4 = "red";
+//			RightW2 = 1;
+//			numberWeightsRed ++; 
+//			if (positionRedCube1 != 0){
+//				if (positionRedCube2 != 0){
+//					if (positionRedCube3 !=0){
+//						positionRedCube4 = pnr2;}
+//					else {
+//						positionRedCube3 = pnr2;
+//					}
+//				}
+//				else {positionRedCube2 = pnr2;
+//				}
+//			}
+//			else {
+//				positionRedCube1 = pnr2;
+//			}
+//			
+//		} else {
+//			colorname4 = "yellow";
+//			RightW2 = 2;
+//			numberWeightsYellow ++; 
+//			if (positionYellowCube1 != 0){
+//				if (positionYellowCube2 != 0){
+//					if (positionYellowCube3 !=0){
+//						positionYellowCube4 = pnr2;}
+//					else {
+//						positionYellowCube3 = pnr2;
+//					}
+//				}
+//				else {positionYellowCube2 = pnr2;
+//				}
+//			}
+//			else {
+//				positionYellowCube1 = pnr2;
+//			}
+//		}
 		
 		{
 			instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname2 + " piece in the left place number " + pnl2 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1 + ".\n1 " + colorname4 + " piece in the right place number " + pnr2;
