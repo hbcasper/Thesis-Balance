@@ -8,10 +8,6 @@ TagManager:
   - Yellow
   - Left
   - Right
-  - Right
-  - Left
-  - SpaceRight
-  - SpaceLeft
   - Enviroment
   layers:
   - Default
