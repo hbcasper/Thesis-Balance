@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Restarttogrey : MonoBehaviour {
 
-
+	//HelloGiana!
 		public Receivedweight[] restartgray;
 		
 		// Use this for initialization
