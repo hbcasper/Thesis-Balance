@@ -31,6 +31,19 @@ public class Calculateside : MonoBehaviour {
 	public GameObject InsideRightCube5;
 	public GameObject InsideRightCube6;
 
+	int weightL1; 
+	int weightL2;
+	int weightL3;
+	int weightL4;
+	int weightL5;
+	int weightL6;
+	int weightR1;
+	int weightR2;
+	int weightR3;
+	int weightR4;
+	int weightR5;
+	int weightR6;
+
 
 	public int balance = 0;
 
