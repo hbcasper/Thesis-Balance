@@ -15,9 +15,10 @@ public class TextfileTask2 : MonoBehaviour {
 	private Iscorrect CorrectScore;
 	private GameObject correctScore; 
 	
-	//values of the pressed button and the correct button to press
+	//values of the pressed button and the correct button to press + position and weight of the cubes
 	private Calculateside Balanceresult;
 	private GameObject balanceresult;
+
 	private Instructiontask2 Balancerequired;
 	private GameObject balancerequired;
 	
@@ -47,7 +48,7 @@ public class TextfileTask2 : MonoBehaviour {
 		
 		balancerequired = GameObject.Find ("Instructiontask2");
 		Balancerequired = balancerequired.GetComponent<Instructiontask2> ();
-		
+
 		sceneName = Application.loadedLevelName; 
 		
 		createLogFile (); 
@@ -94,8 +95,15 @@ public class TextfileTask2 : MonoBehaviour {
 	{
 		endTime = System.DateTime.Now; 
 	}
+
+	public void CubePos()
+	{
+		
 	
-	public void write () {
+	}
+
+	public void write () 
+	{
 		
 		reactionTime3 = endTime.Subtract (startTime); 
 		
