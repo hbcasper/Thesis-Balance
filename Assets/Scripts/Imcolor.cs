@@ -30,5 +30,12 @@ public class Imcolor : MonoBehaviour {
 			Cubecolor = "Yellow";
 
 			}
+		else
+		{
+			
+			Cubecolor = "Grey";
+			
+		}
+
 	}
 }

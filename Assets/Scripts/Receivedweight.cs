@@ -30,6 +30,14 @@ public class Receivedweight : MonoBehaviour {
 
 	}
 
+	public void restartreceivedcolor ()
+		
+	{
+		
+		Cubereceives = "Grey";
+		
+	}
+
 	//void Update {
 //
 //		if elpesodearduinoespuesto {
