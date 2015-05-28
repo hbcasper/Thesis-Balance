@@ -12,6 +12,7 @@ TagManager:
   - Left
   - SpaceRight
   - SpaceLeft
+  - Enviroment
   layers:
   - Default
   - TransparentFX

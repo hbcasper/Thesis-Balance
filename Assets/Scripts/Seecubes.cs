@@ -30,7 +30,7 @@ public class Seecubes : MonoBehaviour {
 
 
 	
-		Debug.Log (cubeIndex);
+
 
 		if (((Valores.pnr1 == cubeIndex || Valores.pnr2 == cubeIndex) && gameObject.tag == "Right")||((Valores.pnl1 == cubeIndex || Valores.pnl2 == cubeIndex) && gameObject.tag == "Left"))
 		{

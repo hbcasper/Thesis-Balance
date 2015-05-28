@@ -31,7 +31,6 @@ GameObject:
   - 114: {fileID: 11424552}
   - 114: {fileID: 11465698}
   - 114: {fileID: 11413448}
-  - 114: {fileID: 11476314}
   m_Layer: 0
   m_Name: RightCube1
   m_TagString: Untagged
@@ -188,18 +187,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cubereceives: Grey
---- !u!114 &11476314
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 120030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2126dccde338c644893b212c9579ba9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  result: 496e636f7272656374
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

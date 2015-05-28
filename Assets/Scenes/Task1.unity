@@ -339,6 +339,10 @@ Prefab:
       propertyPath: newparent
       value: 
       objectReference: {fileID: 2050649592}
+    - target: {fileID: 140528, guid: 5be82523359dc554ba8d649d6fce4e1a, type: 2}
+      propertyPath: m_TagString
+      value: Enviroment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5be82523359dc554ba8d649d6fce4e1a, type: 2}
   m_IsPrefabParent: 0
@@ -621,7 +625,7 @@ GameObject:
   - 23: {fileID: 200114075}
   m_Layer: 0
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: Enviroment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -826,6 +830,10 @@ Prefab:
       propertyPath: newparent
       value: 
       objectReference: {fileID: 2050649592}
+    - target: {fileID: 140520, guid: 3881ab6d1a32b09449755c78428924cb, type: 2}
+      propertyPath: m_TagString
+      value: Enviroment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3881ab6d1a32b09449755c78428924cb, type: 2}
   m_IsPrefabParent: 0
@@ -1226,7 +1234,7 @@ GameObject:
   - 23: {fileID: 399489542}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Enviroment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1750,8 +1758,7 @@ MonoBehaviour:
 --- !u!114 &523814106
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11483542, guid: 45992c85bdbdd854987cfceaa6df3b18,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 523814104}
   m_Enabled: 1
@@ -3829,7 +3836,7 @@ GameObject:
   - 23: {fileID: 770960098}
   m_Layer: 0
   m_Name: Background 1
-  m_TagString: Untagged
+  m_TagString: Enviroment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4039,8 +4046,7 @@ MonoBehaviour:
 --- !u!114 &806052170
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11483542, guid: 45992c85bdbdd854987cfceaa6df3b18,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 806052167}
   m_Enabled: 1
@@ -4618,8 +4624,7 @@ MonoBehaviour:
 --- !u!114 &1119595921
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11483542, guid: 45992c85bdbdd854987cfceaa6df3b18,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1119595919}
   m_Enabled: 1
@@ -4839,6 +4844,10 @@ Prefab:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 140528, guid: 5be82523359dc554ba8d649d6fce4e1a, type: 2}
+      propertyPath: m_TagString
+      value: Enviroment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5be82523359dc554ba8d649d6fce4e1a, type: 2}
   m_IsPrefabParent: 0
@@ -4885,7 +4894,7 @@ GameObject:
   - 23: {fileID: 1406465542}
   m_Layer: 0
   m_Name: Background 2
-  m_TagString: Untagged
+  m_TagString: Enviroment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5153,6 +5162,10 @@ Prefab:
       propertyPath: newparent
       value: 
       objectReference: {fileID: 2050649592}
+    - target: {fileID: 140520, guid: 3881ab6d1a32b09449755c78428924cb, type: 2}
+      propertyPath: m_TagString
+      value: Enviroment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3881ab6d1a32b09449755c78428924cb, type: 2}
   m_IsPrefabParent: 0
@@ -5282,8 +5295,7 @@ MonoBehaviour:
 --- !u!114 &1553037961
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11483542, guid: 45992c85bdbdd854987cfceaa6df3b18,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1553037959}
   m_Enabled: 1
@@ -5788,8 +5800,7 @@ MonoBehaviour:
 --- !u!114 &1708643728
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11483542, guid: 45992c85bdbdd854987cfceaa6df3b18,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1708643726}
   m_Enabled: 1
@@ -6175,8 +6186,7 @@ MonoBehaviour:
 --- !u!114 &1779092434
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11483542, guid: 45992c85bdbdd854987cfceaa6df3b18,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1779092431}
   m_Enabled: 1
@@ -6354,6 +6364,7 @@ GameObject:
   - 114: {fileID: 1898096706}
   - 114: {fileID: 1898096708}
   - 114: {fileID: 1898096709}
+  - 114: {fileID: 1898096710}
   m_Layer: 0
   m_Name: Exercisemanager
   m_TagString: Untagged
@@ -6407,6 +6418,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93833a169c717224d9261abc9b13ff16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1898096710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1898096705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d4ee5f57e566b4eb093b9d8ef341a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1910342581
@@ -6508,7 +6530,7 @@ GameObject:
   - 23: {fileID: 2035616372}
   m_Layer: 0
   m_Name: Fulcrum
-  m_TagString: Untagged
+  m_TagString: Enviroment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
