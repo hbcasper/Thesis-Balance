@@ -11,12 +11,12 @@ public class SpaceblockinglevelsT2 : MonoBehaviour {
 	public string desrightcube1;
 	public string desrightcube2;
 	public string desrightcube3;
-	int lcubenumber1;
-	int lcubenumber2;
-	int lcubenumber3;
-	int rcubenumber1;
-	int rcubenumber2;
-	int rcubenumber3;
+	public int lcubenumber1;
+	public int lcubenumber2;
+	public int lcubenumber3;
+	public int rcubenumber1;
+	public int rcubenumber2;
+	public int rcubenumber3;
 
 	void Start () {
 
