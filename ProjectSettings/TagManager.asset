@@ -9,6 +9,7 @@ TagManager:
   - Left
   - Right
   - Enviroment
+  - AR
   layers:
   - Default
   - TransparentFX
