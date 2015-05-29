@@ -3202,7 +3202,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11496174, guid: 8d04ea887958de24385b8dcf5e782a45, type: 2}
       propertyPath: m_FontData.m_FontStyle
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11496174, guid: 8d04ea887958de24385b8dcf5e782a45, type: 2}
       propertyPath: m_Color.r

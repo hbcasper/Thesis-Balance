@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Balance
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 2, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _METALLICGLOSSMAP
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -138,7 +138,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .737254918, g: .737254918, b: .737254918, a: .592156887}
+        second: {r: .576470613, g: .576470613, b: .576470613, a: .592156887}
       data:
         first:
           name: _EmissionColorUI
