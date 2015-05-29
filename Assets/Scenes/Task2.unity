@@ -7839,6 +7839,10 @@ Prefab:
       propertyPath: m_TagString
       value: AR
       objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: bf30d577eead1ef40bcf2b404289daf4, type: 2}
+      propertyPath: VuforiaLicenseKey
+      value: AWmej4b/////AAAAAaU+vnX6fkYPsFxZZtV6eWg6noSdH3XnU4HTXrunUdRrfnVzrIcbiJV7/O50f/FacoOUdEXrKbTrLpZp1NSVz3Vy9nFuF8/djXKqqstARKugi4ND4JO5xpX3gQHjhSIQFEDLWKaFdOJVIJBe8Gj2WxEe7AhkFu/pgix25a/9RUUt5NjpultuZrLUa2UxiFHNeZjXJW4FC9mT2u4kHx7rPdk5mfIKqfoNM56/FcxoH7n/+bY2NWpOcS59Ntf3QEcQzkPwmkO8psKwKxyPJA45GejyHNbn5yXw1O8ldxmUiwbJO11tMt1yK4vMpQuvPz1aYAWVXpeXrYy+uC4Jhq8pHvUZpC412PTwasax/2wPIaxt
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf30d577eead1ef40bcf2b404289daf4, type: 2}
   m_IsPrefabParent: 0

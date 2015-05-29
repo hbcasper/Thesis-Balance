@@ -31,7 +31,7 @@ public class Checkconfiguration : MonoBehaviour {
 			AugmentedReality ();
 		} else {
 			foreach (GameObject ARobject in ARobjects) {
-				ARobject.SetActive (true);
+				ARobject.SetActive (false);
 			}
 		}
 
