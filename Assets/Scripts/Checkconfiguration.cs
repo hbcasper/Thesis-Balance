@@ -54,6 +54,8 @@ public class Checkconfiguration : MonoBehaviour {
 		scale = GameObject.Find ("Scale");
 		normalcamera = GameObject.Find ("Main Camera");
 
+
+
 		foreach (GameObject enviromentobject in enviroment)
 		{
 			enviromentobject.SetActive(false);
@@ -67,9 +69,10 @@ public class Checkconfiguration : MonoBehaviour {
 			yellowweight.GetComponent<Renderer> ().enabled = false;
 		}
 
-		scale.GetComponent<Renderer> ().enabled = false;
 		scaleparent.Changeparentfull ();
 		indicatorlines.Changeparentfull ();
+		scale.GetComponent<Renderer> ().enabled = false;
+
 		normalcamera.SetActive(false);
 
 

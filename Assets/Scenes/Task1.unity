@@ -5083,7 +5083,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4a92d471d38b849b3b91c5641d1df91c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 197
+      value: 144
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4a92d471d38b849b3b91c5641d1df91c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5148,6 +5148,18 @@ Prefab:
     - target: {fileID: 100000, guid: 4a92d471d38b849b3b91c5641d1df91c, type: 2}
       propertyPath: m_TagString
       value: AR
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4a92d471d38b849b3b91c5641d1df91c, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4a92d471d38b849b3b91c5641d1df91c, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4a92d471d38b849b3b91c5641d1df91c, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a92d471d38b849b3b91c5641d1df91c, type: 2}
@@ -5801,6 +5813,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1679890161}
   - 114: {fileID: 1679890162}
+  - 114: {fileID: 1679890163}
   m_Layer: 0
   m_Name: Invisible Spaces
   m_TagString: Untagged
@@ -5844,6 +5857,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restartgray: []
+--- !u!114 &1679890163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1679890160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cade91fb49dc16e42bb781d1e60c9206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newparent: {fileID: 1241857435}
 --- !u!1 &1690910890
 GameObject:
   m_ObjectHideFlags: 0
@@ -6750,7 +6775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d4ee5f57e566b4eb093b9d8ef341a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleparent: {fileID: 2050649596}
+  scaleparent: {fileID: 1679890163}
   indicatorlines: {fileID: 1504627185}
 --- !u!4 &1910342581
 Transform:
@@ -6933,7 +6958,6 @@ GameObject:
   - 111: {fileID: 2050649593}
   - 114: {fileID: 2050649594}
   - 114: {fileID: 2050649595}
-  - 114: {fileID: 2050649596}
   m_Layer: 0
   m_Name: Scale
   m_TagString: Untagged
@@ -7066,18 +7090,6 @@ MonoBehaviour:
   correct: 0
   score: 0
   correctToLog: 0
---- !u!114 &2050649596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2050649587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cade91fb49dc16e42bb781d1e60c9206, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newparent: {fileID: 1241857435}
 --- !u!1 &2077252811
 GameObject:
   m_ObjectHideFlags: 0
