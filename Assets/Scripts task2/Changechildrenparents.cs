@@ -3,11 +3,11 @@ using System.Collections;
 
 public class Changechildrenparents : MonoBehaviour {
 
-	public TransformWeightsParent Weight1;
+	public TransformParent Weight1;
 
-	public TransformWeightsParent Weight2;
-	public TransformWeightsParent Weight3;
-	public TransformWeightsParent Weight4;
+	public TransformParent Weight2;
+	public TransformParent Weight3;
+	public TransformParent Weight4;
 
 
 

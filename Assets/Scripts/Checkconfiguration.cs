@@ -11,8 +11,9 @@ public class Checkconfiguration : MonoBehaviour {
 	private GameObject[] yellowweights;
 	private GameObject[] ARobjects;
 	private GameObject scale;
-
-
+	private GameObject normalcamera;
+	public TransformParent scaleparent;
+	public TransformParent indicatorlines;
 
 	// Use this for initialization
 	void Start () {
@@ -51,6 +52,7 @@ public class Checkconfiguration : MonoBehaviour {
 		redweights = GameObject.FindGameObjectsWithTag ("Red");
 		yellowweights = GameObject.FindGameObjectsWithTag ("Yellow");
 		scale = GameObject.Find ("Scale");
+		normalcamera = GameObject.Find ("Main Camera");
 
 		foreach (GameObject enviromentobject in enviroment)
 		{
@@ -66,6 +68,10 @@ public class Checkconfiguration : MonoBehaviour {
 		}
 
 		scale.GetComponent<Renderer> ().enabled = false;
+		scaleparent.Changeparentfull ();
+		indicatorlines.Changeparentfull ();
+		normalcamera.SetActive(false);
+
 
 
 	}
