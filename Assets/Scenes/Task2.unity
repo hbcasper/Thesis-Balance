@@ -1565,9 +1565,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inside: 0
   Imin: 
+  imInInt: 0
   side: 
+  sideInt: 0
   colorimin: 
   placeimin: 
+  placeImInInt: 0
+  myPos: 0
 --- !u!1 &422087623
 GameObject:
   m_ObjectHideFlags: 0
@@ -2478,9 +2482,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inside: 0
   Imin: 
+  imInInt: 0
   side: 
+  sideInt: 0
   colorimin: 
   placeimin: 
+  placeImInInt: 0
+  myPos: 0
 --- !u!1001 &723977672
 Prefab:
   m_ObjectHideFlags: 0
@@ -4203,9 +4211,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inside: 0
   Imin: 
+  imInInt: 0
   side: 
+  sideInt: 0
   colorimin: 
   placeimin: 
+  placeImInInt: 0
+  myPos: 0
 --- !u!1 &1119595919 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 106312, guid: 45992c85bdbdd854987cfceaa6df3b18, type: 2}
@@ -5290,9 +5302,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inside: 0
   Imin: 
+  imInInt: 0
   side: 
+  sideInt: 0
   colorimin: 
   placeimin: 
+  placeImInInt: 0
+  myPos: 0
 --- !u!1 &1500035240
 GameObject:
   m_ObjectHideFlags: 0

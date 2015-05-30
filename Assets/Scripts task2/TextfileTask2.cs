@@ -34,10 +34,10 @@ public class TextfileTask2 : MonoBehaviour {
 	TimeSpan reactionTime2;
 	TimeSpan reactionTime3; 
 
-	int positionRed1;
-	int positionRed2;
-	int positionYellow1;
-	int positionYellow2;
+	int posRed1;
+	int posRed2;
+	int posYellow1;
+	int posYellow2;
 	
 	void Start () {
 		
@@ -63,11 +63,7 @@ public class TextfileTask2 : MonoBehaviour {
 	}
 	
 	private void createLogFile(){
-
-		positionRed1 = GameObject.Find("RedWeightLeft 1").GetComponent<Imused>().myPos; 
-		positionRed2 = GameObject.Find("RedWeightLeft 2").GetComponent<Imused>().myPos; 
-		positionYellow1 = GameObject.Find("YellowWeightLeft 1").GetComponent<Imused>().myPos; 
-		positionYellow2 = GameObject.Find("YellowWeightLeft 2").GetComponent<Imused>().myPos;
+	
 
 		string logFilePath = @"Assets\ParticipantFiles\" + sceneName + "_balancescale_nr_";
 		int version = 0;
@@ -106,17 +102,22 @@ public class TextfileTask2 : MonoBehaviour {
 		endTime = System.DateTime.Now; 
 	}
 
-	public void CubePos()
-	{
-		if (
-	
-	}
+//	public void CubePos()
+//	{
+//		if (
+//	
+//	}
 
 	public void write () 
 	{
-		
+		posRed1 = GameObject.Find("RedWeightLeft 1").GetComponent<Imused>().myPos; 
+//		posRed2 = GameObject.Find("RedWeightLeft 2").GetComponent<Imused>().myPos; 
+		posYellow1 = GameObject.Find("YellowWeightLeft 1").GetComponent<Imused>().myPos; 
+		posYellow2 = GameObject.Find("YellowWeightLeft 2").GetComponent<Imused>().myPos;
+
 		reactionTime3 = endTime.Subtract (startTime); 
-		
+
+		//writer.WriteLine (posRed1.ToString ()); 
 		writer.WriteLine (" " + Tasknumber.taskCount.ToString ()+ ", " + CorrectScore.Correct.ToString()+ ", " + Balanceresult.balance.ToString() + ", " + Balancerequired.side.ToString()+ ", " +Tasknumber.levelnumber.ToString ()+ ", " + CorrectScore.Score.ToString() + ", " + "#ofRedWeights" + ", " + "#ofYellowWeights" + ", " + reactionTime3.ToString());// + "         ,   " + loggedLevelNumber.ToString() + " ,           "+ loggedScore.ToString() + " ,       " + loggedNumberWeightsRed.ToString() + " ,          " + loggedNumberWeightsYellow.ToString() + "   , " +  reactionTime1.ToString()+ " , " +  reactionTime2.ToString() +" , " + reactionTime3.ToString());
 		//writer.WriteLine(reactionTime3.ToString());
 		//writer.WriteLine (CubePosition.positionRedCube1.ToString() + "," + CubePosition.positionRedCube2.ToString() + ","+ CubePosition.positionRedCube3.ToString() + "," + CubePosition.positionRedCube4.ToString() +"|"+ CubePosition.positionYellowCube1.ToString() + "," + CubePosition.positionYellowCube2.ToString() + "," + CubePosition.positionYellowCube3.ToString() + "," + CubePosition.positionYellowCube4.ToString()); 

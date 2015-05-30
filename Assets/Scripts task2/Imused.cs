@@ -13,8 +13,6 @@ public class Imused : MonoBehaviour {
 	public int sideInt;
 
 	public string colorimin;
-	public int colorImInInt;
-
 	public string placeimin;
 	public int placeImInInt;
 
@@ -29,6 +27,7 @@ public class Imused : MonoBehaviour {
 		side = "none";
 		colorimin = "none";
 		placeimin = "none";
+
 		sideInt = 0; 
 		placeImInInt = 0; 
 		myPos = 0; 
@@ -47,6 +46,11 @@ public class Imused : MonoBehaviour {
 			placeimin = "3";
 			placeImInInt = 3;
 		}
+		else if (Imin.EndsWith("4")){
+			placeimin = "4";
+			placeImInInt = 4;
+		}
+
 		else if (Imin.EndsWith("4")){
 			placeimin = "4";
 			placeImInInt = 4;
@@ -74,19 +78,17 @@ public class Imused : MonoBehaviour {
 		Imin = other.name;
 		side = other.tag;
 
-		if (other.tag == "Left") {
-			sideInt = -1;
-		} else if (other.tag == "Right") {
-			sideInt = 1;
-		}
+//		if (other.tag == "Left") {
+//			sideInt = (-1);
+//		} else if (other.tag == "Right") {
+//			sideInt = 1;
+//		}
 		
 		if (other.gameObject.GetComponent<Renderer> ().material.color == Color.red) {
 			colorimin = "Red";
-			colorImInInt = 1;
 		}
 		else if (other.gameObject.GetComponent<Renderer> ().material.color == Color.yellow) {
 			colorimin = "Yellow";
-			colorImInInt = 2; 
 		}
 		
 		
