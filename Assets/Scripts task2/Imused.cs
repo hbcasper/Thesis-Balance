@@ -7,9 +7,18 @@ public class Imused : MonoBehaviour {
 	
 	public int Inside = 0;
 	public string Imin;
+	public int imInInt;
+
 	public string side;
+	public int sideInt;
+
 	public string colorimin;
+	public int colorImInInt;
+
 	public string placeimin;
+	public int placeImInInt;
+
+	public int myPos;
 	
 	
 	
@@ -20,33 +29,42 @@ public class Imused : MonoBehaviour {
 		side = "none";
 		colorimin = "none";
 		placeimin = "none";
+		sideInt = 0; 
+		placeImInInt = 0; 
+		myPos = 0; 
 	}
 	
 	void Update (){
 		if(Imin.EndsWith("1")){
 			placeimin = "1";
+			placeImInInt = 1;
 		}
 		else if (Imin.EndsWith("2")){
 			placeimin = "2";
+			placeImInInt = 2;
 		}
 		else if (Imin.EndsWith("3")){
 			placeimin = "3";
+			placeImInInt = 3;
 		}
 		else if (Imin.EndsWith("4")){
 			placeimin = "4";
-		}
-		
-		else if (Imin.EndsWith("4")){
-			placeimin = "4";
+			placeImInInt = 4;
 		}
 		else if (Imin.EndsWith("5")){
 			placeimin = "5";
+			placeImInInt = 5; 
 		}
 		else if (Imin.EndsWith("6")){
 			placeimin = "6";
+			placeImInInt = 6; 
 		}
-		else { placeimin = "none";}
-		
+		else { 
+			placeimin = "none";
+		}
+
+		myPos = sideInt * placeImInInt; 
+
 	}
 	
 	
@@ -55,12 +73,20 @@ public class Imused : MonoBehaviour {
 		Inside = 1;	
 		Imin = other.name;
 		side = other.tag;
+
+		if (other.tag == "Left") {
+			sideInt = -1;
+		} else if (other.tag == "Right") {
+			sideInt = 1;
+		}
 		
 		if (other.gameObject.GetComponent<Renderer> ().material.color == Color.red) {
 			colorimin = "Red";
+			colorImInInt = 1;
 		}
 		else if (other.gameObject.GetComponent<Renderer> ().material.color == Color.yellow) {
 			colorimin = "Yellow";
+			colorImInInt = 2; 
 		}
 		
 		

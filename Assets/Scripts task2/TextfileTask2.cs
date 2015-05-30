@@ -33,10 +33,16 @@ public class TextfileTask2 : MonoBehaviour {
 	TimeSpan reactionTime1; 
 	TimeSpan reactionTime2;
 	TimeSpan reactionTime3; 
-	
+
+	int positionRed1;
+	int positionRed2;
+	int positionYellow1;
+	int positionYellow2;
 	
 	void Start () {
-		
+
+		//GameObject.Find("RedWeightLeft 1").GetComponent<Imused>.myPos
+
 		tasknumber = GameObject.Find ("Gamemanager");
 		Tasknumber = tasknumber.GetComponent<GamemanagerT2> ();
 		
@@ -98,7 +104,7 @@ public class TextfileTask2 : MonoBehaviour {
 
 	public void CubePos()
 	{
-		
+		if (
 	
 	}
 
