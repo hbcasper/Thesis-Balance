@@ -110,10 +110,10 @@ public class TextfileTask2 : MonoBehaviour {
 
 	public void write () 
 	{
-		posRed1 = GameObject.Find("RedWeightLeft 1").GetComponent<Imused>().myPos; 
+//		posRed1 = GameObject.Find("RedWeightLeft 1").GetComponent<Imused>().myPos; 
 //		posRed2 = GameObject.Find("RedWeightLeft 2").GetComponent<Imused>().myPos; 
-		posYellow1 = GameObject.Find("YellowWeightLeft 1").GetComponent<Imused>().myPos; 
-		posYellow2 = GameObject.Find("YellowWeightLeft 2").GetComponent<Imused>().myPos;
+//		posYellow1 = GameObject.Find("YellowWeightLeft 1").GetComponent<Imused>().myPos; 
+//		posYellow2 = GameObject.Find("YellowWeightLeft 2").GetComponent<Imused>().myPos;
 
 		reactionTime3 = endTime.Subtract (startTime); 
 
