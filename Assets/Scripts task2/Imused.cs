@@ -17,8 +17,7 @@ public class Imused : MonoBehaviour {
 	public int placeImInInt;
 
 	public int myPos;
-	
-	
+
 	
 	public void restart ()
 	{
@@ -78,11 +77,11 @@ public class Imused : MonoBehaviour {
 		Imin = other.name;
 		side = other.tag;
 
-//		if (other.tag == "Left") {
-//			sideInt = (-1);
-//		} else if (other.tag == "Right") {
-//			sideInt = 1;
-//		}
+		if (other.tag == "Left") {
+			sideInt = (-1);
+		} else if (other.tag == "Right") {
+			sideInt = 1;
+		}
 		
 		if (other.gameObject.GetComponent<Renderer> ().material.color == Color.red) {
 			colorimin = "Red";

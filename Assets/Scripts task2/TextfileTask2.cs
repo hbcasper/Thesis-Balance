@@ -21,7 +21,17 @@ public class TextfileTask2 : MonoBehaviour {
 
 	private Instructiontask2 Balancerequired;
 	private GameObject balancerequired;
-	
+
+//	private Imused PosRed1;
+//	private Imused PosRed2;
+//	private Imused PosYellow1;
+//	private Imused PosYellow2; 
+//
+//	private GameObject posRed1;
+//	private GameObject posRed2;
+//	private GameObject posYellow1;
+//	private GameObject posYellow2;
+//	
 	private StreamWriter writer;  
 	string sceneName; 
 	string logFileName; 
@@ -34,10 +44,10 @@ public class TextfileTask2 : MonoBehaviour {
 	TimeSpan reactionTime2;
 	TimeSpan reactionTime3; 
 
-	int posRed1;
-	int posRed2;
-	int posYellow1;
-	int posYellow2;
+//	int posRed1Int;
+//	int posRed2Int;
+//	int posYellow1Int;
+//	int posYellow2Int;
 	
 	void Start () {
 		
@@ -53,6 +63,18 @@ public class TextfileTask2 : MonoBehaviour {
 		
 		balancerequired = GameObject.Find ("Instructiontask2");
 		Balancerequired = balancerequired.GetComponent<Instructiontask2> ();
+
+//		posRed1 = GameObject.Find ("RedWeightLeft 1");
+//		PosRed1 = posRed1.GetComponent<Imused>(); 
+//		
+//		posRed2 = GameObject.Find ("RedWeightLeft 2");
+//		PosRed2 = posRed2.GetComponent<Imused>(); 
+//		
+//		posYellow1 = GameObject.Find ("YellowWeightLeft 1");
+//		PosYellow1 = posYellow1.GetComponent<Imused>(); 
+//		
+//		posYellow2 = GameObject.Find ("YellowWeightLeft 2");
+//		PosYellow2 = posYellow2.GetComponent<Imused>(); 
 
 		sceneName = Application.loadedLevelName; 
 		
@@ -102,23 +124,33 @@ public class TextfileTask2 : MonoBehaviour {
 		endTime = System.DateTime.Now; 
 	}
 
-//	public void CubePos()
-//	{
-//		if (
+//	public void SetCube()
+//	{	
+//
+//		posRed1Int = PosRed1.myPos;
+//		posRed2Int = PosRed2.myPos;
+//		posYellow1Int = PosYellow1.myPos;
+//		posYellow2Int = PosYellow2.myPos;	
+//
+//		Debug.Log (posRed1Int);
 //	
+//	}
+
+//	public void SetZeroCube()
+//	{
+//		posRed1Int = 0;
+//		posRed2Int = 0;
+//		posYellow1Int = 0;
+//		posYellow2Int = 0;
 //	}
 
 	public void write () 
 	{
-//		posRed1 = GameObject.Find("RedWeightLeft 1").GetComponent<Imused>().myPos; 
-//		posRed2 = GameObject.Find("RedWeightLeft 2").GetComponent<Imused>().myPos; 
-//		posYellow1 = GameObject.Find("YellowWeightLeft 1").GetComponent<Imused>().myPos; 
-//		posYellow2 = GameObject.Find("YellowWeightLeft 2").GetComponent<Imused>().myPos;
 
 		reactionTime3 = endTime.Subtract (startTime); 
 
-		//writer.WriteLine (posRed1.ToString ()); 
-		writer.WriteLine (" " + Tasknumber.taskCount.ToString ()+ ", " + CorrectScore.Correct.ToString()+ ", " + Balanceresult.balance.ToString() + ", " + Balancerequired.side.ToString()+ ", " +Tasknumber.levelnumber.ToString ()+ ", " + CorrectScore.Score.ToString() + ", " + "#ofRedWeights" + ", " + "#ofYellowWeights" + ", " + reactionTime3.ToString());// + "         ,   " + loggedLevelNumber.ToString() + " ,           "+ loggedScore.ToString() + " ,       " + loggedNumberWeightsRed.ToString() + " ,          " + loggedNumberWeightsYellow.ToString() + "   , " +  reactionTime1.ToString()+ " , " +  reactionTime2.ToString() +" , " + reactionTime3.ToString());
+		//writer.WriteLine (posRed1Int.ToString () +","+ posYellow1Int.ToString()); 
+		//writer.WriteLine (" " + Tasknumber.taskCount.ToString ()+ ", " + CorrectScore.Correct.ToString()+ ", " + Balanceresult.balance.ToString() + ", " + Balancerequired.side.ToString()+ ", " +Tasknumber.levelnumber.ToString ()+ ", " + CorrectScore.Score.ToString() + ", " + "#ofRedWeights" + ", " + "#ofYellowWeights" + ", " + reactionTime3.ToString());// + "         ,   " + loggedLevelNumber.ToString() + " ,           "+ loggedScore.ToString() + " ,       " + loggedNumberWeightsRed.ToString() + " ,          " + loggedNumberWeightsYellow.ToString() + "   , " +  reactionTime1.ToString()+ " , " +  reactionTime2.ToString() +" , " + reactionTime3.ToString());
 		//writer.WriteLine(reactionTime3.ToString());
 		//writer.WriteLine (CubePosition.positionRedCube1.ToString() + "," + CubePosition.positionRedCube2.ToString() + ","+ CubePosition.positionRedCube3.ToString() + "," + CubePosition.positionRedCube4.ToString() +"|"+ CubePosition.positionYellowCube1.ToString() + "," + CubePosition.positionYellowCube2.ToString() + "," + CubePosition.positionYellowCube3.ToString() + "," + CubePosition.positionYellowCube4.ToString()); 
 		writer.Flush ();
