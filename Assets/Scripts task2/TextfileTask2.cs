@@ -40,8 +40,7 @@ public class TextfileTask2 : MonoBehaviour {
 	int positionYellow2;
 	
 	void Start () {
-
-		//GameObject.Find("RedWeightLeft 1").GetComponent<Imused>.myPos
+		
 
 		tasknumber = GameObject.Find ("Gamemanager");
 		Tasknumber = tasknumber.GetComponent<GamemanagerT2> ();
@@ -64,7 +63,12 @@ public class TextfileTask2 : MonoBehaviour {
 	}
 	
 	private void createLogFile(){
-		
+
+		positionRed1 = GameObject.Find("RedWeightLeft 1").GetComponent<Imused>().myPos; 
+		positionRed2 = GameObject.Find("RedWeightLeft 2").GetComponent<Imused>().myPos; 
+		positionYellow1 = GameObject.Find("YellowWeightLeft 1").GetComponent<Imused>().myPos; 
+		positionYellow2 = GameObject.Find("YellowWeightLeft 2").GetComponent<Imused>().myPos;
+
 		string logFilePath = @"Assets\ParticipantFiles\" + sceneName + "_balancescale_nr_";
 		int version = 0;
 		logFileName = logFilePath + version + ".txt";
