@@ -150,8 +150,7 @@ public class TextfileTask2 : MonoBehaviour {
 		reactionTime3 = endTime.Subtract (startTime); 
 
 		//writer.WriteLine (posRed1Int.ToString () +","+ posYellow1Int.ToString()); 
-		//writer.WriteLine (" " + Tasknumber.taskCount.ToString ()+ ", " + CorrectScore.Correct.ToString()+ ", " + Balanceresult.balance.ToString() + ", " + Balancerequired.side.ToString()+ ", " +Tasknumber.levelnumber.ToString ()+ ", " + CorrectScore.Score.ToString() + ", " + "#ofRedWeights" + ", " + "#ofYellowWeights" + ", " + reactionTime3.ToString());// + "         ,   " + loggedLevelNumber.ToString() + " ,           "+ loggedScore.ToString() + " ,       " + loggedNumberWeightsRed.ToString() + " ,          " + loggedNumberWeightsYellow.ToString() + "   , " +  reactionTime1.ToString()+ " , " +  reactionTime2.ToString() +" , " + reactionTime3.ToString());
-		//writer.WriteLine(reactionTime3.ToString());
+		writer.WriteLine (Tasknumber.taskCount.ToString ()+ "," + CorrectScore.Correct.ToString()+ "," + Balanceresult.balance.ToString() + "," + Balancerequired.side.ToString()+ "," +Tasknumber.levelnumber.ToString ()+ "," + CorrectScore.Score.ToString() + "," + "#ofRedWeights" + "," + "#ofYellowWeights" + "," + reactionTime3.ToString());
 		//writer.WriteLine (CubePosition.positionRedCube1.ToString() + "," + CubePosition.positionRedCube2.ToString() + ","+ CubePosition.positionRedCube3.ToString() + "," + CubePosition.positionRedCube4.ToString() +"|"+ CubePosition.positionYellowCube1.ToString() + "," + CubePosition.positionYellowCube2.ToString() + "," + CubePosition.positionYellowCube3.ToString() + "," + CubePosition.positionYellowCube4.ToString()); 
 		writer.Flush ();
 		
