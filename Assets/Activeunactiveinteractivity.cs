@@ -28,6 +28,9 @@ public class Activeunactiveinteractivity : MonoBehaviour {
 
 		gameObject.GetComponent<Button> ().interactable = true;
 		}
+		else {
+			gameObject.GetComponent<Button> ().interactable = false;
+		}
 
 
 	
