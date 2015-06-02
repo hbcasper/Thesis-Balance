@@ -134,8 +134,7 @@ public class Textfile : MonoBehaviour {
 		// reactionTime3 = endTime.Subtract(readyTime); 
 		
 		
-		//writer.WriteLine (" " + Tasknumber.taskCount.ToString () + " ,     " + loggedCorrect.ToString () + "   ,      " + loggedCorrectButton.ToString() + "         ,      " + Useranswer.whichbutton.ToString()+ "         ,   " + loggedLevelNumber.ToString() + " ,           "+ loggedScore.ToString() + " ,       " + loggedNumberWeightsRed.ToString() + " ,          " + loggedNumberWeightsYellow.ToString() + "   , " +  reactionTime1.ToString()+ " , " +  reactionTime2.ToString() +" , " + reactionTime3.ToString());
-		writer.WriteLine (CubePosition.positionRedCube1.ToString() + "," + CubePosition.positionRedCube2.ToString() + ","+ CubePosition.positionRedCube3.ToString() + "," + CubePosition.positionRedCube4.ToString() +"|"+ CubePosition.positionYellowCube1.ToString() + "," + CubePosition.positionYellowCube2.ToString() + "," + CubePosition.positionYellowCube3.ToString() + "," + CubePosition.positionYellowCube4.ToString()); 
+		writer.WriteLine (Tasknumber.taskCount.ToString () + "," + loggedCorrect.ToString () + "," + loggedCorrectButton.ToString() + "," + Useranswer.whichbutton.ToString()+ "," + loggedLevelNumber.ToString() + ","+ loggedScore.ToString() + "," + loggedNumberWeightsRed.ToString() + "," + loggedNumberWeightsYellow.ToString() + "," +  reactionTime1.ToString()+ "," +  reactionTime2.ToString() +"," + reactionTime3.ToString()+","+CubePosition.positionRedCube1.ToString() + "," + CubePosition.positionRedCube2.ToString() + ","+ CubePosition.positionRedCube3.ToString() + "," + CubePosition.positionRedCube4.ToString() +","+ CubePosition.positionYellowCube1.ToString() + "," + CubePosition.positionYellowCube2.ToString() + "," + CubePosition.positionYellowCube3.ToString() + "," + CubePosition.positionYellowCube4.ToString()); 
 		writer.Flush ();
 		
 	}
