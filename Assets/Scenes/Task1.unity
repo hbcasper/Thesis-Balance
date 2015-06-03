@@ -2503,7 +2503,7 @@ Prefab:
     - target: {fileID: 11473806, guid: 8d04ea887958de24385b8dcf5e782a45, type: 2}
       propertyPath: LeftCube1
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 938204849}
     - target: {fileID: 11473806, guid: 8d04ea887958de24385b8dcf5e782a45, type: 2}
       propertyPath: LeftCube2
       value: 
@@ -4606,7 +4606,7 @@ GameObject:
   - 114: {fileID: 938204852}
   - 114: {fileID: 938204851}
   m_Layer: 0
-  m_Name: LeftCube2
+  m_Name: LeftCube1
   m_TagString: Left
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

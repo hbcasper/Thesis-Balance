@@ -19,25 +19,16 @@ public class Seecubes : MonoBehaviour {
 	
     void Update () {
 
-		//string[] cubeColors = new string[] {"red", "yellow","","","","red", "yellow","","","","red", "yellow"};
 		int nameLenght = gameObject.name.Length;
-	
 		int cubeIsRight = 0;
-		//if (gameObject.name[0] == 'R') {
-		//	cubeIsRight = 1;
-		//}
-		//int cubeIndex = (cubeIsRight*6 + int.Parse(gameObject.name[nameLenght - 1].ToString())) - 1 ;
 		int cubeIndex = int.Parse(gameObject.name[nameLenght - 1].ToString());
-
-	
-
-
+		
 		if (((Valores.pnr1 == cubeIndex || Valores.pnr2 == cubeIndex) && gameObject.tag == "Right")||((Valores.pnl1 == cubeIndex || Valores.pnl2 == cubeIndex) && gameObject.tag == "Left"))
 		{
 			gameObject.GetComponent<Collider> ().enabled = true;
 			gameObject.GetComponent<Renderer> ().enabled = true;
 		} else {
-			gameObject.GetComponent<Collider> ().enabled = false;
+			gameObject.GetComponent<Collider> ().enabled = false;	
 			gameObject.GetComponent<Renderer> ().enabled = false;
 			gameObject.GetComponent<Renderer> ().material.color = Color.gray;
 		}
