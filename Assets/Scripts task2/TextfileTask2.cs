@@ -48,7 +48,15 @@ public class TextfileTask2 : MonoBehaviour {
 //	int posRed2Int;
 //	int posYellow1Int;
 //	int posYellow2Int;
-	
+//
+//	void Awake(){
+//
+//		PosRed1 = new Imused ();
+//		PosRed2 = new Imused ();
+//		PosYellow1 = new Imused ();
+//		PosYellow2 = new Imused ();
+//	}
+
 	void Start () {
 		
 
@@ -64,17 +72,22 @@ public class TextfileTask2 : MonoBehaviour {
 		balancerequired = GameObject.Find ("Instructiontask2");
 		Balancerequired = balancerequired.GetComponent<Instructiontask2> ();
 
-//		posRed1 = GameObject.Find ("RedWeightLeft 1");
-//		PosRed1 = posRed1.GetComponent<Imused>(); 
-//		
-//		posRed2 = GameObject.Find ("RedWeightLeft 2");
-//		PosRed2 = posRed2.GetComponent<Imused>(); 
-//		
-//		posYellow1 = GameObject.Find ("YellowWeightLeft 1");
-//		PosYellow1 = posYellow1.GetComponent<Imused>(); 
-//		
-//		posYellow2 = GameObject.Find ("YellowWeightLeft 2");
-//		PosYellow2 = posYellow2.GetComponent<Imused>(); 
+//		if (posRed1.activeSelf) {
+//			posRed1 = GameObject.Find ("RedWeightLeft 1");
+//			PosRed1 = posRed1.GetComponent<Imused> (); 
+//		}
+//		if (posRed2.activeSelf) {
+//			posRed2 = GameObject.Find ("RedWeightLeft 2");
+//			PosRed2 = posRed2.GetComponent<Imused> (); 
+//		}
+//		if (posYellow1.activeSelf) {
+//			posYellow1 = GameObject.Find ("YellowWeightLeft 1");
+//			PosYellow1 = posYellow1.GetComponent<Imused> (); 
+//		}
+//		if (posYellow2.activeSelf) {
+//			posYellow2 = GameObject.Find ("YellowWeightLeft 2");
+//			PosYellow2 = posYellow2.GetComponent<Imused> (); 
+//		}
 
 		sceneName = Application.loadedLevelName; 
 		
@@ -135,7 +148,7 @@ public class TextfileTask2 : MonoBehaviour {
 //		Debug.Log (posRed1Int);
 //	
 //	}
-
+//
 //	public void SetZeroCube()
 //	{
 //		posRed1Int = 0;
