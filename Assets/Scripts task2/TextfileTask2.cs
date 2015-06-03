@@ -22,12 +22,12 @@ public class TextfileTask2 : MonoBehaviour {
 	private Instructiontask2 Balancerequired;
 	private GameObject balancerequired;
 
-//	private Imused PosRed1;
+	private Imused PosRed1;
 //	private Imused PosRed2;
 //	private Imused PosYellow1;
 //	private Imused PosYellow2; 
 //
-//	private GameObject posRed1;
+	private GameObject posRed1;
 //	private GameObject posRed2;
 //	private GameObject posYellow1;
 //	private GameObject posYellow2;
@@ -44,7 +44,7 @@ public class TextfileTask2 : MonoBehaviour {
 	TimeSpan reactionTime2;
 	TimeSpan reactionTime3; 
 
-//	int posRed1Int;
+	int posRed1Int;
 //	int posRed2Int;
 //	int posYellow1Int;
 //	int posYellow2Int;
@@ -73,9 +73,10 @@ public class TextfileTask2 : MonoBehaviour {
 		Balancerequired = balancerequired.GetComponent<Instructiontask2> ();
 
 //		if (posRed1.activeSelf) {
-//			posRed1 = GameObject.Find ("RedWeightLeft 1");
-//			PosRed1 = posRed1.GetComponent<Imused> (); 
+			posRed1 = GameObject.Find ("RedWeightLeft 1");
+			PosRed1 = posRed1.GetComponent<Imused> (); 
 //		}
+
 //		if (posRed2.activeSelf) {
 //			posRed2 = GameObject.Find ("RedWeightLeft 2");
 //			PosRed2 = posRed2.GetComponent<Imused> (); 
@@ -137,25 +138,25 @@ public class TextfileTask2 : MonoBehaviour {
 		endTime = System.DateTime.Now; 
 	}
 
-//	public void SetCube()
-//	{	
-//
-//		posRed1Int = PosRed1.myPos;
+	public void SetCube()
+	{	
+		
+		posRed1Int = PosRed1.myPos;
 //		posRed2Int = PosRed2.myPos;
 //		posYellow1Int = PosYellow1.myPos;
 //		posYellow2Int = PosYellow2.myPos;	
 //
-//		Debug.Log (posRed1Int);
+		Debug.Log (posRed1Int);
 //	
-//	}
+	}
 //
-//	public void SetZeroCube()
-//	{
-//		posRed1Int = 0;
+	public void SetZeroCube()
+	{
+		posRed1Int = 0;
 //		posRed2Int = 0;
 //		posYellow1Int = 0;
 //		posYellow2Int = 0;
-//	}
+	}
 
 	public void write () 
 	{
