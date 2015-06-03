@@ -6,70 +6,127 @@ public class Seecubes : MonoBehaviour {
 	// private Instruction Valores; 
 	private Instruction Valores;
 	public GameObject Objeto;	
+	public string colorName; 
 
 	void Start (){
 
-		gameObject.GetComponent<Collider>().enabled = false;
+		gameObject.GetComponent<Collider> ().enabled = false;
 		//Valores = Objeto.GetComponent<Instruction>();	
 		Valores = Objeto.GetComponent<Instruction> (); 
-		gameObject.GetComponent<Renderer>().enabled = false;
+		gameObject.GetComponent<Renderer> ().enabled = false;
+
+		UpdateLoop ();
 
 	}
-	
-    void Update () {
 
+	void UpdateLoop(){ 
+
+		for (int i = 0; i < 20; i++) {
 		//string[] cubeColors = new string[] {"red", "yellow","","","","red", "yellow","","","","red", "yellow"};
 		int nameLenght = gameObject.name.Length;
-	
+		
 		int cubeIsRight = 0;
 		//if (gameObject.name[0] == 'R') {
 		//	cubeIsRight = 1;
 		//}
 		//int cubeIndex = (cubeIsRight*6 + int.Parse(gameObject.name[nameLenght - 1].ToString())) - 1 ;
 		int cubeIndex = int.Parse(gameObject.name[nameLenght - 1].ToString());
+		
+
+			if (((Valores.pnr1 == cubeIndex || Valores.pnr2 == cubeIndex) && gameObject.tag == "Right") || ((Valores.pnl1 == cubeIndex || Valores.pnl2 == cubeIndex) && gameObject.tag == "Left")) {
+				gameObject.GetComponent<Collider> ().enabled = true;
+				gameObject.GetComponent<Renderer> ().enabled = true;
+			} else {
+				gameObject.GetComponent<Collider> ().enabled = false;
+				gameObject.GetComponent<Renderer> ().enabled = false;
+				gameObject.GetComponent<Renderer> ().material.color = Color.gray;
+			}
+		
+			if ((Valores.pnr1 == cubeIndex) && gameObject.tag == "Right") {
+				Colorchange (Valores.colorname3);
+			} else if 
+		((Valores.pnr2 == cubeIndex) && gameObject.tag == "Right") {
+				Colorchange (Valores.colorname4);
+			} else if 
+		((Valores.pnl1 == cubeIndex) && gameObject.tag == "Left") {
+				Colorchange (Valores.colorname1);
+			} else if 
+		((Valores.pnl2 == cubeIndex) && gameObject.tag == "Left") {
+				Colorchange (Valores.colorname2);
+			 
+			}
 
 
+		}
+		//GrowCube (colorName);
+
+	}
 	
+    void Update () {
 
-
-		if (((Valores.pnr1 == cubeIndex || Valores.pnr2 == cubeIndex) && gameObject.tag == "Right")||((Valores.pnl1 == cubeIndex || Valores.pnl2 == cubeIndex) && gameObject.tag == "Left"))
-		{
-			gameObject.GetComponent<Collider> ().enabled = true;
-			gameObject.GetComponent<Renderer> ().enabled = true;
-		} else {
-			gameObject.GetComponent<Collider> ().enabled = false;
-			gameObject.GetComponent<Renderer> ().enabled = false;
-			gameObject.GetComponent<Renderer> ().material.color = Color.gray;
-		}
-
-		if ((Valores.pnr1 == cubeIndex) && gameObject.tag == "Right"){
-			Colorchange (Valores.colorname3);
-		}
-		else if 
-		((Valores.pnr2 == cubeIndex)  && gameObject.tag == "Right"){
-			Colorchange (Valores.colorname4);
-		}
-		else if 
-		((Valores.pnl1 == cubeIndex)  && gameObject.tag == "Left"){
-			Colorchange (Valores.colorname1);
-		}
-		else if 
-		((Valores.pnl2 == cubeIndex) && gameObject.tag == "Left"){
-			Colorchange (Valores.colorname2);
-		}
-
+//		//string[] cubeColors = new string[] {"red", "yellow","","","","red", "yellow","","","","red", "yellow"};
+//		int nameLenght = gameObject.name.Length;
+//	
+//		int cubeIsRight = 0;
+//		//if (gameObject.name[0] == 'R') {
+//		//	cubeIsRight = 1;
+//		//}
+//		//int cubeIndex = (cubeIsRight*6 + int.Parse(gameObject.name[nameLenght - 1].ToString())) - 1 ;
+//		int cubeIndex = int.Parse(gameObject.name[nameLenght - 1].ToString());
+//
+//	
+//
+//
+//		if (((Valores.pnr1 == cubeIndex || Valores.pnr2 == cubeIndex) && gameObject.tag == "Right")||((Valores.pnl1 == cubeIndex || Valores.pnl2 == cubeIndex) && gameObject.tag == "Left"))
+//		{
+//			gameObject.GetComponent<Collider> ().enabled = true;
+//			gameObject.GetComponent<Renderer> ().enabled = true;
+//		} else {
+//			gameObject.GetComponent<Collider> ().enabled = false;
+//			gameObject.GetComponent<Renderer> ().enabled = false;
+//			gameObject.GetComponent<Renderer> ().material.color = Color.gray;
+//		}
+//
+//		if ((Valores.pnr1 == cubeIndex) && gameObject.tag == "Right"){
+//			Colorchange (Valores.colorname3);
+//			colorName = Valores.colorname3;
+//		}
+//		else if 
+//		((Valores.pnr2 == cubeIndex)  && gameObject.tag == "Right"){
+//			Colorchange (Valores.colorname4);
+//			colorName = Valores.colorname4;
+//		}
+//		else if 
+//		((Valores.pnl1 == cubeIndex)  && gameObject.tag == "Left"){
+//			Colorchange (Valores.colorname1);
+//			colorName = Valores.colorname1;
+//		}
+//		else if 
+//		((Valores.pnl2 == cubeIndex) && gameObject.tag == "Left"){
+//			Colorchange (Valores.colorname2);
+//			colorName = Valores.colorname2;
+//		}
+//
 
 	}
 	void Colorchange(string color){
 		
 		if (color == "red") {
 			gameObject.GetComponent<Renderer> ().material.color = Color.red;
+
 		} else if (color == "yellow") {
 			gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
+			gameObject.transform.localScale += new Vector3(0.1f,0.2f,0);
 		} 
 		
 		
 	}
+
+//	void GrowCube(string colorName){
+//	 if (colorName == "yellow") {
+//			gameObject.transform.localScale += new Vector3(5f,20f,0);
+//		} 
+//	}
 
 }
 		
