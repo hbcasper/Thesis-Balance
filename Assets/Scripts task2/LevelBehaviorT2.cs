@@ -11,6 +11,7 @@ public class LevelBehaviorT2 : MonoBehaviour {
 	private GameObject ExtraRedweight;
 	private GameObject ExtraYellowweight;
 	private GameObject Redweight;
+
 	
 	private GameObject Allweights;
 
@@ -34,7 +35,7 @@ public class LevelBehaviorT2 : MonoBehaviour {
 		levelnumber = 1;
 		ExtraRedweight.SetActive (false);
 		ExtraYellowweight.SetActive (false);
-		Redweight.GetComponent<Renderer> ().material.color = Color.red;
+		Redweight.SetActive (true);
 		Allweights.GetComponent<Allweightsdeactivation> ().enabled = false;
 		runlevelinstruction.defineside ();
 		runlevelinstruction.level1 ();
@@ -46,8 +47,8 @@ public class LevelBehaviorT2 : MonoBehaviour {
 		public void level2 (){
 		levelnumber = 2;
 		ExtraRedweight.SetActive (false);
-		ExtraYellowweight.SetActive (false);
-		Redweight.GetComponent<Renderer> ().material.color = Color.yellow;
+		ExtraYellowweight.SetActive (true);
+		Redweight.SetActive (false);
 		Allweights.GetComponent<Allweightsdeactivation> ().enabled = false;
 		runlevelinstruction.defineside ();
 		runlevelinstruction.level2 ();
@@ -56,6 +57,7 @@ public class LevelBehaviorT2 : MonoBehaviour {
 	}
 		public void level3 (){
 		levelnumber = 3;
+		Redweight.SetActive (true);
 		ExtraRedweight.SetActive (false);
 		ExtraYellowweight.SetActive (false);
 		Redweight.GetComponent<Renderer> ().material.color = Color.red;
