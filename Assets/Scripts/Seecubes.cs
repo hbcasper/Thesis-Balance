@@ -20,6 +20,8 @@ public class Seecubes : MonoBehaviour {
 		Valores = Objeto.GetComponent<Instruction> (); 
 		//gameObject.GetComponent<Renderer> ().enabled = false;
 		gameObject.GetComponent<Renderer> ().material.color = Color.clear;
+		gameObject.transform.localScale = new Vector3(1.4f,1.4f,1.4f);
+
 
 	}
 	
@@ -77,6 +79,7 @@ public class Seecubes : MonoBehaviour {
 	}
 
 	void GrowCube(string colorName){
+
 
 		try
 		{
