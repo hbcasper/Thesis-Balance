@@ -23,14 +23,14 @@ public class TextfileTask2 : MonoBehaviour {
 	private GameObject balancerequired;
 
 	private Imused PosRed1;
-//	private Imused PosRed2;
-//	private Imused PosYellow1;
-//	private Imused PosYellow2; 
+	private Imused PosRed2;
+	private Imused PosYellow1;
+	private Imused PosYellow2; 
 //
 	private GameObject posRed1;
-//	private GameObject posRed2;
-//	private GameObject posYellow1;
-//	private GameObject posYellow2;
+	private GameObject posRed2;
+	private GameObject posYellow1;
+	private GameObject posYellow2;
 //	
 	private StreamWriter writer;  
 	string sceneName; 
@@ -45,9 +45,9 @@ public class TextfileTask2 : MonoBehaviour {
 	TimeSpan reactionTime3; 
 
 	int posRed1Int;
-//	int posRed2Int;
-//	int posYellow1Int;
-//	int posYellow2Int;
+	int posRed2Int;
+	int posYellow1Int;
+	int posYellow2Int;
 //
 //	void Awake(){
 //
@@ -72,23 +72,25 @@ public class TextfileTask2 : MonoBehaviour {
 		balancerequired = GameObject.Find ("Instructiontask2");
 		Balancerequired = balancerequired.GetComponent<Instructiontask2> ();
 
-//		if (posRed1.activeSelf) {
+		if (GameObject.Find("RedWeightLeft 1")) {
 			posRed1 = GameObject.Find ("RedWeightLeft 1");
 			PosRed1 = posRed1.GetComponent<Imused> (); 
-//		}
+		}
 
-//		if (posRed2.activeSelf) {
-//			posRed2 = GameObject.Find ("RedWeightLeft 2");
-//			PosRed2 = posRed2.GetComponent<Imused> (); 
-//		}
-//		if (posYellow1.activeSelf) {
-//			posYellow1 = GameObject.Find ("YellowWeightLeft 1");
-//			PosYellow1 = posYellow1.GetComponent<Imused> (); 
-//		}
-//		if (posYellow2.activeSelf) {
-//			posYellow2 = GameObject.Find ("YellowWeightLeft 2");
-//			PosYellow2 = posYellow2.GetComponent<Imused> (); 
-//		}
+		if (GameObject.Find("RedWeightLeft 2")) {
+			posRed2 = GameObject.Find ("RedWeightLeft 2");
+			PosRed2 = posRed2.GetComponent<Imused> (); 
+		}
+
+		if (GameObject.Find("YellowWeightLeft 1")) {
+			posYellow1 = GameObject.Find ("YellowWeightLeft 1");
+			PosYellow1 = posYellow1.GetComponent<Imused> (); 
+		}
+
+		if (GameObject.Find("YellowWeightLeft 2")) {
+			posYellow2 = GameObject.Find ("YellowWeightLeft 2");
+			PosYellow2 = posYellow2.GetComponent<Imused> (); 
+		}
 
 		sceneName = Application.loadedLevelName; 
 		
@@ -140,22 +142,40 @@ public class TextfileTask2 : MonoBehaviour {
 
 	public void SetCube()
 	{	
-		
-		posRed1Int = PosRed1.myPos;
-//		posRed2Int = PosRed2.myPos;
-//		posYellow1Int = PosYellow1.myPos;
-//		posYellow2Int = PosYellow2.myPos;	
-//
-		Debug.Log (posRed1Int);
+		if (GameObject.Find ("RedWeightLeft 1")) {
+			posRed1Int = PosRed1.myPos;
+		} else {
+			posRed1Int = 0;
+		}
+		if (GameObject.Find ("RedWeightLeft 2")) {
+			posRed2Int = PosRed2.myPos;
+		} else {
+			posRed2Int = 0;
+		}
+		if (GameObject.Find ("YellowWeightLeft 1")) {
+			posYellow1Int = PosYellow1.myPos;
+		} else {
+			posYellow1Int = 0;
+		}
+		if (GameObject.Find ("YellowWeightLeft 2")) {
+			posYellow2Int = PosYellow2.myPos;	
+		} else {
+			posYellow2Int = 0;
+		}
+
+
+
+//	
+		Debug.Log ("HEEEEEEEEEEEEERRREEE"+posRed1Int +","+posYellow1Int);
 //	
 	}
-//
+
 	public void SetZeroCube()
 	{
 		posRed1Int = 0;
-//		posRed2Int = 0;
-//		posYellow1Int = 0;
-//		posYellow2Int = 0;
+		posRed2Int = 0;
+		posYellow1Int = 0;
+		posYellow2Int = 0;
 	}
 
 	public void write () 
@@ -163,9 +183,9 @@ public class TextfileTask2 : MonoBehaviour {
 
 		reactionTime3 = endTime.Subtract (startTime); 
 
-		//writer.WriteLine (posRed1Int.ToString () +","+ posYellow1Int.ToString()); 
-		writer.WriteLine (Tasknumber.taskCount.ToString ()+ "," + CorrectScore.Correct.ToString()+ "," + Balanceresult.balance.ToString() + "," + Balancerequired.side.ToString()+ "," +Tasknumber.levelnumber.ToString ()+ "," + CorrectScore.Score.ToString() + "," + "#ofRedWeights" + "," + "#ofYellowWeights" + "," + reactionTime3.ToString());
-		//writer.WriteLine (CubePosition.positionRedCube1.ToString() + "," + CubePosition.positionRedCube2.ToString() + ","+ CubePosition.positionRedCube3.ToString() + "," + CubePosition.positionRedCube4.ToString() +"|"+ CubePosition.positionYellowCube1.ToString() + "," + CubePosition.positionYellowCube2.ToString() + "," + CubePosition.positionYellowCube3.ToString() + "," + CubePosition.positionYellowCube4.ToString()); 
+		writer.WriteLine (posRed1Int.ToString () +","+ posRed2Int.ToString() +","+posYellow1Int.ToString () +","+ posYellow2Int.ToString()); 
+		//writer.WriteLine (Tasknumber.taskCount.ToString ()+ "," + CorrectScore.Correct.ToString()+ "," + Balanceresult.balance.ToString() + "," + Balancerequired.side.ToString()+ "," +Tasknumber.levelnumber.ToString ()+ "," + CorrectScore.Score.ToString() + "," + "#ofRedWeights" + "," + "#ofYellowWeights" + "," + reactionTime3.ToString());
+		//writer.WriteLine (CubePosition.positionRedCube1.ToString ());//+ "," + CubePosition.positionRedCube2.ToString() + ","+ CubePosition.positionRedCube3.ToString() + "," + CubePosition.positionRedCube4.ToString() +"|"+ CubePosition.positionYellowCube1.ToString() + "," + CubePosition.positionYellowCube2.ToString() + "," + CubePosition.positionYellowCube3.ToString() + "," + CubePosition.positionYellowCube4.ToString()); 
 		writer.Flush ();
 		
 	}
