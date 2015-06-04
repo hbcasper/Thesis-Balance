@@ -42,7 +42,7 @@ public class GamemanagerT2 : MonoBehaviour {
 		else if (taskCount == 41) 
 		{
 			Debug.Log("ready");
-			Application.LoadLevel("UserInstructionTask2");
+			Application.LoadLevel("FinalScene");
 		}
 	}
 }
