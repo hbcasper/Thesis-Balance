@@ -75,7 +75,7 @@ public class Seecubes : MonoBehaviour {
 
 	//if (Hidden States == true){
 	 if (colorName == "yellow") {
-			gameObject.transform.localScale = new Vector3(2f,3f,0);
+			gameObject.transform.localScale = new Vector3(2f,3f,2f);
 		} 
 		// }
 	}
