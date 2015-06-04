@@ -77,5 +77,10 @@ public class LevelBehaviorT2 : MonoBehaviour {
 		runlevelblocks.level4 ();
 
 	}
+	public void NextTask (){
+		ExtraRedweight.SetActive (true);
+		ExtraYellowweight.SetActive (false);
+		
+	}
 
 }
