@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class Seecubes : MonoBehaviour {
 
@@ -7,8 +8,12 @@ public class Seecubes : MonoBehaviour {
 	private Instruction Valores;
 	public GameObject Objeto;	
 	public string colorName; 
+	private ToogleOptions GameConfiguration;
+	private GameObject GameConfigurationToogles;
 
 	void Start (){
+
+		GameConfigurationToogles = GameObject.Find ("GameConfiguration");
 
 		gameObject.GetComponent<Collider> ().enabled = false;
 		//Valores = Objeto.GetComponent<Instruction>();	
@@ -65,7 +70,7 @@ public class Seecubes : MonoBehaviour {
 
 		} else if (color == "yellow") {
 			gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
-			//gameObject.transform.localScale = new Vector3(2.0f,3.0f,0);
+		
 		} 
 		
 		
@@ -73,13 +78,20 @@ public class Seecubes : MonoBehaviour {
 
 	void GrowCube(string colorName){
 
-	//if (Hidden States == true){
-	 if (colorName == "yellow") {
-			gameObject.transform.localScale = new Vector3(2f,3f,2f);
-		} 
-		// }
-	}
+		try
+		{
+		
+			GameConfiguration = GameConfigurationToogles.GetComponent<ToogleOptions>();
 
+			if (GameConfiguration.ActiveHiddenStates == true)
+			{
+			 	if (colorName == "yellow") {
+				gameObject.transform.localScale = new Vector3(2f,3f,2f);
+				} 
+			 }
+		} catch (Exception e){}
+
+	}
 }
 		
 
