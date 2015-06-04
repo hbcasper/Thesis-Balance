@@ -388,7 +388,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c7a0321072f8e345beeef21c61ae0ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animal: {fileID: 806929543}
 --- !u!1 &116125071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,7 +1138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c7a0321072f8e345beeef21c61ae0ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animal: {fileID: 949353244}
 --- !u!1 &370018485
 GameObject:
   m_ObjectHideFlags: 0
@@ -5599,7 +5597,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c7a0321072f8e345beeef21c61ae0ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animal: {fileID: 966598863}
 --- !u!1 &1201288933 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 166076, guid: 8d04ea887958de24385b8dcf5e782a45, type: 2}
@@ -6378,7 +6375,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c7a0321072f8e345beeef21c61ae0ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animal: {fileID: 1896849616}
 --- !u!4 &1551038759 stripped
 Transform:
   m_PrefabParentObject: {fileID: 401806, guid: 5be82523359dc554ba8d649d6fce4e1a, type: 2}
@@ -7573,6 +7569,7 @@ GameObject:
   - 114: {fileID: 1898096708}
   - 114: {fileID: 1898096709}
   - 114: {fileID: 1898096710}
+  - 114: {fileID: 1898096711}
   m_Layer: 0
   m_Name: Exercisemanager
   m_TagString: Untagged
@@ -7641,6 +7638,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleparent: {fileID: 1679890163}
   indicatorlines: {fileID: 1504627185}
+  HiddenStatesObjects: []
+--- !u!114 &1898096711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1898096705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d99025cb76e30794bb06b58208265ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1910342581
 Transform:
   m_ObjectHideFlags: 0
