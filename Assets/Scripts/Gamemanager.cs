@@ -38,5 +38,10 @@ public class Gamemanager : MonoBehaviour {
 			levelnumber=4;
 
 		}
+		else if (taskCount == 41) 
+		{
+			Application.LoadLevel("UserInstructionTask2");
+			
+		}
 	}
 }
