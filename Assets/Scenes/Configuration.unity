@@ -392,6 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   participantNumber: 
+  Set: {fileID: 0}
 --- !u!1 &135329556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,6 +1235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   participantNumber: 
+  Set: {fileID: 0}
 --- !u!1 &1403086960
 GameObject:
   m_ObjectHideFlags: 0

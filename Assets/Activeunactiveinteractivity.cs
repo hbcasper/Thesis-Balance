@@ -12,8 +12,7 @@ public class Activeunactiveinteractivity : MonoBehaviour {
 
 		gameObject.GetComponent<Button> ().interactable = false;
 
-		Checkage = GameObject.Find ("Agetext");
-		agescript = Checkage.GetComponent<Checkage>();
+
 
 	}
 
@@ -24,13 +23,20 @@ public class Activeunactiveinteractivity : MonoBehaviour {
 
 	void Update () {
 
-		if ((agescript.ageisset == true) && (genderisset == true)){
+		if (gameObject.name == ("Startexperiment")) {
 
-		gameObject.GetComponent<Button> ().interactable = true;
+			Checkage = GameObject.Find ("Agetext");
+			agescript = Checkage.GetComponent<Checkage>();
+
+
+			if ((agescript.ageisset == true) && (genderisset == true)) {
+
+				gameObject.GetComponent<Button> ().interactable = true;
+			} else {
+				gameObject.GetComponent<Button> ().interactable = false;
+			}
 		}
-		else {
-			gameObject.GetComponent<Button> ().interactable = false;
-		}
+
 
 
 	
