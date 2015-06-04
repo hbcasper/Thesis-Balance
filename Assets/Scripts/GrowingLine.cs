@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class GrowingLine : MonoBehaviour {
 
@@ -39,6 +40,8 @@ public class GrowingLine : MonoBehaviour {
 	}
 
 	public void DrawLine(){
+		try
+		{
 		
 		LineLeft1 = GetComponent<LineRenderer>(); 
 		//LineRight1 = GetComponent<LineRenderer> (); 
@@ -91,6 +94,7 @@ public class GrowingLine : MonoBehaviour {
 		 
 			
 		}
+		} catch (Exception e){}
 	}
 	
 	void Update () {
