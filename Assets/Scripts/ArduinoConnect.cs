@@ -1,9 +1,9 @@
-﻿//using UnityEngine;
-//using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 //using System.IO.Ports; 
 //using System.Threading;
 //
-//public class ArduinoConnect : MonoBehaviour {
+public class ArduinoConnect : MonoBehaviour {
 //
 //
 //	private ArduinoInputBehavior BalanceVar;
@@ -96,4 +96,4 @@
 //		sp.Close();
 //	}
 //
-//}
+}
