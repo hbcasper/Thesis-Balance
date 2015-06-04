@@ -782,7 +782,7 @@ GameObject:
   - 4: {fileID: 213446241}
   m_Layer: 0
   m_Name: Elefant
-  m_TagString: Untagged
+  m_TagString: HiddenStates
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2276,7 +2276,7 @@ GameObject:
   - 4: {fileID: 563144452}
   m_Layer: 0
   m_Name: Animal
-  m_TagString: Untagged
+  m_TagString: HiddenStates
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2394,7 +2394,7 @@ GameObject:
   - 4: {fileID: 612171941}
   m_Layer: 0
   m_Name: Animal
-  m_TagString: Untagged
+  m_TagString: HiddenStates
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5848,7 +5848,7 @@ GameObject:
   - 4: {fileID: 1378858911}
   m_Layer: 0
   m_Name: Animal
-  m_TagString: Untagged
+  m_TagString: HiddenStates
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6231,6 +6231,34 @@ Prefab:
     - target: {fileID: 456474, guid: 01d660f5daf41074ab3451b3be725141, type: 2}
       propertyPath: m_LocalPosition.x
       value: -659
+      objectReference: {fileID: 0}
+    - target: {fileID: 148380, guid: 01d660f5daf41074ab3451b3be725141, type: 2}
+      propertyPath: m_TagString
+      value: HiddenStates
+      objectReference: {fileID: 0}
+    - target: {fileID: 190604, guid: 01d660f5daf41074ab3451b3be725141, type: 2}
+      propertyPath: m_TagString
+      value: HiddenStates
+      objectReference: {fileID: 0}
+    - target: {fileID: 187530, guid: 01d660f5daf41074ab3451b3be725141, type: 2}
+      propertyPath: m_TagString
+      value: HiddenStates
+      objectReference: {fileID: 0}
+    - target: {fileID: 137132, guid: 01d660f5daf41074ab3451b3be725141, type: 2}
+      propertyPath: m_TagString
+      value: HiddenStates
+      objectReference: {fileID: 0}
+    - target: {fileID: 121848, guid: 01d660f5daf41074ab3451b3be725141, type: 2}
+      propertyPath: m_TagString
+      value: HiddenStates
+      objectReference: {fileID: 0}
+    - target: {fileID: 166582, guid: 01d660f5daf41074ab3451b3be725141, type: 2}
+      propertyPath: m_TagString
+      value: HiddenStates
+      objectReference: {fileID: 0}
+    - target: {fileID: 106408, guid: 01d660f5daf41074ab3451b3be725141, type: 2}
+      propertyPath: m_TagString
+      value: HiddenStates
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01d660f5daf41074ab3451b3be725141, type: 2}
@@ -7635,7 +7663,7 @@ GameObject:
   - 4: {fileID: 1952102010}
   m_Layer: 0
   m_Name: Animal
-  m_TagString: Untagged
+  m_TagString: HiddenStates
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

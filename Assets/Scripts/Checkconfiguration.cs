@@ -14,47 +14,57 @@ public class Checkconfiguration : MonoBehaviour {
 	private GameObject normalcamera;
 	public TransformParent scaleparent;
 	public TransformParent indicatorlines;
+	public GameObject[] HiddenStatesObjects;
 
 	// Use this for initialization
 	void Start () {
 		ARobjects = GameObject.FindGameObjectsWithTag ("AR");
-		
 		GameConfigurationToogles = GameObject.Find ("GameConfiguration");
+		HiddenStatesObjects = GameObject.FindGameObjectsWithTag ("HiddenStates");
 
 		try{
+
 		GameConfiguration = GameConfigurationToogles.GetComponent<ToogleOptions>();
-		
-
-		//checar variable que viene desde el toogle
-
-		if (GameConfiguration.ActiveAugmentedReality == true) {
+		//check AR
+		if (GameConfiguration.ActiveAugmentedReality == true) 
+			{
 			AugmentedReality ();
-		} else {
-			foreach (GameObject ARobject in ARobjects) {
+			} else 
+			{
+			foreach (GameObject ARobject in ARobjects) 
+				{
 				ARobject.SetActive (false);
+				}
 			}
-		}
+		
+			//check HS
 
-		if (GameConfiguration.ActiveHiddenStates == true) {
+		if (GameConfiguration.ActiveHiddenStates == true) 
+			{
 			HiddenStates();
-		}
-		if (GameConfiguration.ActiveAdaptiveDificulty == true) {
+			}else
+				{
+				foreach (GameObject HiddenStateObject in HiddenStatesObjects) 
+					{
+					HiddenStateObject.SetActive(false);
+					}
+				}
+
+		//check AD
+		if (GameConfiguration.ActiveAdaptiveDificulty == true) 
+		{
 		 AdaptiveDifficulty();
 		}
-		} catch (Exception e){
-
+		} catch (Exception e){}
 		}
-	}
 	
-	void AugmentedReality(){
+	void AugmentedReality(){ //AR Behavior
 
 		enviroment = GameObject.FindGameObjectsWithTag ("Enviroment");
 		redweights = GameObject.FindGameObjectsWithTag ("Red");
 		yellowweights = GameObject.FindGameObjectsWithTag ("Yellow");
 		scale = GameObject.Find ("Scale");
 		normalcamera = GameObject.Find ("Main Camera");
-
-
 
 		foreach (GameObject enviromentobject in enviroment)
 		{
@@ -74,12 +84,9 @@ public class Checkconfiguration : MonoBehaviour {
 		scale.GetComponent<Renderer> ().enabled = false;
 
 		normalcamera.SetActive(false);
-
-
-
 	}
-	void HiddenStates(){
-		Debug.Log ("HS");
+	void HiddenStates(){ //HS Behavior
+
 	}
 	void AdaptiveDifficulty(){
 		Debug.Log ("AD");
