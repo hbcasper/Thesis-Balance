@@ -15,12 +15,16 @@ public class Checkconfiguration : MonoBehaviour {
 	public TransformParent scaleparent;
 	public TransformParent indicatorlines;
 	public GameObject[] HiddenStatesObjects;
+	public GameObject[] AdaptiveDifficultyObjects;
+	public GameObject ReactiveSystemNext;
 
 	// Use this for initialization
 	void Start () {
 		ARobjects = GameObject.FindGameObjectsWithTag ("AR");
 		GameConfigurationToogles = GameObject.Find ("GameConfiguration");
 		HiddenStatesObjects = GameObject.FindGameObjectsWithTag ("HiddenStates");
+		AdaptiveDifficultyObjects = GameObject.FindGameObjectsWithTag ("AD");
+		ReactiveSystemNext = GameObject.Find ("Next");
 
 		try{
 
@@ -43,20 +47,29 @@ public class Checkconfiguration : MonoBehaviour {
 			{
 			HiddenStates();
 			}else
+			{foreach (GameObject HiddenStateObject in HiddenStatesObjects) 
 				{
-				foreach (GameObject HiddenStateObject in HiddenStatesObjects) 
-					{
 					HiddenStateObject.SetActive(false);
-					}
+				}
+
 				}
 
 		//check AD
 		if (GameConfiguration.ActiveAdaptiveDificulty == true) 
 		{
 		 AdaptiveDifficulty();
-		}
+			}else
+			{
+				foreach (GameObject AdaptiveDifficultyObject in AdaptiveDifficultyObjects) 
+				{
+					AdaptiveDifficultyObject.SetActive(false);
+				}
+
+
+			}
 		} catch (Exception e){}
-		}
+	}
+
 	
 	void AugmentedReality(){ //AR Behavior
 
@@ -89,6 +102,10 @@ public class Checkconfiguration : MonoBehaviour {
 
 	}
 	void AdaptiveDifficulty(){
-		Debug.Log ("AD");
+		foreach (GameObject AdaptiveDifficultyObject in AdaptiveDifficultyObjects) 
+				{
+					AdaptiveDifficultyObject.SetActive(true);
+				}
+		ReactiveSystemNext.SetActive (false);
 	}
 }
