@@ -132,7 +132,7 @@ void Start () {
 		try
 		{
 		
-			Arduinovalues = sp.ReadLine(); 
+			Arduinovalues = sp.ReadLine(); //first value colo(Color left side, Place left side ; Color right side, Place right side)
 			Debug.Log(Arduinovalues );
 		}
 		catch (Exception e){Debug.Log ("NotWorking");}
