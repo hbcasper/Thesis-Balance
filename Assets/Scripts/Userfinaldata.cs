@@ -7,6 +7,7 @@ public class Userfinaldata : MonoBehaviour {
 
 
 	public string participantGender; //Variable that save the gender of the participant
+	public int gender; 
 
 	public string participantNumber; //Variable that save the number of the participant
 
@@ -25,11 +26,13 @@ public class Userfinaldata : MonoBehaviour {
 	public void SetGenderfemenine(){
 
 			participantGender = "femenine";
+			gender = 1; 
 
 		}
 
 	public void SetGendermasculine(){
 		participantGender = "masculine";
+		gender = 0; 
 	}
 
 
