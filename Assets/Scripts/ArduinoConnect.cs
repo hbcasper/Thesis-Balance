@@ -8,7 +8,7 @@ public class ArduinoConnect : MonoBehaviour {
 
 
 	public static SerialPort sp = new SerialPort("COM1", 9600);
-	int Balanceresult=0;
+	int Balanceresult = 0;
 //
 //	private ArduinoInputBehavior BalanceVar;
 //	public GameObject balanceVar;
@@ -66,7 +66,7 @@ void Start () {
 	{
 		if (Balanceresult == 1) {
 
-			sp.Write("AL"); //why that values?????
+			sp.Write("AL"); //why that values????? That's what Alex sends to the arduiono...
 			
 		} else if (Balanceresult== 2) {
 
@@ -78,7 +78,7 @@ void Start () {
 		}
 	}
 
-public void OpenConnection() 
+	public void OpenConnection() 
 	{
 		if (sp != null) 
 		{
