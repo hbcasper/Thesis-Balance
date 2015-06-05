@@ -43,9 +43,11 @@ public class SpaceblockinglevelsT2 : MonoBehaviour {
 
 	// Update is called once per frame
 	public void level1(){
+
 		restart ();
 		lcubenumber1 = Random.Range (1, 7);
 		rcubenumber1 = lcubenumber1;
+		lcubenumber1 = rcubenumber1;
 	}
 	public void level2(){
 		restart ();
