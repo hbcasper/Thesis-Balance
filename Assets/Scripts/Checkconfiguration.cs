@@ -14,9 +14,10 @@ public class Checkconfiguration : MonoBehaviour {
 	private GameObject normalcamera;
 	public TransformParent scaleparent;
 	public TransformParent indicatorlines;
-	public GameObject[] HiddenStatesObjects;
-	public GameObject[] AdaptiveDifficultyObjects;
-	public GameObject ReactiveSystemNext;
+	GameObject[] HiddenStatesObjects;
+	GameObject[] AdaptiveDifficultyObjects;
+	GameObject ReactiveSystemNext;
+	private InputOutputADS ActiveADSystem;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +26,7 @@ public class Checkconfiguration : MonoBehaviour {
 		HiddenStatesObjects = GameObject.FindGameObjectsWithTag ("HiddenStates");
 		AdaptiveDifficultyObjects = GameObject.FindGameObjectsWithTag ("AD");
 		ReactiveSystemNext = GameObject.Find ("Next");
+		ActiveADSystem = gameObject.GetComponent<InputOutputADS>();
 
 		try{
 
@@ -101,11 +103,16 @@ public class Checkconfiguration : MonoBehaviour {
 	void HiddenStates(){ //HS Behavior
 
 	}
+
 	void AdaptiveDifficulty(){
+
+		ActiveADSystem.DeclareParameters();
+		ActiveADSystem.ReceiveInputsADS ();
+
 		foreach (GameObject AdaptiveDifficultyObject in AdaptiveDifficultyObjects) 
 				{
 					AdaptiveDifficultyObject.SetActive(true);
 				}
-		ReactiveSystemNext.SetActive (false);
+		//ReactiveSystemNext.SetActive (false);
 	}
 }
