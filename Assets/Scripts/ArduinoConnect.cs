@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 using System.IO.Ports; 
 using System.Threading;
 
 //
 public class ArduinoConnect : MonoBehaviour {
+
+	string Arduinovalues;
 
 
 
@@ -125,11 +128,16 @@ void Start () {
 	}
 
 	void Update (){
-		if (sp.IsOpen) {
-			//sp.ReadTimeout = 50;
-			Debug.Log ("Imhere");
-			//Debug.Log (sp.ReadByte ());
+
+		try
+		{
+		
+			Arduinovalues = sp.ReadLine(); 
+			Debug.Log(Arduinovalues );
 		}
+		catch (Exception e){Debug.Log ("NotWorking");}
+	
 	}
+
 	
 }
