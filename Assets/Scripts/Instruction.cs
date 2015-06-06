@@ -8,6 +8,8 @@ public class Instruction : MonoBehaviour
 	public GameObject levelcomesfrom; // level comes from Excercise Manager
 	private Gamemanager levelis;
 
+
+
 	// number of the active cube (max. 2)
 	public int pnl1;
 	public int pnl2;
@@ -481,6 +483,8 @@ public class Instruction : MonoBehaviour
 	}
 
 	public void ADexercise(){
+
+		// Call the inputs of the Receive Inputs
 
 		//Use the Diffculty parameters and generates the excercise
 

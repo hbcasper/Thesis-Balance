@@ -18,7 +18,9 @@ public class Gamemanager : MonoBehaviour {
 
 			
 	public void Checklevel (){
-		
+
+		// If augmented reality = false
+
 		if (taskCount <= 5) {
 			levelnumber=1;
 
