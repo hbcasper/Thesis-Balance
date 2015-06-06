@@ -5,13 +5,16 @@ using UnityEngine.UI;
 public class Instruction : MonoBehaviour 
 
 {
-	public GameObject levelcomesfrom;
+	public GameObject levelcomesfrom; // level comes from Excercise Manager
 	private Gamemanager levelis;
-	
+
+	// number of the active cube (max. 2)
 	public int pnl1;
 	public int pnl2;
 	public int pnr1;
 	public int pnr2;
+
+	// Define the color with random (pcolor) and assign the color of the active cubes depending in the value (colorname) (max. 2)
 	
 	public float pcolor1;
 	public string colorname1; 
@@ -26,7 +29,8 @@ public class Instruction : MonoBehaviour
 	public int LeftW2;
 	public int RightW1;
 	public int RightW2;
-	
+
+	// variables for the TextLog
 	public int numberWeightsRed; 
 	public int numberWeightsYellow; 
 	
@@ -43,25 +47,32 @@ public class Instruction : MonoBehaviour
 	Text instruction;
 	
 	void Start () {
-		
-		levelis = levelcomesfrom.GetComponent<Gamemanager> ();
-		level1 ();
+
+				
+		levelis = levelcomesfrom.GetComponent<Gamemanager> (); //Declare level
+
+		// if AD is false!!{
+		level1 (); // run first level
+
+		// If AD is true ..{ 
+		//Run ADexercise(); ...for first time
+		//}
+
+
 	}
 	
-	void Update () 
-	{
-		Debug.Log ("Levelis" + levelis.levelnumber);
-	}
-	
-	
-	
-	
-	public void displayinstructions (){
-		
+	public void displayinstructions (){ // Run the instructions every time that you press "Next Excercise" button. 
+
+		// Run Adaptive System
+		//if AD is true{
+		// run ADexercise();
+		//}
+
+		// Run Reactive System
+
 		if (levelis.levelnumber == 1) 
 		{
-			level1 ();
-			
+			level1 ();	
 		}	
 		else if (levelis.levelnumber == 2) 
 		{
@@ -76,16 +87,19 @@ public class Instruction : MonoBehaviour
 			level4 ();
 		}
 	}
+
+	// Behavior of each level in reactive system
 	
 	public void level1 (){
+
 		instruction = GetComponent <Text> ();
-		
+
 		numberWeightsRed = 0; 
 		numberWeightsYellow = 0; 
 		
 		pnl1 = Random.Range (1, 7);
 		pnl2 = 0;
-		pnr1 = pnl1; //Random.Range (1, 7);
+		pnr1 = pnl1; 
 		pnr2 = 0;
 		pcolor1 = Random.Range (0, 2);
 		pcolor2 = 0;
@@ -96,8 +110,7 @@ public class Instruction : MonoBehaviour
 		positionRedCube2 = 0;
 		positionYellowCube1 = 0; 
 		positionYellowCube2 = 0; 
-		
-		// pnl1 = pnr1;
+
 		
 		if (pcolor1 < 2) {
 			colorname1 = "red";
@@ -154,11 +167,7 @@ public class Instruction : MonoBehaviour
 			else{positionRedCube2 = pnr1;}
 			positionYellowCube2 = 0; 
 			
-		}
-		
-		
-		// if(for position of Red & Yellow Cube depending on pnl1 & pnl2 and colorname figure out tomorrow
-		
+		}		
 		
 		{
 			instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1;
@@ -401,32 +410,6 @@ public class Instruction : MonoBehaviour
 				positionRedCube1 = (pnl2*(-1));
 			}
 		}
-
-		// --------------Cube 2
-
-//		if (pcolor2 < 2) {
-//			colorname2 = "red";
-//			LeftW2 = 1;
-//			numberWeightsRed ++; 
-//			if (positionRedCube1 != 0){
-//				positionRedCube2 = (pnl2*(-1));
-//			}
-//			else {
-//				positionRedCube1 = (pnl2*(-1));
-//			}
-//			
-//		} else {
-//			colorname2 = "yellow";
-//			LeftW2 = 2;
-//			numberWeightsYellow ++; 
-//			if (positionYellowCube1 != 0){
-//				positionYellowCube2 = (pnl2*(-1));
-//			}
-//			else {
-//				positionYellowCube1 = (pnl2*(-1));
-//			}
-//		}
-		// --------------Cube 3
 		
 		if (pcolor3 < 2) {
 			colorname3 = "red";
@@ -441,8 +424,6 @@ public class Instruction : MonoBehaviour
 			} else {
 				positionRedCube1 = pnr1;
 			}
-
-			//affects colorname4
 
 			colorname4 = "yellow";
 			RightW2 = 2;
@@ -475,8 +456,6 @@ public class Instruction : MonoBehaviour
 				positionYellowCube1 = pnr1;
 			}
 
-			// affects to colorname4
-
 			colorname4 = "red";
 			RightW2 = 1;
 			numberWeightsRed ++; 
@@ -495,52 +474,21 @@ public class Instruction : MonoBehaviour
 			}
 		}
 
-		// cube of color name 4
-
-//		if (pcolor4 < 2) {
-//			colorname4 = "red";
-//			RightW2 = 1;
-//			numberWeightsRed ++; 
-//			if (positionRedCube1 != 0){
-//				if (positionRedCube2 != 0){
-//					if (positionRedCube3 !=0){
-//						positionRedCube4 = pnr2;}
-//					else {
-//						positionRedCube3 = pnr2;
-//					}
-//				}
-//				else {positionRedCube2 = pnr2;
-//				}
-//			}
-//			else {
-//				positionRedCube1 = pnr2;
-//			}
-//			
-//		} else {
-//			colorname4 = "yellow";
-//			RightW2 = 2;
-//			numberWeightsYellow ++; 
-//			if (positionYellowCube1 != 0){
-//				if (positionYellowCube2 != 0){
-//					if (positionYellowCube3 !=0){
-//						positionYellowCube4 = pnr2;}
-//					else {
-//						positionYellowCube3 = pnr2;
-//					}
-//				}
-//				else {positionYellowCube2 = pnr2;
-//				}
-//			}
-//			else {
-//				positionYellowCube1 = pnr2;
-//			}
-//		}
-		
 		{
 			instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname2 + " piece in the left place number " + pnl2 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1 + ".\n1 " + colorname4 + " piece in the right place number " + pnr2;
 			
 		}
 	}
+
+	public void ADexercise(){
+
+		//Use the Diffculty parameters and generates the excercise
+
+		//{
+		//	instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname2 + " piece in the left place number " + pnl2 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1 + ".\n1 " + colorname4 + " piece in the right place number " + pnr2;
+		//}
+	}
+
 }
 	
 	
