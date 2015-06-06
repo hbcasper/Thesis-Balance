@@ -7,7 +7,7 @@ using System.Threading;
 //
 public class ArduinoConnect : MonoBehaviour {
 
-	string Arduinovalues;
+	int Arduinovalues;
 
 
 
@@ -132,8 +132,8 @@ void Start () {
 		try
 		{
 		
-			Arduinovalues = sp.ReadLine(); //first value colo(Color left side, Place left side ; Color right side, Place right side)
-			Debug.Log(Arduinovalues );
+			Arduinovalues = sp.ReadByte(); //first value colo(Color left side, Place left side ; Color right side, Place right side)
+			Debug.Log(Arduinovalues);
 		}
 		catch (Exception e){Debug.Log ("NotWorking");}
 	
