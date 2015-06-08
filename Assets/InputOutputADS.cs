@@ -5,13 +5,13 @@ public class InputOutputADS : MonoBehaviour {
 
 	// Use this for initialization
 
-	int reactionTime;
-	int numberOfErrors;
-	int numberOfmovements;
+	public int reactionTime;
+	public int numberOfErrors;
+	public int numberOfmovements;
 
-	int numberofcubes;
-	int numberofcolors;
-	int numberofplaces;
+	public int numberofcubes;
+	public int numberofcolors;
+	public int numberofplaces;
 
 	GameObject Instructions;
 	Instruction Runlevel;
