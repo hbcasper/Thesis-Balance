@@ -62,7 +62,7 @@ public class Seecubes : MonoBehaviour {
 			colorName = Valores.colorname2;
 		}
 
-		GrowCube (colorName); // Only in Virtual Reality
+//		GrowCube (colorName); // Only in Virtual Reality
 
 	}
 
@@ -78,23 +78,23 @@ public class Seecubes : MonoBehaviour {
 	}
 
 //  Only in Virtual Reality
-	void GrowCube(string colorName){
-
-
-		try
-		{
-		
-			GameConfiguration = GameConfigurationToogles.GetComponent<ToogleOptions>();
-
-			if (GameConfiguration.ActiveHiddenStates == true)
-			{
-			 	if (colorName == "yellow") {
-				gameObject.transform.localScale = new Vector3(1.4f,3f,1.4f);
-				} 
-			 }
-		} catch (Exception e){}
-
-	}
+//	void GrowCube(string colorName){
+//
+//
+//		try
+//		{
+//		
+//			GameConfiguration = GameConfigurationToogles.GetComponent<ToogleOptions>();
+//
+//			if (GameConfiguration.ActiveHiddenStates == true)
+//			{
+//			 	if (colorName == "yellow") {
+//				gameObject.transform.localScale = new Vector3(1.4f,3f,1.4f);
+//				} 
+//			 }
+//		} catch (Exception e){}
+//
+//	}
 //	void VisibleWeights(){
 //		try
 //			{

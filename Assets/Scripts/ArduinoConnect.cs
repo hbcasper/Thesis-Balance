@@ -7,12 +7,12 @@ using System.Threading;
 //
 public class ArduinoConnect : MonoBehaviour {
 
+	private ArduinoInputBehavior CalculatedBalance;
+	private GameObject calculatedBalance;
+
 	int Arduinovalues;
 
-
-
-	public static SerialPort sp = new SerialPort("COM3", 9600);
-	int Balanceresult = 0;
+	public static SerialPort sp = new SerialPort("COM1", 9600);
 //
 //	private ArduinoInputBehavior BalanceVar;
 //	public GameObject balanceVar;
@@ -21,23 +21,40 @@ public class ArduinoConnect : MonoBehaviour {
 //	public static string strIn;
 //
 //	// Use this for initialization
-void Start () {
+
+	void Start () {
 
 	//	sp.Open ();
 	//	sp.ReadTimeout= 1;
+
+		calculatedBalance = GameObject.Find ("Scale"); 
+		CalculatedBalance = calculatedBalance.GetComponent<ArduinoInputBehavior> (); 
 //
 		gameObject.GetComponent<Renderer>().material.color = Color.black;
 		OpenConnection();
+		Debug.Log ("Connection Open");
 
 //		balanceVar = GameObject.Find ("Scale");
 //		BalanceVar = balanceVar.GetComponent<ArduinoInputBehavior> (); 
 //
 	}
+
+	void OutputForArduino(){
+
+		if (CalculatedBalance.balance == 1) {
+			sp.Write ("AL"); 
+		} else if (CalculatedBalance.balance == 2) {
+			sp.Write ("AR");
+		} else {
+			sp.Write ("AH");
+		}
+	
+	}
 //	
 //	// Update is called once per frame
 		public void Testarduino () {
 			gameObject.GetComponent<Renderer> ().material.color = Color.magenta;
-			sp.Write ("AR");
+			sp.Write ("R");
 
 //		if (sp.IsOpen) {
 //			try {
@@ -71,21 +88,6 @@ void Start () {
 //	}
 //
 //
-//	void ScaleMove ()
-//	{
-//		if (Balanceresult == 1) {
-//
-//			sp.Write("AL"); //why that values????? That's what Alex sends to the arduiono...
-//			
-//		} else if (Balanceresult== 2) {
-//
-//			sp.Write ("AR");
-//			
-//		} else if (Balanceresult == 0)
-//		{
-//			sp.Write ("AH");  
-//		}
-//	}
 
 	public void OpenConnection(){
 		if (sp != null) 
