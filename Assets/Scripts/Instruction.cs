@@ -11,6 +11,9 @@ public class Instruction : MonoBehaviour
 	// Check if is AD or RS
 	private ToogleOptions GameConfiguration;
 	private GameObject GameConfigurationToogles;
+	private GameObject ExcerciseManager;
+	private InputOutputADS ADSystem;
+
 
 
 
@@ -54,6 +57,8 @@ public class Instruction : MonoBehaviour
 	
 	void Start () {
 		levelis = levelcomesfrom.GetComponent<Gamemanager> (); //Declare level
+		ExcerciseManager = GameObject.Find ("Excercisemanager");
+		ADSystem = ExcerciseManager.GetComponent<InputOutputADS> ();
 
 		if (GameObject.Find("GameConfiguration") == null){
 			level1();
@@ -71,15 +76,20 @@ public class Instruction : MonoBehaviour
 
 
 	}
+
+	public void SetInstructions (){
+
+			if (GameConfiguration.ActiveAdaptiveDificulty == true) {
+			ADSystem.SendOutputADS();
+
+		} else if (GameObject.Find("GameConfiguration") == null || GameConfiguration.ActiveAdaptiveDificulty == false) {
+			displayinstructions();
+		}
+	}
+
 	
 	public void displayinstructions (){ // Run the instructions every time that you press "Next Excercise" button. 
 
-		// Run Adaptive System
-		//if AD is true{
-		// run ADexercise();
-		//}
-
-		// Run Reactive System
 
 		if (levelis.levelnumber == 1) 
 		{
