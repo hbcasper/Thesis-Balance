@@ -8,6 +8,10 @@ public class Instruction : MonoBehaviour
 	public GameObject levelcomesfrom; // level comes from Excercise Manager
 	private Gamemanager levelis;
 
+	// Check if is AD or RS
+	private ToogleOptions GameConfiguration;
+	private GameObject GameConfigurationToogles;
+
 
 
 	// number of the active cube (max. 2)
@@ -49,16 +53,21 @@ public class Instruction : MonoBehaviour
 	Text instruction;
 	
 	void Start () {
-
-				
 		levelis = levelcomesfrom.GetComponent<Gamemanager> (); //Declare level
 
-		// if AD is false!!{
-		level1 (); // run first level
+		if (GameObject.Find("GameConfiguration") == null){
+			level1();
+		}
+		else { 
+			GameConfigurationToogles = GameObject.Find ("GameConfiguration");
+			GameConfiguration = GameConfigurationToogles.GetComponent<ToogleOptions>();
+			
+			if (GameConfiguration.ActiveAdaptiveDificulty == false)
+			{
+				level1 (); 
+			}
+		}
 
-		// If AD is true ..{ 
-		//Run ADexercise(); ...for first time
-		//}
 
 
 	}

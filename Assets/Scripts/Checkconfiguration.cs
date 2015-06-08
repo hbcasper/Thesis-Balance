@@ -60,15 +60,14 @@ public class Checkconfiguration : MonoBehaviour {
 		if (GameConfiguration.ActiveAdaptiveDificulty == true) 
 		{
 		 AdaptiveDifficulty();
-			}else
-			{
-				foreach (GameObject AdaptiveDifficultyObject in AdaptiveDifficultyObjects) 
-				{
-					AdaptiveDifficultyObject.SetActive(false);
-				}
-
-
 			}
+//			else
+//			{
+//				foreach (GameObject AdaptiveDifficultyObject in AdaptiveDifficultyObjects) 
+//				{
+//					AdaptiveDifficultyObject.SetActive(false);
+//				}
+//			}
 		} catch (Exception e){}
 	}
 
@@ -107,12 +106,12 @@ public class Checkconfiguration : MonoBehaviour {
 	void AdaptiveDifficulty(){
 
 		ActiveADSystem.DeclareParameters();
-		ActiveADSystem.ReceiveInputsADS ();
+	
 
-		foreach (GameObject AdaptiveDifficultyObject in AdaptiveDifficultyObjects) 
-				{
-					AdaptiveDifficultyObject.SetActive(true);
-				}
+		//foreach (GameObject AdaptiveDifficultyObject in AdaptiveDifficultyObjects) 
+		//		{
+		//			AdaptiveDifficultyObject.SetActive(true);
+		//		}
 		//ReactiveSystemNext.SetActive (false);
 	}
 }

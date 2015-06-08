@@ -13,10 +13,23 @@ public class InputOutputADS : MonoBehaviour {
 	int numberofcolors;
 	int numberofplaces;
 
+	GameObject Instructions;
+	Instruction Runlevel;
+
+
+	void Start(){
+
+		Instructions = GameObject.Find ("Instructions");
+		Runlevel = Instructions.GetComponent<Instruction> ();
+
+	}
+
 
 
 	public void DeclareParameters () {
 		 //I have no idea 
+
+		ReceiveInputsADS ();
 
 	}
 	
@@ -25,9 +38,14 @@ public class InputOutputADS : MonoBehaviour {
 
 	// Read Inputs of the ADSystem
 
+
 		numberofcubes = 1; //equal to inputs
 		numberofcolors = 1;
 		numberofplaces = 1;
+
+		Runlevel.ADexercise();
+
+
 	}
 
 	public void SendOutputADS(){
@@ -36,6 +54,8 @@ public class InputOutputADS : MonoBehaviour {
 		reactionTime = 3;
 	    numberOfErrors = 2;
 		numberOfmovements = 5;
+
+		ReceiveInputsADS ();
 
 		}
 
