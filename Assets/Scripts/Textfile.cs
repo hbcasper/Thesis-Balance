@@ -28,6 +28,9 @@ public class Textfile : MonoBehaviour {
 	// takes the position for each cube 
 	private Instruction CubePosition;
 	private GameObject cubePosition; 
+
+//	private Userfinaldata FinalData;
+//	private GameObject finalData; 
 	
 	private StreamWriter writer;  
 	string sceneName; 
@@ -66,9 +69,13 @@ public class Textfile : MonoBehaviour {
 		
 		correctButton = GameObject.Find ("Scale");
 		CorrectButton = correctButton.GetComponent<ArduinoInputBehavior> (); 
+
+//		finalData = GameObject.Find ("Userdata");
+//		FinalData = finalData.GetComponent<Userfinaldata> ();
 		
 		sceneName = Application.loadedLevelName; 
-		
+
+//		Debug.Log (FinalData.gender.ToString ());
 		StoreStartTime (); 
 		createLogFile (); 
 		
@@ -149,7 +156,5 @@ public class Textfile : MonoBehaviour {
 		loggedTask = Tasknumber.taskCount;
 		
 	}
-	
 
-	
 }

@@ -825,33 +825,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 647579248}
   m_Script: {fileID: 11500000, guid: 1aaf18ce4f22a6948b4e1d31e7ca93d0, type: 3}
---- !u!1 &213446240
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 213446241}
-  m_Layer: 0
-  m_Name: Elefant
-  m_TagString: HiddenStates
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &213446241
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 213446240}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -46.5386353, y: -25.0718079, z: -87.9260254}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
 --- !u!1 &218842585 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 186488, guid: 8d04ea887958de24385b8dcf5e782a45, type: 2}
@@ -4493,7 +4466,7 @@ GameObject:
   - 212: {fileID: 806929545}
   m_Layer: 0
   m_Name: Duck
-  m_TagString: Untagged
+  m_TagString: Red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5066,7 +5039,7 @@ GameObject:
   - 212: {fileID: 949353246}
   m_Layer: 0
   m_Name: MiLMRaLia_0
-  m_TagString: Untagged
+  m_TagString: Yellow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5132,7 +5105,7 @@ GameObject:
   - 212: {fileID: 966598865}
   m_Layer: 0
   m_Name: Duck
-  m_TagString: Untagged
+  m_TagString: Red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7854,7 +7827,7 @@ GameObject:
   - 212: {fileID: 1896849618}
   m_Layer: 0
   m_Name: MiLMRaLia_0
-  m_TagString: Untagged
+  m_TagString: Yellow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
