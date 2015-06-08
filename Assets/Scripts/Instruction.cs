@@ -57,8 +57,9 @@ public class Instruction : MonoBehaviour
 	
 	void Start () {
 		levelis = levelcomesfrom.GetComponent<Gamemanager> (); //Declare level
-		ExcerciseManager = GameObject.Find ("Excercisemanager");
-		ADSystem = ExcerciseManager.GetComponent<InputOutputADS> ();
+
+
+		ADSystem = levelcomesfrom.GetComponent<InputOutputADS> ();
 
 		if (GameObject.Find("GameConfiguration") == null){
 			level1();
