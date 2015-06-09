@@ -7,18 +7,12 @@ public class HiddenStatesWeights : MonoBehaviour {
 	private Renderer Weight; 
 	public GameObject CubeBelong; 
 	public Color cubeColor; 
-	// private Color clear = (0,0,0,0); 
-
-//	public Color red = Color.red;
-//	public Color yellow = Color.yellow; 
 
 	// Use this for initialization
 	void Start () {
 
-		//cubeColor = Color.blue; 
 		gameObject.GetComponent<Renderer> ().material.color = Color.clear;
 		ColorChange (); 
-		//Debug.Log ("Called Function");
 
 	}
 

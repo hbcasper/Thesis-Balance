@@ -7,27 +7,37 @@ public class TwoWeights : MonoBehaviour {
 	//Sets the GameObjectActive only when the cube color is yellow 
 
 	public GameObject CubeBelong; 
-	public Color colorOfCube; 
+	public Color cubeColor; 
 	// Seecubes otherScript = GetComponent<Seecubes>(); 
 
 	// Use this for initialization
 	void Start () {
-		colorOfCube = CubeBelong.GetComponent<Renderer> ().material.color;
-		SetActive2Cube (); 
-		Debug.Log (colorOfCube.ToString ());
+
+		gameObject.GetComponent<Renderer>().enabled=false;
+		//		gameObject.GetComponent<Renderer>().enabled=true; 
+//		cubeColor = CubeBelong.GetComponent<Renderer> ().material.color;
 	}
 
 	void SetActive2Cube(){
 
-		if (colorOfCube == Color.yellow) {
-			gameObject.SetActive(true); 
-			Debug.Log ("Should be active"); 
+		if (cubeColor == Color.yellow)
+		{
+			gameObject.GetComponent<Renderer>().enabled=true;  
+			Debug.Log ("THIS IS YELLOW SO IM ACTIVE");
+		} 
+		
+		else 
+		{	
+			gameObject.GetComponent<Renderer>().enabled=false;  
+			Debug.Log ("RED = NOTACTIVE");
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		colorOfCube = CubeBelong.GetComponent<Renderer> ().material.color;
+
+		cubeColor = CubeBelong.GetComponent<Renderer> ().material.color;
 		SetActive2Cube();
 	}
+
 }
