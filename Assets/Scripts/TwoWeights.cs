@@ -23,13 +23,13 @@ public class TwoWeights : MonoBehaviour {
 		if (cubeColor == Color.yellow)
 		{
 			gameObject.GetComponent<Renderer>().enabled=true;  
-			Debug.Log ("THIS IS YELLOW SO IM ACTIVE");
+			//Debug.Log ("THIS IS YELLOW SO IM ACTIVE");
 		} 
 		
 		else 
 		{	
 			gameObject.GetComponent<Renderer>().enabled=false;  
-			Debug.Log ("RED = NOTACTIVE");
+			//Debug.Log ("RED = NOTACTIVE");
 		}
 	}
 	
