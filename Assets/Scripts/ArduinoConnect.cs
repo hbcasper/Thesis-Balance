@@ -12,13 +12,13 @@ public class ArduinoConnect : MonoBehaviour {
 
 	int Arduinovalues;
 
-	public static SerialPort sp = new SerialPort("COM1", 9600);
+	public static SerialPort sp = new SerialPort("COM5", 9600);
 //
 //	private ArduinoInputBehavior BalanceVar;
 //	public GameObject balanceVar;
 //
 //	public bool rightSetting; // input of pixi compared to the instruction, effects the READY -Button
-//	public static string strIn;
+	public static string strIn;
 //
 //	// Use this for initialization
 
@@ -30,8 +30,9 @@ public class ArduinoConnect : MonoBehaviour {
 		calculatedBalance = GameObject.Find ("Scale"); 
 		CalculatedBalance = calculatedBalance.GetComponent<ArduinoInputBehavior> (); 
 //
-		gameObject.GetComponent<Renderer>().material.color = Color.black;
+//		gameObject.GetComponent<Renderer>().material.color = Color.black;
 		OpenConnection();
+		sp.Write ("AH");
 		Debug.Log ("Connection Open");
 
 //		balanceVar = GameObject.Find ("Scale");
@@ -39,22 +40,39 @@ public class ArduinoConnect : MonoBehaviour {
 //
 	}
 
-	void OutputForArduino(){
+
+	public void InputArduino(){
+		
+		print(strIn);
+	}
+
+	public void OutputForArduino(){
 
 		if (CalculatedBalance.balance == 1) {
 			sp.Write ("AL"); 
+			Debug.Log ("Sent AL");
 		} else if (CalculatedBalance.balance == 2) {
 			sp.Write ("AR");
+			Debug.Log ("Sent AR");
+
 		} else {
 			sp.Write ("AH");
+			Debug.Log ("Sent AH");
+
 		}
 	
+	}
+
+	public void MoveBackHome(){
+
+		sp.Write ("AH");
+
 	}
 //	
 //	// Update is called once per frame
 		public void Testarduino () {
-			gameObject.GetComponent<Renderer> ().material.color = Color.magenta;
-			sp.Write ("R");
+//			gameObject.GetComponent<Renderer> ().material.color = Color.magenta;
+		//	sp.Write ("R");
 
 //		if (sp.IsOpen) {
 //			try {
@@ -104,7 +122,7 @@ public class ArduinoConnect : MonoBehaviour {
 			{
 				sp.Open();  // opens the connection
 				sp.ReadTimeout = 50;  // sets the timeout value before reporting error
-				gameObject.GetComponent<Renderer>().material.color = Color.green;
+//				gameObject.GetComponent<Renderer>().material.color = Color.green;
 				print ("Port Opened!");
 
 			}
@@ -126,6 +144,7 @@ public class ArduinoConnect : MonoBehaviour {
 	
 	void OnApplicationQuit() 
 	{
+		sp.Write ("AH");
 		sp.Close();
 	}
 
@@ -135,7 +154,11 @@ public class ArduinoConnect : MonoBehaviour {
 		{
 		
 			Arduinovalues = sp.ReadByte(); //first value colo(Color left side, Place left side ; Color right side, Place right side)
-			Debug.Log(Arduinovalues);
+			//Debug.Log(Convert.ToUInt64(Arduinovalues));
+			strIn = sp.ReadLine();
+
+//			strIn = sp.ReadLine();
+//			print(strIn);
 		}
 		catch (Exception e){Debug.Log ("NotWorking");}
 	
