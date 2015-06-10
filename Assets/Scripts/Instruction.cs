@@ -80,12 +80,12 @@ public class Instruction : MonoBehaviour
 
 	public void SetInstructions (){
 
-			if (GameConfiguration.ActiveAdaptiveDificulty == true) {
-			ADSystem.SendOutputADS();
+//			if (GameConfiguration.ActiveAdaptiveDificulty == true) {
+//			ADSystem.SendOutputADS();
 
-		} else if (GameObject.Find("GameConfiguration") == null || GameConfiguration.ActiveAdaptiveDificulty == false) {
+//		} else if (GameObject.Find("GameConfiguration") == null || GameConfiguration.ActiveAdaptiveDificulty == false) {
 			displayinstructions();
-		}
+//		}
 	}
 
 	

@@ -34,6 +34,7 @@ public class ArduinoConnect : MonoBehaviour {
 		OpenConnection();
 		sp.Write ("AH");
 		Debug.Log ("Connection Open");
+		strIn = sp.ReadLine();
 
 //		balanceVar = GameObject.Find ("Scale");
 //		BalanceVar = balanceVar.GetComponent<ArduinoInputBehavior> (); 
@@ -42,7 +43,9 @@ public class ArduinoConnect : MonoBehaviour {
 
 
 	public void InputArduino(){
-		
+
+//		string s = [strIn];
+//		string[] values = s.Split(',');
 		print(strIn);
 	}
 

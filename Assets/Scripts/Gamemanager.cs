@@ -12,6 +12,7 @@ public class Gamemanager : MonoBehaviour {
 
 	public void addtrial(){
 		taskCount = taskCount + 1;
+		Debug.Log ("Trial Added"+taskCount.ToString()); 
 	}
 
 	void Start (){
