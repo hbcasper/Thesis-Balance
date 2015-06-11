@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -71,6 +71,10 @@ public class Instruction : MonoBehaviour
 			if (GameConfiguration.ActiveAdaptiveDificulty == false)
 			{
 				level1 (); 
+			}
+
+			if(GameConfiguration.ActiveAdaptiveLevels == true){
+				AdaptiveLevels();
 			}
 		}
 
@@ -511,6 +515,27 @@ public class Instruction : MonoBehaviour
 		//{
 		//	instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname2 + " piece in the left place number " + pnl2 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1 + ".\n1 " + colorname4 + " piece in the right place number " + pnr2;
 		//}
+	}
+
+	public void AdaptiveLevels(){
+		
+		if (levelis.performancelevel > 60) {
+			if (levelis.levelnumber == 4){
+				levelis.levelnumber = levelis.levelnumber;}
+			else{
+				levelis.levelnumber = levelis.levelnumber + 1;
+			}
+		}
+		if (levelis.performancelevel < 40) {
+			if (levelis.levelnumber == 1){
+				levelis.levelnumber = levelis.levelnumber;}
+			else {
+				levelis.levelnumber = levelis.levelnumber - 1;}
+		}
+		else {
+			levelis.levelnumber = levelis.levelnumber;
+		}
+		displayinstructions ();
 	}
 
 }

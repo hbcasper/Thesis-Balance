@@ -49,7 +49,7 @@ public class Checkconfiguration : MonoBehaviour {
 			{
 			HiddenStates();
 			}else
-			{foreach (GameObject HiddenStateObject in HiddenStatesObjects) 
+			{	foreach (GameObject HiddenStateObject in HiddenStatesObjects) 
 				{
 					HiddenStateObject.SetActive(false);
 				}
@@ -61,6 +61,10 @@ public class Checkconfiguration : MonoBehaviour {
 		{
 		 AdaptiveDifficulty();
 			}
+		if (GameConfiguration.ActiveAdaptiveLevels == true) 
+		{
+			AdaptiveLevels();
+		}
 //			else
 //			{
 //				foreach (GameObject AdaptiveDifficultyObject in AdaptiveDifficultyObjects) 
@@ -101,6 +105,11 @@ public class Checkconfiguration : MonoBehaviour {
 	}
 	void HiddenStates(){ //HS Behavior
 
+	}
+
+	void AdaptiveLevels(){
+		
+		//ActiveADSystem.DeclareParameters ();
 	}
 
 	void AdaptiveDifficulty(){

@@ -5,6 +5,7 @@ public class Gamemanager : MonoBehaviour {
 	
 	public int taskCount;
 	public int levelnumber;
+	public int performancelevel;
 
 	ToogleOptions GameConfiguration;
 	GameObject GameConfigurationToogles;
@@ -18,6 +19,10 @@ public class Gamemanager : MonoBehaviour {
 	void Start (){
 		taskCount = 1;
 		levelnumber = 1;
+	}
+
+	public void PerformanceCalculator(){
+		performancelevel = 100;
 	}
 
 			
