@@ -6,7 +6,8 @@ public class ToogleOptions : MonoBehaviour {
 	public bool ActiveAugmentedReality = false;
 	public bool ActiveHiddenStates = false;
 	public bool ActiveAdaptiveDificulty = false;
-	public int condition;
+	public bool ActiveAdaptiveLevels = false;
+	public int condition = 0;
 	//public int HS;
 	//public int AD; 
 
@@ -22,17 +23,36 @@ public class ToogleOptions : MonoBehaviour {
 	}
 
 	public void ActiveAR(){
-		ActiveAugmentedReality = true;
-		condition = 0;
-
+		if (ActiveAugmentedReality == true) {
+			ActiveAugmentedReality = false;
+		} else {
+			ActiveAugmentedReality = true;
+		}
 	}
 	public void ActiveHS (){
-		ActiveHiddenStates = true;
+		if (ActiveHiddenStates == false) {
+			ActiveHiddenStates = true;
+		} else {
+			ActiveHiddenStates = false;
+		}
 		condition = 1;
 	}
 	public void ActiveAD () {
-		ActiveAdaptiveDificulty = true;
+		if (ActiveAdaptiveDificulty == false) {
+			ActiveAdaptiveDificulty = true;
+		} else {
+			ActiveAdaptiveDificulty = false;
+		}
+
 		condition = 2; 
+	}
+	public void ActiveAL () {
+		if (ActiveAdaptiveLevels == false) {
+			ActiveAdaptiveLevels = true;
+		} else {
+			ActiveAdaptiveLevels = false;
+		}
+		condition = 3; 
 	}
 	
 }
