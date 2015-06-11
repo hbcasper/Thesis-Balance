@@ -86,12 +86,13 @@ public class Instruction : MonoBehaviour
 
 
 		if (GameObject.Find ("GameConfiguration") == true) {
-			if (GameConfiguration.ActiveAdaptiveDificulty == false) {
-				displayinstructions ();
-			} else if (GameConfiguration.ActiveAdaptiveDificulty == true) {
+			if (GameConfiguration.ActiveAdaptiveDificulty == true) {
 				ADSystem.SendOutputADS ();
 			} else if (GameConfiguration.ActiveAdaptiveLevels == true) {
 				AdaptiveLevels ();
+			
+			} else {
+				displayinstructions ();
 			}
 		} else {
 			displayinstructions ();
@@ -525,14 +526,14 @@ public class Instruction : MonoBehaviour
 
 	public void AdaptiveLevels(){
 		
-		if (levelis.performancelevel > 60) {
+		if (levelis.performancelevel >= 60) {
 			if (levelis.levelnumber == 4){
 				levelis.levelnumber = levelis.levelnumber;}
 			else{
 				levelis.levelnumber = levelis.levelnumber + 1;
 			}
 		}
-		if (levelis.performancelevel < 40) {
+		if (levelis.performancelevel <= 40) {
 			if (levelis.levelnumber == 1){
 				levelis.levelnumber = levelis.levelnumber;}
 			else {

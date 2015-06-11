@@ -4,8 +4,10 @@ using System.Collections;
 public class Gamemanager : MonoBehaviour {
 	
 	public int taskCount;
+	public int score;
 	public int levelnumber;
-	public int performancelevel;
+	public float performancelevel;
+	public int adaptiveTaskNumber;
 
 	private GameObject ScoreObject;
 	private Animate Scorecode;
@@ -16,12 +18,19 @@ public class Gamemanager : MonoBehaviour {
 
 	public void addtrial(){
 		taskCount = taskCount + 1;
-		Debug.Log ("Trial Added"+taskCount.ToString()); 
+
+		Debug.Log ("Trial Added"+taskCount.ToString());
+
+		adaptiveTaskNumber = adaptiveTaskNumber+1;
 	}
 
+	void Update(){
+		score = Scorecode.score;
+	}
 	void Start (){
 		ScoreObject = GameObject.Find ("Scale");
 		Scorecode = ScoreObject.GetComponent<Animate>();
+
 
 		if (GameObject.Find ("GameConfiguration") == true) {
 			GameConfigurationToogles = GameObject.Find ("GameConfiguration");
@@ -41,16 +50,27 @@ public class Gamemanager : MonoBehaviour {
 		}
 
 		taskCount = 1;
+		adaptiveTaskNumber = 1;
 
 		
 	}
 
 	public void PerformanceCalculator(){
-		performancelevel = 50;
-		if (taskCount >= 3) {
-			performancelevel = ((Scorecode.score / taskCount)*100);
+
+
+
+		if (adaptiveTaskNumber >4){
+			adaptiveTaskNumber = 1;
+		}
+
+
+		if (taskCount > 4) {
+			performancelevel = ((score * 100) / taskCount);
+		} else {
+			performancelevel = 50;
 		}
 	}
+
 
 			
 	public void Checklevel (){
