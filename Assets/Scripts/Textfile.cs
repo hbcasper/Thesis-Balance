@@ -147,13 +147,13 @@ public class Textfile : MonoBehaviour {
 	}
 	
 	void Update () {
-		
-		loggedNumberWeightsRed = Weightnumber.numberWeightsRed; 
-		loggedNumberWeightsYellow = Weightnumber.numberWeightsYellow;
-		loggedCorrectButton = CorrectButton.balance; 
-		loggedUserButton = Useranswer.whichbutton; 
-		loggedCorrect = Useranswer.correct; 
-		loggedTask = Tasknumber.taskCount;
+//		actually unneccessary Update 
+//		loggedNumberWeightsRed = Weightnumber.numberWeightsRed; 
+//		loggedNumberWeightsYellow = Weightnumber.numberWeightsYellow;
+//		loggedCorrectButton = CorrectButton.balance; 
+//		loggedUserButton = Useranswer.whichbutton; 
+//		loggedCorrect = Useranswer.correct; 
+//		loggedTask = Tasknumber.taskCount;
 		
 	}
 

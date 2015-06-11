@@ -10,6 +10,18 @@ public class ArduinoConnect : MonoBehaviour {
 	private ArduinoInputBehavior CalculatedBalance;
 	private GameObject calculatedBalance;
 
+//  Input from Pixi (color incorrect but position correct) 
+//	public int color1; 
+//	public int color2;
+//	public int color3; 
+//	public int color4;
+//	
+//	public int position1; 
+//	public int position2; 
+//	public int position3; 
+//	public int position4; 
+
+
 	int Arduinovalues;
 
 	public static SerialPort sp = new SerialPort("COM5", 9600);
@@ -22,14 +34,23 @@ public class ArduinoConnect : MonoBehaviour {
 		OpenConnection();
 		sp.Write ("AH");
 		Debug.Log ("Connection Open");
-		strIn = sp.ReadLine(); // <--- if is only in start, if the person/kid change the position it will not recognize it. It have to be update or a while, I think
+	
+		//strIn = sp.ReadLine(); // <--- if is only in start, if the person/kid change the position it will not recognize it. It have to be update or a while, I think
 	}
 
-	public void InputArduino(){
-//		string s = [strIn];
-//		string[] values = s.Split(',');
-		print(strIn);
-	}
+//	public void InputArduino(){
+
+		// converts ReadLine - string into individual Ints
+		//string s = strIn;
+//		string[] values = strIn.Split(',');
+//		color1 = Convert.ToInt32(values[0]);
+//		position1 = Convert.ToInt32(values[1]);
+//		color2 = Convert.ToInt32(values[2]);
+//		position2 = Convert.ToInt32(values[3]);
+//
+//		Debug.Log (color1);
+//		print(strIn);
+//	}
 
 	public void OutputForArduino(){
 
@@ -101,7 +122,7 @@ public class ArduinoConnect : MonoBehaviour {
 //			strIn = sp.ReadLine();
 //			print(strIn);
 		}
-		catch (Exception e){Debug.Log ("NotWorking");}
+		catch (Exception e){}
 	
 	}
 
