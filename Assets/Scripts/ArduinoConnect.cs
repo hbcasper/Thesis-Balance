@@ -24,7 +24,13 @@ public class ArduinoConnect : MonoBehaviour {
 
 	int Arduinovalues;
 
+	
+
 	public static SerialPort sp = new SerialPort("COM5", 9600);
+
+
+
+
 //	public bool rightSetting; // input of pixi compared to the instruction, effects the READY -Button
 	public static string strIn;
 
@@ -54,15 +60,18 @@ public class ArduinoConnect : MonoBehaviour {
 
 	public void OutputForArduino(){
 
-		if (CalculatedBalance.balance == 1) {
-			sp.Write ("AL"); 
-			Debug.Log ("Sent AL");
-		} else if (CalculatedBalance.balance == 2) {
-			sp.Write ("AR");
-			Debug.Log ("Sent AR");
-		} else {
-			sp.Write ("AH");
-			Debug.Log ("Sent AH");
+		if (sp.IsOpen) {
+
+			if (CalculatedBalance.balance == 1) {
+				sp.Write ("AL"); 
+				Debug.Log ("Sent AL");
+			} else if (CalculatedBalance.balance == 2) {
+				sp.Write ("AR");
+				Debug.Log ("Sent AR");
+			} else {
+				sp.Write ("AH");
+				Debug.Log ("Sent AH");
+			}
 		}
 	}
 
@@ -79,6 +88,8 @@ public class ArduinoConnect : MonoBehaviour {
 //-----------------
 
 	public void OpenConnection(){
+		try
+		{ 
 		if (sp != null) 
 		{
 			if (sp.IsOpen) 
@@ -105,6 +116,8 @@ public class ArduinoConnect : MonoBehaviour {
 				print("Port == null");
 			}
 		}
+		}
+		catch (Exception e){}
 	}
 	
 	void OnApplicationQuit() 
