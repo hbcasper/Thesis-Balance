@@ -84,12 +84,18 @@ public class Instruction : MonoBehaviour
 
 	public void SetInstructions (){
 
-//			if (GameConfiguration.ActiveAdaptiveDificulty == true) {
-//			ADSystem.SendOutputADS();
 
-//		} else if (GameObject.Find("GameConfiguration") == null || GameConfiguration.ActiveAdaptiveDificulty == false) {
-			displayinstructions();
-//		}
+		if (GameObject.Find ("GameConfiguration") == true) {
+			if (GameConfiguration.ActiveAdaptiveDificulty == false) {
+				displayinstructions ();
+			} else if (GameConfiguration.ActiveAdaptiveDificulty == true) {
+				ADSystem.SendOutputADS ();
+			} else if (GameConfiguration.ActiveAdaptiveLevels == true) {
+				AdaptiveLevels ();
+			}
+		} else {
+			displayinstructions ();
+		}
 	}
 
 	
