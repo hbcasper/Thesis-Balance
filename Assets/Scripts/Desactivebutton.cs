@@ -79,11 +79,11 @@ public class Desactivebutton : MonoBehaviour {
 		Cube11result = RightCube6.GetComponent<Checkcorrect> ();
 		Cube12result = LeftCube6.GetComponent<Checkcorrect> ();
 
-		rightSetting = GameObject.Find ("Instructions"); 
-		RightSetting = rightSetting.GetComponent<Instruction> (); 
-
-		userSetting = GameObject.Find ("Exercisemanager");
-		UserSetting = userSetting.GetComponent<ArduinoConnect> ();
+//		rightSetting = GameObject.Find ("Instructions"); 
+//		RightSetting = rightSetting.GetComponent<Instruction> (); 
+//
+//		userSetting = GameObject.Find ("Exercisemanager");
+//		UserSetting = userSetting.GetComponent<ArduinoConnect> ();
 
 //	 	Variables needed to compare user Placement of Weights with Instruction 
 //		colorCube1 = 0;

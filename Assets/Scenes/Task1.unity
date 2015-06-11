@@ -14755,7 +14755,6 @@ MonoBehaviour:
   color2: 0
   position1: 0
   position2: 0
-  correctPosition: 0
 --- !u!114 &1898096712
 MonoBehaviour:
   m_ObjectHideFlags: 0
