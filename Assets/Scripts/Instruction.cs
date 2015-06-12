@@ -203,7 +203,8 @@ public class Instruction : MonoBehaviour
 		}		
 		
 		{
-			instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1;
+			instruction.text="Place the required weights in the marked places";
+			//instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1;
 			
 		}
 	}
@@ -265,8 +266,8 @@ public class Instruction : MonoBehaviour
 		}
 		
 		{
-			instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1;
-			
+			//instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1;
+			instruction.text="Place the required weights in the marked places";
 		}
 	}
 	
@@ -365,7 +366,8 @@ public class Instruction : MonoBehaviour
 		
 		
 		{
-			instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1;
+			instruction.text="Place the required weights in the marked places";
+			//instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1;
 			
 		}
 	}
@@ -508,12 +510,49 @@ public class Instruction : MonoBehaviour
 		}
 
 		{
-			instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname2 + " piece in the left place number " + pnl2 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1 + ".\n1 " + colorname4 + " piece in the right place number " + pnr2;
+			instruction.text="Place the required weights in the marked places";
+			//instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname2 + " piece in the left place number " + pnl2 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1 + ".\n1 " + colorname4 + " piece in the right place number " + pnr2;
 			
 		}
 	}
 
 	public void ADexercise(){
+	}
+//
+//		instruction = GetComponent <Text> ();
+//		
+//		instruction.text="Place the required weights in the marked places"
+//
+//		Arrayofplaces [0,1,0,3,0,3
+//
+//		Place 1, Color 1
+//		Place 2, Color 2
+//		Place 3, Color 3
+//		Place 4, Color 4
+//		Place 5, Color 5
+//		Place 6, Color 6
+//		
+//		ColorS 1-3
+//		Lines 1- 6
+//		Same Color true/false
+//			               }
+//
+//
+//		private string RandomString(int Size)  {
+//				string input = "abcdefghijklmnopqrstuvwxyz0123456789";
+//				StringBuilder builder = new StringBuilder();
+//				char ch;
+//				for (int i = 0; i < Size; i++)
+//				{
+//					ch = input[random.Next(0, input.Length)];
+//					builder.Append(ch);
+//				}
+//				return builder.ToString();
+//			               }
+//			             
+//		
+		        
+
 
 		// Call the inputs of the Receive Inputs
 
@@ -522,9 +561,10 @@ public class Instruction : MonoBehaviour
 		//{
 		//	instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname2 + " piece in the left place number " + pnl2 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1 + ".\n1 " + colorname4 + " piece in the right place number " + pnr2;
 		//}
-	}
+	//}
 
 	public void AdaptiveLevels(){
+
 		
 		if (levelis.performancelevel >= 60) {
 			if (levelis.levelnumber == 4){

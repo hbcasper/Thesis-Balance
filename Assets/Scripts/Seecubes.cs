@@ -10,6 +10,8 @@ public class Seecubes : MonoBehaviour {
 	public string colorName; 
 	private ToogleOptions GameConfiguration;
 	private GameObject GameConfigurationToogles;
+	int cubeColor=0;
+	bool cubeIsActive=false;
 
 	void Start (){
 
@@ -27,18 +29,18 @@ public class Seecubes : MonoBehaviour {
 	
     void Update () {
 
+		// if es adaptativo{
+			//definepaintedcubes ();
+		//}
+		//if no es adaptativo{
 		int nameLenght = gameObject.name.Length;
-		int cubeIsRight = 0;
 		int cubeIndex = int.Parse(gameObject.name[nameLenght - 1].ToString());
 		
 		if (((Valores.pnr1 == cubeIndex || Valores.pnr2 == cubeIndex) && gameObject.tag == "Right")||((Valores.pnl1 == cubeIndex || Valores.pnl2 == cubeIndex) && gameObject.tag == "Left"))
 		{
 			gameObject.GetComponent<Collider> ().enabled = true;
-			//gameObject.GetComponent<Renderer> ().enabled = true;
-			//gameObject.GetComponent<Renderer> ().material.color = Color.red;
 		} else {
 			gameObject.GetComponent<Collider> ().enabled = false;	
-			//gameObject.GetComponent<Renderer> ().enabled = false;
 			gameObject.GetComponent<Renderer> ().material.color = Color.clear;
 		}
 
@@ -111,6 +113,60 @@ public class Seecubes : MonoBehaviour {
 //			} catch (Exception e){}
 //		
 //		}
+
+//
+//	void ActiveCube(){
+//
+//		int nameLenght = gameObject.name.Length;
+//		int cubenumber = int.Parse(gameObject.name[nameLenght - 1].ToString());
+//		if (gameObject.tag == right) {
+//		if (cubenumber Contains rightactivecubes){
+//				cubeIsActive=true
+//			}
+//			else {
+//				cubeIsActive=false;
+//			}
+//			else if (gameObject.tag == left) {
+//				if (cubenumber Contains rightactivecubes){
+//				cubeIsActive=true
+//			}
+//			else {
+//				cubeIsActive=false;
+//			}
+//			}
+//
+//		
+//	}
+//
+//	void definepaintedcubes(){
+//
+//		//Check addaptive input
+//		if (cubeIsActive = true)
+//		{
+//		if (diff = 1)
+//		{Cubecolor =1;}
+//		else if (diff = 2)
+//		{Cubecolor =Random 1- 3;}
+//		else if (diff = 3){
+//			Cubecolor = Random 1-4;}
+//		}
+//		paintcubes();
+//
+//	void paintcubes(){
+//		
+//
+//			if (Cubecolor = 1){
+//				gameObject.GetComponent<Renderer> ().material.color = Color.red;
+//		}
+//		else if (Cubecolor = 2){
+//				gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
+//			}
+//		else if Cubecolor = 3){
+//				gameObject.GetComponent<Renderer> ().material.color = Color.green;
+//				}
+//
+//
+//	}
 }
 		
 
