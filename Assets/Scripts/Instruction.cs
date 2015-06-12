@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Text;
 using UnityEngine.UI;
 
 public class Instruction : MonoBehaviour 
@@ -538,19 +539,30 @@ public class Instruction : MonoBehaviour
 //			               }
 //
 //
-//		private string RandomString(int Size)  {
-//				string input = "abcdefghijklmnopqrstuvwxyz0123456789";
-//				StringBuilder builder = new StringBuilder();
-//				char ch;
-//				for (int i = 0; i < Size; i++)
-//				{
-//					ch = input[random.Next(0, input.Length)];
-//					builder.Append(ch);
-//				}
-//				return builder.ToString();
-//			               }
-//			             
-//		
+
+		private string RandomString(int Size)  {
+
+		string input = "123456";
+		StringBuilder activecubes = new StringBuilder();
+				char ch;
+				for (int i = 0; i < Size; i++)
+				{
+					ch = input[Random.Range(0, input.Length)];
+						activecubes.Append(ch);
+						input.Replace("1","2");
+
+				}
+					return activecubes.ToString();
+
+			               }
+
+	void Update (){
+
+		Debug.Log (RandomString (6));
+
+	}
+			             
+		
 		        
 
 
