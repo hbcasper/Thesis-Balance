@@ -45,10 +45,8 @@ public class Checkconfiguration : MonoBehaviour {
 		
 			//check HS
 
-		if (GameConfiguration.ActiveHiddenStates == true) 
-			{
-			HiddenStates();
-			}else
+		if (GameConfiguration.ActiveHiddenStates == false) 
+			
 			{	foreach (GameObject HiddenStateObject in HiddenStatesObjects) 
 				{
 					HiddenStateObject.SetActive(false);
@@ -103,9 +101,7 @@ public class Checkconfiguration : MonoBehaviour {
 
 		normalcamera.SetActive(false);
 	}
-	void HiddenStates(){ //HS Behavior
 
-	}
 
 	void AdaptiveLevels(){
 		

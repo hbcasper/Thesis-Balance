@@ -1605,6 +1605,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 151.360077
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4a92d471d38b849b3b91c5641d1df91c, type: 2}
+      propertyPath: m_TagString
+      value: AR
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a92d471d38b849b3b91c5641d1df91c, type: 2}
   m_IsPrefabParent: 0
@@ -5889,9 +5893,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleparent: {fileID: 1679890163}
   indicatorlines: {fileID: 723977711}
-  HiddenStatesObjects: []
-  AdaptiveDifficultyObjects: []
-  ReactiveSystemNext: {fileID: 0}
 --- !u!1001 &1524188778
 Prefab:
   m_ObjectHideFlags: 0
