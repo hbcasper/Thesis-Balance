@@ -135,9 +135,9 @@ public class Instruction : MonoBehaviour
 		pnl2 = 0;
 		pnr1 = pnl1; 
 		pnr2 = 0;
-		pcolor1 = Random.Range (0, 2);
+		pcolor1 = Random.Range (0, 4);
 		pcolor2 = 0;
-		pcolor3 = Random.Range (0, 2);
+		pcolor3 = Random.Range (0, 4);
 		pcolor4 = 0;
 		
 		positionRedCube1 = 0; 
