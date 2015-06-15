@@ -38,6 +38,9 @@ public class Seecubes : MonoBehaviour {
 	{
 		if (GameObject.Find ("GameConfiguration") == true) 
 		{
+			GameConfigurationToogles = GameObject.Find ("GameConfiguration");
+			GameConfiguration = GameConfigurationToogles.GetComponent<ToogleOptions>();
+
 			if (GameConfiguration.ActiveAdaptiveDificulty == true) 
 			{
 				ActiveCubesAD ();
