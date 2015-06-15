@@ -15,7 +15,10 @@ public class Instruction : MonoBehaviour
 	private GameObject ExcerciseManager;
 	private InputOutputADS ADSystem;
 
-
+	//AD variables
+	public string rightSideAD;
+	public string leftSideAD;
+	public int numberofplaces;
 
 
 	// number of the active cube (max. 2)
@@ -59,22 +62,21 @@ public class Instruction : MonoBehaviour
 	void Start () {
 		levelis = levelcomesfrom.GetComponent<Gamemanager> (); //Declare level
 
+		ADSystem = levelcomesfrom.GetComponent<InputOutputADS> (); //Declare ADS variables
 
-		ADSystem = levelcomesfrom.GetComponent<InputOutputADS> ();
-
-		if (GameObject.Find("GameConfiguration") == null){
+		if (GameObject.Find("GameConfiguration") == null){// if the Game configuration is unactive run reactive system
 			level1();
 		}
-		else { 
+		else {                                               // If game configuration is active...
 			GameConfigurationToogles = GameObject.Find ("GameConfiguration");
 			GameConfiguration = GameConfigurationToogles.GetComponent<ToogleOptions>();
 			
-			if (GameConfiguration.ActiveAdaptiveDificulty == false)
+			if (GameConfiguration.ActiveAdaptiveDificulty == false && GameConfiguration.ActiveAdaptiveLevels == false) //If ADS & ADSLevels are not active run reactive system
 			{
 				level1 (); 
 			}
 
-			if(GameConfiguration.ActiveAdaptiveLevels == true){
+			else if(GameConfiguration.ActiveAdaptiveLevels == true){ // If ADLevels is active run Adaptive levels
 				AdaptiveLevels();
 			}
 		}
@@ -518,30 +520,17 @@ public class Instruction : MonoBehaviour
 	}
 
 	public void ADexercise(){
+		
+		rightSideAD = Generatecubespositions(ADSystem.numberofcubes);
+		leftSideAD = Generatecubespositions(ADSystem.numberofcubes);
+		numberofplaces = ADSystem.numberofcubes;
+
+		instruction = GetComponent <Text> ();
+		instruction.text="Place the required weights in the marked places"
+		
 	}
-//
-//		instruction = GetComponent <Text> ();
-//		
-//		instruction.text="Place the required weights in the marked places"
-//
-//		Arrayofplaces [0,1,0,3,0,3
-//
-//		Place 1, Color 1
-//		Place 2, Color 2
-//		Place 3, Color 3
-//		Place 4, Color 4
-//		Place 5, Color 5
-//		Place 6, Color 6
-//		
-//		ColorS 1-3
-//		Lines 1- 6
-//		Same Color true/false
-//			               }
-//
-//
 
-
-		public string Generatecubespositions(int Size)  {
+		string Generatecubespositions(int Size)  {
 
 		string input = "123456";
 		StringBuilder activecubes = new StringBuilder();
@@ -559,20 +548,7 @@ public class Instruction : MonoBehaviour
 			               }
 
 
-			             
-		
-		        
-
-
-		// Call the inputs of the Receive Inputs
-
-		//Use the Diffculty parameters and generates the excercise
-
-		//{
-		//	instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname2 + " piece in the left place number " + pnl2 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1 + ".\n1 " + colorname4 + " piece in the right place number " + pnr2;
-		//}
-	//}
-
+		  
 	public void AdaptiveLevels(){
 
 		
