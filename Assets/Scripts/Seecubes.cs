@@ -6,7 +6,7 @@ public class Seecubes : MonoBehaviour {
 
 	// private Instruction Valores; 
 	private Instruction Valores;
-	public GameObject Objeto;	
+	GameObject Objeto;	
 	public string colorName; 
 	private ToogleOptions GameConfiguration;
 	private GameObject GameConfigurationToogles;
@@ -17,6 +17,7 @@ public class Seecubes : MonoBehaviour {
 
 		GameConfigurationToogles = GameObject.Find ("GameConfiguration");
 
+		Objeto = GameObject.Find ("Instructions");
 		gameObject.GetComponent<Collider> ().enabled = false;
 		//Valores = Objeto.GetComponent<Instruction>();	
 		Valores = Objeto.GetComponent<Instruction> (); 

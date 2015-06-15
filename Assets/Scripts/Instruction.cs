@@ -540,27 +540,25 @@ public class Instruction : MonoBehaviour
 //
 //
 
-		private string RandomString(int Size)  {
+
+		public string Generatecubespositions(int Size)  {
 
 		string input = "123456";
 		StringBuilder activecubes = new StringBuilder();
 				char ch;
 				for (int i = 0; i < Size; i++)
 				{
-					ch = input[Random.Range(0, input.Length)];
+
+			ch = input[Random.Range(0, input.Length-1)];
 						activecubes.Append(ch);
-						input.Replace("1","2");
+						input = input.Replace(ch.ToString(),string.Empty);
 
 				}
 					return activecubes.ToString();
 
 			               }
 
-	void Update (){
 
-		Debug.Log (RandomString (6));
-
-	}
 			             
 		
 		        
