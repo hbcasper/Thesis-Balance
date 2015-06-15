@@ -11,7 +11,7 @@ public class InputOutputADS : MonoBehaviour {
 
 	public int numberofcubes;
 	public int numberofcolors;
-	public int numberofplaces;
+	public int equalcolors;
 
 	GameObject Instructions;
 	Instruction Runlevel;
@@ -39,12 +39,11 @@ public class InputOutputADS : MonoBehaviour {
 	// Read Inputs of the ADSystem
 
 
-		numberofcubes = 1; //equal to inputs
-		numberofcolors = 1;
-		numberofplaces = 1;
+		numberofcubes = 3; //(1-6)
+		numberofcolors = 3; //(1-3)
+		equalcolors = 2; //(1-2)
 
 		Runlevel.ADexercise();
-
 
 	}
 
