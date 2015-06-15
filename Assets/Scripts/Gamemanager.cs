@@ -19,12 +19,12 @@ public class Gamemanager : MonoBehaviour {
 	GameObject GameConfigurationToogles;
 
 
-	public void addPretestCount (){
-		pretestCount = pretestCount + 1; 
-		if (pretestCount > 5) {
-			pretest = false; 
-		}
-	}
+//	public void addPretestCount (){
+//		pretestCount = pretestCount + 1; 
+//		if (pretestCount > 5) {
+//			pretest = false; 
+//		}
+//	}
 
 	public void addtrial(){
 		if (pretest == false) {
@@ -33,18 +33,22 @@ public class Gamemanager : MonoBehaviour {
 			Debug.Log ("Trial Added" + taskCount.ToString ());
 
 			adaptiveTaskNumber = adaptiveTaskNumber + 1;
+		} else {
+			pretestCount = pretestCount + 1; 
+			if (pretestCount > 5) {
+				pretest = false; 
+			}
 		}
 	}
 
 	void Update(){
 		score = Scorecode.score;
 	}
+
 	void Start (){
 		ScoreObject = GameObject.Find ("Scale");
 		Scorecode = ScoreObject.GetComponent<Animate>();
-
-	
-
+		pretest = true; 
 
 		if (GameObject.Find ("GameConfiguration") == true) {
 			GameConfigurationToogles = GameObject.Find ("GameConfiguration");
@@ -53,17 +57,24 @@ public class Gamemanager : MonoBehaviour {
 			if (GameConfiguration.ActiveAdaptiveDificulty == true) {
 				levelnumber = 0;
 			} else {
-				levelnumber = 1;
+				if (pretest){
+					levelnumber = 5; 
+				} else{
+					levelnumber = 1;
+				}
 			}
 			if 
 			(GameConfiguration.ActiveAdaptiveLevels == true) {
 				PerformanceCalculator ();
 			} else {
-				levelnumber = 1;
+				if (pretest){
+					levelnumber = 5; 
+				} else{
+					levelnumber = 1;
+				}
 			}
 		}
-
-		pretest = true; 
+		 
 		pretestCount = 1; 
 
 		taskCount = 1;
