@@ -13,30 +13,47 @@ public class Seecubes : MonoBehaviour {
 	int cubeColor=0;
 	bool cubeIsActive=false;
 
-	void Start (){
+	int nameLenght; 
+	int cubeIndex;
 
-		GameConfigurationToogles = GameObject.Find ("GameConfiguration");
+	private GameObject ExcerciseManager;
+	private InputOutputADS ADSystem;
+
+	void Start (){
+		nameLenght = gameObject.name.Length;
+		cubeIndex =  int.Parse(gameObject.name[nameLenght - 1].ToString());
 
 		Objeto = GameObject.Find ("Instructions");
+		ExcerciseManager = GameObject.Find ("Exercisemanager");
+		ADSystem = ExcerciseManager.GetComponent<InputOutputADS> ();
 		gameObject.GetComponent<Collider> ().enabled = false;
 		//Valores = Objeto.GetComponent<Instruction>();	
 		Valores = Objeto.GetComponent<Instruction> (); 
 		//gameObject.GetComponent<Renderer> ().enabled = false;
 		gameObject.GetComponent<Renderer> ().material.color = Color.clear;
 		gameObject.transform.localScale = new Vector3(1.4f,1.4f,1.4f);
-
-
 	}
 	
-    void Update () {
+    void Update () 
+	{
+		if (GameObject.Find ("GameConfiguration") == true) 
+		{
+			if (GameConfiguration.ActiveAdaptiveDificulty == true) 
+			{
+				ActiveCubesAD ();
+				DefineCubeColor();
+			}
+			else {
+				ActiveCubesRS ();
+			}
+		} else if (GameObject.Find ("GameConfiguration") == false) 
+			{
+			ActiveCubesRS ();
+			}
+	}
 
-		// if es adaptativo{
-			//definepaintedcubes ();
-		//}
-		//if no es adaptativo{
-		int nameLenght = gameObject.name.Length;
-		int cubeIndex = int.Parse(gameObject.name[nameLenght - 1].ToString());
-		
+	void ActiveCubesRS(){
+
 		if (((Valores.pnr1 == cubeIndex || Valores.pnr2 == cubeIndex) && gameObject.tag == "Right")||((Valores.pnl1 == cubeIndex || Valores.pnl2 == cubeIndex) && gameObject.tag == "Left"))
 		{
 			gameObject.GetComponent<Collider> ().enabled = true;
@@ -80,6 +97,48 @@ public class Seecubes : MonoBehaviour {
 		} 
 	}
 
+	void ActiveCubesAD(){
+	if (gameObject.tag == "Right")
+		{
+			if (Valores.rightSideAD.Contains(gameObject.name[nameLenght - 1].ToString()))
+			    {
+				paintcube();
+				}
+		}
+	else if (gameObject.tag == "Left") 
+			{
+			if (Valores.leftSideAD.Contains(gameObject.name[nameLenght - 1].ToString()))
+				{
+				paintcube();
+				}
+			}
+	}
+
+	void DefineCubeColor(){
+
+//		if (diff = 1)
+//		{Cubecolor =1;}
+//		else if (diff = 2)
+//		{Cubecolor =Random 1- 3;}
+//		else if (diff = 3){
+//			Cubecolor = Random 1-4;}
+		}
+
+	void paintcube(){
+
+//			if (Cubecolor = 1){
+//				gameObject.GetComponent<Renderer> ().material.color = Color.red;
+//		}
+//		else if (Cubecolor = 2){
+//				gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
+//			}
+//		else if Cubecolor = 3){
+//				gameObject.GetComponent<Renderer> ().material.color = Color.green;
+				}
+//
+//
+//	}
+}
 //  Only in Virtual Reality
 //	void GrowCube(string colorName){
 //
@@ -116,59 +175,7 @@ public class Seecubes : MonoBehaviour {
 //		}
 
 //
-//	void ActiveCube(){
-//
-//		int nameLenght = gameObject.name.Length;
-//		int cubenumber = int.Parse(gameObject.name[nameLenght - 1].ToString());
-//		if (gameObject.tag == right) {
-//		if (cubenumber Contains rightactivecubes){
-//				cubeIsActive=true
-//			}
-//			else {
-//				cubeIsActive=false;
-//			}
-//			else if (gameObject.tag == left) {
-//				if (cubenumber Contains rightactivecubes){
-//				cubeIsActive=true
-//			}
-//			else {
-//				cubeIsActive=false;
-//			}
-//			}
-//
-//		
-//	}
-//
-//	void definepaintedcubes(){
-//
-//		//Check addaptive input
-//		if (cubeIsActive = true)
-//		{
-//		if (diff = 1)
-//		{Cubecolor =1;}
-//		else if (diff = 2)
-//		{Cubecolor =Random 1- 3;}
-//		else if (diff = 3){
-//			Cubecolor = Random 1-4;}
-//		}
-//		paintcubes();
-//
-//	void paintcubes(){
-//		
-//
-//			if (Cubecolor = 1){
-//				gameObject.GetComponent<Renderer> ().material.color = Color.red;
-//		}
-//		else if (Cubecolor = 2){
-//				gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
-//			}
-//		else if Cubecolor = 3){
-//				gameObject.GetComponent<Renderer> ().material.color = Color.green;
-//				}
-//
-//
-//	}
-}
+
 		
 
 
