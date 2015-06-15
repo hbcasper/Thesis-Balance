@@ -9,8 +9,8 @@ public class Gamemanager : MonoBehaviour {
 	public float performancelevel;
 	public int adaptiveTaskNumber;
 
-	public int pretestCount; 
-	bool pretest; 
+//	public int pretestCount; 
+//	bool pretest; 
 
 	private GameObject ScoreObject;
 	private Animate Scorecode;
@@ -27,18 +27,13 @@ public class Gamemanager : MonoBehaviour {
 //	}
 
 	public void addtrial(){
-		if (pretest == false) {
+
 			taskCount = taskCount + 1;
 
 			Debug.Log ("Trial Added" + taskCount.ToString ());
 
 			adaptiveTaskNumber = adaptiveTaskNumber + 1;
-		} else {
-			pretestCount = pretestCount + 1; 
-			if (pretestCount > 5) {
-				pretest = false; 
-			}
-		}
+		
 	}
 
 	void Update(){
@@ -48,7 +43,7 @@ public class Gamemanager : MonoBehaviour {
 	void Start (){
 		ScoreObject = GameObject.Find ("Scale");
 		Scorecode = ScoreObject.GetComponent<Animate>();
-		pretest = true; 
+//		pretest = true; 
 
 		if (GameObject.Find ("GameConfiguration") == true) {
 			GameConfigurationToogles = GameObject.Find ("GameConfiguration");
@@ -57,25 +52,17 @@ public class Gamemanager : MonoBehaviour {
 			if (GameConfiguration.ActiveAdaptiveDificulty == true) {
 				levelnumber = 0;
 			} else {
-				if (pretest){
-					levelnumber = 5; 
-				} else{
 					levelnumber = 1;
-				}
 			}
 			if 
 			(GameConfiguration.ActiveAdaptiveLevels == true) {
 				PerformanceCalculator ();
 			} else {
-				if (pretest){
-					levelnumber = 5; 
-				} else{
 					levelnumber = 1;
-				}
 			}
 		}
 		 
-		pretestCount = 1; 
+		//pretestCount = 1; 
 
 		taskCount = 1;
 		adaptiveTaskNumber = 1;
@@ -113,10 +100,7 @@ public class Gamemanager : MonoBehaviour {
 		}
 
 		else {
-			if (pretest == true){
-				levelnumber = 5; 
-			}
-			else {
+		
 				if (taskCount <= 5) {
 					levelnumber = 1; 
 					
@@ -133,7 +117,6 @@ public class Gamemanager : MonoBehaviour {
 				}else if (taskCount == 31) {
 					Application.LoadLevel ("UserInstructionTask2");
 					
-				}
 			}
 		}
 	}
