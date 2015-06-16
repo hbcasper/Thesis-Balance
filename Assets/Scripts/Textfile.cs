@@ -29,8 +29,8 @@ public class Textfile : MonoBehaviour {
 	private Instruction CubePosition;
 	private GameObject cubePosition; 
 
-//	private Userfinaldata FinalData;
-//	private GameObject finalData; 
+	private Userfinaldata FinalData;
+	private GameObject finalData; 
 	
 	private StreamWriter writer;  
 	string sceneName; 
@@ -70,8 +70,8 @@ public class Textfile : MonoBehaviour {
 		correctButton = GameObject.Find ("Scale");
 		CorrectButton = correctButton.GetComponent<ArduinoInputBehavior> (); 
 
-//		finalData = GameObject.Find ("Userdata");
-//		FinalData = finalData.GetComponent<Userfinaldata> ();
+		finalData = GameObject.Find ("Userdata");
+		FinalData = finalData.GetComponent<Userfinaldata> ();
 		
 		sceneName = Application.loadedLevelName; 
 
@@ -96,13 +96,11 @@ public class Textfile : MonoBehaviour {
 		}
 		
 		writer = new StreamWriter (logFileName);
-		writer.Write ("Date and time: ");
+		writer.Write ("Date and time: " + System.DateTime.Now.ToString());
 		writer.WriteLine (); 
-		writer.Write ("Participant #: ");
+		writer.Write ("Participant #: " + FinalData.participantNumber.ToString ());
 		writer.WriteLine (); 
-		writer.Write ("Day: ");
-		writer.WriteLine (); 
-		writer.Write ("Age: ");
+		writer.Write ("Age: " + FinalData.participantAge.ToString());
 		writer.WriteLine (); 	      
 		writer.WriteLine ("_____________________________________________________________________________________________________________________________________________________________________"); 
 		writer.WriteLine ("Trial#  , Correct , Button Correct , Button Pressed , Level, Score, #RedWeights, #YellowWeights ,TimeSet, TimeChoose, TimeTotal, RedPos1, RedPos2, YellPos1, YellPos2"); 
@@ -141,7 +139,7 @@ public class Textfile : MonoBehaviour {
 		
 		// reactionTime3 = endTime.Subtract(readyTime); 
 		
-		
+	
 		writer.WriteLine (Tasknumber.taskCount.ToString () + "," + loggedCorrect.ToString () + "," + loggedCorrectButton.ToString() + "," + Useranswer.whichbutton.ToString()+ "," + loggedLevelNumber.ToString() + ","+ loggedScore.ToString() + "," + loggedNumberWeightsRed.ToString() + "," + loggedNumberWeightsYellow.ToString() + "," +  reactionTime1.ToString()+ "," +  reactionTime2.ToString() +"," + reactionTime3.ToString()+","+CubePosition.positionRedCube1.ToString() + "," + CubePosition.positionRedCube2.ToString() + ","+ CubePosition.positionRedCube3.ToString() + "," + CubePosition.positionRedCube4.ToString() +","+ CubePosition.positionYellowCube1.ToString() + "," + CubePosition.positionYellowCube2.ToString() + "," + CubePosition.positionYellowCube3.ToString() + "," + CubePosition.positionYellowCube4.ToString()); 
 		writer.Flush ();
 		
