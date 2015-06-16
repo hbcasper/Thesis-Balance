@@ -13,14 +13,14 @@ public class InputOutputADS : MonoBehaviour {
 	public int numberofcolors;
 	public int equalcolors;
 
-	GameObject Instructions;
-	Instruction Runlevel;
+	//GameObject Instructions;
+	//Instruction Runlevel;
 
 
 	void Start(){
 
-		Instructions = GameObject.Find ("Instructions");
-		Runlevel = Instructions.GetComponent<Instruction> ();
+
+		//Runlevel = Instructions.GetComponent<Instruction> ();
 
 	}
 
@@ -29,8 +29,9 @@ public class InputOutputADS : MonoBehaviour {
 	public void DeclareParameters () {
 		 //I have no idea 
 
-		ReceiveInputsADS ();
 		Debug.Log ("Gothere3");
+		ReceiveInputsADS ();
+
 
 	}
 	
@@ -44,8 +45,13 @@ public class InputOutputADS : MonoBehaviour {
 		numberofcolors = 3; //(1-3)
 		equalcolors = 2; //(1-2)
 
-		Runlevel.ADexercise();
 		Debug.Log ("Gothere4");
+
+		GameObject Instructions = GameObject.Find ("Instructions");
+		Instructions.GetComponent<Instruction> ().ADexercise ();
+
+		//Runlevel.prueba();
+		//Runlevel.ADexercise();
 
 	}
 

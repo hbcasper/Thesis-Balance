@@ -656,6 +656,10 @@ public class Instruction : MonoBehaviour
 		}
 	}
 
+	public void prueba(){
+		Debug.Log ("Prueba");
+	}
+
 	public void ADexercise(){
 		Debug.Log ("GotHere5");
 
