@@ -31,31 +31,31 @@ public class Calculateside : MonoBehaviour {
 	public GameObject InsideRightCube5;
 	public GameObject InsideRightCube6;
 
-	int weightL1; 
-	int weightL2;
-	int weightL3;
-	int weightL4;
-	int weightL5;
-	int weightL6;
-	int weightR1;
-	int weightR2;
-	int weightR3;
-	int weightR4;
-	int weightR5;
-	int weightR6;
-
-	int posL1; 
-	int posL2;
-	int posL3;
-	int posL4;
-	int posL5;
-	int posL6;
-	int posR1;
-	int posR2;
-	int posR3;
-	int posR4;
-	int posR5;
-	int posR6;
+//	int weightL1; 
+//	int weightL2;
+//	int weightL3;
+//	int weightL4;
+//	int weightL5;
+//	int weightL6;
+//	int weightR1;
+//	int weightR2;
+//	int weightR3;
+//	int weightR4;
+//	int weightR5;
+//	int weightR6;
+//
+//	int posL1; 
+//	int posL2;
+//	int posL3;
+//	int posL4;
+//	int posL5;
+//	int posL6;
+//	int posR1;
+//	int posR2;
+//	int posR3;
+//	int posR4;
+//	int posR5;
+//	int posR6;
 
 
 	public int balance = 0;
@@ -75,19 +75,19 @@ public class Calculateside : MonoBehaviour {
 		RightCube4 = InsideRightCube4.GetComponent<ReceivedweightT2>();
 		RightCube5 = InsideRightCube5.GetComponent<ReceivedweightT2>();
 		RightCube6 = InsideRightCube6.GetComponent<ReceivedweightT2>();
-
-		weightL1 = LeftCube1.Cubereceivesweight; 
-		weightL2 = LeftCube2.Cubereceivesweight;
-		weightL3 = LeftCube3.Cubereceivesweight;
-		weightL4 = LeftCube4.Cubereceivesweight;
-		weightL5 = LeftCube5.Cubereceivesweight;
-		weightL6 = LeftCube6.Cubereceivesweight;
-		weightR1 = RightCube1.Cubereceivesweight;
-		weightR2 = RightCube2.Cubereceivesweight;
-		weightR3 = RightCube3.Cubereceivesweight;
-		weightR4 = RightCube4.Cubereceivesweight;
-		weightR5 = RightCube5.Cubereceivesweight;
-		weightR6 = RightCube6.Cubereceivesweight;
+//
+//		weightL1 = LeftCube1.Cubereceivesweight; 
+//		weightL2 = LeftCube2.Cubereceivesweight;
+//		weightL3 = LeftCube3.Cubereceivesweight;
+//		weightL4 = LeftCube4.Cubereceivesweight;
+//		weightL5 = LeftCube5.Cubereceivesweight;
+//		weightL6 = LeftCube6.Cubereceivesweight;
+//		weightR1 = RightCube1.Cubereceivesweight;
+//		weightR2 = RightCube2.Cubereceivesweight;
+//		weightR3 = RightCube3.Cubereceivesweight;
+//		weightR4 = RightCube4.Cubereceivesweight;
+//		weightR5 = RightCube5.Cubereceivesweight;
+//		weightR6 = RightCube6.Cubereceivesweight;
 
 
 		// SetWeigth(leftpos1, leftpos2, rightpos1, rightpos2, leftW1Red, leftW2Yell, rightW1Red, rightW2Yell);
@@ -103,31 +103,31 @@ public class Calculateside : MonoBehaviour {
 		              RightCube1.Imthecubenumber,RightCube1.Cubereceivesweight,RightCube2.Imthecubenumber,RightCube2.Cubereceivesweight,RightCube3.Imthecubenumber,RightCube3.Cubereceivesweight,
 		              RightCube4.Imthecubenumber,RightCube4.Cubereceivesweight,RightCube5.Imthecubenumber,RightCube5.Cubereceivesweight,RightCube6.Imthecubenumber,RightCube6.Cubereceivesweight);
 
-		weightL1 = LeftCube1.Cubereceivesweight; 
-		weightL2 = LeftCube2.Cubereceivesweight;
-		weightL3 = LeftCube3.Cubereceivesweight;
-		weightL4 = LeftCube4.Cubereceivesweight;
-		weightL5 = LeftCube5.Cubereceivesweight;
-		weightL6 = LeftCube6.Cubereceivesweight;
-		weightR1 = RightCube1.Cubereceivesweight;
-		weightR2 = RightCube2.Cubereceivesweight;
-		weightR3 = RightCube3.Cubereceivesweight;
-		weightR4 = RightCube4.Cubereceivesweight;
-		weightR5 = RightCube5.Cubereceivesweight;
-		weightR6 = RightCube6.Cubereceivesweight;
-	
-		posL1 = (LeftCube1.Imthecubenumber* (-1)); 
-		posL2 = (LeftCube2.Imthecubenumber* (-1));
-		posL3 = (LeftCube3.Imthecubenumber* (-1));
-		posL4 = (LeftCube4.Imthecubenumber* (-1));
-		posL5 = (LeftCube5.Imthecubenumber* (-1));
-		posL6 = (LeftCube6.Imthecubenumber* (-1));
-		posR1 = RightCube1.Imthecubenumber;
-		posR2 = RightCube2.Imthecubenumber;
-		posR3 = RightCube3.Imthecubenumber;
-		posR4 = RightCube4.Imthecubenumber;
-		posR5 = RightCube5.Imthecubenumber;
-		posR6 = RightCube6.Imthecubenumber;
+//		weightL1 = LeftCube1.Cubereceivesweight; 
+//		weightL2 = LeftCube2.Cubereceivesweight;
+//		weightL3 = LeftCube3.Cubereceivesweight;
+//		weightL4 = LeftCube4.Cubereceivesweight;
+//		weightL5 = LeftCube5.Cubereceivesweight;
+//		weightL6 = LeftCube6.Cubereceivesweight;
+//		weightR1 = RightCube1.Cubereceivesweight;
+//		weightR2 = RightCube2.Cubereceivesweight;
+//		weightR3 = RightCube3.Cubereceivesweight;
+//		weightR4 = RightCube4.Cubereceivesweight;
+//		weightR5 = RightCube5.Cubereceivesweight;
+//		weightR6 = RightCube6.Cubereceivesweight;
+//	
+//		posL1 = (LeftCube1.Imthecubenumber* (-1)); 
+//		posL2 = (LeftCube2.Imthecubenumber* (-1));
+//		posL3 = (LeftCube3.Imthecubenumber* (-1));
+//		posL4 = (LeftCube4.Imthecubenumber* (-1));
+//		posL5 = (LeftCube5.Imthecubenumber* (-1));
+//		posL6 = (LeftCube6.Imthecubenumber* (-1));
+//		posR1 = RightCube1.Imthecubenumber;
+//		posR2 = RightCube2.Imthecubenumber;
+//		posR3 = RightCube3.Imthecubenumber;
+//		posR4 = RightCube4.Imthecubenumber;
+//		posR5 = RightCube5.Imthecubenumber;
+//		posR6 = RightCube6.Imthecubenumber;
 	
 	}
 

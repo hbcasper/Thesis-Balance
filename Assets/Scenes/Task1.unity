@@ -746,12 +746,6 @@ MonoBehaviour:
   placeimin: 
   placeImInInt: 0
   myPos: 0
---- !u!114 &94343689 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11406246, guid: 5be82523359dc554ba8d649d6fce4e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 94343686}
-  m_Script: {fileID: 11500000, guid: cade91fb49dc16e42bb781d1e60c9206, type: 3}
 --- !u!1 &95556674
 GameObject:
   m_ObjectHideFlags: 0
@@ -2481,12 +2475,6 @@ MonoBehaviour:
   placeimin: 
   placeImInInt: 0
   myPos: 0
---- !u!114 &367361225 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11420618, guid: 3881ab6d1a32b09449755c78428924cb,
-    type: 2}
-  m_PrefabInternal: {fileID: 367361222}
-  m_Script: {fileID: 11500000, guid: cade91fb49dc16e42bb781d1e60c9206, type: 3}
 --- !u!1 &370018485
 GameObject:
   m_ObjectHideFlags: 0
@@ -3856,10 +3844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9d2c3d0c9262f4cb6beace8b18a8c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Weight1: {fileID: 1171301627}
-  Weight2: {fileID: 94343689}
-  Weight3: {fileID: 367361225}
-  Weight4: {fileID: 1524188781}
 --- !u!114 &520598896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3871,7 +3855,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fadae673c4842894c8949aed064b34dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartvar: []
 --- !u!114 &520598897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11048,12 +11031,6 @@ MonoBehaviour:
   placeimin: 
   placeImInInt: 0
   myPos: 0
---- !u!114 &1171301627 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11406246, guid: 5be82523359dc554ba8d649d6fce4e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1171301624}
-  m_Script: {fileID: 11500000, guid: cade91fb49dc16e42bb781d1e60c9206, type: 3}
 --- !u!1 &1187994854
 GameObject:
   m_ObjectHideFlags: 0
@@ -13254,6 +13231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newparent: {fileID: 1241857435}
+  initialParent: {fileID: 0}
 --- !u!4 &1504627186 stripped
 Transform:
   m_PrefabParentObject: {fileID: 438732, guid: 01d660f5daf41074ab3451b3be725141, type: 2}
@@ -13442,12 +13420,6 @@ MonoBehaviour:
   placeimin: 
   placeImInInt: 0
   myPos: 0
---- !u!114 &1524188781 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11420618, guid: 3881ab6d1a32b09449755c78428924cb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1524188778}
-  m_Script: {fileID: 11500000, guid: cade91fb49dc16e42bb781d1e60c9206, type: 3}
 --- !u!1 &1536519560
 GameObject:
   m_ObjectHideFlags: 0
@@ -14666,6 +14638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newparent: {fileID: 1241857435}
+  initialParent: {fileID: 0}
 --- !u!114 &1679890164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16219,7 +16192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 832fa8a9c338d6843ba514271431cf04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialParent: {fileID: 520598894}
 --- !u!4 &1898096707
 Transform:
   m_ObjectHideFlags: 0
@@ -16283,9 +16255,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99025cb76e30794bb06b58208265ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CalculatedBalance: {fileID: 0}
-  calculatedBalance: {fileID: 0}
-  Arduinovalues: 0
 --- !u!114 &1898096712
 MonoBehaviour:
   m_ObjectHideFlags: 0

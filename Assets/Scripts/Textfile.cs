@@ -35,9 +35,9 @@ public class Textfile : MonoBehaviour {
 	private StreamWriter writer;  
 	string sceneName; 
 	string logFileName; 
-	int loggedTask;
+//	int loggedTask;
 	int loggedCorrect; 
-	int loggedUserButton; 
+//	int loggedUserButton; 
 	int loggedCorrectButton; 
 	int loggedLevelNumber; 
 	int loggedScore; 
@@ -130,9 +130,9 @@ public class Textfile : MonoBehaviour {
 		// Useranswer = gameObject.GetComponent<Animate> ();
 		loggedLevelNumber = Tasknumber.levelnumber;
 		loggedCorrectButton = CorrectButton.balance; 
-		loggedUserButton = Useranswer.whichbutton; 
+//		loggedUserButton = Useranswer.whichbutton; 
 		loggedCorrect = Useranswer.correct; 
-		loggedTask = Tasknumber.taskCount;
+//		loggedTask = Tasknumber.taskCount;
 		loggedScore = Useranswer.score; 
 		
 		reactionTime1 = readyTime.Subtract(startTime); 
