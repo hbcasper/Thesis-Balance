@@ -104,6 +104,7 @@ public class Seecubes : MonoBehaviour {
 			if (Valores.rightSideAD.Contains(gameObject.name[nameLenght - 1].ToString()))
 			    {
 				paintcube();
+				gameObject.GetComponent<Collider> ().enabled = true;
 				}
 		}
 	else if (gameObject.tag == "Left") 
@@ -111,6 +112,7 @@ public class Seecubes : MonoBehaviour {
 			if (Valores.leftSideAD.Contains(gameObject.name[nameLenght - 1].ToString()))
 				{
 				paintcube();
+				gameObject.GetComponent<Collider> ().enabled = true;
 				}
 			}
 

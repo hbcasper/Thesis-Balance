@@ -12,6 +12,7 @@ TagManager:
   - AR
   - HiddenStates
   - AD
+  - Green
   layers:
   - Default
   - TransparentFX

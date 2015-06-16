@@ -30,6 +30,12 @@ public class Imcolor : MonoBehaviour {
 			Cubecolor = "Yellow";
 
 			}
+		else if(gameObject.GetComponent<Renderer> ().material.color == Color.green)
+		{
+			
+			Cubecolor = "Green";
+			
+		}
 		else
 		{
 			

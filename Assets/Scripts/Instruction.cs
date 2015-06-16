@@ -667,8 +667,10 @@ public class Instruction : MonoBehaviour
 		instruction.text = "Place the required weights in the marked places";
 		
 		rightSideAD = Generatecubespositions(ADSystem.numberofcubes);
+
 		leftSideAD = Generatecubespositions(ADSystem.numberofcubes);
 		numberofplaces = ADSystem.numberofcubes;
+		Debug.Log ("Right: " + rightSideAD + " Left: " + leftSideAD);
 
 		GameObject Cubes = GameObject.Find ("Invisible Spaces");
 		Cubes.GetComponent<ColorcubesAD> ().ActiveCubesAD ();
