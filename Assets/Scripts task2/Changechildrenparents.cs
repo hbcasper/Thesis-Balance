@@ -3,21 +3,30 @@ using System.Collections;
 
 public class Changechildrenparents : MonoBehaviour {
 
-	public TransformParent Weight1;
+	TransformParent[] newParent;
 
-	public TransformParent Weight2;
-	public TransformParent Weight3;
-	public TransformParent Weight4;
+	void Start(){
+		newParent = gameObject.GetComponentsInChildren<TransformParent> ();
+	}
 
-
-
-
-	// Use this for initialization
 	public void moveweights() {
-		Weight1.Changeparent ();
-		Weight2.Changeparent ();
-		Weight3.Changeparent ();
-		Weight4.Changeparent ();
+
+		foreach (TransformParent script in newParent) {
+
+			script.Changeparent ();
+		}
+	}
+
+	public void restartparent() {
+	
+			foreach (TransformParent script in newParent) {
+				
+				script.Restartparent();
+			}
+
+	
+
+
 	}
 	
 

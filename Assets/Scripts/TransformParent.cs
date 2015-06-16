@@ -5,6 +5,7 @@ public class TransformParent : MonoBehaviour {
 
 	//public Transform initialParent;
 	public Transform newparent;
+	public Transform initialParent;
 	private Imused isinside;
 
 
@@ -13,16 +14,22 @@ public class TransformParent : MonoBehaviour {
 
 		//transform.parent = initialParent;
 		isinside = gameObject.GetComponent<Imused>();
-
-			
+				
 }
 
 	public void Changeparent() {
 		if (isinside.Inside == 1) {
-			Debug.Log ("correctisimo");
 			transform.parent = newparent.transform;
 		}
 	}
+
+
+	public void Restartparent(){
+
+		transform.parent = initialParent.transform;
+
+	}
+
 
 	public void Changeparentfull() {
 

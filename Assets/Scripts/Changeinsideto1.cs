@@ -3,7 +3,9 @@ using System.Collections;
 
 public class Changeinsideto1 : MonoBehaviour {
 
-	public Imused[] restartvar;
+	private Imused[] restartvar;
+	private Returnoriginalposition[] originalpositionscript;
+
 	
 	// Use this for initialization
 	public void Restartweights() {
@@ -11,7 +13,19 @@ public class Changeinsideto1 : MonoBehaviour {
 		restartvar = gameObject.GetComponentsInChildren<Imused> ();
 		foreach (Imused script in restartvar) {
 			
-			script.restart();
+			script.restart ();
 		}
+	}
+
+	public void ReturnOriginalPosition(){
+
+			originalpositionscript = gameObject.GetComponentsInChildren<Returnoriginalposition> ();
+			foreach (Returnoriginalposition script in originalpositionscript){
+
+				script.ReturnOriginalPosition();
+
+			}
+	
+	
 	}
 }
