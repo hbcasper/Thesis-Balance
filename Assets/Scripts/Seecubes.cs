@@ -98,6 +98,7 @@ public class Seecubes : MonoBehaviour {
 	}
 
 	public void ActiveCubesAD(){
+	DefineCubeColor ();
 	if (gameObject.tag == "Right")
 		{
 			if (Valores.rightSideAD.Contains(gameObject.name[nameLenght - 1].ToString()))
@@ -112,6 +113,7 @@ public class Seecubes : MonoBehaviour {
 				paintcube();
 				}
 			}
+
 	}
 
 	public void DefineCubeColor(){
