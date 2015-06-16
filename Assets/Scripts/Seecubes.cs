@@ -42,12 +42,8 @@ public class Seecubes : MonoBehaviour {
 			GameConfigurationToogles = GameObject.Find ("GameConfiguration");
 			GameConfiguration = GameConfigurationToogles.GetComponent<ToogleOptions>();
 
-			if (GameConfiguration.ActiveAdaptiveDificulty == true) 
-			{
-				ActiveCubesAD ();
-				DefineCubeColor();
-			}
-			else {
+			if (GameConfiguration.ActiveAdaptiveDificulty == false) {
+			
 				ActiveCubesRS ();
 			}
 		} else if (GameObject.Find ("GameConfiguration") == false) 
@@ -101,7 +97,7 @@ public class Seecubes : MonoBehaviour {
 		} 
 	}
 
-	void ActiveCubesAD(){
+	public void ActiveCubesAD(){
 	if (gameObject.tag == "Right")
 		{
 			if (Valores.rightSideAD.Contains(gameObject.name[nameLenght - 1].ToString()))
@@ -118,7 +114,7 @@ public class Seecubes : MonoBehaviour {
 			}
 	}
 
-	void DefineCubeColor(){
+	public void DefineCubeColor(){
 
 		if (ADSystem.numberofcolors == 1)
 		{cubeColor = 1;}
