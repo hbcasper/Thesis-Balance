@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using System;
+
 
 public class Seecubes : MonoBehaviour {
 
@@ -15,7 +15,7 @@ public class Seecubes : MonoBehaviour {
 
 	int nameLenght; 
 	int cubeIndex;
-	int cubeColor;
+
 
 	private GameObject ExcerciseManager;
 	private InputOutputADS ADSystem;
@@ -123,9 +123,10 @@ public class Seecubes : MonoBehaviour {
 		if (ADSystem.numberofcolors == 1)
 		{cubeColor = 1;}
 		else if (ADSystem.numberofcolors == 2)
-		{cubeColor = Random 1- 3;}
-		else if (ADSystem.numberofcolors == 3){
-			cubeColor = Random 1-4;}
+		{cubeColor = Random.Range(1,3);}
+		else if (ADSystem.numberofcolors == 3)
+		{
+			cubeColor = Random.Range(1,4);}
 		}
 
 	void paintcube(){

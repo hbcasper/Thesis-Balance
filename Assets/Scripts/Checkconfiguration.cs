@@ -57,7 +57,9 @@ public class Checkconfiguration : MonoBehaviour {
 		//check AD
 		if (GameConfiguration.ActiveAdaptiveDificulty == true) 
 		{
-		 AdaptiveDifficulty();
+				Debug.Log ("Gothere1");
+				AdaptiveDifficulty();
+
 			}
 		if (GameConfiguration.ActiveAdaptiveLevels == true) 
 		{
@@ -110,13 +112,8 @@ public class Checkconfiguration : MonoBehaviour {
 
 	void AdaptiveDifficulty(){
 
+		Debug.Log ("Gothere2");
 		ActiveADSystem.DeclareParameters();
-	
 
-		//foreach (GameObject AdaptiveDifficultyObject in AdaptiveDifficultyObjects) 
-		//		{
-		//			AdaptiveDifficultyObject.SetActive(true);
-		//		}
-		//ReactiveSystemNext.SetActive (false);
 	}
 }

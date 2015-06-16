@@ -30,6 +30,7 @@ public class InputOutputADS : MonoBehaviour {
 		 //I have no idea 
 
 		ReceiveInputsADS ();
+		Debug.Log ("Gothere3");
 
 	}
 	
@@ -44,6 +45,7 @@ public class InputOutputADS : MonoBehaviour {
 		equalcolors = 2; //(1-2)
 
 		Runlevel.ADexercise();
+		Debug.Log ("Gothere4");
 
 	}
 

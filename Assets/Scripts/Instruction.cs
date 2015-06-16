@@ -657,13 +657,16 @@ public class Instruction : MonoBehaviour
 	}
 
 	public void ADexercise(){
+		Debug.Log ("GotHere5");
+
+		instruction = GetComponent <Text> ();
+		instruction.text = "Place the required weights in the marked places";
 		
 		rightSideAD = Generatecubespositions(ADSystem.numberofcubes);
 		leftSideAD = Generatecubespositions(ADSystem.numberofcubes);
 		numberofplaces = ADSystem.numberofcubes;
 
-		instruction = GetComponent <Text> ();
-		instruction.text = "Place the required weights in the marked places";
+	
 		
 	}
 
