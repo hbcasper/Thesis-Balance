@@ -670,6 +670,8 @@ public class Instruction : MonoBehaviour
 		leftSideAD = Generatecubespositions(ADSystem.numberofcubes);
 		numberofplaces = ADSystem.numberofcubes;
 
+		GameObject Cubes = GameObject.Find ("Invisible Spaces");
+		Cubes.GetComponent<ColorcubesAD> ().ActiveCubesAD ();
 	
 		
 	}
