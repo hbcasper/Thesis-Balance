@@ -15,6 +15,7 @@ public class Seecubes : MonoBehaviour {
 
 	int nameLenght; 
 	int cubeIndex;
+	int cubeColor;
 
 	private GameObject ExcerciseManager;
 	private InputOutputADS ADSystem;
@@ -119,28 +120,27 @@ public class Seecubes : MonoBehaviour {
 
 	void DefineCubeColor(){
 
-//		if (diff = 1)
-//		{Cubecolor =1;}
-//		else if (diff = 2)
-//		{Cubecolor =Random 1- 3;}
-//		else if (diff = 3){
-//			Cubecolor = Random 1-4;}
+		if (ADSystem.numberofcolors == 1)
+		{cubeColor = 1;}
+		else if (ADSystem.numberofcolors == 2)
+		{cubeColor = Random 1- 3;}
+		else if (ADSystem.numberofcolors == 3){
+			cubeColor = Random 1-4;}
 		}
 
 	void paintcube(){
 
-//			if (Cubecolor = 1){
-//				gameObject.GetComponent<Renderer> ().material.color = Color.red;
-//		}
-//		else if (Cubecolor = 2){
-//				gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
-//			}
-//		else if Cubecolor = 3){
-//				gameObject.GetComponent<Renderer> ().material.color = Color.green;
+		if (cubeColor == 1){
+				gameObject.GetComponent<Renderer> ().material.color = Color.red;
+		}
+		else if (cubeColor == 2){
+				gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
+			}
+		else if (cubeColor == 3){
+				gameObject.GetComponent<Renderer> ().material.color = Color.green;
 				}
-//
-//
-//	}
+
+	}
 }
 //  Only in Virtual Reality
 //	void GrowCube(string colorName){
