@@ -21,7 +21,7 @@ public class Imused : MonoBehaviour {
 	
 	public void restart ()
 	{
-		Debug.Log ("Restarting" + gameObject.name);
+
 		Inside=0;
 		Imin = "none";
 		side = "none";

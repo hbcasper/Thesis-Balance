@@ -30,7 +30,6 @@ public class Gamemanager : MonoBehaviour {
 
 			taskCount = taskCount + 1;
 
-			Debug.Log ("Trial Added" + taskCount.ToString ());
 
 			adaptiveTaskNumber = adaptiveTaskNumber + 1;
 		

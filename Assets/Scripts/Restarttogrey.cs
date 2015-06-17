@@ -9,7 +9,7 @@ public class Restarttogrey : MonoBehaviour {
 		// Use this for initialization
 		public void Restartgraycolor() {
 			
-			Debug.Log ("1");
+
 			
 			restartgray = gameObject.GetComponentsInChildren<Receivedweight> ();
 			foreach (Receivedweight script in restartgray) {
