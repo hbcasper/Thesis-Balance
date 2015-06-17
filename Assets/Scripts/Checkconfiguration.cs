@@ -8,6 +8,7 @@ public class Checkconfiguration : MonoBehaviour {
 	private GameObject GameConfigurationToogles;
 	private GameObject[] enviroment;
 	private GameObject[] redweights;
+	private GameObject[] greenweights;
 	private GameObject[] yellowweights;
 	private GameObject[] ARobjects;
 	private GameObject scale;
@@ -81,6 +82,7 @@ public class Checkconfiguration : MonoBehaviour {
 		enviroment = GameObject.FindGameObjectsWithTag ("Enviroment");
 		redweights = GameObject.FindGameObjectsWithTag ("Red");
 		yellowweights = GameObject.FindGameObjectsWithTag ("Yellow");
+		greenweights = GameObject.FindGameObjectsWithTag ("Green");
 		scale = GameObject.Find ("Scale");
 		normalcamera = GameObject.Find ("Main Camera");
 
@@ -91,6 +93,10 @@ public class Checkconfiguration : MonoBehaviour {
 		foreach (GameObject redweight in redweights)
 		{
 			redweight.GetComponent<Renderer> ().enabled = false;
+		}
+		foreach (GameObject greenweight in greenweights)
+		{
+			greenweight.GetComponent<Renderer> ().enabled = false;
 		}
 		foreach (GameObject yellowweight in yellowweights)
 		{
