@@ -12,7 +12,7 @@ public class Changeinsideto1 : MonoBehaviour {
 		
 		restartvar = gameObject.GetComponentsInChildren<Imused> ();
 		foreach (Imused script in restartvar) {
-			
+					
 			script.restart ();
 		}
 	}
