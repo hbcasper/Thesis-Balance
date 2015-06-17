@@ -71,17 +71,19 @@ public class Gamemanager : MonoBehaviour {
 
 	public void PerformanceCalculator(){
 
+		if (GameConfiguration.ActiveAdaptiveLevels == true) {
 
 
-		if (adaptiveTaskNumber > 4){
-			adaptiveTaskNumber = 1;
-		}
+			if (adaptiveTaskNumber > 4) {
+				adaptiveTaskNumber = 1;
+			}
 
 
-		if (taskCount > 4) {
-			performancelevel = ((score * 100) / taskCount);
-		} else {
-			performancelevel = 50;
+			if (taskCount > 4) {
+				performancelevel = ((score * 100) / taskCount);
+			} else {
+				performancelevel = 50;
+			}
 		}
 	}
 
@@ -90,14 +92,11 @@ public class Gamemanager : MonoBehaviour {
 	public void Checklevel (){
 
 
-		if (GameObject.Find ("GameConfiguration") == true)
-		{
-			if(GameConfiguration.ActiveAdaptiveDificulty == true || GameConfiguration.ActiveAdaptiveLevels == true) {
+		if(GameConfiguration.ActiveAdaptiveDificulty == true || GameConfiguration.ActiveAdaptiveLevels == true) {
 				if (taskCount == 31) {
 					Application.LoadLevel ("UserInstructionTask2");
 				}
 				}
-		}
 
 		else {
 		
