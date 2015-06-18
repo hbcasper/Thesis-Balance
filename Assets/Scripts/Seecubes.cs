@@ -117,6 +117,11 @@ public class Seecubes : MonoBehaviour {
 			}
 
 	}
+	public void NoActiveCubesAD(){
+		gameObject.GetComponent<Renderer> ().material.color = Color.clear;
+		gameObject.GetComponent<Collider> ().enabled = false;
+			
+	}
 
 	public void DefineCubeColor(){
 

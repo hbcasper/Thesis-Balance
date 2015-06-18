@@ -6,15 +6,29 @@ public class ColorcubesAD : MonoBehaviour {
 
 	public Seecubes[] activecubes;
 
-	public void ActiveCubesAD() {
-		Debug.Log ("GotHere7");
-
+	public void Start(){
 		activecubes = gameObject.GetComponentsInChildren<Seecubes> ();
+	}
+
+
+	public void ActiveCubesAD() {
+		
 		foreach (Seecubes script in activecubes) {
 			
-			script.ActiveCubesAD();
+			script.ActiveCubesAD ();
 
 
 		}
+	}
+
+		public void DeactiveCubesAD() {
+			
+			activecubes = gameObject.GetComponentsInChildren<Seecubes> ();
+			foreach (Seecubes script in activecubes) {
+				
+				script.NoActiveCubesAD();
+				
+				
+			}
 	}
 }
