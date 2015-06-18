@@ -44,16 +44,18 @@ public class Textfile : MonoBehaviour {
 	int loggedNumberWeightsRed; 
 	int loggedNumberWeightsYellow;
 	
-	DateTime startTime;
-	DateTime readyTime;
-	DateTime endTime;
-	
+	public DateTime startTime;
+	public DateTime readyTime;
+	public DateTime endTime;
+
 	TimeSpan reactionTime1; 
 	TimeSpan reactionTime2;
 	TimeSpan reactionTime3; 
 	
 	
 	void Start () {
+
+
 		
 		cubePosition = GameObject.Find ("Instructions"); 
 		CubePosition = cubePosition.GetComponent<Instruction> (); 
@@ -111,6 +113,7 @@ public class Textfile : MonoBehaviour {
 	public void StoreStartTime ()
 	{
 		startTime = System.DateTime.Now;
+
 	}
 	
 	public void StoreReadyTime()

@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class InputOutputADS : MonoBehaviour {
 
 	// Use this for initialization
 
-	public int reactionTime;
+	public float reactionTime;
 	public int answercorrect;
-	public int numberOfmovements;
+	//public int numberOfmovements;
 
 	public int numberofcubes;
 	public int numberofcolors;
@@ -62,7 +63,7 @@ public class InputOutputADS : MonoBehaviour {
 
 		// all the values are from 0 - 1 
 
-		//reactionTime = performdata.StoreEndTime/100; // number of seconds how to mapp it?
+		reactionTime = Convert.ToSingle(performdata.endTime.Second) /100; // number of seconds how to mapp it?
 	    answercorrect = Exercisedata.correct; // 0-1
 		//code for send it
 
