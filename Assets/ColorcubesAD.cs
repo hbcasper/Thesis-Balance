@@ -4,7 +4,9 @@ using System.Collections;
 public class ColorcubesAD : MonoBehaviour {
 
 
-	public Seecubes[] activecubes;
+	Seecubes[] activecubes;
+	public int totalLeft = 0;
+	public int totalRight = 0;
 
 	public void Start(){
 		activecubes = gameObject.GetComponentsInChildren<Seecubes> ();
@@ -18,17 +20,35 @@ public class ColorcubesAD : MonoBehaviour {
 			script.ActiveCubesAD ();
 
 
+
 		}
+		CalculateWeight();
 	}
 
 		public void DeactiveCubesAD() {
+		totalLeft = 0;
+		totalRight = 0;
 			
-			activecubes = gameObject.GetComponentsInChildren<Seecubes> ();
 			foreach (Seecubes script in activecubes) {
 				
 				script.NoActiveCubesAD();
-				
-				
+
 			}
 	}
+
+	public void CalculateWeight(){
+		foreach (Seecubes script in activecubes) {
+			
+			if (script.gameObject.tag == ("Left")){
+				totalLeft = totalLeft + script.myValue;
+			}
+			if (script.gameObject.tag == ("Right")){
+					totalRight = totalRight + script.myValue;
+			
+			
+		}
+
+		}
+
+}
 }

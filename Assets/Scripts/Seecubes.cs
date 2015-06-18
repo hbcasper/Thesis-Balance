@@ -12,6 +12,7 @@ public class Seecubes : MonoBehaviour {
 	private GameObject GameConfigurationToogles;
 	int cubeColor=0;
 	bool cubeIsActive=false;
+	public int myValue = 0;
 
 	int nameLenght; 
 	int cubeIndex;
@@ -103,6 +104,7 @@ public class Seecubes : MonoBehaviour {
 		{
 			if (Valores.rightSideAD.Contains(gameObject.name[nameLenght - 1].ToString()))
 			    {
+
 				paintcube();
 				gameObject.GetComponent<Collider> ().enabled = true;
 				}
@@ -120,6 +122,7 @@ public class Seecubes : MonoBehaviour {
 	public void NoActiveCubesAD(){
 		gameObject.GetComponent<Renderer> ().material.color = Color.clear;
 		gameObject.GetComponent<Collider> ().enabled = false;
+		myValue = 0;
 			
 	}
 
@@ -138,12 +141,15 @@ public class Seecubes : MonoBehaviour {
 
 		if (cubeColor == 1){
 				gameObject.GetComponent<Renderer> ().material.color = Color.red;
+				myValue=cubeIndex*1;
 		}
 		else if (cubeColor == 2){
 				gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
+				myValue=cubeIndex*2;
 			}
 		else if (cubeColor == 3){
 				gameObject.GetComponent<Renderer> ().material.color = Color.green;
+				myValue=cubeIndex*3;
 				}
 
 	}
