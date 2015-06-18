@@ -62,7 +62,7 @@ public class InputOutputADS : MonoBehaviour {
 
 		// all the values are from 0 - 1 
 
-		reactionTime = performdata.StoreEndTime/ 100; // number of seconds how to mapp it?
+		//reactionTime = performdata.StoreEndTime/100; // number of seconds how to mapp it?
 	    answercorrect = Exercisedata.correct; // 0-1
 		//code for send it
 
