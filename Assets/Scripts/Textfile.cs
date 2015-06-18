@@ -85,8 +85,8 @@ public class Textfile : MonoBehaviour {
 	
 	private void createLogFile(){
 		
-		string logFilePath = @"Assets\Resources\" + sceneName + "_balancescale_nr_";
-		// string logFilePath = @"FileManager\Resources\" + sceneName + "_balancescale_nr_"; // TabletVersion
+		//string logFilePath = @"Assets\Resources\" + sceneName + "_balancescale_nr_";
+		 string logFilePath = @"FileManager\Resources\" + sceneName + "_balancescale_nr_"; // TabletVersion
 		int version = 0;
 		logFileName = logFilePath + version + ".txt";
 		

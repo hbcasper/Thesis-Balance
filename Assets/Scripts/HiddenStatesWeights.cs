@@ -8,6 +8,7 @@ public class HiddenStatesWeights : MonoBehaviour {
 	public GameObject CubeBelong; 
 	public Color cubeColor; 
 
+
 	// Use this for initialization
 	void Start () {
 
@@ -48,7 +49,10 @@ public class HiddenStatesWeights : MonoBehaviour {
 	void Update () {
 
 		cubeColor = CubeBelong.GetComponent<Renderer> ().material.color; 
+	
+
 		ColorChange (); 
+
 		//Debug.Log ("Update Called");
 	
 	}

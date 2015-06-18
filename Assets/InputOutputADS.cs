@@ -10,8 +10,8 @@ public class InputOutputADS : MonoBehaviour {
 	public float answercorrect;
 
 	// Difficulty Parameters
-	public float numberofcubes;
-	public float numberofcolors;
+	public int numberofcubes;
+	public int numberofcolors;
 	public float equalcolors;
 	public float equaldistance;
 	
