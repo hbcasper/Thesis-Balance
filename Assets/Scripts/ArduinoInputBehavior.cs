@@ -5,6 +5,10 @@ using System.Collections;
 public class ArduinoInputBehavior : MonoBehaviour {
 
 	private Instruction Instructionvalues;
+	private ToogleOptions GameConfiguration;
+	private GameObject GameConfigurationToogles;
+	private GameObject Cubesparent;
+	private ColorcubesAD Colorcubes;
 
 	public GameObject Objeto;
 
@@ -27,26 +31,14 @@ public class ArduinoInputBehavior : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		GameConfigurationToogles = GameObject.Find ("GameConfiguration");
+		GameConfiguration = GameConfigurationToogles.GetComponent<ToogleOptions>();
+		Cubesparent = GameObject.Find ("Invisible Spaces");
+		Colorcubes = Cubesparent.GetComponent<ColorcubesAD> ();
+
 		Instructionvalues = Objeto.GetComponent<Instruction>();
-
-
-		// SetWeigth(leftpos1, leftpos2, rightpos1, rightpos2, leftW1Red, leftW2Yell, rightW1Red, rightW2Yell);
 	}
-//		Debug.Log (balance);
-//		
-//		if (!GetComponent<Animation>().isPlaying) {
-//			
-//			if (balance == 1) {
-//				GetComponent<Animation>().Play ("Balance Moves Left");//left
-//			} else if (balance == 2) {
-//				GetComponent<Animation>().Play ("Balance Moves Right");// Move Balance to the right
-//			} else {
-//				//Balance in equilibrium 
-//			}
-//		}
-	 
-	
-	// Update is called once per frame
+
 
 	void Update ()
 	{
@@ -59,25 +51,26 @@ public class ArduinoInputBehavior : MonoBehaviour {
 		rightW1Red = Instructionvalues.RightW1;
 		rightW2Yell = Instructionvalues.RightW2;
 
-		SetWeigth(leftpos1, leftpos2, rightpos1, rightpos2, leftW1Red, leftW2Yell, rightW1Red, rightW2Yell);
+		if (GameConfiguration.ActiveAdaptiveDificulty == false) {
+
+			SetWeigth (leftpos1, leftpos2, rightpos1, rightpos2, leftW1Red, leftW2Yell, rightW1Red, rightW2Yell);
+		}
+		else if (GameConfiguration.ActiveAdaptiveDificulty == true) 
+		{
+			if (Colorcubes.totalLeft > Colorcubes.totalRight) {
+				balance = 1;
+			} 
+			else if (Colorcubes.totalLeft < Colorcubes.totalRight) {
+				balance = 2;
+			} 
+			else {
+				balance = 0;
+			}
+
+		}
 
 
 	}
-
-
-
-//	int TakeValuesArduino ()
-//	{
-//		// Some input will be somehow translated into values 1-4 for position and 1-2 for object
-//		return leftpos1; 
-//		return leftpos2; 
-//		return rightpos1; 
-//		return rightpos2; 
-//		return leftW1; 
-//		return leftW2;
-//		return rightW1; 
-//		return rightW2;
-//	}
 
 
 	//balance coded for 1 = left, 2 = right, 0 = balanced
@@ -97,17 +90,5 @@ public class ArduinoInputBehavior : MonoBehaviour {
 		return balance;
 
 	}
-	
 
-//	void ScaleMove (balance)
-//	{
-//		if (balance = 1) {
-//			// Move balance to the left
-//		} else if (balance = 2) {
-//			// Move Balance to the right
-//		} else 
-//		{
-//			//Balance in equilibrium 
-//		}
-//	}
 }
