@@ -4,24 +4,24 @@ using System;
 
 public class InputOutputADS : MonoBehaviour {
 
-	// Use this for initialization
 
+	// Performance Parameters
 	public float reactionTime;
-	public int answercorrect;
-	//public int numberOfmovements;
+	public float answercorrect;
 
-	public int numberofcubes;
-	public int numberofcolors;
-	public int equalcolors;
+	// Difficulty Parameters
+	public float numberofcubes;
+	public float numberofcolors;
+	public float equalcolors;
+	public float equaldistance;
+	
+	//Calling values
 
 	private GameObject ExerciseManager;
 	private Textfile performdata;
 
 	private GameObject Scale;
 	private Animate Exercisedata;
-	//GameObject Instructions;
-	//Instruction Runlevel;
-
 
 	void Start(){
 		ExerciseManager = GameObject.Find ("Exercisemanager");
@@ -29,30 +29,23 @@ public class InputOutputADS : MonoBehaviour {
 
 		Scale = GameObject.Find ("Scale");
 		Exercisedata = Scale.GetComponent<Animate> ();
-		//Runlevel = Instructions.GetComponent<Instruction> ();
 	}
-
-
 
 	public void DeclareParameters () {
-		 //I have no idea 
-
+		 //I have no idea of how to
 		ReceiveInputsADS ();
-
-
 	}
-	
-	// Update is called once per frame
+
 	public void ReceiveInputsADS () {
 
 	// Read Inputs of the ADSystem
 
-		// all the values are from  0 to 1
+	// all the values should be from  0 to 1
 
-
-		numberofcubes = 3; //(1-6)
-		numberofcolors = 3; //(1-3)
-		equalcolors = 2; //(1-2)
+		numberofcubes = 1; //(0-1) 0 = 1 cube - 1 = 2 cubes
+		numberofcolors = 1; //(0- 1) 0 = 1 color - 1 = 2 colors
+		equalcolors = 1; //(0-1) 0 = Same colos en each side 1 = Different color in each side
+		equaldistance = 1; // ( 0 -1) 0 = Same distance on each side 1 = Different distance in each side
 
 		GameObject Instructions = GameObject.Find ("Instructions");
 		Instructions.GetComponent<Instruction> ().ADexercise ();
@@ -63,11 +56,9 @@ public class InputOutputADS : MonoBehaviour {
 
 		// all the values are from 0 - 1 
 
-		reactionTime = Convert.ToSingle(performdata.endTime.Second) /100; // number of seconds how to mapp it?
-	    answercorrect = Exercisedata.correct; // 0-1
-		//code for send it
-
-
+		reactionTime = Convert.ToSingle(performdata.endTime.Second) /100; // NECESSARY to pass from 0 -1 
+	    answercorrect = Convert.ToSingle (Exercisedata.correct); // 0-1 0 = Incorrect. 1 = Correct
+	
 		ReceiveInputsADS ();
 
 		}
