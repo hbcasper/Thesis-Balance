@@ -60,7 +60,7 @@ public class Seecubes : MonoBehaviour {
 			gameObject.GetComponent<Collider> ().enabled = true;
 		} else {
 			gameObject.GetComponent<Collider> ().enabled = false;	
-			gameObject.GetComponent<Renderer> ().material.color = Color.clear;
+			gameObject.GetComponent<Renderer> ().enabled = false;
 		}
 
 		if ((Valores.pnr1 == cubeIndex) && gameObject.tag == "Right"){
