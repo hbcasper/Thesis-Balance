@@ -342,7 +342,7 @@ public class Instruction : MonoBehaviour
 		}		
 		
 		{
-			instruction.text="Place the required weights in the marked places";
+		//	instruction.text="Place the required weights in the marked places";
 			//instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1;
 			
 		}
@@ -406,7 +406,7 @@ public class Instruction : MonoBehaviour
 		
 		{
 			//instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1;
-			instruction.text="Place the required weights in the marked places";
+			//instruction.text="Place the required weights in the marked places";
 		}
 	}
 	
@@ -505,7 +505,7 @@ public class Instruction : MonoBehaviour
 		
 		
 		{
-			instruction.text="Place the required weights in the marked places";
+			//instruction.text="Place the required weights in the marked places";
 			//instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1;
 			
 		}
@@ -650,7 +650,7 @@ public class Instruction : MonoBehaviour
 		}
 
 		{
-			instruction.text="Place the required weights in the marked places";
+			//instruction.text="Place the required weights in the marked places";
 			//instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname2 + " piece in the left place number " + pnl2 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1 + ".\n1 " + colorname4 + " piece in the right place number " + pnr2;
 			
 		}
@@ -664,7 +664,7 @@ public class Instruction : MonoBehaviour
 		Debug.Log ("GotHere5");
 
 		instruction = GetComponent <Text> ();
-		instruction.text = "Place the required weights in the marked places";
+	//	instruction.text = "Place the required weights in the marked places";
 		
 		rightSideAD = Generatecubespositions(ADSystem.numberofcubes);
 
