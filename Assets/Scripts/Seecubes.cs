@@ -46,10 +46,12 @@ public class Seecubes : MonoBehaviour {
 			if (GameConfiguration.ActiveAdaptiveDificulty == false) {
 			
 				ActiveCubesRS ();
+
 			}
 		} else if (GameObject.Find ("GameConfiguration") == false) 
 			{
 			ActiveCubesRS ();
+
 			}
 	}
 
@@ -58,6 +60,7 @@ public class Seecubes : MonoBehaviour {
 		if (((Valores.pnr1 == cubeIndex || Valores.pnr2 == cubeIndex) && gameObject.tag == "Right")||((Valores.pnl1 == cubeIndex || Valores.pnl2 == cubeIndex) && gameObject.tag == "Left"))
 		{
 			gameObject.GetComponent<Collider> ().enabled = true;
+			gameObject.GetComponent<Renderer> ().enabled = true;
 		} else {
 			gameObject.GetComponent<Collider> ().enabled = false;	
 			gameObject.GetComponent<Renderer> ().enabled = false;

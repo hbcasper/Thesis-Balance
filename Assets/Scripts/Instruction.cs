@@ -431,16 +431,12 @@ public class Instruction : MonoBehaviour
 		pcolor3 = Random.Range (0, 4);
 		pcolor4 = 0;
 		
-		while (pnl1 == pnl2) {
-			pnl2 = Random.Range (1, 7); 
+		while (pnl1 == pnr1) {
+			pnr1 = Random.Range (1, 7); 
 			
 		}
 		
-		while (pnr1 == pnr2) {
-			pnr2 = Random.Range (1, 7);
-			
-			
-		}
+
 		
 		if (pcolor1 < 2) {
 			colorname1 = "red";
