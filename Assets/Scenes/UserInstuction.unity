@@ -310,7 +310,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 306628067}
   m_LocalRotation: {x: -.000120822224, y: .719279706, z: -.694110572, w: .0291073211}
-  m_LocalPosition: {x: 28, y: 406, z: -922}
+  m_LocalPosition: {x: 28, y: 391, z: -922}
   m_LocalScale: {x: 2.60998869, y: 2.60998535, z: 2.60998535}
   m_Children: []
   m_Father: {fileID: 0}
@@ -420,7 +420,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 392752240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 50}
+  m_LocalPosition: {x: 0, y: 0, z: 36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 447408867}
@@ -429,7 +429,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 9, y: -351}
+  m_AnchoredPosition: {x: 9, y: -281}
   m_SizeDelta: {x: 326, y: 119}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &426686395
@@ -589,7 +589,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 648350952}
   m_LocalRotation: {x: .0966076329, y: 0, z: 0, w: .995322585}
-  m_LocalPosition: {x: 0, y: 0, z: -915.799927}
+  m_LocalPosition: {x: 0, y: 0, z: -916}
   m_LocalScale: {x: .216259196, y: .216259196, z: .216259196}
   m_Children:
   - {fileID: 1648400931}
@@ -603,7 +603,7 @@ RectTransform:
   m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 404.153259}
+  m_AnchoredPosition: {x: 0, y: 389}
   m_SizeDelta: {x: 1280, y: 800.914307}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &648350954
@@ -689,7 +689,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: db25edfcfeb297e478b58a2ddc02381e, type: 2}
+  - {fileID: 2100000, guid: 0ec73cc421ce09c47af4b54777e6282a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -731,7 +731,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 656167559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -48.0999985, y: 462.899994, z: -810}
+  m_LocalPosition: {x: -48, y: 439, z: -810}
   m_LocalScale: {x: 27.1533241, y: 13.5766621, z: 27.1533241}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1052,7 +1052,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1501761561}
   m_LocalRotation: {x: -.000120822224, y: .719279706, z: -.694110572, w: .0291073211}
-  m_LocalPosition: {x: 102, y: 406, z: -922}
+  m_LocalPosition: {x: 102, y: 391, z: -922}
   m_LocalScale: {x: 2.60998869, y: 2.60998535, z: 2.60998535}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1164,7 +1164,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1562937019}
   m_LocalRotation: {x: .771490216, y: -.00346825039, z: .0197920352, w: .635923862}
-  m_LocalPosition: {x: -15, y: 406, z: -922}
+  m_LocalPosition: {x: -15, y: 391, z: -922}
   m_LocalScale: {x: 2.60998869, y: 2.60998535, z: 2.60998535}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1376,7 +1376,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1613111089}
   m_LocalRotation: {x: .771490216, y: -.00346825039, z: .0197920352, w: .635923862}
-  m_LocalPosition: {x: -103, y: 406, z: -922}
+  m_LocalPosition: {x: -103, y: 391, z: -922}
   m_LocalScale: {x: 2.60998869, y: 2.60998535, z: 2.60998535}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1619,7 +1619,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0ec73cc421ce09c47af4b54777e6282a, type: 2}
+  - {fileID: 2100000, guid: db25edfcfeb297e478b58a2ddc02381e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1661,7 +1661,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1740556769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.5, y: 462.899994, z: -810}
+  m_LocalPosition: {x: 48, y: 440, z: -810}
   m_LocalScale: {x: 27.1533241, y: 13.5766621, z: 27.1533241}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1701,8 +1701,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 9, y: 28}
-  m_SizeDelta: {x: 1064, y: 710}
+  m_AnchoredPosition: {x: -13, y: 28}
+  m_SizeDelta: {x: 1174, y: 710}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1796546342
 MonoBehaviour:
@@ -1729,10 +1729,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "In the next tasks you will see a configuration of a scale\nThe yellow weights
-    double the weight of the red weights: \n\n\n\n\n\nChoose to which side you think
-    that the balance will fall \n\n\n\n\n\n\n\n\n\n\nYou will have 5 seconds for solve
-    each task\n\n"
+  m_Text: "In the next tasks you have to place the required weights in the indicated
+    positions\nConsider that the red weights double the weight of the yellow weights:
+    \n\n\n\n\n\nThen, you will have to choose the side you think the balance will
+    fall"
 --- !u!222 &1796546343
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1841,7 +1841,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0ec73cc421ce09c47af4b54777e6282a, type: 2}
+  - {fileID: 2100000, guid: db25edfcfeb297e478b58a2ddc02381e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1883,7 +1883,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2016029869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.6999998, y: 462.899994, z: -810}
+  m_LocalPosition: {x: 16, y: 440, z: -810}
   m_LocalScale: {x: 27.1533241, y: 13.5766621, z: 27.1533241}
   m_Children: []
   m_Father: {fileID: 0}
