@@ -91,9 +91,9 @@ public class Gamemanager : MonoBehaviour {
 	public void Checklevel (){
 
 
-		if(GameConfiguration.ActiveAdaptiveDificulty == true || GameConfiguration.ActiveAdaptiveLevels == true) {
+		if(GameConfiguration.ActiveAdaptiveLevels == true) {
 				if (taskCount == 31) {
-					Application.LoadLevel ("UserInstructionTask2");
+				Application.LoadLevel ("FinalScene");
 				}
 				}
 
@@ -110,10 +110,8 @@ public class Gamemanager : MonoBehaviour {
 					
 				} else if (taskCount <= 30) {
 					levelnumber = 4;
-
-
 				}else if (taskCount == 31) {
-					Application.LoadLevel ("UserInstructionTask2");
+					Application.LoadLevel ("FinalScene");
 					
 			}
 		}
