@@ -11,7 +11,7 @@ public class Seecubes : MonoBehaviour {
 	private ToogleOptions GameConfiguration;
 	private GameObject GameConfigurationToogles;
 	int cubeColor=0;
-	bool cubeIsActive=false;
+	public bool cubeIsActive=false;
 	public int myValue = 0;
 
 	int nameLenght; 
@@ -32,7 +32,7 @@ public class Seecubes : MonoBehaviour {
 		//Valores = Objeto.GetComponent<Instruction>();	
 		Valores = Objeto.GetComponent<Instruction> (); 
 		//gameObject.GetComponent<Renderer> ().enabled = false;
-		gameObject.GetComponent<Renderer> ().material.color = Color.clear;
+		gameObject.GetComponent<Renderer> ().enabled = false;
 		//gameObject.transform.localScale = new Vector3(1.4f,1.4f,1.4f);
 	}
 	

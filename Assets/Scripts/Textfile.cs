@@ -6,10 +6,7 @@ using System.Text;
 using System; 
 
 public class Textfile : MonoBehaviour {
-	
 
-
-	private GameObject ExcerciseManager; 
 		private Gamemanager GameManager;
 		private ToogleOptions TaskCondition;
 
@@ -20,8 +17,9 @@ public class Textfile : MonoBehaviour {
 	private GameObject Instructions; 
 		private Instruction WeightsConfiguration;
 
-	private GameObject UserDataObject;
-	private Userfinaldata UserData;
+	private GameObject TaskData;
+
+	string dataTaskLine;
 
 	// Config Scene necessary Particpipant# & Age
 	//    private Userfinaldata FinalData;
@@ -55,17 +53,16 @@ public class Textfile : MonoBehaviour {
 		Instructions = GameObject.Find ("Instructions"); 
 		WeightsConfiguration = Instructions.GetComponent<Instruction> (); 
 		
-		ExcerciseManager = GameObject.Find ("Exercisemanager");
-		GameManager = ExcerciseManager.GetComponent<Gamemanager> ();
-		TaskCondition = ExcerciseManager.GetComponent<ToogleOptions> ();
+
+		GameManager = gameObject.GetComponent<Gamemanager> ();
+
 		
 		Scale = GameObject.Find ("Scale"); 
 		Useranswer = Scale.GetComponent<Animate> ();
 		ScaleCalculator = Scale.GetComponent<ArduinoInputBehavior> (); 
 		
-		UserDataObject = GameObject.Find ("Userdata");
-		UserData = UserDataObject.GetComponent<Userfinaldata>;
-
+		TaskData = GameObject.Find ("GameConfiguration");
+		TaskCondition = TaskData.GetComponent<ToogleOptions> ();
 	 
 		sceneName = Application.loadedLevelName; 
 		
@@ -88,7 +85,7 @@ public class Textfile : MonoBehaviour {
 		}
 		
 		writer = new StreamWriter (logFileName);
-		startTask = (System.DateTime.Now.ToString());;
+		startTask = System.DateTime.Now;
 		writer.WriteLine (); 
 		writer.WriteLine ("Date and Time, Participant Number, Condition, Trial#  , CorrectFallSide , ChoosedFallSide , IsCorrect? , Level, Score, TimeSet, TimeChoose, TimeTotal, #RedWeights, #YellowWeights , RedPos1, RedPos2, YellPos1, YellPos2"); 
 
@@ -119,10 +116,12 @@ public class Textfile : MonoBehaviour {
 		// reactionTime3 = endTime.Subtract(readyTime); 
 		
 		
-		writer.WriteLine (	startTask.ToString()+ ","
-		                  	+ UserData.participantNumber + "," 
-							+ GameManager.taskCount.ToString () + "," 
-		                	+ GameManager.condition.ToString() + "," 
+		dataTaskLine = (startTask.Day.ToString()+ "/"
+		                  + startTask.Month.ToString()+ "/"
+		                  + startTask.Year.ToString()+ ","
+		                  + TaskCondition.participantNumber + "," 
+						+ GameManager.taskCount.ToString () + "," 
+		                	+ TaskCondition.condition.ToString() + "," 
 		                  + ScaleCalculator.balance.ToString () + "," 
 		                  + Useranswer.whichbutton.ToString() + ","
 		                  + Useranswer.correct.ToString()+ "," 
@@ -141,6 +140,8 @@ public class Textfile : MonoBehaviour {
 		                  + WeightsConfiguration.positionYellowCube2.ToString() + "," 
 		                  + WeightsConfiguration.positionYellowCube3.ToString() + "," 
 		                  + WeightsConfiguration.positionYellowCube4.ToString()); 
+		Debug.Log (dataTaskLine);
+		writer.WriteLine (dataTaskLine);
 
 		writer.Flush ();
 		
