@@ -461,6 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
 --- !u!23 &36448053
 MeshRenderer:
@@ -1201,6 +1202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
 --- !u!23 &144270116
 MeshRenderer:
@@ -1322,6 +1324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
 --- !u!23 &146220914
 MeshRenderer:
@@ -1761,6 +1764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
 --- !u!23 &202068864
 MeshRenderer:
@@ -3869,6 +3873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
 --- !u!23 &523814109
 MeshRenderer:
@@ -4197,6 +4202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
 --- !u!23 &548114622
 MeshRenderer:
@@ -6561,7 +6567,7 @@ Prefab:
     - target: {fileID: 11470150, guid: 8d04ea887958de24385b8dcf5e782a45, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[14].m_Target
       value: 
-      objectReference: {fileID: 1898096711}
+      objectReference: {fileID: 0}
     - target: {fileID: 11470150, guid: 8d04ea887958de24385b8dcf5e782a45, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[14].m_MethodName
       value: InputArduino
@@ -6585,7 +6591,7 @@ Prefab:
     - target: {fileID: 11470150, guid: 8d04ea887958de24385b8dcf5e782a45, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[15].m_Target
       value: 
-      objectReference: {fileID: 1898096711}
+      objectReference: {fileID: 0}
     - target: {fileID: 11470150, guid: 8d04ea887958de24385b8dcf5e782a45, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[15].m_MethodName
       value: OutputForArduino
@@ -6605,7 +6611,7 @@ Prefab:
     - target: {fileID: 11416022, guid: 8d04ea887958de24385b8dcf5e782a45, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[16].m_Target
       value: 
-      objectReference: {fileID: 1898096711}
+      objectReference: {fileID: 0}
     - target: {fileID: 11416022, guid: 8d04ea887958de24385b8dcf5e782a45, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[16].m_MethodName
       value: OutputForArduino
@@ -6625,7 +6631,7 @@ Prefab:
     - target: {fileID: 11492420, guid: 8d04ea887958de24385b8dcf5e782a45, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[16].m_Target
       value: 
-      objectReference: {fileID: 1898096711}
+      objectReference: {fileID: 0}
     - target: {fileID: 11492420, guid: 8d04ea887958de24385b8dcf5e782a45, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[16].m_MethodName
       value: OutputForArduino
@@ -6645,7 +6651,7 @@ Prefab:
     - target: {fileID: 11472166, guid: 8d04ea887958de24385b8dcf5e782a45, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[16].m_Target
       value: 
-      objectReference: {fileID: 1898096711}
+      objectReference: {fileID: 0}
     - target: {fileID: 11472166, guid: 8d04ea887958de24385b8dcf5e782a45, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[16].m_MethodName
       value: OutputForArduino
@@ -8807,6 +8813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
 --- !u!23 &865910510
 MeshRenderer:
@@ -9192,6 +9199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
 --- !u!23 &938204855
 MeshRenderer:
@@ -11159,6 +11167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
 --- !u!23 &1119595924
 MeshRenderer:
@@ -14624,6 +14633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
 --- !u!23 &1553037964
 MeshRenderer:
@@ -16019,6 +16029,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
 --- !u!23 &1708643731
 MeshRenderer:
@@ -16325,6 +16336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
 --- !u!23 &1779092437
 MeshRenderer:
@@ -17009,7 +17021,6 @@ GameObject:
   - 114: {fileID: 1898096708}
   - 114: {fileID: 1898096709}
   - 114: {fileID: 1898096710}
-  - 114: {fileID: 1898096711}
   - 114: {fileID: 1898096712}
   m_Layer: 0
   m_Name: Exercisemanager
@@ -17081,17 +17092,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleparent: {fileID: 0}
   indicatorlines: {fileID: 1504627185}
---- !u!114 &1898096711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1898096705}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d99025cb76e30794bb06b58208265ebe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1898096712
 MonoBehaviour:
   m_ObjectHideFlags: 0
