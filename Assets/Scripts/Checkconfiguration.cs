@@ -35,7 +35,7 @@ public class Checkconfiguration : MonoBehaviour {
 		//check AR
 		if (GameConfiguration.ActiveAugmentedReality == true) 
 			{
-			AugmentedReality ();
+			
 			} else 
 			{
 			foreach (GameObject ARobject in ARobjects) 
@@ -58,7 +58,7 @@ public class Checkconfiguration : MonoBehaviour {
 		//check AD
 		if (GameConfiguration.ActiveAdaptiveDificulty == true) 
 		{
-				Debug.Log ("Gothere1");
+		
 				AdaptiveDifficulty();
 
 			}
@@ -77,38 +77,7 @@ public class Checkconfiguration : MonoBehaviour {
 	}
 
 	
-	void AugmentedReality(){ //AR Behavior
 
-		enviroment = GameObject.FindGameObjectsWithTag ("Enviroment");
-		redweights = GameObject.FindGameObjectsWithTag ("Red");
-		yellowweights = GameObject.FindGameObjectsWithTag ("Yellow");
-		greenweights = GameObject.FindGameObjectsWithTag ("Green");
-		scale = GameObject.Find ("Scale");
-		normalcamera = GameObject.Find ("Main Camera");
-
-		foreach (GameObject enviromentobject in enviroment)
-		{
-			enviromentobject.SetActive(false);
-		}
-		foreach (GameObject redweight in redweights)
-		{
-			redweight.GetComponent<Renderer> ().enabled = false;
-		}
-		foreach (GameObject greenweight in greenweights)
-		{
-			greenweight.GetComponent<Renderer> ().enabled = false;
-		}
-		foreach (GameObject yellowweight in yellowweights)
-		{
-			yellowweight.GetComponent<Renderer> ().enabled = false;
-		}
-
-		scaleparent.Changeparentfull ();
-		indicatorlines.Changeparentfull ();
-		scale.GetComponent<Renderer> ().enabled = false;
-
-		normalcamera.SetActive(false);
-	}
 
 
 	void AdaptiveLevels(){
@@ -118,7 +87,6 @@ public class Checkconfiguration : MonoBehaviour {
 
 	void AdaptiveDifficulty(){
 
-		Debug.Log ("Gothere2");
 		ActiveADSystem.DeclareParameters();
 
 	}

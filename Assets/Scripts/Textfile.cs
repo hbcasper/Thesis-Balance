@@ -87,9 +87,9 @@ public class Textfile : MonoBehaviour {
 		writer = new StreamWriter (logFileName);
 		startTask = System.DateTime.Now;
 		writer.WriteLine (); 
-		writer.WriteLine ("Date and Time, Participant Number, Condition, Trial#  , CorrectFallSide , ChoosedFallSide , IsCorrect? , Level, Score, TimeSet, TimeChoose, TimeTotal, #RedWeights, #YellowWeights , RedPos1, RedPos2, YellPos1, YellPos2"); 
+		writer.WriteLine ("Date and Time, Participant Number, Condition, Trial# , Level, CorrectFallSide , ChoosedFallSide , IsCorrect? , Score, TimetoChoose, #RedWeights, #YellowWeights , RedPos1, RedPos2, YellPos1, YellPos2"); 
 
-	}
+	} 
 
 	
 	public void StoreStartTime ()
@@ -119,17 +119,17 @@ public class Textfile : MonoBehaviour {
 		dataTaskLine = (startTask.Day.ToString()+ "/"
 		                  + startTask.Month.ToString()+ "/"
 		                  + startTask.Year.ToString()+ ","
-		                  + TaskCondition.participantNumber + "," 
-						+ GameManager.taskCount.ToString () + "," 
+		                  + TaskCondition.participantNumber + ","
 		                	+ TaskCondition.condition.ToString() + "," 
+		                + GameManager.taskCount.ToString () + ","
+		                + GameManager.levelnumber.ToString() + ","
 		                  + ScaleCalculator.balance.ToString () + "," 
 		                  + Useranswer.whichbutton.ToString() + ","
-		                  + Useranswer.correct.ToString()+ "," 
-		                  + GameManager.levelnumber.ToString() + ","
-		                  + GameManager.score.ToString() + "," 
-		                  + reactionTime1.ToString()+ "," 
+		                  + Useranswer.correct.ToString()+ ","
+		                + GameManager.score.ToString() + "," 
+		                  //+ reactionTime1.ToString()+ "," 
 		                  + reactionTime2.ToString() +"," 
-		                  + reactionTime3.ToString()+","
+		                 // + reactionTime3.ToString()+","
 		                  + loggedNumberWeightsRed.ToString() + "," 
 		                  + loggedNumberWeightsYellow.ToString() + "," 
 		                  + WeightsConfiguration.positionRedCube1.ToString() + "," 
