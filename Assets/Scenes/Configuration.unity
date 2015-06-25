@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   participantNumber: 
-  Set: {fileID: 0}
+  Set: {fileID: 2069054021}
 --- !u!1 &135329556
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,7 +930,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 860891047}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6}
+  m_LocalPosition: {x: 0, y: 0, z: -23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 558598078}
@@ -939,7 +939,7 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 2, y: -55}
+  m_AnchoredPosition: {x: 283, y: 34}
   m_SizeDelta: {x: 378.700012, y: 47.2999992}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &860891049
@@ -1107,7 +1107,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Reactive Difficulty
+  m_Text: 'AR
 
 '
 --- !u!222 &955326601
@@ -1696,7 +1696,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Adaptive Difficulty
+  m_Text: 'AD
 
 '
 --- !u!222 &1418839694
@@ -1825,7 +1825,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Set configuration
+  m_Text: Start
 --- !u!222 &1456816287
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2322,7 +2322,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2069054021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.69779989e-05}
+  m_LocalPosition: {x: 0, y: 0, z: -31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1456816285}
@@ -2330,7 +2330,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 6.125, y: -263}
+  m_AnchoredPosition: {x: 6, y: -105}
   m_SizeDelta: {x: 387.75, y: 88}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2069054023
@@ -2383,18 +2383,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11444498, guid: 10c103d6cf634f944be760ebbc53dab9, type: 2}
-        m_MethodName: SaveParticipantNumber
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Participant
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2069054023}
         m_MethodName: NextLevelButton
         m_Mode: 5
@@ -2404,7 +2392,7 @@ MonoBehaviour:
             Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Participant
+          m_StringArgument: UserInstruction
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

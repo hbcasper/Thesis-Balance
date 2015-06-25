@@ -7,7 +7,7 @@ public class ToogleOptions : MonoBehaviour {
 	public bool ActiveHiddenStates = false;
 	public bool ActiveAdaptiveDificulty = false;
 	public bool ActiveAdaptiveLevels = false;
-	public int condition = 0;
+	public int condition = 1;
 	//public int HS;
 	//public int AD; 
 
@@ -35,7 +35,7 @@ public class ToogleOptions : MonoBehaviour {
 		} else {
 			ActiveHiddenStates = false;
 		}
-		condition = 1;
+
 	}
 	public void ActiveAD () {
 		if (ActiveAdaptiveDificulty == false) {
@@ -52,7 +52,7 @@ public class ToogleOptions : MonoBehaviour {
 		} else {
 			ActiveAdaptiveLevels = false;
 		}
-		condition = 3; 
+		 
 	}
 	
 }
