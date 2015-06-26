@@ -12,9 +12,9 @@ public class Seecubes : MonoBehaviour {
 	private GameObject GameConfigurationToogles;
 	int cubeColor=0;
 	public bool cubeIsActive=false;
-	public int myValue = 0;
+	public int myValue;
 
-	int nameLenght; 
+	public int nameLenght; 
 	public int cubeIndex;
 
 
@@ -58,6 +58,7 @@ public class Seecubes : MonoBehaviour {
 			ActiveCubesRS ();
 
 			}
+		calculatecubevalue ();
 	}
 
 	void ActiveCubesRS(){
@@ -135,7 +136,7 @@ public class Seecubes : MonoBehaviour {
 		gameObject.GetComponent<Renderer> ().material.color = Color.clear;
 	
 		gameObject.GetComponent<Collider> ().enabled = false;
-		myValue = 0;
+	
 			
 	}
 
@@ -154,17 +155,36 @@ public class Seecubes : MonoBehaviour {
 
 		if (cubeColor == 1){
 				gameObject.GetComponent<Renderer> ().material.color = Color.red;
-				myValue=cubeIndex*1;
+				
 		}
 		else if (cubeColor == 2){
 				gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
-				myValue=cubeIndex*2;
+				
 			}
 		else if (cubeColor == 3){
 				gameObject.GetComponent<Renderer> ().material.color = Color.green;
-				myValue=cubeIndex*3;
+
 				}
 
+
+	}
+
+	void calculatecubevalue() {
+
+		if(cubeIsActive == true){
+			if (gameObject.GetComponent<Renderer> ().material.color == Color.red)
+				{
+					myValue=cubeIndex*1;
+				}
+		if (gameObject.GetComponent<Renderer> ().material.color == Color.yellow)
+			{
+				myValue=cubeIndex*2;
+			}
+		}
+		else {
+			myValue = 0;
+		}
+	
 	}
 }
 //  Only in Virtual Reality

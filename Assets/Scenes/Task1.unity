@@ -463,6 +463,7 @@ MonoBehaviour:
   colorName: 
   cubeIsActive: 0
   myValue: 0
+  nameLenght: 0
   cubeIndex: 0
 --- !u!23 &36448053
 MeshRenderer:
@@ -1284,6 +1285,7 @@ MonoBehaviour:
   colorName: 
   cubeIsActive: 0
   myValue: 0
+  nameLenght: 0
   cubeIndex: 0
 --- !u!23 &144270116
 MeshRenderer:
@@ -1407,6 +1409,7 @@ MonoBehaviour:
   colorName: 
   cubeIsActive: 0
   myValue: 0
+  nameLenght: 0
   cubeIndex: 0
 --- !u!23 &146220914
 MeshRenderer:
@@ -1848,6 +1851,7 @@ MonoBehaviour:
   colorName: 
   cubeIsActive: 0
   myValue: 0
+  nameLenght: 0
   cubeIndex: 0
 --- !u!23 &202068864
 MeshRenderer:
@@ -4244,6 +4248,7 @@ MonoBehaviour:
   colorName: 
   cubeIsActive: 0
   myValue: 0
+  nameLenght: 0
   cubeIndex: 0
 --- !u!23 &523814109
 MeshRenderer:
@@ -4574,6 +4579,7 @@ MonoBehaviour:
   colorName: 
   cubeIsActive: 0
   myValue: 0
+  nameLenght: 0
   cubeIndex: 0
 --- !u!23 &548114622
 MeshRenderer:
@@ -7574,6 +7580,7 @@ MonoBehaviour:
   colorName: 
   cubeIsActive: 0
   myValue: 0
+  nameLenght: 0
   cubeIndex: 0
 --- !u!23 &865910510
 MeshRenderer:
@@ -7961,6 +7968,7 @@ MonoBehaviour:
   colorName: 
   cubeIsActive: 0
   myValue: 0
+  nameLenght: 0
   cubeIndex: 0
 --- !u!23 &938204855
 MeshRenderer:
@@ -10230,6 +10238,7 @@ MonoBehaviour:
   colorName: 
   cubeIsActive: 0
   myValue: 0
+  nameLenght: 0
   cubeIndex: 0
 --- !u!23 &1119595924
 MeshRenderer:
@@ -13499,7 +13508,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11495986, guid: f6187022eef21b14b9403e76ef680442, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 438232, guid: f6187022eef21b14b9403e76ef680442, type: 2}
       propertyPath: m_LocalPosition.x
@@ -15003,6 +15012,7 @@ MonoBehaviour:
   colorName: 
   cubeIsActive: 0
   myValue: 0
+  nameLenght: 0
   cubeIndex: 0
 --- !u!23 &1553037964
 MeshRenderer:
@@ -16507,6 +16517,7 @@ MonoBehaviour:
   colorName: 
   cubeIsActive: 0
   myValue: 0
+  nameLenght: 0
   cubeIndex: 0
 --- !u!23 &1708643731
 MeshRenderer:
@@ -16815,6 +16826,7 @@ MonoBehaviour:
   colorName: 
   cubeIsActive: 0
   myValue: 0
+  nameLenght: 0
   cubeIndex: 0
 --- !u!23 &1779092437
 MeshRenderer:

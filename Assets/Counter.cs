@@ -56,6 +56,7 @@ public class Counter : MonoBehaviour {
 		
 		startTime = System.DateTime.Now;
 		maxtime = 3;
+		Log.StoreReadyTime ();
 		
 		counterMode = "ask";
 		
@@ -107,6 +108,7 @@ public class Counter : MonoBehaviour {
 				if (Scale.GetComponent<Animate>().whichbutton == 3){	
 					Log.StoreEndTime();
 						}
+						GameObject.Find("Invisible Spaces").GetComponent<ColorcubesAD>().CalculateWeight();
 						Log.write();
 						Next.SetActive(true);
 						counterMode = "none";

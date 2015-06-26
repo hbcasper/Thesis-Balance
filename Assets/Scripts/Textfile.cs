@@ -77,7 +77,7 @@ public class Textfile : MonoBehaviour {
 		sceneName = Application.loadedLevelName; 
 		
 		//        Debug.Log (FinalData.gender.ToString ());
-		StoreStartTime (); 
+		//StoreStartTime (); 
 		createLogFile (); 
 		
 	}
@@ -97,7 +97,7 @@ public class Textfile : MonoBehaviour {
 		writer = new StreamWriter (logFileName);
 		startTask = System.DateTime.Now;
 		writer.WriteLine (); 
-		writer.WriteLine ("Date and Time, Participant Number, Condition, Trial# , Level, CorrectFallSide , ChoosedFallSide , IsCorrect? , Score, TimetoChoose, #RedWeights, #YellowWeights , RedPos1, RedPos2, YellPos1, YellPos2"); 
+		writer.WriteLine ("Date and Time, Participant Number, Condition, Trial# , Level, CorrectFallSide , ChoosedFallSide , IsCorrect? , Score, TimetoChoose, LeftRedPos, LeftYellPos, RightRedPos, RightYellPos,TotalWeightLeft, TotalWeightRight,DifferenceOfWeights"); 
 
 	} 
 

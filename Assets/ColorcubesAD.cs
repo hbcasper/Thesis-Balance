@@ -13,6 +13,10 @@ public class ColorcubesAD : MonoBehaviour {
 		activecubes = gameObject.GetComponentsInChildren<Seecubes> ();
 	}
 
+	public void Update(){
+
+		}
+
 
 	public void ActiveCubesAD() {
 		
