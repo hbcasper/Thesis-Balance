@@ -14,7 +14,7 @@ using System.Collections;
 
 	void Start () {
 		TakeVarHere = gameObject.GetComponent<ArduinoInputBehavior>();
-		//public void restartvalue();
+		restartvalue();
 	}
 
 	void Update ()
@@ -36,9 +36,9 @@ using System.Collections;
 	{
 		whichbutton = 0;
 	}
-//	public void restartvalue(){
-//		whichbutton = 3;
-//	}
+	public void restartvalue(){
+		whichbutton = 3;
+	}
 
 
 	public void compare()

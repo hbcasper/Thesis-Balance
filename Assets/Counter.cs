@@ -102,8 +102,6 @@ public class Counter : MonoBehaviour {
 			else if (counterMode == "balance"){
 						
 						Scale.GetComponent<Animate>().animate();
-
-						Scale.GetComponent<Animate>().whichbutton = 3; ///CHECK!
 						Scale.GetComponent<Animate>().compare();
 						Log.StoreEndTime(); //CHECK!
 						Log.write();
