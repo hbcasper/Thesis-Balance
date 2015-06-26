@@ -16,6 +16,7 @@ public class Showcounter : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		counter = GetComponent <Text> ();
+
 		TimeCounter = ExerciseManager.GetComponent<Counter> ();
 	
 	}

@@ -1,0 +1,5 @@
+
+Date and Time, Participant Number, Condition, Trial# , Level, CorrectFallSide , ChoosedFallSide , IsCorrect? , Score, TimetoChoose, #RedWeights, #YellowWeights , RedPos1, RedPos2, YellPos1, YellPos2
+26/6/2015,12,1,1,1,1,3,0,0,735774.12:00:42.9329645,0,0,0,2,0,0,-2,0,0,0
+26/6/2015,12,1,2,1,2,1,0,0,735774.12:00:50.6881014,0,0,-1,0,0,0,1,0,0,0
+26/6/2015,12,1,2,1,2,3,0,0,735774.12:00:55.8074925,0,0,-1,0,0,0,1,0,0,0

@@ -4,6 +4,8 @@ using System.IO;
 using UnityEngine.UI;
 using System.Text;
 using System;
+using System.Threading;
+
 
 public class Counter : MonoBehaviour {
 
@@ -22,7 +24,7 @@ public class Counter : MonoBehaviour {
 	public GameObject Next;
 	public GameObject Question;
 	public GameObject Correct;
-	public GameObject Incorrect;
+
 
 
 	Animate Scaledata;
@@ -58,6 +60,13 @@ public class Counter : MonoBehaviour {
 		counterMode = "ask";
 		
 	}
+	void balancecounter(){
+		startTime = System.DateTime.Now;
+		maxtime = 1;
+		counterMode = "balance";
+		
+		}
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -82,24 +91,30 @@ public class Counter : MonoBehaviour {
 			
 				Scale.SetActive(true);
 				Fulcrum.SetActive(true);
-				Scale.GetComponent<Animate>().animate();
-				Scale.GetComponent<Animate>().whichbutton = 3;
-				Scale.GetComponent<Animate>().compare();
-				Next.SetActive(true);
-				Correct.SetActive(true);
-				Incorrect.SetActive(true);
-				Choosebuttons.SetActive(false);
-				Log.StoreEndTime();
-				Log.write();
 				Question.SetActive(false);
+			
+				Correct.SetActive(true);
 
+				Choosebuttons.SetActive(false);
+				balancecounter();
+			}
 
-				counterMode = "none";
-				//Animate.animate();
+			else if (counterMode == "balance"){
+						
+						Scale.GetComponent<Animate>().animate();
+						Scale.GetComponent<Animate>().whichbutton = 3;
+						Scale.GetComponent<Animate>().compare();
+						Log.StoreEndTime();
+						Log.write();
+				Next.SetActive(true);
+						counterMode = "none";
+					}
+				}
 
 			}
+
 		
 		}
 	
-	}
-}
+	
+
