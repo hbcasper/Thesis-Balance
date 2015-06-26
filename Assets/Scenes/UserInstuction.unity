@@ -1618,9 +1618,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "In the next tasks you will see a scale with weights for 4 seconds\nYou
     will have to find out to which side will fall, or if it stays balanced\n\nConsider
-    that the yellow cilinders double the weight of the red cilinders: \n\n\n\n\n\nAfter
-    watch the scale you will have 3 seconds to choose the side you think will fall
-    \n\n\n\n\n\n\n\n\n\n\n\n\n"
+    that the yellow cylinders have double the weight of the red cylinders: \n\n\n\n\n\nYou
+    will have 3 seconds to choose the side you think will fall \n\n\n\n\n\n\n\n\n\n\n\n\n"
 --- !u!222 &1796546343
 CanvasRenderer:
   m_ObjectHideFlags: 0
