@@ -15,7 +15,7 @@ public class Seecubes : MonoBehaviour {
 	public int myValue = 0;
 
 	int nameLenght; 
-	int cubeIndex;
+	public int cubeIndex;
 
 
 	private GameObject ExcerciseManager;
@@ -38,6 +38,11 @@ public class Seecubes : MonoBehaviour {
 	
     void Update () 
 	{
+		if (gameObject.GetComponent<Renderer> ().enabled == true) {
+			cubeIsActive = true;
+		} else {
+			cubeIsActive = false;
+		}
 		if (GameObject.Find ("GameConfiguration") == true) 
 		{
 			GameConfigurationToogles = GameObject.Find ("GameConfiguration");
@@ -60,9 +65,11 @@ public class Seecubes : MonoBehaviour {
 		if (((Valores.pnr1 == cubeIndex || Valores.pnr2 == cubeIndex) && gameObject.tag == "Right")||((Valores.pnl1 == cubeIndex || Valores.pnl2 == cubeIndex) && gameObject.tag == "Left"))
 		{
 			gameObject.GetComponent<Collider> ().enabled = true;
+		
 			gameObject.GetComponent<Renderer> ().enabled = true;
 		} else {
 			gameObject.GetComponent<Collider> ().enabled = false;	
+		
 			gameObject.GetComponent<Renderer> ().enabled = false;
 		}
 
@@ -109,6 +116,7 @@ public class Seecubes : MonoBehaviour {
 			    {
 
 				paintcube();
+			
 				gameObject.GetComponent<Collider> ().enabled = true;
 				}
 		}
@@ -117,6 +125,7 @@ public class Seecubes : MonoBehaviour {
 			if (Valores.leftSideAD.Contains(gameObject.name[nameLenght - 1].ToString()))
 				{
 				paintcube();
+
 				gameObject.GetComponent<Collider> ().enabled = true;
 				}
 			}
@@ -124,6 +133,7 @@ public class Seecubes : MonoBehaviour {
 	}
 	public void NoActiveCubesAD(){
 		gameObject.GetComponent<Renderer> ().material.color = Color.clear;
+	
 		gameObject.GetComponent<Collider> ().enabled = false;
 		myValue = 0;
 			

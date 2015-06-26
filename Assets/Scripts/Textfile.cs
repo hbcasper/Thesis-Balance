@@ -19,6 +19,11 @@ public class Textfile : MonoBehaviour {
 
 	private GameObject TaskData;
 
+	private GameObject Cubes;
+	private Registeractivecubes CubesOrder;
+	private ColorcubesAD Sidetotal;
+
+
 	string dataTaskLine;
 
 	// Config Scene necessary Particpipant# & Age
@@ -56,6 +61,10 @@ public class Textfile : MonoBehaviour {
 
 		GameManager = gameObject.GetComponent<Gamemanager> ();
 
+		Cubes = GameObject.Find ("Invisible Spaces");
+		CubesOrder = Cubes.GetComponent<Registeractivecubes> ();
+		Sidetotal = Cubes.GetComponent<ColorcubesAD> ();
+
 		
 		Scale = GameObject.Find ("Scale"); 
 		Useranswer = Scale.GetComponent<Animate> ();
@@ -63,6 +72,7 @@ public class Textfile : MonoBehaviour {
 		
 		TaskData = GameObject.Find ("GameConfiguration");
 		TaskCondition = TaskData.GetComponent<ToogleOptions> ();
+
 	 
 		sceneName = Application.loadedLevelName; 
 		
@@ -116,30 +126,24 @@ public class Textfile : MonoBehaviour {
 		// reactionTime3 = endTime.Subtract(readyTime); 
 		
 		
-		dataTaskLine = (startTask.Day.ToString()+ "/"
-		                  + startTask.Month.ToString()+ "/"
-		                  + startTask.Year.ToString()+ ","
-		                  + TaskCondition.participantNumber + ","
-		                	+ TaskCondition.condition.ToString() + "," 
-		                + GameManager.taskCount.ToString () + ","
-		                + GameManager.levelnumber.ToString() + ","
-		                  + ScaleCalculator.balance.ToString () + "," 
-		                  + Useranswer.whichbutton.ToString() + ","
-		                  + Useranswer.correct.ToString()+ ","
-		                + GameManager.score.ToString() + "," 
-		                  //+ reactionTime1.ToString()+ "," 
-		                  + reactionTime2.ToString() +"," 
-		                 // + reactionTime3.ToString()+","
-		                  + loggedNumberWeightsRed.ToString() + "," 
-		                  + loggedNumberWeightsYellow.ToString() + "," 
-		                  + WeightsConfiguration.positionRedCube1.ToString() + "," 
-		                  + WeightsConfiguration.positionRedCube2.ToString() + ","
-		                  + WeightsConfiguration.positionRedCube3.ToString() + "," 
-		                  + WeightsConfiguration.positionRedCube4.ToString() +","
-		                  + WeightsConfiguration.positionYellowCube1.ToString() + "," 
-		                  + WeightsConfiguration.positionYellowCube2.ToString() + "," 
-		                  + WeightsConfiguration.positionYellowCube3.ToString() + "," 
-		                  + WeightsConfiguration.positionYellowCube4.ToString()); 
+		dataTaskLine = (startTask.Day.ToString () + "/"
+			+ startTask.Month.ToString () + "/"
+			+ startTask.Year.ToString () + ","
+			+ TaskCondition.participantNumber + ","
+			+ TaskCondition.condition.ToString () + "," 
+			+ GameManager.taskCount.ToString () + ","
+			+ GameManager.levelnumber.ToString () + ","
+			+ ScaleCalculator.balance.ToString () + "," 
+			+ Useranswer.whichbutton.ToString () + ","
+			+ Useranswer.correct.ToString () + ","
+			+ GameManager.score.ToString () + "," 
+		//+ reactionTime1.ToString()+ "," 
+			+ reactionTime2.ToString () + "," 
+		// + reactionTime3.ToString()+"," 
+			+ CubesOrder.activecubes + ","
+		     + Sidetotal.totalLeft.ToString() + ","   
+		     + Sidetotal.totalRight.ToString() + ","
+		     + Sidetotal.difference.ToString()); 
 		Debug.Log (dataTaskLine);
 		writer.WriteLine (dataTaskLine);
 
