@@ -764,9 +764,6 @@ GameObject:
   - 33: {fileID: 656167565}
   - 65: {fileID: 656167564}
   - 23: {fileID: 656167563}
-  - 114: {fileID: 656167562}
-  - 114: {fileID: 656167561}
-  - 114: {fileID: 656167560}
   m_Layer: 0
   m_Name: wEIGHT
   m_TagString: Left
@@ -774,47 +771,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &656167560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11449786, guid: 6ee49b52680fbbb4faa7f726deae208d,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 656167559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c79c5faf8356f7438667657a028f5c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cubecolor: Grey
---- !u!114 &656167561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11483752, guid: 6ee49b52680fbbb4faa7f726deae208d,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 656167559}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37a340121a132ee4daa88e825ee02b83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  result: Incorrect
---- !u!114 &656167562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11426308, guid: 6ee49b52680fbbb4faa7f726deae208d,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 656167559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25ebe72df30f592419de543bd0ea0498, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colorName: 
-  cubeIsActive: 0
-  myValue: 0
 --- !u!23 &656167563
 MeshRenderer:
   m_ObjectHideFlags: 0
