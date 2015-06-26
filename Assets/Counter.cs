@@ -35,7 +35,7 @@ public class Counter : MonoBehaviour {
 
 	
 		Log = gameObject.GetComponent<Textfile> ();
-		Scaledata = Scale.GetComponent<Animate> ();
+
 
 
 		taskcounter();
@@ -79,8 +79,12 @@ public class Counter : MonoBehaviour {
 			}
 			else if (counterMode == "ask"){
 				Debug.Log ("maxasktime");
+			
 				Scale.SetActive(true);
 				Fulcrum.SetActive(true);
+				Scale.GetComponent<Animate>().animate();
+				Scale.GetComponent<Animate>().whichbutton = 3;
+				Scale.GetComponent<Animate>().compare();
 				Next.SetActive(true);
 				Correct.SetActive(true);
 				Incorrect.SetActive(true);
@@ -88,8 +92,10 @@ public class Counter : MonoBehaviour {
 				Log.StoreEndTime();
 				Log.write();
 				Question.SetActive(false);
-				//Animate.animate();
+
+
 				counterMode = "none";
+				//Animate.animate();
 
 			}
 		

@@ -21,7 +21,7 @@ public class Restartscene : MonoBehaviour {
 		
 	
 
-		Readybutton.SetActive(true);	
+		//Readybutton.SetActive(true);	
 		Instructions.SetActive (true);
 		Scale.transform.rotation = Quaternion.identity;
 
