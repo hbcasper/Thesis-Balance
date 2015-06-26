@@ -92,6 +92,7 @@ public class Counter : MonoBehaviour {
 				Scale.SetActive(true);
 				Fulcrum.SetActive(true);
 				Question.SetActive(false);
+				Scale.GetComponent<Animate>().compare();
 			
 				Correct.SetActive(true);
 
@@ -102,8 +103,10 @@ public class Counter : MonoBehaviour {
 			else if (counterMode == "balance"){
 						
 						Scale.GetComponent<Animate>().animate();
-						Scale.GetComponent<Animate>().compare();
-						Log.StoreEndTime(); //CHECK!
+						
+				if (Scale.GetComponent<Animate>().whichbutton == 3){	
+					Log.StoreEndTime();
+						}
 						Log.write();
 						Next.SetActive(true);
 						counterMode = "none";

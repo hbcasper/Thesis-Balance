@@ -106,7 +106,7 @@ public class Textfile : MonoBehaviour {
 	{
 		endTime = System.DateTime.Now; 
 	}
-	
+
 	public void write () {
 		
 		reactionTime1 = readyTime.Subtract(startTime); 
