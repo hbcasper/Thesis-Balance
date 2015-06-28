@@ -104,10 +104,12 @@ public class Counter : MonoBehaviour {
 			else if (counterMode == "balance"){
 						
 						Scale.GetComponent<Animate>().animate();
+
 						
 				if (Scale.GetComponent<Animate>().whichbutton == 3){	
 					Log.StoreEndTime();
 						}
+				GameObject.Find("Invisible Spaces").GetComponent<Registeractivecubes>().Checkcubes();
 						GameObject.Find("Invisible Spaces").GetComponent<ColorcubesAD>().CalculateWeight();
 						Log.write();
 						Next.SetActive(true);

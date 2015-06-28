@@ -19,11 +19,12 @@ public class Registeractivecubes : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public void Checkcubes () {
 
 		foreach (Seecubes script in Cubes) {
 
-			if (script.cubeIsActive == true) {
+			if (script.cubeIsActive == true) 
+			{
 				if(script.gameObject.tag == "Left"){
 
 					if (script.colorName == "red"){
@@ -32,24 +33,31 @@ public class Registeractivecubes : MonoBehaviour {
 					if (script.colorName == "yellow"){
 						leftyellow = script.cubeIndex.ToString();
 				}
+
 			}
 				if(script.gameObject.tag == "Right"){
 					
 					if (script.colorName == "red"){
 						rightred = script.cubeIndex.ToString();
 					}
+
 					if (script.colorName == "yellow"){
 						rightyellow = script.cubeIndex.ToString();
 					}
+
 				}
 			
 			}
-
 		
 		}
 
 		activecubes = (leftred+","+leftyellow+","+rightred+","+rightyellow);
 		Debug.Log (activecubes);
-	
+	}
+	public void erasecubes(){
+		leftred = "0";
+		leftyellow ="0";
+		rightred = "0";
+		rightyellow="0";
 	}
 }

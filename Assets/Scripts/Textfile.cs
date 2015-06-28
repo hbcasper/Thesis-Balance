@@ -23,49 +23,35 @@ public class Textfile : MonoBehaviour {
 	private Registeractivecubes CubesOrder;
 	private ColorcubesAD Sidetotal;
 
-
 	string dataTaskLine;
-
-	// Config Scene necessary Particpipant# & Age
-	//    private Userfinaldata FinalData;
-	//    private GameObject finalData; 
 	
 	StreamWriter writer;  
-	string sceneName; 
+	 
 	string logFileName; 
-	//    int loggedTask;
-	int loggedCorrect; 
-	//    int loggedUserButton; 
-	int loggedCorrectButton; 
-	int loggedLevelNumber; 
-	int loggedScore; 
-	int loggedNumberWeightsRed; 
-	int loggedNumberWeightsYellow;
-	
+
 	DateTime startTask;
 
-	public DateTime startTime;
+	//----------- time
+	
 	public DateTime readyTime;
 	public DateTime endTime;
 	
 	TimeSpan reactionTime1; 
 	TimeSpan reactionTime2;
 	TimeSpan reactionTime3; 
-	
-	
+
 	void Start () {
-		
+
+		// ------------ Calling variables---------
 		Instructions = GameObject.Find ("Instructions"); 
 		WeightsConfiguration = Instructions.GetComponent<Instruction> (); 
-		
-
+	
 		GameManager = gameObject.GetComponent<Gamemanager> ();
 
 		Cubes = GameObject.Find ("Invisible Spaces");
 		CubesOrder = Cubes.GetComponent<Registeractivecubes> ();
 		Sidetotal = Cubes.GetComponent<ColorcubesAD> ();
 
-		
 		Scale = GameObject.Find ("Scale"); 
 		Useranswer = Scale.GetComponent<Animate> ();
 		ScaleCalculator = Scale.GetComponent<ArduinoInputBehavior> (); 
@@ -73,18 +59,17 @@ public class Textfile : MonoBehaviour {
 		TaskData = GameObject.Find ("GameConfiguration");
 		TaskCondition = TaskData.GetComponent<ToogleOptions> ();
 
-	 
-		sceneName = Application.loadedLevelName; 
-		
-		//        Debug.Log (FinalData.gender.ToString ());
-		//StoreStartTime (); 
+		// ---------------------
+
+		startTask = System.DateTime.Now; 
+
 		createLogFile (); 
-		
 	}
+
 	
 	private void createLogFile(){
 		
-		string logFilePath = Application.persistentDataPath + @"Assets\Resources\" + sceneName + "_balancescale_nr_"; //tablet
+		string logFilePath = Application.persistentDataPath + @"participant_"; //tablet
 		//string logFilePath = @"Assets\ParticipantFiles\" + "_balancescale_nr_"; // computer
 		int version = 0;
 		logFileName = logFilePath + version + ".txt";
@@ -93,20 +78,11 @@ public class Textfile : MonoBehaviour {
 			version ++;	
 			logFileName = logFilePath + version + ".txt";
 		}
+
 		
 		writer = new StreamWriter (logFileName);
-		startTask = System.DateTime.Now;
-		writer.WriteLine (); 
-		writer.WriteLine ("Date and Time, Participant Number, Condition, Trial# , Level, CorrectFallSide , ChoosedFallSide , IsCorrect? , Score, TimetoChoose, LeftRedPos, LeftYellPos, RightRedPos, RightYellPos,TotalWeightLeft, TotalWeightRight,DifferenceOfWeights"); 
-
 	} 
 
-	
-	public void StoreStartTime ()
-	{
-		startTime = System.DateTime.Now;
-	}
-	
 	public void StoreReadyTime()
 	{
 		readyTime = System.DateTime.Now; 
@@ -118,14 +94,11 @@ public class Textfile : MonoBehaviour {
 	}
 
 	public void write () {
-		
-		reactionTime1 = readyTime.Subtract(startTime); 
+
 		reactionTime2 = endTime.Subtract(readyTime); 
-		reactionTime3 = endTime.Subtract (startTime); 
-		
-		// reactionTime3 = endTime.Subtract(readyTime); 
-		
-		
+
+			// Date and Time, Participant Number, Condition, Trial# , Level, CorrectFallSide , ChoosedFallSide , IsCorrect? , Score, TimetoChoose, LeftRedPos, LeftYellPos, RightRedPos, RightYellPos,TotalWeightLeft, TotalWeightRight,DifferenceOfWeights
+
 		dataTaskLine = (startTask.Day.ToString () + "/"
 			+ startTask.Month.ToString () + "/"
 			+ startTask.Year.ToString () + ","
@@ -144,7 +117,9 @@ public class Textfile : MonoBehaviour {
 		     + Sidetotal.totalLeft.ToString() + ","   
 		     + Sidetotal.totalRight.ToString() + ","
 		     + Sidetotal.difference.ToString()); 
+
 		Debug.Log (dataTaskLine);
+
 		writer.WriteLine (dataTaskLine);
 
 		writer.Flush ();
