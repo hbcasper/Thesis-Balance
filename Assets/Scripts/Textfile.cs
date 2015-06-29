@@ -29,8 +29,7 @@ public class Textfile : MonoBehaviour {
 	private Instruction CubePosition;
 	private GameObject cubePosition; 
 
-	private Userfinaldata FinalData;
-	private GameObject finalData; 
+
 	
 	private StreamWriter writer;  
 	string sceneName; 
@@ -72,8 +71,8 @@ public class Textfile : MonoBehaviour {
 		correctButton = GameObject.Find ("Scale");
 		CorrectButton = correctButton.GetComponent<ArduinoInputBehavior> (); 
 
-		finalData = GameObject.Find ("Userdata");
-		FinalData = finalData.GetComponent<Userfinaldata> ();
+		//finalData = GameObject.Find ("Userdata");
+		//FinalData = finalData.GetComponent<Userfinaldata> ();
 		
 		sceneName = Application.loadedLevelName; 
 
@@ -100,9 +99,9 @@ public class Textfile : MonoBehaviour {
 		writer = new StreamWriter (logFileName);
 		writer.Write ("Date and time: " + System.DateTime.Now.ToString());
 		writer.WriteLine (); 
-		writer.Write ("Participant #: " + FinalData.participantNumber.ToString ());
+		//writer.Write ("Participant #: " + FinalData.participantNumber.ToString ());
 		writer.WriteLine (); 
-		writer.Write ("Age: " + FinalData.participantAge.ToString());
+		//writer.Write ("Age: " + FinalData.participantAge.ToString());
 		writer.WriteLine (); 	      
 		writer.WriteLine ("_____________________________________________________________________________________________________________________________________________________________________"); 
 		writer.WriteLine ("Trial#  , Correct , Button Correct , Button Pressed , Level, Score, #RedWeights, #YellowWeights ,TimeSet, TimeChoose, TimeTotal, RedPos1, RedPos2, YellPos1, YellPos2"); 

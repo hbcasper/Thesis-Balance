@@ -323,7 +323,6 @@ GameObject:
   - 224: {fileID: 99147080}
   - 222: {fileID: 99147082}
   - 114: {fileID: 99147081}
-  - 114: {fileID: 99147083}
   m_Layer: 5
   m_Name: ParticipantNumberText
   m_TagString: Untagged
@@ -380,19 +379,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 99147079}
---- !u!114 &99147083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 99147079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 961dece69d0263749b59622e47d58496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  participantNumber: 
-  Set: {fileID: 0}
 --- !u!1 &135329556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,7 +1141,6 @@ GameObject:
   - 222: {fileID: 1278095328}
   - 114: {fileID: 1278095327}
   - 114: {fileID: 1278095326}
-  - 114: {fileID: 1278095329}
   m_Layer: 5
   m_Name: Participant number
   m_TagString: Untagged
@@ -1231,7 +1216,7 @@ MonoBehaviour:
   m_EndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 99147083}
+      - m_Target: {fileID: 0}
         m_MethodName: SaveParticipantNumber
         m_Mode: 1
         m_Arguments:
@@ -1291,19 +1276,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1278095324}
---- !u!114 &1278095329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1278095324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 961dece69d0263749b59622e47d58496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  participantNumber: 
-  Set: {fileID: 0}
 --- !u!1 &1289414221
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,7 +2104,7 @@ MonoBehaviour:
             Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Participant
+          m_StringArgument: UserInstuction
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
