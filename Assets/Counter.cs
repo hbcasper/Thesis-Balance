@@ -12,6 +12,10 @@ public class Counter : MonoBehaviour {
 	DateTime startTime;
 	DateTime actualTime;
 
+	public AudioClip correct;
+	public AudioClip incorrect;
+	private AudioSource source;
+
 	int maxtime;
 
 	public string counterMode;
