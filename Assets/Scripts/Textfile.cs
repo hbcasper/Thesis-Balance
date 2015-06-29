@@ -3,117 +3,86 @@ using System.Collections;
 using System.IO;
 using UnityEngine.UI;
 using System.Text;
-using System; 
+using System;  
 
 public class Textfile : MonoBehaviour {
 	
-	//int time;
-	// takes the trial number to print 
-	private Gamemanager Tasknumber;
-	private GameObject tasknumber; 
+	private Gamemanager GameManager;
+	private ToogleOptions TaskCondition;
 	
+	private GameObject Scale; 
+	private ArduinoInputBehavior ScaleCalculator;
+	private Animate Useranswer;
 	
-	// takes the number of weights for each trial
-	private Instruction Weightnumber;
-	private GameObject weightnumber; 
+	private GameObject Instructions; 
+	private Instruction WeightsConfiguration;
 	
-	// takes the correct input 
-	private ArduinoInputBehavior CorrectButton;
-	private GameObject correctButton; 
+	private GameObject TaskData;
 	
-	// takes the user input 
-	private Animate Useranswer; 
-	private GameObject useranswer; 
+	private GameObject Cubes;
+	//private Registeractivecubes CubesOrder;
+	private ColorcubesAD Sidetotal;
 	
-	// takes the position for each cube 
-	private Instruction CubePosition;
-	private GameObject cubePosition; 
+	string dataTaskLine;
 
+	StreamWriter writer;
 
 	
-	private StreamWriter writer;  
-	string sceneName; 
 	string logFileName; 
-//	int loggedTask;
-	int loggedCorrect; 
-//	int loggedUserButton; 
-	int loggedCorrectButton; 
-	int loggedLevelNumber; 
-	int loggedScore; 
-	int loggedNumberWeightsRed; 
-	int loggedNumberWeightsYellow;
 	
-	public DateTime startTime;
+	DateTime startTask;
+	
+	//----------- time
+	
 	public DateTime readyTime;
 	public DateTime endTime;
-
+	
 	TimeSpan reactionTime1; 
 	TimeSpan reactionTime2;
 	TimeSpan reactionTime3; 
 	
-	
 	void Start () {
-
-
 		
-		cubePosition = GameObject.Find ("Instructions"); 
-		CubePosition = cubePosition.GetComponent<Instruction> (); 
+		// ------------ Calling variables---------
+		Instructions = GameObject.Find ("Instructions"); 
+		WeightsConfiguration = Instructions.GetComponent<Instruction> (); 
 		
-		weightnumber = GameObject.Find ("Instructions"); 
-		Weightnumber = weightnumber.GetComponent<Instruction> (); 
+		GameManager = gameObject.GetComponent<Gamemanager> ();
 		
-		tasknumber = GameObject.Find ("Exercisemanager");
-		Tasknumber = tasknumber.GetComponent<Gamemanager> ();
+		//Cubes = GameObject.Find ("Invisible Spaces");
+		//CubesOrder = Cubes.GetComponent<Registeractivecubes> ();
+		Sidetotal = Cubes.GetComponent<ColorcubesAD> ();
 		
-		useranswer = GameObject.Find ("Scale"); 
-		Useranswer = useranswer.GetComponent<Animate> ();
+		Scale = GameObject.Find ("Scale"); 
+		Useranswer = Scale.GetComponent<Animate> ();
+		ScaleCalculator = Scale.GetComponent<ArduinoInputBehavior> (); 
 		
-		correctButton = GameObject.Find ("Scale");
-		CorrectButton = correctButton.GetComponent<ArduinoInputBehavior> (); 
-
-		//finalData = GameObject.Find ("Userdata");
-		//FinalData = finalData.GetComponent<Userfinaldata> ();
+		TaskData = GameObject.Find ("GameConfiguration");
+		TaskCondition = TaskData.GetComponent<ToogleOptions> ();
 		
-		sceneName = Application.loadedLevelName; 
-
-//		Debug.Log (FinalData.gender.ToString ());
-		StoreStartTime (); 
+		// ---------------------
+		
+		startTask = System.DateTime.Now; 
+		
 		createLogFile (); 
-		
 	}
+	
 	
 	private void createLogFile(){
 		
-		//string logFilePath = @"Assets\Resources\" + sceneName + "_balancescale_nr_";
-		 string logFilePath = @"FileManager\Resources\" + sceneName + "_balancescale_nr_"; // TabletVersion
+		string logFilePath = Application.persistentDataPath + @"participant_"; //tablet
+		//string logFilePath = @"Assets\ParticipantFiles\" + "_balancescale_nr_"; // computer
 		int version = 0;
 		logFileName = logFilePath + version + ".txt";
 		
-		
 		while (File.Exists(logFileName)) {
-			version ++;
-			
+			version ++;	
 			logFileName = logFilePath + version + ".txt";
 		}
 		
-		writer = new StreamWriter (logFileName);
-		writer.Write ("Date and time: " + System.DateTime.Now.ToString());
-		writer.WriteLine (); 
-		//writer.Write ("Participant #: " + FinalData.participantNumber.ToString ());
-		writer.WriteLine (); 
-		//writer.Write ("Age: " + FinalData.participantAge.ToString());
-		writer.WriteLine (); 	      
-		writer.WriteLine ("_____________________________________________________________________________________________________________________________________________________________________"); 
-		writer.WriteLine ("Trial#  , Correct , Button Correct , Button Pressed , Level, Score, #RedWeights, #YellowWeights ,TimeSet, TimeChoose, TimeTotal, RedPos1, RedPos2, YellPos1, YellPos2"); 
-		writer.WriteLine ("_____________________________________________________________________________________________________________________________________________________________________"); 
 		
-	}
-	
-	public void StoreStartTime ()
-	{
-		startTime = System.DateTime.Now;
-
-	}
+		writer = new StreamWriter (logFileName);
+	} 
 	
 	public void StoreReadyTime()
 	{
@@ -127,35 +96,37 @@ public class Textfile : MonoBehaviour {
 	
 	public void write () {
 		
-		// Useranswer = gameObject.GetComponent<Animate> ();
-		loggedLevelNumber = Tasknumber.levelnumber;
-		loggedCorrectButton = CorrectButton.balance; 
-//		loggedUserButton = Useranswer.whichbutton; 
-		loggedCorrect = Useranswer.correct; 
-//		loggedTask = Tasknumber.taskCount;
-		loggedScore = Useranswer.score; 
-		
-		reactionTime1 = readyTime.Subtract(startTime); 
 		reactionTime2 = endTime.Subtract(readyTime); 
-		reactionTime3 = endTime.Subtract (startTime); 
 		
-		// reactionTime3 = endTime.Subtract(readyTime); 
+		// Date and Time, Participant Number, Condition, Trial# , Level, CorrectFallSide , ChoosedFallSide , IsCorrect? , Score, TimetoChoose, LeftRedPos, LeftYellPos, RightRedPos, RightYellPos,TotalWeightLeft, TotalWeightRight,DifferenceOfWeights
 		
-	
-		writer.WriteLine (Tasknumber.taskCount.ToString () + "," + loggedCorrect.ToString () + "," + loggedCorrectButton.ToString() + "," + Useranswer.whichbutton.ToString()+ "," + loggedLevelNumber.ToString() + ","+ loggedScore.ToString() + "," + loggedNumberWeightsRed.ToString() + "," + loggedNumberWeightsYellow.ToString() + "," +  reactionTime1.ToString()+ "," +  reactionTime2.ToString() +"," + reactionTime3.ToString()+","+CubePosition.positionRedCube1.ToString() + "," + CubePosition.positionRedCube2.ToString() + ","+ CubePosition.positionRedCube3.ToString() + "," + CubePosition.positionRedCube4.ToString() +","+ CubePosition.positionYellowCube1.ToString() + "," + CubePosition.positionYellowCube2.ToString() + "," + CubePosition.positionYellowCube3.ToString() + "," + CubePosition.positionYellowCube4.ToString()); 
+		dataTaskLine = (startTask.Day.ToString () + "/"
+		                + startTask.Month.ToString () + "/"
+		                + startTask.Year.ToString () + ","
+		               // + TaskCondition.participantNumber + ","
+		                + TaskCondition.condition.ToString () + "," 
+		                + GameManager.taskCount.ToString () + ","
+		                + GameManager.levelnumber.ToString () + ","
+		                + ScaleCalculator.balance.ToString () + "," 
+		                + Useranswer.whichbutton.ToString () + ","
+		                + Useranswer.correct.ToString () + ","
+		                + GameManager.score.ToString () + "," 
+		                /////+ reactionTime1.ToString()+ "," 
+		                + reactionTime2.ToString () + "," 
+		                ///// + reactionTime3.ToString()+"," 
+		               // + CubesOrder.activecubes + ","
+		                + Sidetotal.totalLeft.ToString() + ","   
+		                + Sidetotal.totalRight.ToString() + ","); 
+		               // + Sidetotal.difference.ToString()); 
+		
+		//Debug.Log (dataTaskLine);
+		
+		writer.WriteLine (dataTaskLine);
+		
 		writer.Flush ();
 		
 	}
 	
-	void Update () {
-//		actually unneccessary Update 
-//		loggedNumberWeightsRed = Weightnumber.numberWeightsRed; 
-//		loggedNumberWeightsYellow = Weightnumber.numberWeightsYellow;
-//		loggedCorrectButton = CorrectButton.balance; 
-//		loggedUserButton = Useranswer.whichbutton; 
-//		loggedCorrect = Useranswer.correct; 
-//		loggedTask = Tasknumber.taskCount;
-		
-	}
-
+	
+	
 }

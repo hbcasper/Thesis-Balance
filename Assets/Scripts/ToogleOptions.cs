@@ -8,6 +8,7 @@ public class ToogleOptions : MonoBehaviour {
 	public bool ActiveAdaptiveDificulty = false;
 	public bool ActiveAdaptiveLevels = false;
 	public int condition = 0;
+	public string participantnumber;
 	//public int HS;
 	//public int AD; 
 
@@ -53,6 +54,9 @@ public class ToogleOptions : MonoBehaviour {
 			ActiveAdaptiveLevels = false;
 		}
 		condition = 3; 
+	}
+	public void storeparticipant(string number){
+		participantnumber = number;
 	}
 	
 }
