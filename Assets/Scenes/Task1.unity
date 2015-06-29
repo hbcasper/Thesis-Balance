@@ -439,7 +439,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
+  cubeIndex: 0
 --- !u!23 &36448053
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -705,7 +707,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
+  cubeIndex: 0
 --- !u!23 &144270116
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -826,7 +830,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
+  cubeIndex: 0
 --- !u!23 &146220914
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -960,7 +966,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
+  cubeIndex: 0
 --- !u!23 &202068864
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1491,6 +1499,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 129.239151
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4a92d471d38b849b3b91c5641d1df91c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a92d471d38b849b3b91c5641d1df91c, type: 2}
   m_IsPrefabParent: 0
@@ -1731,7 +1743,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
+  cubeIndex: 0
 --- !u!23 &523814109
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1852,7 +1866,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
+  cubeIndex: 0
 --- !u!23 &548114622
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2934,7 +2950,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
+  cubeIndex: 0
 --- !u!23 &865910510
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3128,7 +3146,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
+  cubeIndex: 0
 --- !u!23 &938204855
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3427,7 +3447,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
+  cubeIndex: 0
 --- !u!23 &1119595924
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4433,7 +4455,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
+  cubeIndex: 0
 --- !u!23 &1553037964
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4530,6 +4554,10 @@ Prefab:
     - target: {fileID: 100000, guid: bf30d577eead1ef40bcf2b404289daf4, type: 2}
       propertyPath: m_TagString
       value: AR
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bf30d577eead1ef40bcf2b404289daf4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf30d577eead1ef40bcf2b404289daf4, type: 2}
@@ -4691,6 +4719,7 @@ GameObject:
   - 114: {fileID: 1679890163}
   - 114: {fileID: 1679890164}
   - 114: {fileID: 1679890165}
+  - 114: {fileID: 1679890166}
   m_Layer: 0
   m_Name: Invisible Spaces
   m_TagString: Untagged
@@ -4770,6 +4799,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cee10965451f02c45bc17a78b28c99d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1679890166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1679890160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a246983d7bc2dae4ea3135ead9eb3792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activecubes: 
 --- !u!1 &1708643726
 GameObject:
   m_ObjectHideFlags: 0
@@ -4843,7 +4884,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
+  cubeIndex: 0
 --- !u!23 &1708643731
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5154,7 +5197,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeIsActive: 0
   myValue: 0
+  cubeIndex: 0
 --- !u!23 &1779092437
 MeshRenderer:
   m_ObjectHideFlags: 0

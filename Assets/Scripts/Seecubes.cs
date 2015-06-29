@@ -11,11 +11,11 @@ public class Seecubes : MonoBehaviour {
 	private ToogleOptions GameConfiguration;
 	private GameObject GameConfigurationToogles;
 	int cubeColor=0;
-	bool cubeIsActive=false;
+	public bool cubeIsActive=false;
 	public int myValue = 0;
 
 	int nameLenght; 
-	int cubeIndex;
+	public int cubeIndex;
 
 
 	private GameObject ExcerciseManager;
@@ -34,23 +34,27 @@ public class Seecubes : MonoBehaviour {
 		//gameObject.GetComponent<Renderer> ().enabled = false;
 		gameObject.GetComponent<Renderer> ().material.color = Color.clear;
 		gameObject.transform.localScale = new Vector3(1.4f,1.4f,1.4f);
+
+		GameConfigurationToogles = GameObject.Find ("GameConfiguration");
+		GameConfiguration = GameConfigurationToogles.GetComponent<ToogleOptions>();
 	}
 	
     void Update () 
 	{
-		if (GameObject.Find ("GameConfiguration") == true) 
-		{
-			GameConfigurationToogles = GameObject.Find ("GameConfiguration");
-			GameConfiguration = GameConfigurationToogles.GetComponent<ToogleOptions>();
-
-			if (GameConfiguration.ActiveAdaptiveDificulty == false) {
+		if (GameConfiguration.ActiveAdaptiveDificulty == false) {
 			
 				ActiveCubesRS ();
 			}
-		} else if (GameObject.Find ("GameConfiguration") == false) 
-			{
-			ActiveCubesRS ();
-			}
+
+
+
+		if (gameObject.GetComponent<Renderer> ().enabled == true) {
+			cubeIsActive = true;
+		} else {
+			cubeIsActive = false;
+		}
+
+	calculatecubevalue();
 	}
 
 	void ActiveCubesRS(){
@@ -152,6 +156,23 @@ public class Seecubes : MonoBehaviour {
 				myValue=cubeIndex*3;
 				}
 
+	}
+	void calculatecubevalue() {
+		
+		if(cubeIsActive == true){
+			if (gameObject.GetComponent<Renderer> ().material.color == Color.red)
+			{
+				myValue=cubeIndex*1;
+			}
+			if (gameObject.GetComponent<Renderer> ().material.color == Color.yellow)
+			{
+				myValue=cubeIndex*2;
+			}
+		}
+		else {
+			myValue = 0;
+		}
+		
 	}
 }
 //  Only in Virtual Reality
