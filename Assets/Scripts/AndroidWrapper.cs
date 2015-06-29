@@ -4,14 +4,19 @@ using System.Collections;
 
 
 
+
 public class AndroidWrapper : MonoBehaviour {
 
 	public string configuration;
 
-
+	private void Start () {
+		//Screen.orientation = ScreenOrientation.Portrait;
+		//Debug.Log ("Start");
+	}
 
 	private void Update(){
-		getConfiguration ();
+		//if (Input.GetKeyDown(KeyCode.Escape)) 
+		//	Application.Quit(); 
 	}
 
 	
@@ -40,10 +45,8 @@ public class AndroidWrapper : MonoBehaviour {
 		//Text configurationText = GameObject.Find("ConfigText").GetComponent<Text>();
 	
 //		Text configurationText = GetComponent<Text> ();
-		//configurationText.text = configuration;
+	//	configurationText.text = configuration;
 	}
 
-	//public void exit(){
-	///		Application.Quit(); 
-	//}
+
 }

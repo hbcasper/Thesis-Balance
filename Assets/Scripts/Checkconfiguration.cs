@@ -14,7 +14,7 @@ public class Checkconfiguration : MonoBehaviour {
 	private GameObject scale;
 	private GameObject normalcamera;
 	public TransformParent scaleparent;
-	public TransformParent indicatorlines;
+	//public TransformParent indicatorlines;
 	GameObject[] HiddenStatesObjects;
 	GameObject[] AdaptiveDifficultyObjects;
 	GameObject ReactiveSystemNext;
@@ -103,9 +103,9 @@ public class Checkconfiguration : MonoBehaviour {
 			yellowweight.GetComponent<Renderer> ().enabled = false;
 		}
 
-		scaleparent.Changeparentfull ();
-		indicatorlines.Changeparentfull ();
-		scale.GetComponent<Renderer> ().enabled = false;
+		//scaleparent.Changeparentfull ();
+		//indicatorlines.Changeparentfull ();
+		//scale.GetComponent<Renderer> ().enabled = false;
 
 		normalcamera.SetActive(false);
 	}
