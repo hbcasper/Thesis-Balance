@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class ToogleOptions : MonoBehaviour {
 
-	public bool ActiveAugmentedReality = false;
+	public bool ActiveAugmentedReality = true;
 	public bool ActiveHiddenStates = false;
 	public bool ActiveAdaptiveDificulty = false;
 	public bool ActiveAdaptiveLevels = false;
@@ -18,26 +19,8 @@ public class ToogleOptions : MonoBehaviour {
 	void Start(){
 
 		DontDestroyOnLoad (transform.gameObject);
-//		AR = 0;
-//		HS = 0; 
-//		AD = 0; 
 	}
 
-	public void ActiveAR(){
-		if (ActiveAugmentedReality == true) {
-			ActiveAugmentedReality = false;
-		} else {
-			ActiveAugmentedReality = true;
-		}
-	}
-	public void ActiveHS (){
-		if (ActiveHiddenStates == false) {
-			ActiveHiddenStates = true;
-		} else {
-			ActiveHiddenStates = false;
-		}
-		condition = 1;
-	}
 	public void ActiveAD () {
 		if (ActiveAdaptiveDificulty == false) {
 			ActiveAdaptiveDificulty = true;
@@ -55,8 +38,12 @@ public class ToogleOptions : MonoBehaviour {
 		}
 		condition = 3; 
 	}
-	public void storeparticipant(string number){
-		participantnumber = number;
+	public void storeparticipant(){
+
+		Text participantText = GameObject.Find("ParticipantNumberText").GetComponent<Text>();
+
+
+		participantnumber = participantText.text;
 	}
 	
 }
