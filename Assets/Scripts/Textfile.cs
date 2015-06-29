@@ -20,7 +20,7 @@ public class Textfile : MonoBehaviour {
 	private GameObject TaskData;
 	
 	private GameObject Cubes;
-	//private Registeractivecubes CubesOrder;
+	private RegisterActiveCubes CubesOrder;
 	private ColorcubesAD Sidetotal;
 	
 	string dataTaskLine;
@@ -40,17 +40,29 @@ public class Textfile : MonoBehaviour {
 	TimeSpan reactionTime1; 
 	TimeSpan reactionTime2;
 	TimeSpan reactionTime3; 
+
+
+
+	int TimeCounter(DateTime starttime, DateTime endtime){
+
+		int totalseconds;
+		TimeSpan TimeResult = endTime.Subtract(starttime); 
+		totalseconds = TimeResult.Seconds;
+
+		return totalseconds;
+
+	}
 	
 	void Start () {
-		
+
 		// ------------ Calling variables---------
 		Instructions = GameObject.Find ("Instructions"); 
 		WeightsConfiguration = Instructions.GetComponent<Instruction> (); 
 		
 		GameManager = gameObject.GetComponent<Gamemanager> ();
 		
-		//Cubes = GameObject.Find ("Invisible Spaces");
-		//CubesOrder = Cubes.GetComponent<Registeractivecubes> ();
+		Cubes = GameObject.Find ("Invisible Spaces");
+		CubesOrder = Cubes.GetComponent<RegisterActiveCubes> ();
 		Sidetotal = Cubes.GetComponent<ColorcubesAD> ();
 		
 		Scale = GameObject.Find ("Scale"); 
@@ -103,7 +115,7 @@ public class Textfile : MonoBehaviour {
 		dataTaskLine = (startTask.Day.ToString () + "/"
 		                + startTask.Month.ToString () + "/"
 		                + startTask.Year.ToString () + ","
-		               // + TaskCondition.participantNumber + ","
+		                + TaskCondition.participantnumber + ","
 		                + TaskCondition.condition.ToString () + "," 
 		                + GameManager.taskCount.ToString () + ","
 		                + GameManager.levelnumber.ToString () + ","
@@ -111,12 +123,14 @@ public class Textfile : MonoBehaviour {
 		                + Useranswer.whichbutton.ToString () + ","
 		                + Useranswer.correct.ToString () + ","
 		                + GameManager.score.ToString () + "," 
+		                // -----times ----
 		                /////+ reactionTime1.ToString()+ "," 
 		                + reactionTime2.ToString () + "," 
 		                ///// + reactionTime3.ToString()+"," 
-		               // + CubesOrder.activecubes + ","
-		                + Sidetotal.totalLeft.ToString() + ","   
-		                + Sidetotal.totalRight.ToString() + ","); 
+		                /// ------times
+		               + CubesOrder.activecubes + ","
+		               // + Sidetotal.totalLeft.ToString() + ","   
+		                //+ Sidetotal.totalRight.ToString() + ","); 
 		               // + Sidetotal.difference.ToString()); 
 		
 		//Debug.Log (dataTaskLine);
