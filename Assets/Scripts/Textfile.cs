@@ -129,10 +129,9 @@ public class Textfile : MonoBehaviour {
 		                ///// + reactionTime3.ToString()+"," 
 		                /// ------times
 		               + CubesOrder.activecubes + ","
-		               // + Sidetotal.totalLeft.ToString() + ","   
-		                //+ Sidetotal.totalRight.ToString() + ","); 
-		               // + Sidetotal.difference.ToString()); 
-		
+		                + Sidetotal.totalLeft.ToString() + ","   
+		               + Sidetotal.totalRight.ToString() + ","
+				+ Sidetotal.difference.ToString());
 		//Debug.Log (dataTaskLine);
 		
 		writer.WriteLine (dataTaskLine);

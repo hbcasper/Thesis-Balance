@@ -7,6 +7,7 @@ public class ColorcubesAD : MonoBehaviour {
 	Seecubes[] activecubes;
 	public int totalLeft = 0;
 	public int totalRight = 0;
+	public int difference;
 
 	public void Start(){
 		activecubes = gameObject.GetComponentsInChildren<Seecubes> ();
@@ -43,12 +44,20 @@ public class ColorcubesAD : MonoBehaviour {
 				totalLeft = totalLeft + script.myValue;
 			}
 			if (script.gameObject.tag == ("Right")){
-					totalRight = totalRight + script.myValue;
-			
+				totalRight = totalRight + script.myValue;
+				
+			}
 			
 		}
-
+		
+		if (totalLeft > totalRight) {
+			
+			difference = totalLeft - totalRight;
+		} else if (totalLeft < totalRight) {
+			
+			difference = totalRight - totalLeft;
+		} else {
+			difference = 0;
 		}
-
 }
 }

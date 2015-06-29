@@ -29,7 +29,7 @@ public class Checkconfiguration : MonoBehaviour {
 		ReactiveSystemNext = GameObject.Find ("Next");
 		ActiveADSystem = gameObject.GetComponent<InputOutputADS>();
 
-		try{
+	
 
 		GameConfiguration = GameConfigurationToogles.GetComponent<ToogleOptions>();
 		//check AR
@@ -73,7 +73,7 @@ public class Checkconfiguration : MonoBehaviour {
 //					AdaptiveDifficultyObject.SetActive(false);
 //				}
 //			}
-		} catch (Exception e){}
+		
 	}
 
 	

@@ -52,7 +52,7 @@ public class RegisterActiveCubes : MonoBehaviour {
 		}
 		
 		activecubes = (leftred+","+leftyellow+","+rightred+","+rightyellow);
-		Debug.Log (activecubes);
+
 	}
 	public void erasecubes(){
 		leftred = "0";
