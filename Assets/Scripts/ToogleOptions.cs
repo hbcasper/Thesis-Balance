@@ -4,7 +4,7 @@ using System.Collections;
 
 public class ToogleOptions : MonoBehaviour {
 
-	public bool ActiveAugmentedReality = true;
+	public bool ActiveAugmentedReality;
 	public bool ActiveHiddenStates = false;
 	public bool ActiveAdaptiveDificulty = false;
 	public bool ActiveAdaptiveLevels = false;
@@ -17,6 +17,7 @@ public class ToogleOptions : MonoBehaviour {
 
 
 	void Start(){
+		ActiveAugmentedReality = true;
 
 		DontDestroyOnLoad (transform.gameObject);
 	}
