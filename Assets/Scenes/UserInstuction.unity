@@ -581,14 +581,14 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 426686395}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 648350953}
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -46, y: 173}
+  m_AnchoredPosition: {x: -46, y: 44}
   m_SizeDelta: {x: 69, y: 126}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &447408866
@@ -837,7 +837,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 656167559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -48.0999985, y: 445.899994, z: -810}
+  m_LocalPosition: {x: -48, y: 402, z: -810}
   m_LocalScale: {x: 27.1533241, y: 13.5766621, z: 27.1533241}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1552,7 +1552,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1740556769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.5, y: 445.899994, z: -810}
+  m_LocalPosition: {x: 48, y: 402, z: -810}
   m_LocalScale: {x: 27.1533241, y: 13.5766621, z: 27.1533241}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1581,14 +1581,14 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1796546340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 33}
+  m_LocalPosition: {x: 0, y: 0, z: 52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 648350953}
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 6, y: 28}
+  m_AnchoredPosition: {x: 6, y: -70}
   m_SizeDelta: {x: 1160, y: 710}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1796546342
@@ -1616,10 +1616,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "In the next tasks you will see a scale with weights for 4 seconds\nYou
-    will have to find out to which side will fall, or if it stays balanced\n\nConsider
-    that the yellow cylinders have double the weight of the red cylinders: \n\n\n\n\n\nYou
-    will have 3 seconds to choose the side you think will fall \n\n\n\n\n\n\n\n\n\n\n\n\n"
+  m_Text: "In the following tasks you will see a scale with weights placed in it,
+    for 4 seconds.\nYou must quickly decide to which side it will fall, Left or Right,
+    or if it will stay balanced.\n\nConsider that the yellow objects are twice as
+    heavy as the red objects: \n\n\n\n\n\nYou have 3 seconds to press the button corresponding
+    to your answer.\n\n\n\n\n\n\n\n\n\n\n\n"
 --- !u!222 &1796546343
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1648,7 +1649,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1899193451}
   m_LocalRotation: {x: -.0966076329, y: 0, z: 0, w: .995322585}
-  m_LocalPosition: {x: 17, y: -26, z: 10}
+  m_LocalPosition: {x: 17, y: -159, z: 36}
   m_LocalScale: {x: 4.62408066, y: 4.62408113, z: 4.62408113}
   m_Children:
   - {fileID: 240975199}
@@ -1805,7 +1806,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2016029869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.6999998, y: 445.899994, z: -810}
+  m_LocalPosition: {x: 16, y: 402, z: -810}
   m_LocalScale: {x: 27.1533241, y: 13.5766621, z: 27.1533241}
   m_Children: []
   m_Father: {fileID: 0}
