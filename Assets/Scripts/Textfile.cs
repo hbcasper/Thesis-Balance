@@ -29,10 +29,12 @@ public class Textfile : MonoBehaviour {
 
 	
 	string logFileName; 
-	
-	DateTime startTask;
+
 	
 	//----------- time
+	
+	DateTime startTask;
+
 	
 	public DateTime readyTime;
 	public DateTime endTime;
@@ -95,6 +97,10 @@ public class Textfile : MonoBehaviour {
 		
 		writer = new StreamWriter (logFileName);
 	} 
+	public void StoreStartTime()
+	{
+		startTask = System.DateTime.Now; 
+	}
 	
 	public void StoreReadyTime()
 	{
@@ -108,9 +114,11 @@ public class Textfile : MonoBehaviour {
 	
 	public void write () {
 		
+		reactionTime1 = readyTime.Subtract(startTask);
 		reactionTime2 = endTime.Subtract(readyTime); 
+		reactionTime3 = endTime.Subtract(startTask);
 		
-		// Date and Time, Participant Number, Condition, Trial# , Level, CorrectFallSide , ChoosedFallSide , IsCorrect? , Score, TimetoChoose, LeftRedPos, LeftYellPos, RightRedPos, RightYellPos,TotalWeightLeft, TotalWeightRight,DifferenceOfWeights
+		// Date and Time, Participant Number, Condition, Trial# , Level, CorrectFallSide , ChoosedFallSide , IsCorrect? , Score, Time to Set, TimetoChoose, Total Time, LeftRedPos, LeftYellPos, RightRedPos, RightYellPos,TotalWeightLeft, TotalWeightRight,DifferenceOfWeights
 		
 		dataTaskLine = (startTask.Day.ToString () + "/"
 		                + startTask.Month.ToString () + "/"
@@ -124,15 +132,15 @@ public class Textfile : MonoBehaviour {
 		                + Useranswer.correct.ToString () + ","
 		                + GameManager.score.ToString () + "," 
 		                // -----times ----
-		                /////+ reactionTime1.ToString()+ "," 
+		               + reactionTime1.ToString()+ "," 
 		                + reactionTime2.ToString () + "," 
-		                ///// + reactionTime3.ToString()+"," 
+		               + reactionTime3.ToString()+"," 
 		                /// ------times
 		               + CubesOrder.activecubes + ","
 		                + Sidetotal.totalLeft.ToString() + ","   
 		               + Sidetotal.totalRight.ToString() + ","
 				+ Sidetotal.difference.ToString());
-		//Debug.Log (dataTaskLine);
+		Debug.Log (dataTaskLine);
 		
 		writer.WriteLine (dataTaskLine);
 		
