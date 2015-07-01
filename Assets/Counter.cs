@@ -31,7 +31,7 @@ public class Counter : MonoBehaviour {
 	public void scalemoves () {
 		
 		startTime = System.DateTime.Now;
-		maxtime = 1;
+		maxtime = 3;
 		
 		counterMode = "scalemoves";
 		
@@ -40,7 +40,7 @@ public class Counter : MonoBehaviour {
 	public void scalegoback () {
 		
 		startTime = System.DateTime.Now;
-		maxtime = 1;
+		maxtime = 3;
 		
 		counterMode = "scalegoback";
 		

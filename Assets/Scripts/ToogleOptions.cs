@@ -8,8 +8,10 @@ public class ToogleOptions : MonoBehaviour {
 	public bool ActiveHiddenStates = false;
 	public bool ActiveAdaptiveDificulty = false;
 	public bool ActiveAdaptiveLevels = false;
+	public bool Data = false;
 	public int condition = 0;
 	public string participantnumber;
+	public GameObject ParticipantNumberText;
 	//public int HS;
 	//public int AD; 
 
@@ -31,6 +33,15 @@ public class ToogleOptions : MonoBehaviour {
 
 		condition = 2; 
 	}
+	public void SaveData () {
+		if (Data == false) {
+			Data = true;
+		} else {
+			Data = false;
+		}
+		
+		condition = 2; 
+	}
 	public void ActiveAL () {
 		if (ActiveAdaptiveLevels == false) {
 			ActiveAdaptiveLevels = true;
@@ -41,7 +52,7 @@ public class ToogleOptions : MonoBehaviour {
 	}
 	public void storeparticipant(){
 
-		Text participantText = GameObject.Find("ParticipantNumberText").GetComponent<Text>();
+		Text participantText = ParticipantNumberText.GetComponent<Text>();
 
 
 		participantnumber = participantText.text;

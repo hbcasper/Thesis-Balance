@@ -103,7 +103,7 @@ public class Checkconfiguration : MonoBehaviour {
 			yellowweight.GetComponent<Renderer> ().enabled = false;
 		}
 
-		//scaleparent.Changeparentfull ();
+		scaleparent.Changeparentfull ();
 		//indicatorlines.Changeparentfull ();
 		//scale.GetComponent<Renderer> ().enabled = false;
 

@@ -5,10 +5,12 @@ using UnityEngine.UI;
 public class CorrectIncorrect : MonoBehaviour {
 	
 	private Animate Result;
+	private ArduinoInputBehavior CorrectAnswer;
 	GameObject Scale;
 	Text Resulttext;
 	public GameObject Audio;
 	PlaySounds AudioFeedback;
+	string answer;
 	
 	// Use this for initialization
 	void Start () {
@@ -16,8 +18,9 @@ public class CorrectIncorrect : MonoBehaviour {
 		Result = Scale.GetComponent<Animate> ();
 		Resulttext = GetComponent<Text> ();
 
+
 		
-		Result = Scale.GetComponent<Animate> ();
+		CorrectAnswer = Scale.GetComponent<ArduinoInputBehavior> ();
 		
 	}
 	
@@ -27,15 +30,28 @@ public class CorrectIncorrect : MonoBehaviour {
 		if (Result.correct == 0)
 		{ 
 			Resulttext.color = Color.red; 
-			Resulttext.text = "Incorrect";
-		
+			int correctanswer = CorrectAnswer.balance;
 
+			if (correctanswer == 0){
+				answer = "Balance";
+			}
+			if (correctanswer == 1){
+				answer = "Left";
+			}
+			if (correctanswer == 2){
+				answer = "Right";
+			}
+
+
+			Resulttext.text = "Incorrect \n Correct Answer: "+answer;
+		
 		}
 		
 		if (Result.correct == 1)
 		{
 			Resulttext.color = Color.green; 
 			Resulttext.text = "Correct";
+
 		
 		}
 		

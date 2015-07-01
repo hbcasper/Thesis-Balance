@@ -113,7 +113,7 @@ public class Gamemanager : MonoBehaviour {
 
 
 				}else if (taskCount == 31) {
-					Application.LoadLevel ("UserInstructionTask2");
+				Application.LoadLevel ("FinalScene");
 					
 			}
 		}

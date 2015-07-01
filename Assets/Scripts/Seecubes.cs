@@ -57,7 +57,7 @@ public class Seecubes : MonoBehaviour {
 	calculatecubevalue();
 	}
 
-	void ActiveCubesRS(){
+	public void ActiveCubesRS(){
 
 		if (((Valores.pnr1 == cubeIndex || Valores.pnr2 == cubeIndex) && gameObject.tag == "Right")||((Valores.pnl1 == cubeIndex || Valores.pnl2 == cubeIndex) && gameObject.tag == "Left"))
 		{
@@ -65,6 +65,7 @@ public class Seecubes : MonoBehaviour {
 		} else {
 			gameObject.GetComponent<Collider> ().enabled = false;	
 			gameObject.GetComponent<Renderer> ().material.color = Color.clear;
+
 		}
 
 		if ((Valores.pnr1 == cubeIndex) && gameObject.tag == "Right"){

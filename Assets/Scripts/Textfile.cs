@@ -25,6 +25,8 @@ public class Textfile : MonoBehaviour {
 	
 	string dataTaskLine;
 
+	int participant;
+
 	StreamWriter writer;
 
 	
@@ -83,68 +85,83 @@ public class Textfile : MonoBehaviour {
 	
 	
 	private void createLogFile(){
+
+		if (TaskCondition.Data == true){
 		
 		string logFilePath = Application.persistentDataPath + @"participant_"; //tablet
 		//string logFilePath = @"Assets\ParticipantFiles\" + "_balancescale_nr_"; // computer
-		int version = 0;
+		int version = 1;
 		logFileName = logFilePath + version + ".txt";
+		participant = 1;
 		
 		while (File.Exists(logFileName)) {
 			version ++;	
+			participant ++;
 			logFileName = logFilePath + version + ".txt";
 		}
 		
 		
 		writer = new StreamWriter (logFileName);
+		}
 	} 
 	public void StoreStartTime()
 	{
-		startTask = System.DateTime.Now; 
+		if (TaskCondition.Data == true) {
+			startTask = System.DateTime.Now; 
+		}
 	}
 	
 	public void StoreReadyTime()
 	{
-		readyTime = System.DateTime.Now; 
+		if (TaskCondition.Data == true) {
+			readyTime = System.DateTime.Now; 
+		}
 	}
 	
 	public void StoreEndTime()
 	{
-		endTime = System.DateTime.Now; 
+		if (TaskCondition.Data == true) {
+			endTime = System.DateTime.Now; 
+		}
 	}
 	
 	public void write () {
+		if (TaskCondition.Data == true) {
 		
-		reactionTime1 = readyTime.Subtract(startTask);
-		reactionTime2 = endTime.Subtract(readyTime); 
-		reactionTime3 = endTime.Subtract(startTask);
+			reactionTime1 = readyTime.Subtract (startTask);
+			reactionTime2 = endTime.Subtract (readyTime); 
+			reactionTime3 = endTime.Subtract (startTask);
 		
-		// Date and Time, Participant Number, Condition, Trial# , Level, CorrectFallSide , ChoosedFallSide , IsCorrect? , Score, Time to Set, TimetoChoose, Total Time, LeftRedPos, LeftYellPos, RightRedPos, RightYellPos,TotalWeightLeft, TotalWeightRight,DifferenceOfWeights
+			// Date, Time, Participant Number, Condition, Trial# , Level, CorrectFallSide , ChoosedFallSide , IsCorrect? , Score, Time to Set, TimetoChoose, Total Time, LeftRedPos, LeftYellPos, RightRedPos, RightYellPos,TotalWeightLeft, TotalWeightRight,DifferenceOfWeights
 		
-		dataTaskLine = (startTask.Day.ToString () + "/"
-		                + startTask.Month.ToString () + "/"
-		                + startTask.Year.ToString () + ","
-		                + TaskCondition.participantnumber + ","
-		                + TaskCondition.condition.ToString () + "," 
-		                + GameManager.taskCount.ToString () + ","
-		                + GameManager.levelnumber.ToString () + ","
-		                + ScaleCalculator.balance.ToString () + "," 
-		                + Useranswer.whichbutton.ToString () + ","
-		                + Useranswer.correct.ToString () + ","
-		                + GameManager.score.ToString () + "," 
-		                // -----times ----
-		               + reactionTime1.ToString()+ "," 
-		                + reactionTime2.ToString () + "," 
-		               + reactionTime3.ToString()+"," 
-		                /// ------times
-		               + CubesOrder.activecubes + ","
-		                + Sidetotal.totalLeft.ToString() + ","   
-		               + Sidetotal.totalRight.ToString() + ","
-				+ Sidetotal.difference.ToString());
-		Debug.Log (dataTaskLine);
+			dataTaskLine = (startTask.Day.ToString () + "/"
+				+ startTask.Month.ToString () + "/"
+				+ startTask.Year.ToString () + ","
+				+ startTask.Hour.ToString () + "."
+				+ startTask.Minute.ToString () + ","
+				+ participant.ToString() + ","
+				+ TaskCondition.condition.ToString () + "," 
+				+ GameManager.taskCount.ToString () + ","
+				+ GameManager.levelnumber.ToString () + ","
+				+ ScaleCalculator.balance.ToString () + "," 
+				+ Useranswer.whichbutton.ToString () + ","
+				+ Useranswer.correct.ToString () + ","
+				+ GameManager.score.ToString () + "," 
+			// -----times ----
+				+ reactionTime1.ToString () + "," 
+				+ reactionTime2.ToString () + "," 
+				+ reactionTime3.ToString () + "," 
+			/// ------times
+				+ CubesOrder.activecubes + ","
+				+ Sidetotal.totalLeft.ToString () + ","   
+				+ Sidetotal.totalRight.ToString () + ","
+				+ Sidetotal.difference.ToString ());
+			Debug.Log (dataTaskLine);
 		
-		writer.WriteLine (dataTaskLine);
+			writer.WriteLine (dataTaskLine);
 		
-		writer.Flush ();
+			writer.Flush ();
+		}
 		
 	}
 	
