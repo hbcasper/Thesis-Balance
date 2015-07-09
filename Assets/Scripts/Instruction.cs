@@ -64,10 +64,7 @@ public class Instruction : MonoBehaviour
 
 		ADSystem = levelcomesfrom.GetComponent<InputOutputADS> (); //Declare ADS variables
 
-		if (GameObject.Find("GameConfiguration") == null){// if the Game configuration is unactive run reactive system
-			level1();
-		}
-		else {                                               // If game configuration is active...
+	
 			GameConfigurationToogles = GameObject.Find ("GameConfiguration");
 			GameConfiguration = GameConfigurationToogles.GetComponent<ToogleOptions>();
 			
@@ -79,7 +76,7 @@ public class Instruction : MonoBehaviour
 			else if(GameConfiguration.ActiveAdaptiveLevels == true){ // If ADLevels is active run Adaptive levels
 				AdaptiveLevels();
 			}
-		}
+
 
 
 
@@ -90,7 +87,7 @@ public class Instruction : MonoBehaviour
 
 		if (GameObject.Find ("GameConfiguration") == true) {
 			if (GameConfiguration.ActiveAdaptiveDificulty == true) {
-				ADSystem.SendOutputADS ();
+				ADSystem.CalculatePerformance ();
 			} else if (GameConfiguration.ActiveAdaptiveLevels == true) {
 				AdaptiveLevels ();
 			

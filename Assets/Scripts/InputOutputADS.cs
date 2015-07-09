@@ -31,17 +31,21 @@ public class InputOutputADS : MonoBehaviour {
 		Exercisedata = Scale.GetComponent<Animate> ();
 	}
 
-	public void DeclareParameters () {
-		 //I have no idea of how to
-		ReceiveInputsADS ();
+
+	public void CalculatePerformance(){
+
+		// Read performance parameters 
+		reactionTime = Convert.ToSingle(performdata.endTime.Second); // number of seconds 
+		answercorrect = Convert.ToSingle (Exercisedata.correct); //correct or incorrect 0 -1 
+
+		//Calculate performance
 	}
 
 	public void ReceiveInputsADS () {
 
-	// Read Inputs of the ADSystem
+	// read performance
 
-	// all the values should be from  0 to 1
-
+	//Calculate new level
 		numberofcubes = 1; //(0-1) 0 = 1 cube - 1 = 2 cubes
 		numberofcolors = 1; //(0- 1) 0 = 1 color - 1 = 2 colors
 		equalcolors = 1; //(0-1) 0 = Same colos en each side 1 = Different color in each side
@@ -52,16 +56,6 @@ public class InputOutputADS : MonoBehaviour {
 
 	}
 
-	public void SendOutputADS(){
-
-		// all the values are from 0 - 1 
-
-		reactionTime = Convert.ToSingle(performdata.endTime.Second) /100; // NECESSARY to pass from 0 -1 
-	    answercorrect = Convert.ToSingle (Exercisedata.correct); // 0-1 0 = Incorrect. 1 = Correct
-	
-		ReceiveInputsADS ();
-
-		}
 
 
 }
