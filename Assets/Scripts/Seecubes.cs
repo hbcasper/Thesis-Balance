@@ -172,11 +172,11 @@ public class Seecubes : MonoBehaviour {
 		if(cubeIsActive == true){
 			if (gameObject.GetComponent<Renderer> ().material.color == Color.red)
 			{
-				myValue=cubeIndex*1;
+				myValue=cubeIndex*2;
 			}
 			if (gameObject.GetComponent<Renderer> ().material.color == Color.yellow)
 			{
-				myValue=cubeIndex*2;
+				myValue=cubeIndex*1;
 			}
 		}
 		else {
