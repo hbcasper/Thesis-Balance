@@ -15,7 +15,7 @@ public class Checkconfiguration : MonoBehaviour {
 	private GameObject normalcamera;
 	public TransformParent scaleparent;
 	//public TransformParent indicatorlines;
-	GameObject[] HiddenStatesObjects;
+	//GameObject[] HiddenStatesObjects;
 	GameObject[] AdaptiveDifficultyObjects;
 	GameObject ReactiveSystemNext;
 	private InputOutputADS ActiveADSystem;
@@ -24,7 +24,7 @@ public class Checkconfiguration : MonoBehaviour {
 	void Start () {
 		ARobjects = GameObject.FindGameObjectsWithTag ("AR");
 		GameConfigurationToogles = GameObject.Find ("GameConfiguration");
-		HiddenStatesObjects = GameObject.FindGameObjectsWithTag ("HiddenStates");
+		//HiddenStatesObjects = GameObject.FindGameObjectsWithTag ("HiddenStates");
 		AdaptiveDifficultyObjects = GameObject.FindGameObjectsWithTag ("AD");
 		ReactiveSystemNext = GameObject.Find ("Next");
 		ActiveADSystem = gameObject.GetComponent<InputOutputADS>();
@@ -46,14 +46,14 @@ public class Checkconfiguration : MonoBehaviour {
 		
 			//check HS
 
-		if (GameConfiguration.ActiveHiddenStates == false) 
+		//if (GameConfiguration.ActiveHiddenStates == false) 
 			
-			{	foreach (GameObject HiddenStateObject in HiddenStatesObjects) 
-				{
-					HiddenStateObject.SetActive(false);
-				}
+			//	foreach (GameObject HiddenStateObject in HiddenStatesObjects) 
+				//{
+				//	HiddenStateObject.SetActive(false);
+				//}
 
-				}
+				
 
 		//check AD
 		if (GameConfiguration.ActiveAdaptiveDificulty == true) 

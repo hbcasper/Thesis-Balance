@@ -273,13 +273,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActiveAugmentedReality: 0
-  ActiveHiddenStates: 0
   ActiveAdaptiveDificulty: 0
   ActiveAdaptiveLevels: 0
   Data: 0
   condition: 0
-  participantnumber: 
-  ParticipantNumberText: {fileID: 1190522446}
 --- !u!4 &135329558
 Transform:
   m_ObjectHideFlags: 0

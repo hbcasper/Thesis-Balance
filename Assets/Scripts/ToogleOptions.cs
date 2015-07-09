@@ -5,13 +5,13 @@ using System.Collections;
 public class ToogleOptions : MonoBehaviour {
 
 	public bool ActiveAugmentedReality;
-	public bool ActiveHiddenStates = false;
+	//public bool ActiveHiddenStates = false;
 	public bool ActiveAdaptiveDificulty = false;
 	public bool ActiveAdaptiveLevels = false;
 	public bool Data = false;
 	public int condition = 0;
-	public string participantnumber;
-	public GameObject ParticipantNumberText;
+	//public string participantnumber;
+	//public GameObject ParticipantNumberText;
 	//public int HS;
 	//public int AD; 
 
@@ -27,11 +27,14 @@ public class ToogleOptions : MonoBehaviour {
 	public void ActiveAD () {
 		if (ActiveAdaptiveDificulty == false) {
 			ActiveAdaptiveDificulty = true;
+			condition = 1; 
 		} else {
 			ActiveAdaptiveDificulty = false;
+			condition = 2; 
+
 		}
 
-		condition = 2; 
+
 	}
 	public void SaveData () {
 		if (Data == false) {
@@ -40,7 +43,7 @@ public class ToogleOptions : MonoBehaviour {
 			Data = false;
 		}
 		
-		condition = 2; 
+	
 	}
 	public void ActiveAL () {
 		if (ActiveAdaptiveLevels == false) {
@@ -48,14 +51,14 @@ public class ToogleOptions : MonoBehaviour {
 		} else {
 			ActiveAdaptiveLevels = false;
 		}
-		condition = 3; 
+	
 	}
-	public void storeparticipant(){
-
-		Text participantText = ParticipantNumberText.GetComponent<Text>();
-
-
-		participantnumber = participantText.text;
-	}
+//	public void storeparticipant(){
+//
+//		Text participantText = ParticipantNumberText.GetComponent<Text>();
+//
+//
+//		participantnumber = participantText.text;
+//	}
 	
 }
