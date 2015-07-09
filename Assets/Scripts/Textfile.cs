@@ -158,9 +158,12 @@ public class Textfile : MonoBehaviour {
 				+ Sidetotal.difference.ToString ());
 			Debug.Log (dataTaskLine);
 		
-			writer.WriteLine (dataTaskLine);
+			try{
+				writer.WriteLine (dataTaskLine);
+			
 		
 			writer.Flush ();
+			} catch (Exception e){}
 		}
 		
 	}

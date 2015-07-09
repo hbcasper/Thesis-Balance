@@ -39,7 +39,7 @@ public class InputOutputADS : MonoBehaviour {
 
 
 		// Read performance parameters 
-		reactionTime = Convert.ToSingle(performdata.endTime.Second); // number of seconds 
+		//reactionTime = Convert.ToSingle(performdata.endTime.Second); // number of seconds 
 		answercorrect = Convert.ToSingle (Exercisedata.correct); //correct or incorrect 0 -1 
 
 		//Calculate performance
