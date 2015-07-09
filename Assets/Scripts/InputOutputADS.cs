@@ -14,6 +14,8 @@ public class InputOutputADS : MonoBehaviour {
 	public int numberofcolors;
 	public float equalcolors;
 	public float equaldistance;
+
+	float performancelevel;
 	
 	//Calling values
 
@@ -34,20 +36,30 @@ public class InputOutputADS : MonoBehaviour {
 
 	public void CalculatePerformance(){
 
+
+
 		// Read performance parameters 
 		reactionTime = Convert.ToSingle(performdata.endTime.Second); // number of seconds 
 		answercorrect = Convert.ToSingle (Exercisedata.correct); //correct or incorrect 0 -1 
 
 		//Calculate performance
+
+		if (performancelevel >= 70) {
+
+		}
+		if (performancelevel <= 40) {
+
+		}
+		SetDifficulty ();
 	}
 
-	public void ReceiveInputsADS () {
+	public void SetDifficulty () {
 
 	// read performance
 
 	//Calculate new level
-		numberofcubes = 1; //(0-1) 0 = 1 cube - 1 = 2 cubes
-		numberofcolors = 1; //(0- 1) 0 = 1 color - 1 = 2 colors
+		numberofcubes = 1; //1-2 cubes
+		numberofcolors = 1; //1-2 colors
 		equalcolors = 1; //(0-1) 0 = Same colos en each side 1 = Different color in each side
 		equaldistance = 1; // ( 0 -1) 0 = Same distance on each side 1 = Different distance in each side
 

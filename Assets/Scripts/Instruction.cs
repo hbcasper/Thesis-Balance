@@ -85,19 +85,18 @@ public class Instruction : MonoBehaviour
 	public void SetInstructions (){
 
 
-		if (GameObject.Find ("GameConfiguration") == true) {
-			if (GameConfiguration.ActiveAdaptiveDificulty == true) {
-				ADSystem.CalculatePerformance ();
-			} else if (GameConfiguration.ActiveAdaptiveLevels == true) {
-				AdaptiveLevels ();
+
+		if (GameConfiguration.ActiveAdaptiveDificulty == true) {
+			ADSystem.CalculatePerformance ();
+		} else if (GameConfiguration.ActiveAdaptiveLevels == true) {
+			AdaptiveLevels ();
 			
-			} else {
-				displayinstructions ();
-			}
 		} else {
 			displayinstructions ();
 		}
 	}
+
+
 
 	
 	public void displayinstructions (){ // Run the instructions every time that you press "Next Excercise" button. 
@@ -547,25 +546,25 @@ public class Instruction : MonoBehaviour
 
 		  
 	public void AdaptiveLevels(){
-
-		
-		if (levelis.performancelevel >= 60) {
-			if (levelis.levelnumber == 4){
-				levelis.levelnumber = levelis.levelnumber;}
-			else{
-				levelis.levelnumber = levelis.levelnumber + 1;
-			}
-		}
-		if (levelis.performancelevel <= 40) {
-			if (levelis.levelnumber == 1){
-				levelis.levelnumber = levelis.levelnumber;}
-			else {
-				levelis.levelnumber = levelis.levelnumber - 1;}
-		}
-		else {
-			levelis.levelnumber = levelis.levelnumber;
-		}
-		displayinstructions ();
+//
+//		
+//		if (levelis.performancelevel >= 60) {
+//			if (levelis.levelnumber == 4){
+//				levelis.levelnumber = levelis.levelnumber;}
+//			else{
+//				levelis.levelnumber = levelis.levelnumber + 1;
+//			}
+//		}
+//		if (levelis.performancelevel <= 40) {
+//			if (levelis.levelnumber == 1){
+//				levelis.levelnumber = levelis.levelnumber;}
+//			else {
+//				levelis.levelnumber = levelis.levelnumber - 1;}
+//		}
+//		else {
+//			levelis.levelnumber = levelis.levelnumber;
+//		}
+//		displayinstructions ();
 	}
 
 }

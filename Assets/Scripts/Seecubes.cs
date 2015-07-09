@@ -109,6 +109,7 @@ public class Seecubes : MonoBehaviour {
 		{
 			if (Valores.rightSideAD.Contains(gameObject.name[nameLenght - 1].ToString()))
 			    {
+				cubeIsActive=true;
 
 				paintcube();
 				gameObject.GetComponent<Collider> ().enabled = true;
@@ -118,10 +119,15 @@ public class Seecubes : MonoBehaviour {
 			{
 			if (Valores.leftSideAD.Contains(gameObject.name[nameLenght - 1].ToString()))
 				{
+			cubeIsActive=true;
 				paintcube();
 				gameObject.GetComponent<Collider> ().enabled = true;
 				}
 			}
+		else {
+			cubeIsActive=false;
+		}
+
 
 	}
 	public void NoActiveCubesAD(){
@@ -132,15 +138,18 @@ public class Seecubes : MonoBehaviour {
 	}
 
 	public void DefineCubeColor(){
+		if (Valores.rightSideAD.Contains (gameObject.name [nameLenght - 1].ToString ())||
+		    Valores.leftSideAD.Contains(gameObject.name[nameLenght - 1].ToString())) {
 
-		if (ADSystem.numberofcolors == 1)
-		{cubeColor = 1;}
-		else if (ADSystem.numberofcolors == 2)
-		{cubeColor = Random.Range(1,3);}
-		else if (ADSystem.numberofcolors == 3)
-		{
-			cubeColor = Random.Range(1,4);}
+			if (ADSystem.numberofcolors == 1) {
+				cubeColor = 1;
+			} else if (ADSystem.numberofcolors == 2) {
+				cubeColor = Random.Range (1, 3);
+			} else if (ADSystem.numberofcolors == 3) {
+				cubeColor = Random.Range (1, 4);
+			}
 		}
+	}
 
 	void paintcube(){
 
