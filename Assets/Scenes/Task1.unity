@@ -5262,6 +5262,7 @@ MonoBehaviour:
   numberofcolors: 0
   equalcolors: 0
   equaldistance: 0
+  Scale: {fileID: 2050649587}
 --- !u!114 &1898096713
 MonoBehaviour:
   m_ObjectHideFlags: 0

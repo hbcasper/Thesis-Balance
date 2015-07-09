@@ -22,15 +22,16 @@ public class InputOutputADS : MonoBehaviour {
 	private GameObject ExerciseManager;
 	private Textfile performdata;
 
-	private GameObject Scale;
+	public GameObject Scale;
 	private Animate Exercisedata;
 
 	void Start(){
 		ExerciseManager = GameObject.Find ("Exercisemanager");
 		performdata = ExerciseManager.GetComponent<Textfile> ();
 
-		Scale = GameObject.Find ("Scale");
+
 		Exercisedata = Scale.GetComponent<Animate> ();
+		CalculatePerformance ();
 	}
 
 

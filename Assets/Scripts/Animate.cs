@@ -13,6 +13,7 @@ using System.Collections;
 
 
 	void Start () {
+		correct = 0;
 		TakeVarHere = gameObject.GetComponent<ArduinoInputBehavior>();
 	}
 
