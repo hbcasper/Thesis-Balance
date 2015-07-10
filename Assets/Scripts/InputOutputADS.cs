@@ -12,6 +12,8 @@ public class InputOutputADS : MonoBehaviour {
  int performancecorrect;
 	int targetperformance;
 	 int time;
+
+	public int error;
 	public int globalperformance;
 
 	// Difficulty Parameters
@@ -50,7 +52,7 @@ public class InputOutputADS : MonoBehaviour {
 
 
 	public void CalculatePerformance(){
-		Debug.Log ("Hot");
+
 
 	
 
@@ -105,6 +107,7 @@ public class InputOutputADS : MonoBehaviour {
 
 		}
 		globalperformance = (globalperformance / numberofdata);
+		error = targetperformance - globalperformance;
 
 	
 
