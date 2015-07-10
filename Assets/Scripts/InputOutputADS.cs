@@ -6,12 +6,13 @@ public class InputOutputADS : MonoBehaviour {
 
 
 	// Performance Parameters
-	public float reactionTime;
-	public float answercorrect;
-	public int performancetime;
-	public int performancecorrect;
-	public int targetperformance;
-	public int time;
+
+	 int performancetime;
+	int numberofdata;
+ int performancecorrect;
+	int targetperformance;
+	 int time;
+	public int globalperformance;
 
 	// Difficulty Parameters
 	public int numberofcubes;
@@ -19,7 +20,10 @@ public class InputOutputADS : MonoBehaviour {
 	public float equalcolors;
 	public float equaldistance;
 
-	public int performancetotal;
+	 int[] totalPerformances = new int[15];
+	 int performancenumber;
+
+	 int performancetotal;
 	
 	//Calling values
 
@@ -30,6 +34,11 @@ public class InputOutputADS : MonoBehaviour {
 	private Animate Exercisedata;
 
 	void Start(){
+
+		int[] totalPerformances = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+
+		performancenumber = 15;
+
 		targetperformance = 70;
 		ExerciseManager = GameObject.Find ("Exercisemanager");
 		performdata = ExerciseManager.GetComponent<Textfile> ();
@@ -81,6 +90,27 @@ public class InputOutputADS : MonoBehaviour {
 		if (performancetotal <= 40) {
 
 		}
+
+		performancenumber = performancenumber - 1;
+		if (numberofdata <= 15) {
+			numberofdata = numberofdata + 1;
+		}
+
+		totalPerformances [performancenumber] = performancetotal;
+
+
+		if (performancenumber == 0){
+			performancenumber = 15;
+		}
+
+		globalperformance = 0;
+		foreach (int i in totalPerformances) {
+		
+			globalperformance = globalperformance + i;
+
+		}
+		globalperformance = (globalperformance / numberofdata);
+
 		//SetDifficulty ();
 	}
 
@@ -97,6 +127,8 @@ public class InputOutputADS : MonoBehaviour {
 
 	
 		GameObject.Find("Instructions").GetComponent<Instruction> ().ADexercise ();
+
+		 
 
 	}
 
