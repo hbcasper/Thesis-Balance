@@ -20,7 +20,7 @@ public class InputOutputADS : MonoBehaviour {
 	public float equalcolors;
 	public float equaldistance;
 
-	 int[] totalPerformances = new int[15];
+	 public int[] totalPerformances = new int[15];
 	 int performancenumber;
 
 	 int performancetotal;
@@ -84,12 +84,7 @@ public class InputOutputADS : MonoBehaviour {
 		//Calculate performance
 		performancetotal = ((performancetime + performancecorrect) / 2);
 
-		if (performancetotal >= 70) {
 
-		}
-		if (performancetotal <= 40) {
-
-		}
 
 		performancenumber = performancenumber - 1;
 		if (numberofdata <= 15) {
@@ -111,12 +106,21 @@ public class InputOutputADS : MonoBehaviour {
 		}
 		globalperformance = (globalperformance / numberofdata);
 
+	
+
 		//SetDifficulty ();
 	}
 
 	public void SetDifficulty () {
 
 	// read performance
+
+		if (globalperformance >= 70) {
+			
+		}
+		if (globalperformance <= 40) {
+			
+		}
 
 	//Calculate new level
 
