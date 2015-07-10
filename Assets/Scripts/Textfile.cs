@@ -43,7 +43,7 @@ public class Textfile : MonoBehaviour {
 	
 	TimeSpan reactionTime1; 
 	TimeSpan reactionTime2;
-	TimeSpan reactionTime3; 
+	public TimeSpan reactionTime3; 
 
 
 
