@@ -18,7 +18,7 @@ public class InputOutputADS : MonoBehaviour {
 	public float equalcolors;
 	public float equaldistance;
 
-	float performancelevel;
+	public int performancetotal;
 	
 	//Calling values
 
@@ -43,24 +43,36 @@ public class InputOutputADS : MonoBehaviour {
 
 		// calculate performance parameters 
 	
-		if (Exercisedata.correct = 0) {
+		if (Exercisedata.correct == 0) {
 			performancecorrect = 0;
 		} else {
 			answercorrect = 100;
 		}
+		// performance time
 
-		if (performdata.reactionTime3.Seconds = 0) {
+			
+
+		if (performdata.reactionTime3.TotalMilliseconds < 60) {
+			performancetime = 100;
+		} else if (performdata.reactionTime3.Seconds < 90) {
+			performancetime = 80;
+		}  else if (performdata.reactionTime3.Seconds < 120) {
+			performancetime = 60;
+		} else if (performdata.reactionTime3.Seconds < 150) {
+			performancetime = 40;
+		} else if (performdata.reactionTime3.Seconds < 180) {
+			performancetime = 20;
+		} else if (performdata.reactionTime3.Seconds >= 180) {
 			performancetime = 0;
 		}
 
-
 		//Calculate performance
-		performancelevel = (performancetime + performancelevel) / 2;
+		performancetotal = ((performancetime + performancecorrect) / 2);
 
-		if (performancelevel >= 70) {
+		if (performancetotal >= 70) {
 
 		}
-		if (performancelevel <= 40) {
+		if (performancetotal <= 40) {
 
 		}
 		SetDifficulty ();
