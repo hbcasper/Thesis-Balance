@@ -11,6 +11,7 @@ public class InputOutputADS : MonoBehaviour {
 	public int performancetime;
 	public int performancecorrect;
 	public int targetperformance;
+	public int time;
 
 	// Difficulty Parameters
 	public int numberofcubes;
@@ -35,34 +36,39 @@ public class InputOutputADS : MonoBehaviour {
 
 
 		Exercisedata = Scale.GetComponent<Animate> ();
-		CalculatePerformance ();
+		//CalculatePerformance ();
 	}
 
 
 	public void CalculatePerformance(){
+		Debug.Log ("Hot");
+
+	
 
 		// calculate performance parameters 
 	
 		if (Exercisedata.correct == 0) {
 			performancecorrect = 0;
-		} else {
-			answercorrect = 100;
+		} else if (Exercisedata.correct == 1){
+			performancecorrect = 100;
 		}
 		// performance time
 
-			
-
-		if (performdata.reactionTime3.TotalMilliseconds < 60) {
+		if (performdata.reactionTime2.Seconds < 1) {
 			performancetime = 100;
-		} else if (performdata.reactionTime3.Seconds < 90) {
-			performancetime = 80;
-		}  else if (performdata.reactionTime3.Seconds < 120) {
+
+		}
+		else if (performdata.reactionTime2.Seconds == 1 && performdata.reactionTime2.Milliseconds <= 500) {
+				performancetime = 80;
+			}
+		 else if (performdata.reactionTime2.Seconds == 1 && performdata.reactionTime2.Milliseconds > 500) {
 			performancetime = 60;
-		} else if (performdata.reactionTime3.Seconds < 150) {
-			performancetime = 40;
-		} else if (performdata.reactionTime3.Seconds < 180) {
+		}
+			else if (performdata.reactionTime2.Seconds == 2 && performdata.reactionTime2.Milliseconds <= 500) {
+		performancetime = 40;}
+		 else if (performdata.reactionTime2.Seconds < 3) {
 			performancetime = 20;
-		} else if (performdata.reactionTime3.Seconds >= 180) {
+		} else if (performdata.reactionTime2.Seconds >= 3) {
 			performancetime = 0;
 		}
 
@@ -75,7 +81,7 @@ public class InputOutputADS : MonoBehaviour {
 		if (performancetotal <= 40) {
 
 		}
-		SetDifficulty ();
+		//SetDifficulty ();
 	}
 
 	public void SetDifficulty () {
@@ -89,8 +95,8 @@ public class InputOutputADS : MonoBehaviour {
 		equalcolors = 1; //1-2 1 = Same colos en each side 2 = Different color in each side
 		equaldistance = 1; // ( 0 -1) 0 = Same distance on each side 1 = Different distance in each side
 
-		GameObject Instructions = GameObject.Find ("Instructions");
-		Instructions.GetComponent<Instruction> ().ADexercise ();
+	
+		GameObject.Find("Instructions").GetComponent<Instruction> ().ADexercise ();
 
 	}
 

@@ -42,7 +42,7 @@ public class Textfile : MonoBehaviour {
 	public DateTime endTime;
 	
 	TimeSpan reactionTime1; 
-	TimeSpan reactionTime2;
+	public TimeSpan reactionTime2;
 	public TimeSpan reactionTime3; 
 
 
@@ -131,6 +131,8 @@ public class Textfile : MonoBehaviour {
 			reactionTime1 = readyTime.Subtract (startTask);
 			reactionTime2 = endTime.Subtract (readyTime); 
 			reactionTime3 = endTime.Subtract (startTask);
+			Debug.Log(reactionTime2.Seconds);
+			Debug.Log(reactionTime2.Milliseconds);
 		
 			// Date, Time, Participant Number, Condition, Trial# , Level, CorrectFallSide , ChoosedFallSide , IsCorrect? , Score, Time to Set, TimetoChoose, Total Time, LeftRedPos, LeftYellPos, RightRedPos, RightYellPos,TotalWeightLeft, TotalWeightRight,DifferenceOfWeights
 		

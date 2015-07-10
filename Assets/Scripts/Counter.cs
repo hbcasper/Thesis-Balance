@@ -65,8 +65,10 @@ public class Counter : MonoBehaviour {
 				Cubes.GetComponent<ColorcubesAD>().DeactiveCubesAD();
 				Cubes.GetComponent<RegisterActiveCubes>().erasecubes();
 				Instructions.SetActive(true);
+				//GameObject.Find ("Exercisemanager").GetComponent<InputOutputADS>().CalculatePerformance();
 				Instructions.GetComponent<Instruction>().SetInstructions();
 				counterMode = "none";
+
 
 
 

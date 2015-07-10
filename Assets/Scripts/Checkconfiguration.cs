@@ -58,7 +58,7 @@ public class Checkconfiguration : MonoBehaviour {
 		//check AD
 		if (GameConfiguration.ActiveAdaptiveDificulty == true) 
 		{
-			ActiveADSystem.CalculatePerformance();
+			ActiveADSystem.SetDifficulty();
 
 			}
 

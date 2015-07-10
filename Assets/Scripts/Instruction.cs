@@ -87,7 +87,7 @@ public class Instruction : MonoBehaviour
 
 
 		if (GameConfiguration.ActiveAdaptiveDificulty == true) {
-			ADSystem.CalculatePerformance ();
+			ADSystem.SetDifficulty ();
 		} else if (GameConfiguration.ActiveAdaptiveLevels == true) {
 			AdaptiveLevels ();
 			
