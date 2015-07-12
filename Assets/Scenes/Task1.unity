@@ -5269,6 +5269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   error: 0
+  previousError: 0
   globalperformance: 0
   numberofcubes: 0
   numberofcolors: 0

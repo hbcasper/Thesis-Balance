@@ -12,7 +12,7 @@ public class InputOutputADS : MonoBehaviour {
  	int performancecorrect;
 	int targetperformance;
 	int time;
-	float lowerrorthreshold = .1;
+	float lowerrorthreshold = .1f;
 
 	public float error;
 	public float previousError = 0;
@@ -153,7 +153,7 @@ public class InputOutputADS : MonoBehaviour {
 				NewStepVector (true, true, false);
 			}
 		} while (outOfBounds);
-		//runexcercise();
+		runexcercise();
 
 		previousError = error;
 
@@ -161,7 +161,7 @@ public class InputOutputADS : MonoBehaviour {
 
 	public float VectorAddition(float previousparameter, float stepvector){
 
-		return previousparameter+stepvector+(Mathf.Sign(error)*.5*error);
+		return previousparameter+stepvector+(Mathf.Sign(error)*.5f*error);
 	}
 
 	public void runexcercise(){

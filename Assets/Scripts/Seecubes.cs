@@ -141,13 +141,11 @@ public class Seecubes : MonoBehaviour {
 		if (Valores.rightSideAD.Contains (gameObject.name [nameLenght - 1].ToString ())||
 		    Valores.leftSideAD.Contains(gameObject.name[nameLenght - 1].ToString())) {
 
-			if (ADSystem.numberofcolors == 1) {
+			if (Valores.numberofcolors == 1) {
 				cubeColor = 1;
-			} else if (ADSystem.numberofcolors == 2) {
+			} else if (Valores.numberofcolors == 2) {
 				cubeColor = Random.Range (1, 3);
-			} else if (ADSystem.numberofcolors == 3) {
-				cubeColor = Random.Range (1, 4);
-			}
+			} 
 		}
 	}
 

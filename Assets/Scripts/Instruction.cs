@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Text;
+using System;
 using UnityEngine.UI;
 
 public class Instruction : MonoBehaviour 
@@ -19,6 +20,8 @@ public class Instruction : MonoBehaviour
 	public string rightSideAD;
 	public string leftSideAD;
 	public int numberofplaces;
+	public int numberofcolors;
+	public int distance;
 
 
 	// number of the active cube (max. 2)
@@ -87,7 +90,7 @@ public class Instruction : MonoBehaviour
 
 
 		if (GameConfiguration.ActiveAdaptiveDificulty == true) {
-			ADSystem.SetDifficulty ();
+			ADSystem.CalculatePerformance ();
 		} else if (GameConfiguration.ActiveAdaptiveLevels == true) {
 			AdaptiveLevels ();
 			
@@ -120,13 +123,13 @@ public class Instruction : MonoBehaviour
 		numberWeightsRed = 0; 
 		numberWeightsYellow = 0; 
 		
-		pnl1 = Random.Range (1, 7);
+		pnl1 = UnityEngine.Random.Range (1, 7);
 		pnl2 = 0;
 		pnr1 = pnl1; 
 		pnr2 = 0;
-		pcolor1 = Random.Range (0, 4);
+		pcolor1 = UnityEngine.Random.Range (0, 4);
 		pcolor2 = 0;
-		pcolor3 = Random.Range (0, 4);
+		pcolor3 = UnityEngine.Random.Range (0, 4);
 		pcolor4 = 0;
 		
 		positionRedCube1 = 0; 
@@ -210,21 +213,21 @@ public class Instruction : MonoBehaviour
 		positionYellowCube1 = 0; 
 		positionYellowCube2 = 0;
 		
-		pnl1 = Random.Range (1, 7);
+		pnl1 = UnityEngine.Random.Range (1, 7);
 		pnl2 = 0;
-		pnr1 = Random.Range (1, 7);
+		pnr1 = UnityEngine.Random.Range (1, 7);
 		pnr2 = 0;
-		pcolor1 = Random.Range (0, 4);
+		pcolor1 = UnityEngine.Random.Range (0, 4);
 		pcolor2 = 0;
-		pcolor3 = Random.Range (0, 4);
+		pcolor3 = UnityEngine.Random.Range (0, 4);
 		pcolor4 = 0;
 		
 		while (pnl1 == pnl2) {
-			pnl2 = Random.Range (1, 7);
+			pnl2 = UnityEngine.Random.Range (1, 7);
 		}
 		
 		while (pnr1 == pnr2) {
-			pnr2 = Random.Range (1, 7);
+			pnr2 = UnityEngine.Random.Range (1, 7);
 		}
 		
 		
@@ -273,22 +276,22 @@ public class Instruction : MonoBehaviour
 		positionYellowCube1 = 0; 
 		positionYellowCube2 = 0;
 		
-		pnl1 = Random.Range (1, 7);
+		pnl1 = UnityEngine.Random.Range (1, 7);
 		pnl2 = 0;
-		pnr1 = Random.Range (1, 7);
+		pnr1 = UnityEngine.Random.Range (1, 7);
 		pnr2 = 0;
-		pcolor1 = Random.Range (0, 4);
+		pcolor1 = UnityEngine.Random.Range (0, 4);
 		pcolor2 = 0;
-		pcolor3 = Random.Range (0, 4);
+		pcolor3 = UnityEngine.Random.Range (0, 4);
 		pcolor4 = 0;
 		
 		while (pnl1 == pnl2) {
-			pnl2 = Random.Range (1, 7); 
+			pnl2 = UnityEngine.Random.Range (1, 7); 
 			
 		}
 		
 		while (pnr1 == pnr2) {
-			pnr2 = Random.Range (1, 7);
+			pnr2 = UnityEngine.Random.Range (1, 7);
 			
 			
 		}
@@ -379,21 +382,21 @@ public class Instruction : MonoBehaviour
 		positionYellowCube3 = 0;
 		positionYellowCube4 = 0;
 		
-		pnl1 = Random.Range (1, 7);
-		pnl2 = Random.Range (1, 7);
-		pnr1 = Random.Range (1, 7);
-		pnr2 = Random.Range (1, 7);
-		pcolor1 = Random.Range (0, 4);
-		pcolor2 = Random.Range (0, 4);
-		pcolor3 = Random.Range (0, 4);
-		pcolor4 = Random.Range (0, 4);
+		pnl1 = UnityEngine.Random.Range (1, 7);
+		pnl2 = UnityEngine.Random.Range (1, 7);
+		pnr1 = UnityEngine.Random.Range (1, 7);
+		pnr2 = UnityEngine.Random.Range (1, 7);
+		pcolor1 = UnityEngine.Random.Range (0, 4);
+		pcolor2 = UnityEngine.Random.Range (0, 4);
+		pcolor3 = UnityEngine.Random.Range (0, 4);
+		pcolor4 = UnityEngine.Random.Range (0, 4);
 		
 		while (pnl1 == pnl2) {
-			pnl2 = Random.Range (1, 7);
+			pnl2 = UnityEngine.Random.Range (1, 7);
 		}
 		
 		while (pnr1 == pnr2) {
-			pnr2 = Random.Range (1, 7);
+			pnr2 = UnityEngine.Random.Range (1, 7);
 		}
 
 
@@ -513,11 +516,10 @@ public class Instruction : MonoBehaviour
 
 		instruction = GetComponent <Text> ();
 		instruction.text = "Place the required weights in the marked places";
-		
-		rightSideAD = Generatecubespositions(ADSystem.numberofcubes);
 
-		leftSideAD = Generatecubespositions(ADSystem.numberofcubes);
-		numberofplaces = ADSystem.numberofcubes;
+		mappedDifficulty ();
+
+		//numberofplaces = ADSystem.numberofcubes;
 
 
 		GameObject Cubes = GameObject.Find ("Invisible Spaces");
@@ -525,6 +527,27 @@ public class Instruction : MonoBehaviour
 	
 		
 	}
+
+		    public void mappedDifficulty(){
+
+			if (ADSystem.Parameternumberofcubes <= .5) {
+				rightSideAD = Generatecubespositions(1);
+				leftSideAD = Generatecubespositions(1);
+
+		} else {
+				rightSideAD = Generatecubespositions(2);
+				leftSideAD = Generatecubespositions(2);
+
+		}
+		if (ADSystem.Parameternumberofcolors <= .5) {
+			numberofcolors = 1;
+		} else {
+			numberofcolors = 2;
+		}
+
+		distance = 10 - Convert.ToInt32(ADSystem.Parameterdistance)*10;
+		}
+
 
 		string Generatecubespositions(int Size)  {
 
@@ -534,7 +557,7 @@ public class Instruction : MonoBehaviour
 				for (int i = 0; i < Size; i++)
 				{
 
-			ch = input[Random.Range(0, input.Length-1)];
+			ch = input[UnityEngine.Random.Range(0, input.Length-1)];
 						activecubes.Append(ch);
 						input = input.Replace(ch.ToString(),string.Empty);
 
