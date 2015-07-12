@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
+//using System;
 
 public class InputOutputADS : MonoBehaviour {
 
@@ -12,9 +12,12 @@ public class InputOutputADS : MonoBehaviour {
  int performancecorrect;
 	int targetperformance;
 	 int time;
+	int lowerrorthreshold = 10;
 
-	public int error;
+	public float error;
+	public int previousError;
 	public int globalperformance;
+	int distance;
 
 	// Difficulty Parameters
 	public int numberofcubes;
@@ -109,33 +112,58 @@ public class InputOutputADS : MonoBehaviour {
 		globalperformance = (globalperformance / numberofdata);
 		error = targetperformance - globalperformance;
 
+		if (error > previousError || (error > 0 && previousError < 0) || (error < 0 && previousError > 0)) {
+			CalculateNewVector();
+		} else {
+			//same vector
+		}
+
+		error = Mathf.Min (error, lowerrorthreshold);
+
+		VectorAddition ();
+
+		previousError = error;
+
+		
 	
 
 		//SetDifficulty ();
 	}
 
+	public float VectorAddition(float previousparameter,float stepvector,float stepsize){
+
+		previousparameter+stepvector+(Mathf.Sign(error)*1*error);
+
+	}
+
+
+	public void CalculateNewVector(){
+
+
+	}
+
 	public void SetDifficulty () {
 
-	// read performance
-
-		if (globalperformance >= 70) {
-			
-		}
-		if (globalperformance <= 40) {
-			
-		}
-
+	
 	//Calculate new level
 
-		numberofcubes = 1; //1-2 cubes
-		numberofcolors = 1; //1-2 colors
-		equalcolors = 1; //1-2 1 = Same colos en each side 2 = Different color in each side
-		equaldistance = 1; // ( 0 -1) 0 = Same distance on each side 1 = Different distance in each side
+		numberofcubes = randomparameter (1, 2);
+		numberofcolors = randomparameter (1, 2);
+		distance = randomparameter (1, 11);
+		//equalcolors = 1; //1-2 1 = Same colos en each side 2 = Different color in each side
+		//equaldistance = 1; // ( 0 -1) 0 = Same distance on each side 1 = Different distance in each side
 
 	
 		GameObject.Find("Instructions").GetComponent<Instruction> ().ADexercise ();
 
 		 
+
+	}
+
+	public int randomparameter(int minvalue, int maxvalue){
+
+		Random.Range (minvalue, maxvalue);
+	
 
 	}
 

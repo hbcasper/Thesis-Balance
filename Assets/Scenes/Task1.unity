@@ -5268,16 +5268,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4f446d580cd224fb6bf906b1aec588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTime: 0
-  answercorrect: 0
-  performancetime: 0
-  performancecorrect: 0
-  targetperformance: 0
+  error: 0
+  globalperformance: 0
   numberofcubes: 0
   numberofcolors: 0
   equalcolors: 0
   equaldistance: 0
-  performancetotal: 0
+  totalPerformances: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Scale: {fileID: 2050649587}
 --- !u!114 &1898096713
 MonoBehaviour:
