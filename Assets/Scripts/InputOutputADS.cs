@@ -12,16 +12,21 @@ public class InputOutputADS : MonoBehaviour {
  int performancecorrect;
 	int targetperformance;
 	 int time;
-	int lowerrorthreshold = 10;
+	int lowerrorthreshold = .1;
 
 	public float error;
 	public int previousError;
 	public int globalperformance;
-	int distance;
+	int SVdistance;
 
 	// Difficulty Parameters
-	public int numberofcubes;
-	public int numberofcolors;
+	public int SVnumberofcubes;
+	public int SVnumberofcolors;
+
+	public int Parameternumberofcubes;
+	public int Parameternumberofcolors;
+	public int Parameterdistance;
+
 	public float equalcolors;
 	public float equaldistance;
 
@@ -53,24 +58,24 @@ public class InputOutputADS : MonoBehaviour {
 		//CalculatePerformance ();
 	}
 
+	public void SetFirstDifficulty(){
+		Parameternumberofcubes = randomparameter ();
+		Parameternumberofcolors = randomparameter ();
+		Parameterdistance = randomparameter ();
+		
+		GameObject.Find("Instructions").GetComponent<Instruction> ().ADexercise ();
+	}
 
 	public void CalculatePerformance(){
-
-
-	
-
-		// calculate performance parameters 
-	
+			
 		if (Exercisedata.correct == 0) {
 			performancecorrect = 0;
 		} else if (Exercisedata.correct == 1){
 			performancecorrect = 100;
 		}
-		// performance time
 
 		if (performdata.reactionTime2.Seconds < 1) {
 			performancetime = 100;
-
 		}
 		else if (performdata.reactionTime2.Seconds == 1 && performdata.reactionTime2.Milliseconds <= 500) {
 				performancetime = 80;
@@ -89,15 +94,12 @@ public class InputOutputADS : MonoBehaviour {
 		//Calculate performance
 		performancetotal = ((performancetime + performancecorrect) / 2);
 
-
-
 		performancenumber = performancenumber - 1;
 		if (numberofdata <= 15) {
 			numberofdata = numberofdata + 1;
 		}
 
 		totalPerformances [performancenumber] = performancetotal;
-
 
 		if (performancenumber == 0){
 			performancenumber = 15;
@@ -110,62 +112,52 @@ public class InputOutputADS : MonoBehaviour {
 
 		}
 		globalperformance = (globalperformance / numberofdata);
-		error = targetperformance - globalperformance;
+		error = (targetperformance - globalperformance)/100;
 
 		if (error > previousError || (error > 0 && previousError < 0) || (error < 0 && previousError > 0)) {
-			CalculateNewVector();
+			NewStepVector();
 		} else {
 			//same vector
 		}
 
 		error = Mathf.Min (error, lowerrorthreshold);
 
-		VectorAddition ();
+		VectorAddition (Parameternumberofcubes, SVnumberofcubes);
+		VectorAddition (Parameternumberofcolors,SVnumberofcolors);
+		VectorAddition (Parameterdistance, SVdistance);
+
+		runexcercise();
 
 		previousError = error;
 
-		
-	
-
-		//SetDifficulty ();
 	}
 
-	public float VectorAddition(float previousparameter,float stepvector,float stepsize){
+	public float VectorAddition(float previousparameter,float stepvector){
 
-		previousparameter+stepvector+(Mathf.Sign(error)*1*error);
+		previousparameter+stepvector+(Mathf.Sign(error)*.5*error);
 
 	}
 
-
-	public void CalculateNewVector(){
-
-
-	}
-
-	public void SetDifficulty () {
-
-	
-	//Calculate new level
-
-		numberofcubes = randomparameter (1, 2);
-		numberofcolors = randomparameter (1, 2);
-		distance = randomparameter (1, 11);
-		//equalcolors = 1; //1-2 1 = Same colos en each side 2 = Different color in each side
-		//equaldistance = 1; // ( 0 -1) 0 = Same distance on each side 1 = Different distance in each side
-
-	
+	public void runexcercise(){
 		GameObject.Find("Instructions").GetComponent<Instruction> ().ADexercise ();
+	}
 
-		 
+	public void NewStepVector() {
+
+		SVnumberofcubes = randomparameter ();
+		SVnumberofcolors = randomparameter ();
+		SVdistance = randomparameter ();
 
 	}
 
-	public int randomparameter(int minvalue, int maxvalue){
+	public int randomparameter(){
 
-		Random.Range (minvalue, maxvalue);
+		Random.Range (0, 1);
 	
 
 	}
+
+
 
 
 
