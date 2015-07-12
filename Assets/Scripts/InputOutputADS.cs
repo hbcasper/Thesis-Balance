@@ -7,25 +7,26 @@ public class InputOutputADS : MonoBehaviour {
 
 	// Performance Parameters
 
-	 int performancetime;
+	int performancetime;
 	int numberofdata;
- int performancecorrect;
+ 	int performancecorrect;
 	int targetperformance;
-	 int time;
-	int lowerrorthreshold = .1;
+	int time;
+	float lowerrorthreshold = .1;
 
 	public float error;
-	public int previousError;
+	public float previousError = 0;
 	public int globalperformance;
-	int SVdistance;
+
 
 	// Difficulty Parameters
-	public int SVnumberofcubes;
-	public int SVnumberofcolors;
+	public float SVnumberofcubes;
+	public float SVnumberofcolors;
+	public float SVdistance;
 
-	public int Parameternumberofcubes;
-	public int Parameternumberofcolors;
-	public int Parameterdistance;
+	public float Parameternumberofcubes;
+	public float Parameternumberofcolors;
+	public float Parameterdistance;
 
 	public float equalcolors;
 	public float equaldistance;
@@ -67,6 +68,8 @@ public class InputOutputADS : MonoBehaviour {
 	}
 
 	public void CalculatePerformance(){
+
+		//measure performance
 			
 		if (Exercisedata.correct == 0) {
 			performancecorrect = 0;
@@ -112,49 +115,79 @@ public class InputOutputADS : MonoBehaviour {
 
 		}
 		globalperformance = (globalperformance / numberofdata);
+
+		//RANDOM LINE SEARCH
+		// calculate error 
 		error = (targetperformance - globalperformance)/100;
 
+		// new step vector??
+
 		if (error > previousError || (error > 0 && previousError < 0) || (error < 0 && previousError > 0)) {
-			NewStepVector();
+			// calculate new step vector
+			NewStepVector(true, true, true);
 		} else {
 			//same vector
 		}
 
+		// regulate error threshold
+
 		error = Mathf.Min (error, lowerrorthreshold);
 
-		VectorAddition (Parameternumberofcubes, SVnumberofcubes);
-		VectorAddition (Parameternumberofcolors,SVnumberofcolors);
-		VectorAddition (Parameterdistance, SVdistance);
-
-		runexcercise();
+		//vector addition
+		bool outOfBounds = false;
+		do {
+			outOfBounds = false;
+			Parameternumberofcubes = VectorAddition (Parameternumberofcubes, SVnumberofcubes);
+			Parameternumberofcolors = VectorAddition (Parameternumberofcolors, SVnumberofcolors);
+			Parameterdistance = VectorAddition (Parameterdistance, SVdistance);
+			if (Parameternumberofcubes < 0 || Parameternumberofcubes > 1){
+				outOfBounds = true;
+				NewStepVector (false, true, true);
+			}
+			else if (Parameternumberofcolors < 0 || Parameternumberofcolors > 1){
+				outOfBounds = true;
+				NewStepVector (true, false, true);
+			}
+			else if (Parameterdistance < 0 || Parameterdistance > 1){
+				outOfBounds = true;
+				NewStepVector (true, true, false);
+			}
+		} while (outOfBounds);
+		//runexcercise();
 
 		previousError = error;
 
 	}
 
-	public float VectorAddition(float previousparameter,float stepvector){
+	public float VectorAddition(float previousparameter, float stepvector){
 
-		previousparameter+stepvector+(Mathf.Sign(error)*.5*error);
-
+		return previousparameter+stepvector+(Mathf.Sign(error)*.5*error);
 	}
 
 	public void runexcercise(){
 		GameObject.Find("Instructions").GetComponent<Instruction> ().ADexercise ();
 	}
 
-	public void NewStepVector() {
+	public void NewStepVector(bool cubes, bool colors, bool distance) {
+		if (cubes)
+			SVnumberofcubes = randomparameter ();
+		else
+			SVnumberofcubes = 0;
 
-		SVnumberofcubes = randomparameter ();
-		SVnumberofcolors = randomparameter ();
-		SVdistance = randomparameter ();
+		if (colors)
+			SVnumberofcolors = randomparameter ();
+		else
+			SVnumberofcolors = 0;
 
+		if (distance)
+			SVdistance = randomparameter ();
+		else
+			SVdistance = 0;
 	}
 
-	public int randomparameter(){
+	public float randomparameter(){
 
-		Random.Range (0, 1);
-	
-
+		return Random.Range (0, 1);
 	}
 
 
