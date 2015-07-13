@@ -93,7 +93,7 @@ public class Gamemanager : MonoBehaviour {
 
 		if(GameConfiguration.ActiveAdaptiveDificulty == true || GameConfiguration.ActiveAdaptiveLevels == true) {
 				if (taskCount == 31) {
-					Application.LoadLevel ("UserInstructionTask2");
+					Application.LoadLevel ("FinalScene");
 				}
 				}
 
