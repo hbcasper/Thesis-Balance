@@ -18,6 +18,9 @@ public class Seecubes : MonoBehaviour {
 	public int cubeIndex;
 
 
+	GameObject Cubesparent;
+	ColorcubesAD Cubesconfiguration;
+
 	private GameObject ExcerciseManager;
 	private InputOutputADS ADSystem;
 
@@ -25,13 +28,16 @@ public class Seecubes : MonoBehaviour {
 		nameLenght = gameObject.name.Length;
 		cubeIndex =  int.Parse(gameObject.name[nameLenght - 1].ToString());
 
+		Cubesparent = GameObject.Find ("Invisible Spaces");
+		Cubesconfiguration = Cubesparent.GetComponent<ColorcubesAD> ();
+
 		Objeto = GameObject.Find ("Instructions");
 		ExcerciseManager = GameObject.Find ("Exercisemanager");
 		ADSystem = ExcerciseManager.GetComponent<InputOutputADS> ();
 		gameObject.GetComponent<Collider> ().enabled = false;
-		//Valores = Objeto.GetComponent<Instruction>();	
+
 		Valores = Objeto.GetComponent<Instruction> (); 
-		//gameObject.GetComponent<Renderer> ().enabled = false;
+
 		gameObject.GetComponent<Renderer> ().material.color = Color.clear;
 		gameObject.transform.localScale = new Vector3(1.4f,1.4f,1.4f);
 
@@ -44,17 +50,20 @@ public class Seecubes : MonoBehaviour {
 		if (GameConfiguration.ActiveAdaptiveDificulty == false) {
 			
 				ActiveCubesRS ();
+
+			if (gameObject.GetComponent<Renderer> ().enabled == true) {
+				cubeIsActive = true;
+			} else {
+				cubeIsActive = false;
+			}
+			
+			
+			calculatecubevalue();
 			}
 
 
 
-		if (gameObject.GetComponent<Renderer> ().enabled == true) {
-			cubeIsActive = true;
-		} else {
-			cubeIsActive = false;
-		}
 
-	calculatecubevalue();
 	}
 
 	public void ActiveCubesRS(){
@@ -104,24 +113,22 @@ public class Seecubes : MonoBehaviour {
 	}
 
 	public void ActiveCubesAD(){
-	DefineCubeColor ();
+	
 	if (gameObject.tag == "Right")
 		{
-			if (Valores.rightSideAD.Contains(gameObject.name[nameLenght - 1].ToString()))
+			if (Cubesconfiguration.Rightcubes.Contains(gameObject.name[nameLenght - 1].ToString()))
 			    {
 				cubeIsActive=true;
-
-				paintcube();
-				gameObject.GetComponent<Collider> ().enabled = true;
-				}
+				DefineCubeColor ();
+								}
 		}
 	else if (gameObject.tag == "Left") 
 			{
-			if (Valores.leftSideAD.Contains(gameObject.name[nameLenght - 1].ToString()))
+			if (Cubesconfiguration.Leftcubes.Contains(gameObject.name[nameLenght - 1].ToString()))
 				{
-			cubeIsActive=true;
-				paintcube();
-				gameObject.GetComponent<Collider> ().enabled = true;
+				cubeIsActive=true;
+				DefineCubeColor ();
+						
 				}
 			}
 		else {
@@ -138,34 +145,50 @@ public class Seecubes : MonoBehaviour {
 	}
 
 	public void DefineCubeColor(){
-		if (Valores.rightSideAD.Contains (gameObject.name [nameLenght - 1].ToString ())||
-		    Valores.leftSideAD.Contains(gameObject.name[nameLenght - 1].ToString())) {
 
 			if (Valores.numberofcolors == 1) {
 				cubeColor = 1;
 			} else if (Valores.numberofcolors == 2) {
 				cubeColor = Random.Range (1, 3);
 			} 
+			definecubevalue();
 		}
-	}
 
-	void paintcube(){
+
+	void definecubevalue(){
 
 		if (cubeColor == 1){
 				gameObject.GetComponent<Renderer> ().material.color = Color.red;
-				myValue=cubeIndex*1;
+				myValue=cubeIndex*2;
+
 		}
 		else if (cubeColor == 2){
 				gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
-				myValue=cubeIndex*2;
+			myValue=cubeIndex*1;
 			}
-		else if (cubeColor == 3){
-				gameObject.GetComponent<Renderer> ().material.color = Color.green;
-				myValue=cubeIndex*3;
-				}
+		paintcube ();
+
 
 	}
-	void calculatecubevalue() {
+
+	public void paintcube(){
+		if (cubeIsActive == true) {
+			gameObject.GetComponent<Collider> ().enabled = true;
+		
+		if (cubeColor == 1){
+			gameObject.GetComponent<Renderer> ().material.color = Color.red;
+		
+		}
+		else if (cubeColor == 2){
+			gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
+	
+		
+			}}
+
+
+
+	}
+void calculatecubevalue() {
 		
 		if(cubeIsActive == true){
 			if (gameObject.GetComponent<Renderer> ().material.color == Color.red)
@@ -181,7 +204,8 @@ public class Seecubes : MonoBehaviour {
 			myValue = 0;
 		}
 		
-	}
+
+}
 }
 //  Only in Virtual Reality
 //	void GrowCube(string colorName){

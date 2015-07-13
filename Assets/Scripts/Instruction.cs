@@ -16,6 +16,7 @@ public class Instruction : MonoBehaviour
 	private GameObject ExcerciseManager;
 	private InputOutputADS ADSystem;
 
+
 	//AD variables
 	public string rightSideAD;
 	public string leftSideAD;
@@ -90,7 +91,7 @@ public class Instruction : MonoBehaviour
 
 
 		if (GameConfiguration.ActiveAdaptiveDificulty == true) {
-			ADSystem.CalculatePerformance ();
+			ADexercise ();
 		} else if (GameConfiguration.ActiveAdaptiveLevels == true) {
 			AdaptiveLevels ();
 			
@@ -519,7 +520,6 @@ public class Instruction : MonoBehaviour
 
 		mappedDifficulty ();
 
-		//numberofplaces = ADSystem.numberofcubes;
 
 
 		GameObject Cubes = GameObject.Find ("Invisible Spaces");
@@ -531,12 +531,14 @@ public class Instruction : MonoBehaviour
 		    public void mappedDifficulty(){
 
 			if (ADSystem.Parameternumberofcubes <= .5) {
-				rightSideAD = Generatecubespositions(1);
-				leftSideAD = Generatecubespositions(1);
+			numberofplaces = 1;
+				//rightSideAD = Generatecubespositions(1);
+				//leftSideAD = Generatecubespositions(1);
 
 		} else {
-				rightSideAD = Generatecubespositions(2);
-				leftSideAD = Generatecubespositions(2);
+			numberofplaces = 2;
+				//rightSideAD = Generatecubespositions(2);
+				//leftSideAD = Generatecubespositions(2);
 
 		}
 		if (ADSystem.Parameternumberofcolors <= .5) {
@@ -549,22 +551,7 @@ public class Instruction : MonoBehaviour
 		}
 
 
-		string Generatecubespositions(int Size)  {
-
-		string input = "123456";
-		StringBuilder activecubes = new StringBuilder();
-				char ch;
-				for (int i = 0; i < Size; i++)
-				{
-
-			ch = input[UnityEngine.Random.Range(0, input.Length-1)];
-						activecubes.Append(ch);
-						input = input.Replace(ch.ToString(),string.Empty);
-
-				}
-					return activecubes.ToString();
-
-			               }
+		
 
 
 		  
