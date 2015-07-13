@@ -30,12 +30,51 @@ public class ColorcubesAD : MonoBehaviour {
 		Leftcubes = Generatecubespositions ();
 		Rightcubes = Generatecubespositions ();
 
-
+		if (DifficultyConfiguration.side == 1) {
+			Leftcubes = Rightcubes;
+		}
 		foreach (Seecubes script in activecubes) {
 			script.ActiveCubesAD ();
 
 		}
+		checkcolors ();
+		foreach (Seecubes script in activecubes) {
+			script.paintcube ();
+			
+		}
 		CalculateWeight();
+
+
+			
+		}
+	public void checkcolors(){
+		bool correct=false;
+	
+		bool existared= false;
+		bool existayellow=false;
+		foreach (Seecubes script in activecubes) {
+			
+			if (script.cubeColor==1){
+				existayellow=true;
+				
+				
+			} else if (script.cubeColor==2){
+				existared=true;
+			}
+		}
+		if (DifficultyConfiguration.numberofcolors == 2 && existayellow==true && existared==true) {
+			correct = true;
+		}
+		while(correct = false){
+			ActiveCubesAD();
+			if (DifficultyConfiguration.numberofcolors == 2 && existayellow==true && existared==true) {
+			correct = true;
+		}
+
+	}
+
+
+		
 	}
 
 

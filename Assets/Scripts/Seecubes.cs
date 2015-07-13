@@ -10,7 +10,7 @@ public class Seecubes : MonoBehaviour {
 	public string colorName; 
 	private ToogleOptions GameConfiguration;
 	private GameObject GameConfigurationToogles;
-	int cubeColor=0;
+	public int cubeColor=0;
 	public bool cubeIsActive=false;
 	public int myValue = 0;
 
@@ -157,13 +157,13 @@ public class Seecubes : MonoBehaviour {
 
 	void definecubevalue(){
 
-		if (cubeColor == 1){
-				gameObject.GetComponent<Renderer> ().material.color = Color.red;
+		if (cubeColor == 2){
+				//gameObject.GetComponent<Renderer> ().material.color = Color.red;
 				myValue=cubeIndex*2;
 
 		}
-		else if (cubeColor == 2){
-				gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
+		else if (cubeColor == 1){
+				//gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
 			myValue=cubeIndex*1;
 			}
 		paintcube ();
@@ -175,11 +175,11 @@ public class Seecubes : MonoBehaviour {
 		if (cubeIsActive == true) {
 			gameObject.GetComponent<Collider> ().enabled = true;
 		
-		if (cubeColor == 1){
+		if (cubeColor == 2){
 			gameObject.GetComponent<Renderer> ().material.color = Color.red;
 		
 		}
-		else if (cubeColor == 2){
+		else if (cubeColor == 1){
 			gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
 	
 		

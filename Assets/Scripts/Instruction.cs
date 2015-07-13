@@ -22,7 +22,7 @@ public class Instruction : MonoBehaviour
 	public string leftSideAD;
 	public int numberofplaces;
 	public int numberofcolors;
-	public int distance;
+	public int side;
 
 
 	// number of the active cube (max. 2)
@@ -530,15 +530,15 @@ public class Instruction : MonoBehaviour
 
 		    public void mappedDifficulty(){
 
-			if (ADSystem.Parameternumberofcubes <= .5) {
+		if (ADSystem.Parameternumberofcubes <= .5) {
 			numberofplaces = 1;
-				//rightSideAD = Generatecubespositions(1);
-				//leftSideAD = Generatecubespositions(1);
+			//rightSideAD = Generatecubespositions(1);
+			//leftSideAD = Generatecubespositions(1);
 
 		} else {
 			numberofplaces = 2;
-				//rightSideAD = Generatecubespositions(2);
-				//leftSideAD = Generatecubespositions(2);
+			//rightSideAD = Generatecubespositions(2);
+			//leftSideAD = Generatecubespositions(2);
 
 		}
 		if (ADSystem.Parameternumberofcolors <= .5) {
@@ -547,8 +547,12 @@ public class Instruction : MonoBehaviour
 			numberofcolors = 2;
 		}
 
-		distance = 10 - Convert.ToInt32(ADSystem.Parameterdistance)*10;
+		if (ADSystem.Parameternumberofcolors <= .3) {
+			side = 1;
+		} else {
+			side = 2;
 		}
+	}
 
 
 		
