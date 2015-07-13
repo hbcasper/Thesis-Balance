@@ -48,7 +48,7 @@ public class ColorcubesAD : MonoBehaviour {
 			
 		}
 		CalculateWeight();
-
+		gameObject.GetComponent<RegisterActiveCubes> ().Checkcubes ();
 
 			
 		}
@@ -97,6 +97,9 @@ public class ColorcubesAD : MonoBehaviour {
 	}
 
 	public void CalculateWeight(){
+		totalLeft = 0;
+		totalRight = 0;
+		difference = 0;
 		foreach (Seecubes script in activecubes) {
 			
 			if (script.gameObject.tag == ("Left")) {
@@ -118,6 +121,7 @@ public class ColorcubesAD : MonoBehaviour {
 		} else {
 			difference = 0;
 		}
+		Debug.Log (totalLeft+","+ totalRight+","+ difference);
 	}
 
 

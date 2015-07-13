@@ -5,10 +5,10 @@ public class RegisterActiveCubes : MonoBehaviour {
 	
 	Seecubes[] Cubes;
 	public string activecubes;
-	string leftred = "0";
-	string leftyellow = "0";
-	string rightred = "0";
-	string rightyellow = "0";
+	string left1 = "0";
+	string left2 = "0";
+	string right1 = "0";
+	string right2 = "0";
 	
 	
 	
@@ -26,23 +26,25 @@ public class RegisterActiveCubes : MonoBehaviour {
 			if (script.cubeIsActive == true) 
 			{
 				if(script.gameObject.tag == "Left"){
-					
-					if (script.colorName == "red"){
-						leftred = script.cubeIndex.ToString();
+					if (left1 == "0")
+					{
+
+						left1= script.cubeIndex.ToString()+"("+ checkcolor(script.cubeColor)+")";
 					}
-					if (script.colorName == "yellow"){
-						leftyellow = script.cubeIndex.ToString();
+					else if (left2 == "0")
+					{
+						left2= script.cubeIndex.ToString()+"("+ checkcolor(script.cubeColor)+")";
 					}
-					
 				}
 				if(script.gameObject.tag == "Right"){
 					
-					if (script.colorName == "red"){
-						rightred = script.cubeIndex.ToString();
+					if (right1 == "0")
+					{
+						right1= script.cubeIndex.ToString()+"("+ checkcolor(script.cubeColor)+")";
 					}
-					
-					if (script.colorName == "yellow"){
-						rightyellow = script.cubeIndex.ToString();
+					else if (right2 == "0")
+					{
+						right2= script.cubeIndex.ToString()+"("+ checkcolor(script.cubeColor)+")";
 					}
 					
 				}
@@ -51,13 +53,27 @@ public class RegisterActiveCubes : MonoBehaviour {
 			
 		}
 		
-		activecubes = (leftred+","+leftyellow+","+rightred+","+rightyellow);
+		activecubes = (left1+","+left2+","+right1+","+right2);
+		Debug.Log (activecubes);
 
 	}
+
+		public string checkcolor(int color){
+		string c = "";
+			if (color == 2) {
+			c = "red";
+		} else if (color == 1) {
+			c = "yellow";
+		} else {
+			c = "0";
+		}
+
+		return c;
+		}
 	public void erasecubes(){
-		leftred = "0";
-		leftyellow ="0";
-		rightred = "0";
-		rightyellow="0";
+		left1 = "0";
+		left2 = "0";
+		right1 = "0";
+		right2 = "0";
 	}
 }

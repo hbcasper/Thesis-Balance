@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeColor: 0
   cubeIsActive: 0
   myValue: 0
   cubeIndex: 0
@@ -438,6 +439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeColor: 0
   cubeIsActive: 0
   myValue: 0
   cubeIndex: 0
@@ -561,6 +563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeColor: 0
   cubeIsActive: 0
   myValue: 0
   cubeIndex: 0
@@ -697,6 +700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeColor: 0
   cubeIsActive: 0
   myValue: 0
   cubeIndex: 0
@@ -799,7 +803,7 @@ MonoBehaviour:
   leftSideAD: 
   numberofplaces: 0
   numberofcolors: 0
-  distance: 0
+  side: 0
   pnl1: 0
   pnl2: 0
   pnr1: 0
@@ -1472,6 +1476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeColor: 0
   cubeIsActive: 0
   myValue: 0
   cubeIndex: 0
@@ -1595,6 +1600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeColor: 0
   cubeIsActive: 0
   myValue: 0
   cubeIndex: 0
@@ -2226,6 +2232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeColor: 0
   cubeIsActive: 0
   myValue: 0
   cubeIndex: 0
@@ -2422,6 +2429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeColor: 0
   cubeIsActive: 0
   myValue: 0
   cubeIndex: 0
@@ -2726,6 +2734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeColor: 0
   cubeIsActive: 0
   myValue: 0
   cubeIndex: 0
@@ -3476,30 +3485,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1679890166}
-        m_MethodName: Checkcubes
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1679890164}
-        m_MethodName: CalculateWeight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1371119573
@@ -3675,6 +3660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeColor: 0
   cubeIsActive: 0
   myValue: 0
   cubeIndex: 0
@@ -4802,6 +4788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeColor: 0
   cubeIsActive: 0
   myValue: 0
   cubeIndex: 0
@@ -5115,6 +5102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorName: 
+  cubeColor: 0
   cubeIsActive: 0
   myValue: 0
   cubeIndex: 0
@@ -5274,16 +5262,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   error: 0
+  maxError: 0
   previousError: 0
   globalperformance: 0
   SVnumberofcubes: 0
   SVnumberofcolors: 0
-  SVdistance: 0
+  SVside: 0
   Parameternumberofcubes: 0
   Parameternumberofcolors: 0
-  Parameterdistance: 0
+  Parameterside: 0
+  newParamCubes: 0
+  newParamColor: 0
+  newParamside: 0
   equalcolors: 0
-  equaldistance: 0
+  equalside: 0
   totalPerformances: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Scale: {fileID: 2050649587}
 --- !u!114 &1898096713
