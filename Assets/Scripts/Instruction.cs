@@ -547,7 +547,7 @@ public class Instruction : MonoBehaviour
 			numberofcolors = 2;
 		}
 
-		if (ADSystem.Parameternumberofcolors <= .3) {
+		if (ADSystem.Parameterside <= .3) {
 			side = 1;
 		} else {
 			side = 2;

@@ -33,6 +33,11 @@ public class ColorcubesAD : MonoBehaviour {
 		if (DifficultyConfiguration.side == 1) {
 			Leftcubes = Rightcubes;
 		}
+		if (DifficultyConfiguration.side ==2) {
+			if (Leftcubes == Rightcubes){
+				Rightcubes = Generatecubespositions ();
+			}
+		}
 		foreach (Seecubes script in activecubes) {
 			script.ActiveCubesAD ();
 

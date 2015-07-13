@@ -178,7 +178,7 @@ public class InputOutputADS : MonoBehaviour {
 
 	public float VectorAddition(float previousparameter, float stepvector){
 
-		return previousparameter+stepvector*(Mathf.Sign(maxError)*.25f*maxError);
+		return previousparameter+stepvector*(Mathf.Sign(maxError)*.75f*maxError);
 	}
 
 

@@ -121,6 +121,9 @@ public class Seecubes : MonoBehaviour {
 				cubeIsActive=true;
 				DefineCubeColor ();
 								}
+			else {
+				cubeIsActive=false;
+			}
 		}
 	else if (gameObject.tag == "Left") 
 			{
@@ -130,10 +133,11 @@ public class Seecubes : MonoBehaviour {
 				DefineCubeColor ();
 						
 				}
+			else {
+				cubeIsActive=false;
 			}
-		else {
-			cubeIsActive=false;
-		}
+			}
+
 
 
 	}
@@ -145,14 +149,15 @@ public class Seecubes : MonoBehaviour {
 	}
 
 	public void DefineCubeColor(){
-
+		if (cubeIsActive == true) {
 			if (Valores.numberofcolors == 1) {
 				cubeColor = 1;
 			} else if (Valores.numberofcolors == 2) {
 				cubeColor = Random.Range (1, 3);
 			} 
-			definecubevalue();
+			definecubevalue ();
 		}
+	}
 
 
 	void definecubevalue(){
@@ -175,15 +180,18 @@ public class Seecubes : MonoBehaviour {
 		if (cubeIsActive == true) {
 			gameObject.GetComponent<Collider> ().enabled = true;
 		
-		if (cubeColor == 2){
-			gameObject.GetComponent<Renderer> ().material.color = Color.red;
+			if (cubeColor == 2) {
+				gameObject.GetComponent<Renderer> ().material.color = Color.red;
 		
-		}
-		else if (cubeColor == 1){
-			gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
+			} else if (cubeColor == 1) {
+				gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
 	
 		
-			}}
+			}
+		} else {
+			gameObject.GetComponent<Collider> ().enabled = false;
+			gameObject.GetComponent<Renderer> ().material.color = Color.clear;
+		}
 
 
 
