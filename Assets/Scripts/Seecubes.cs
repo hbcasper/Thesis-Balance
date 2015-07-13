@@ -13,6 +13,7 @@ public class Seecubes : MonoBehaviour {
 	public int cubeColor=0;
 	public bool cubeIsActive=false;
 	public int myValue = 0;
+	public int cubechanged = 0;
 
 	int nameLenght; 
 	public int cubeIndex;
@@ -145,6 +146,8 @@ public class Seecubes : MonoBehaviour {
 		gameObject.GetComponent<Renderer> ().material.color = Color.clear;
 		gameObject.GetComponent<Collider> ().enabled = false;
 		myValue = 0;
+		cubeColor = 0;
+		cubechanged = 0;
 			
 	}
 
@@ -159,6 +162,16 @@ public class Seecubes : MonoBehaviour {
 		}
 	}
 
+	public void ChangeColor(int extracolor, int newcolor){
+		if (cubeIsActive == true) {
+			if (cubeColor == extracolor) {
+				cubeColor = newcolor;
+				cubechanged = 1;
+			}
+			definecubevalue ();
+		}
+
+	}
 
 	void definecubevalue(){
 
@@ -171,7 +184,7 @@ public class Seecubes : MonoBehaviour {
 				//gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
 			myValue=cubeIndex*1;
 			}
-		paintcube ();
+		//paintcube ();
 
 
 	}

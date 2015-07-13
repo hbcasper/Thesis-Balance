@@ -16,7 +16,7 @@ public class InputOutputADS : MonoBehaviour {
 	float direction = 1f;
 
 	public float error;
-	public float maxError;
+	 float maxError;
 	public float previousError = 0;
 	public int globalperformance;
 
@@ -34,10 +34,8 @@ public class InputOutputADS : MonoBehaviour {
 	public float newParamColor;
 	public float newParamside;
 
-	public float equalcolors;
-	public float equalside;
 
-	 public int[] totalPerformances = new int[7];
+	int[] totalPerformances = new int[7];
 	 int performancenumber;
 
 	 float performancetotal;
@@ -134,7 +132,7 @@ public class InputOutputADS : MonoBehaviour {
 
 		// new step vector??
 
-		if (error > previousError || (error > 0 && previousError < 0) || (error < 0 && previousError > 0)) {
+		if (error >= previousError || (error > 0 && previousError < 0) || (error < 0 && previousError > 0)) {
 			// calculate new step vector
 			NewStepVector(true, true, true);
 		} else {

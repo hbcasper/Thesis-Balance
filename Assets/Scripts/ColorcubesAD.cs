@@ -11,6 +11,8 @@ public class ColorcubesAD : MonoBehaviour {
 	public int totalLeft = 0;
 	public int totalRight = 0;
 	public int difference;
+	public bool existared= false;
+	public bool existayellow=false;
 
 	public string Leftcubes;
 	public string Rightcubes;
@@ -53,37 +55,46 @@ public class ColorcubesAD : MonoBehaviour {
 			
 		}
 	public void checkcolors(){
-		bool correct=false;
+		existared = false;
+		existayellow = false;
 	
-		bool existared= false;
-		bool existayellow=false;
 		foreach (Seecubes script in activecubes) {
 			
-			if (script.cubeColor==1){
-				existayellow=true;
+			if (script.cubeColor == 1) {
+				existayellow = true;
 				
 				
-			} else if (script.cubeColor==2){
-				existared=true;
+			} else if (script.cubeColor == 2) {
+				existared = true;
 			}
 		}
-		if (DifficultyConfiguration.numberofcolors == 2 && existayellow==true && existared==true) {
-			correct = true;
-		}
-		while(correct = false){
-			ActiveCubesAD();
-			if (DifficultyConfiguration.numberofcolors == 2 && existayellow==true && existared==true) {
-			correct = true;
-		}
+		if (DifficultyConfiguration.numberofcolors == 2) {
+			int cubeschanged = 0;
+		
+			if (existared == false) {
+				foreach (Seecubes script in activecubes) {
+					Debug.Log ("GOtheeeere");
+					if (cubeschanged < 1) {
+						script.ChangeColor (1, 2);
+						cubeschanged = cubeschanged + script.cubechanged;
 
+					}
+				}	
+			} else if (existayellow == false) {
+				Debug.Log ("GOtheeeere");
+			
+				foreach (Seecubes script in activecubes) {
+					if (cubeschanged < 1) {
+						script.ChangeColor (2, 1);
+						cubeschanged = cubeschanged + script.cubechanged;
+
+					}
+				}
+			}
+		}
 	}
 
 
-		
-	}
-
-
-		
 
 		public void DeactiveCubesAD() {
 		totalLeft = 0;
