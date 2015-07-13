@@ -14,6 +14,7 @@ TagManager:
   - AD
   - Green
   - number
+  - TASK
   layers:
   - Default
   - TransparentFX

@@ -15,6 +15,7 @@ public class Instruction : MonoBehaviour
 	private GameObject GameConfigurationToogles;
 	private GameObject ExcerciseManager;
 	private InputOutputADS ADSystem;
+	public string AdaptiveLevel;
 
 
 	//AD variables
@@ -553,6 +554,10 @@ public class Instruction : MonoBehaviour
 			side = 2;
 		}
 	}
+
+
+
+		
 
 
 		

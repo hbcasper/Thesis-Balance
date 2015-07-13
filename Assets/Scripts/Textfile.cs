@@ -45,6 +45,7 @@ public class Textfile : MonoBehaviour {
 	public TimeSpan reactionTime2;
 	public TimeSpan reactionTime3; 
 
+	InputOutputADS AdaptiveSystem;
 
 
 	int TimeCounter(DateTime starttime, DateTime endtime){
@@ -58,6 +59,8 @@ public class Textfile : MonoBehaviour {
 	}
 	
 	void Start () {
+
+		AdaptiveSystem = gameObject.GetComponent<InputOutputADS> ();
 
 		// ------------ Calling variables---------
 		Instructions = GameObject.Find ("Instructions"); 
@@ -134,7 +137,7 @@ public class Textfile : MonoBehaviour {
 			Debug.Log(reactionTime2.Seconds);
 			Debug.Log(reactionTime2.Milliseconds);
 		
-			// Date, Time, Participant Number, Condition, Trial# , Level, CorrectFallSide , ChoosedFallSide , IsCorrect? , Score, Time to Set, TimetoChoose, Total Time, LeftRedPos, LeftYellPos, RightRedPos, RightYellPos,TotalWeightLeft, TotalWeightRight,DifferenceOfWeights
+			// Date, Time, Participant Number, Condition, Trial# , Level, CorrectFallSide , ChoosedFallSide , IsCorrect? , Score, Time to Set, TimetoChoose, Total Time, LeftRedPos, LeftYellPos, RightRedPos, RightYellPos,TotalWeightLeft, TotalWeightRight,DifferenceOfWeights, side parameter, colors parameter, cubes parameter, colors, cubes, equal side
 		
 			dataTaskLine = (startTask.Day.ToString () + "/"
 				+ startTask.Month.ToString () + "/"
@@ -157,7 +160,15 @@ public class Textfile : MonoBehaviour {
 				+ CubesOrder.activecubes + ","
 				+ Sidetotal.totalLeft.ToString () + ","   
 				+ Sidetotal.totalRight.ToString () + ","
-				+ Sidetotal.difference.ToString ());
+			               + Sidetotal.difference.ToString () + ","
+			                + AdaptiveSystem.Parameterside.ToString()+ ","
+			                +AdaptiveSystem.Parameternumberofcolors.ToString() + ","
+			                +AdaptiveSystem.Parameternumberofcubes.ToString()+ ","
+			                +WeightsConfiguration.numberofcolors.ToString() + ","
+			                +WeightsConfiguration.numberofplaces.ToString() + ","
+			                +WeightsConfiguration.side.ToString()
+
+			                );
 			Debug.Log (dataTaskLine);
 		
 			try{

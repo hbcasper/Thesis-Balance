@@ -37,8 +37,9 @@ public class InputOutputADS : MonoBehaviour {
 
 	int[] totalPerformances = new int[7];
 	 int performancenumber;
+	public float totaldifficulty;
 
-	 float performancetotal;
+	 public float performancetotal;
 	
 	//Calling values
 
@@ -170,6 +171,8 @@ public class InputOutputADS : MonoBehaviour {
 		Parameternumberofcolors = newParamColor;
 		Parameterside = newParamside;
 
+		totaldifficulty = (Parameterside + Parameternumberofcubes + Parameternumberofcolors);
+
 		previousError = error;
 
 	}
@@ -202,6 +205,8 @@ public class InputOutputADS : MonoBehaviour {
 
 		return UnityEngine.Random.Range (0f, 1f);
 	}
+
+
 
 
 

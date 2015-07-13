@@ -173,6 +173,7 @@ MonoBehaviour:
   cubeColor: 0
   cubeIsActive: 0
   myValue: 0
+  cubechanged: 0
   cubeIndex: 0
 --- !u!23 &36448053
 MeshRenderer:
@@ -442,6 +443,7 @@ MonoBehaviour:
   cubeColor: 0
   cubeIsActive: 0
   myValue: 0
+  cubechanged: 0
   cubeIndex: 0
 --- !u!23 &144270116
 MeshRenderer:
@@ -566,6 +568,7 @@ MonoBehaviour:
   cubeColor: 0
   cubeIsActive: 0
   myValue: 0
+  cubechanged: 0
   cubeIndex: 0
 --- !u!23 &146220914
 MeshRenderer:
@@ -703,6 +706,7 @@ MonoBehaviour:
   cubeColor: 0
   cubeIsActive: 0
   myValue: 0
+  cubechanged: 0
   cubeIndex: 0
 --- !u!23 &202068864
 MeshRenderer:
@@ -799,6 +803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelcomesfrom: {fileID: 1898096705}
+  AdaptiveLevel: 
   rightSideAD: 
   leftSideAD: 
   numberofplaces: 0
@@ -1230,7 +1235,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 4a92d471d38b849b3b91c5641d1df91c, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a92d471d38b849b3b91c5641d1df91c, type: 2}
@@ -1479,6 +1484,7 @@ MonoBehaviour:
   cubeColor: 0
   cubeIsActive: 0
   myValue: 0
+  cubechanged: 0
   cubeIndex: 0
 --- !u!23 &523814109
 MeshRenderer:
@@ -1603,6 +1609,7 @@ MonoBehaviour:
   cubeColor: 0
   cubeIsActive: 0
   myValue: 0
+  cubechanged: 0
   cubeIndex: 0
 --- !u!23 &548114622
 MeshRenderer:
@@ -2235,6 +2242,7 @@ MonoBehaviour:
   cubeColor: 0
   cubeIsActive: 0
   myValue: 0
+  cubechanged: 0
   cubeIndex: 0
 --- !u!23 &865910510
 MeshRenderer:
@@ -2432,6 +2440,7 @@ MonoBehaviour:
   cubeColor: 0
   cubeIsActive: 0
   myValue: 0
+  cubechanged: 0
   cubeIndex: 0
 --- !u!23 &938204855
 MeshRenderer:
@@ -2737,6 +2746,7 @@ MonoBehaviour:
   cubeColor: 0
   cubeIsActive: 0
   myValue: 0
+  cubechanged: 0
   cubeIndex: 0
 --- !u!23 &1119595924
 MeshRenderer:
@@ -3663,6 +3673,7 @@ MonoBehaviour:
   cubeColor: 0
   cubeIsActive: 0
   myValue: 0
+  cubechanged: 0
   cubeIndex: 0
 --- !u!23 &1553037964
 MeshRenderer:
@@ -4457,7 +4468,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: bf30d577eead1ef40bcf2b404289daf4, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf30d577eead1ef40bcf2b404289daf4, type: 2}
@@ -4689,6 +4700,8 @@ MonoBehaviour:
   totalLeft: 0
   totalRight: 0
   difference: 0
+  existared: 0
+  existayellow: 0
   Leftcubes: 
   Rightcubes: 
   Scale: {fileID: 213136010}
@@ -4791,6 +4804,7 @@ MonoBehaviour:
   cubeColor: 0
   cubeIsActive: 0
   myValue: 0
+  cubechanged: 0
   cubeIndex: 0
 --- !u!23 &1708643731
 MeshRenderer:
@@ -5105,6 +5119,7 @@ MonoBehaviour:
   cubeColor: 0
   cubeIsActive: 0
   myValue: 0
+  cubechanged: 0
   cubeIndex: 0
 --- !u!23 &1779092437
 MeshRenderer:
@@ -5262,7 +5277,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   error: 0
-  maxError: 0
   previousError: 0
   globalperformance: 0
   SVnumberofcubes: 0
@@ -5274,9 +5288,8 @@ MonoBehaviour:
   newParamCubes: 0
   newParamColor: 0
   newParamside: 0
-  equalcolors: 0
-  equalside: 0
-  totalPerformances: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  totaldifficulty: 0
+  performancetotal: 0
   Scale: {fileID: 2050649587}
 --- !u!114 &1898096713
 MonoBehaviour:
