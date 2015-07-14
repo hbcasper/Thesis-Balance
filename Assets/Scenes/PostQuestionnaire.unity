@@ -4586,6 +4586,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Toggles: []
+  userData: 
+  scene: 
 --- !u!1 &1819871190
 GameObject:
   m_ObjectHideFlags: 0

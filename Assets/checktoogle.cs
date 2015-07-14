@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class checktoogle : MonoBehaviour {
 	public Selectedtoogle[] Toggles;
 	public string userData;
+	public string scene;
 
 
 	// Use this for initialization
@@ -28,6 +29,13 @@ public class checktoogle : MonoBehaviour {
 			}
 		}
 		Debug.Log (userData);
+
+		scene = Application.loadedLevelName;
+		if (scene == "PostQuestionnaire") {
+			GameObject.Find ("userdata").GetComponent<userdata> ().savepostanswers ();
+		}	
+
+
 
 
 	

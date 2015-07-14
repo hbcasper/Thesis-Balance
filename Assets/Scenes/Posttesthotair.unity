@@ -1799,7 +1799,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 05c6cb7aa8f729349a36954c92cef724, type: 2}
+  - {fileID: 2100000, guid: 5d81f39ca738c2e479031054056246be, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -4375,7 +4375,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 156b99f763c35d84385ec6908e3f6560, type: 2}
+  - {fileID: 2100000, guid: 1aa8d4d6038bd654e8015d331658aaeb, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -5873,8 +5873,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -228, y: 200}
-  m_SizeDelta: {x: 419, y: 168}
+  m_AnchoredPosition: {x: -209, y: 200}
+  m_SizeDelta: {x: 458, y: 168}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1859532531
 MonoBehaviour:
@@ -5902,8 +5902,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "You will see a hot air balloon like the one in the next image.\n\r\nWith
-    a YELLOW WEIGHT hanging on it.\n\nYou have to find out in which rope you should
-    hang a BLUE WEIGHT in order to BALANCE\r IT"
+    a BLUE WEIGHT hanging on it.\n\nYou have to find out in which rope you should
+    hang a YELLOW WEIGHT in order to BALANCE\r IT"
 --- !u!222 &1859532532
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -5580,8 +5580,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 879004806}
   - 114: {fileID: 879004807}
+  - 114: {fileID: 879004808}
   m_Layer: 0
-  m_Name: Pretestmanager
+  m_Name: userdata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5613,6 +5614,18 @@ MonoBehaviour:
   user: 
   emailobject: {fileID: 0}
   email: 
+  usertotaldata: 
+--- !u!114 &879004808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 879004805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2fe91968e758c40923e6511f3dfa41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &890693918
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class userdata : MonoBehaviour {
 	string ExerciseLog;
 	string AnswerLog;
 	string TotalCorrect;
-	string usertotaldata;
+	public string usertotaldata;
 
 
 
@@ -37,6 +37,17 @@ public class userdata : MonoBehaviour {
 
 		usertotaldata = user + "," + email;
 
+	}
+	public void savepostanswers () {
+		toggles = GameObject.Find ("Questions");
+		answerdata = toggles.GetComponent<checktoogle> ();
+		
+		user = answerdata.userData;
+	
+		
+		usertotaldata = usertotaldata + user;
+		SaveUserTotalData ();
+		
 	}
 
 	public void savetestdata() {
