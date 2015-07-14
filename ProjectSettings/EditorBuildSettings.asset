@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Task1.unity
   - enabled: 1
     path: Assets/Scenes/FinalScene.unity
+  - enabled: 1
+    path: Assets/Scenes/PostQuestionnaire.unity
