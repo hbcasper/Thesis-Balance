@@ -16,7 +16,7 @@ public class userdata : MonoBehaviour {
 	string AnswerLog;
 	string TotalCorrect;
 	public string usertotaldata;
-	public GameObject answer1object;
+	//public GameObject answer1object;
 	string answer1;
 	string answer2;
 
@@ -62,13 +62,14 @@ public class userdata : MonoBehaviour {
 		ExerciseLog = test.GetComponent<checkifcorrect> ().exerciselog;
 		PerformanceLog = test.GetComponent<checkifcorrect> ().performance;
 		TotalCorrect = test.GetComponent<checkifcorrect> ().count.ToString();
+		AnswerLog = test.GetComponent<checkifcorrect> ().answerlog;
 		SaveUserTotalData ();
 
 	}
 
 	public void SaveUserTotalData(){
 
-		usertotaldata = usertotaldata + "," + ExerciseLog + "," + PerformanceLog + "," +TotalCorrect;
+		usertotaldata = usertotaldata + "," + ExerciseLog + "," + AnswerLog + "," + PerformanceLog + "," +TotalCorrect;
 		Debug.Log ("usertotaldata: " + usertotaldata);
 	}
 }

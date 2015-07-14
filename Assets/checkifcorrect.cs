@@ -17,13 +17,17 @@ public class checkifcorrect : MonoBehaviour {
 	public int trials;
 	// Use this for initialization
 	void Start () {
-		scene = Application.loadedLevelName;
+
 		trials = 0;
 
 	
 		exercisenumber = gameObject.GetComponent<randomexercise> ();
 	
 	}
+	void Update(){
+		scene = Application.loadedLevelName;
+	}
+
 	
 	// Update is called once per frame
 	public void correctanwsers () {
