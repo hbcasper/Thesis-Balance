@@ -10,7 +10,7 @@ public class savelog : MonoBehaviour {
 
 	int participant;
 
-	bool ActiveData;
+	public bool ActiveData;
 	StreamWriter writer;
 	
 	
@@ -18,22 +18,27 @@ public class savelog : MonoBehaviour {
 	string dataTaskLine;
 
 	// Use this for initialization
-	void Start () {
+	void Update () {
+		ActiveData = GameObject.Find("GameConfiguration").GetComponent<ToogleOptions> ().Data;
 	
 	}
 	
 	// Update is called once per frame
 	public void SaveDataPrePost () {
 
+
 		createLogFile (); 
 		write ();
+
 
 	
 	}
 	private void createLogFile(){
-		ActiveData = GameObject.Find("GameConfiguration").GetComponent<ToogleOptions> ().Data;
+		Debug.Log ("Got");
+
 		
 		if (ActiveData == true){
+			Debug.Log("Gottoo");
 			
 			string logFilePath = Application.persistentDataPath + @"participant_PrePost"; //tablet
 			//string logFilePath = @"Assets\ParticipantFiles\" + "_balancescale_nr_"; // computer
@@ -52,7 +57,9 @@ public class savelog : MonoBehaviour {
 		}
 	} 
 	public void write () {
+
 		if (ActiveData == true){
+			Debug.Log("Gottoootooo");
 			
 
 
@@ -65,7 +72,11 @@ public class savelog : MonoBehaviour {
 				
 				writer.Flush ();
 			} catch (Exception e){}
+
+			Application.LoadLevel("FinalScene");
+
 		}
+
 		
 	}
 

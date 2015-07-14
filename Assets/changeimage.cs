@@ -36,7 +36,7 @@ public class changeimage : MonoBehaviour {
 		}
 		else if (scene == "Posttestscale") {
 			
-			GetComponent<Renderer> ().material.mainTexture = Resources.Load ("Postsca" + exercisenumber.exercise) as Texture; 
+			GetComponent<Renderer> ().material.mainTexture = Resources.Load ("Postca" + exercisenumber.exercise) as Texture; 
 		}
 	}
 }

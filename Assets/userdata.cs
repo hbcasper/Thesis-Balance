@@ -6,9 +6,7 @@ public class userdata : MonoBehaviour {
 	public string user;
 	GameObject toggles;
 	checktoogle answerdata;
-	public GameObject emailobject;
-	Saveemail emaildata;
-	public string email;
+
 	GameObject test;
 	string CorrectLog;
 	string PerformanceLog;
@@ -17,8 +15,9 @@ public class userdata : MonoBehaviour {
 	string TotalCorrect;
 	public string usertotaldata;
 	//public GameObject answer1object;
-	string answer1;
-	string answer2;
+
+	string scene;
+
 
 
 
@@ -30,16 +29,21 @@ public class userdata : MonoBehaviour {
 		DontDestroyOnLoad(transform.gameObject);
 	}
 
+	void Update(){
+		scene = Application.loadedLevelName;
+	}
+
+
 	// Update is called once per frame
 	public void saveanswers () {
 		toggles = GameObject.Find ("Questions");
 		answerdata = toggles.GetComponent<checktoogle> ();
-		emaildata = emailobject.GetComponent<Saveemail> ();
+
 
 		user = answerdata.userData;
-		email = emaildata.email;
+	
 
-		usertotaldata = user + "," + email;
+		usertotaldata = user + ",";
 
 	}
 	public void savepostanswers () {
@@ -47,12 +51,13 @@ public class userdata : MonoBehaviour {
 		answerdata = toggles.GetComponent<checktoogle> ();
 		
 		user = answerdata.userData;
-		answer1 = GameObject.Find ("Answer1").GetComponent<Saveemail> ().email;
-		answer2 = GameObject.Find ("Answer2").GetComponent<Saveemail> ().email;
 
-		usertotaldata = usertotaldata + user + "," + answer1+ "," + answer2;
-		SaveUserTotalData ();
 
+		usertotaldata = usertotaldata + user;
+
+		if (scene == "PostQuestionnaire") {
+			gameObject.GetComponent<savelog> ().SaveDataPrePost ();
+		}
 		
 	}
 
@@ -71,5 +76,7 @@ public class userdata : MonoBehaviour {
 
 		usertotaldata = usertotaldata + "," + ExerciseLog + "," + AnswerLog + "," + PerformanceLog + "," +TotalCorrect;
 		Debug.Log ("usertotaldata: " + usertotaldata);
+
+
 	}
 }

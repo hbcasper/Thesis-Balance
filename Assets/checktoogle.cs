@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class checktoogle : MonoBehaviour {
 	public Selectedtoogle[] Toggles;
 	public string userData;
-	public string scene;
+
 
 
 	// Use this for initialization
@@ -14,6 +14,8 @@ public class checktoogle : MonoBehaviour {
 	
 		Toggles = gameObject.GetComponentsInChildren<Selectedtoogle> ();
 	}
+
+
 
 	
 	// Update is called once per frame
@@ -30,14 +32,23 @@ public class checktoogle : MonoBehaviour {
 		}
 		Debug.Log (userData);
 
-		scene = Application.loadedLevelName;
-		if (scene == "PostQuestionnaire") {
-			GameObject.Find ("userdata").GetComponent<userdata> ().savepostanswers ();
-		}	
-
-
-
-
 	
 	}
+	public void LastSaveData() {
+		
+		//DATA = Gender, Age, EducationDegree, Studyfield, PhysicsSkills, Videogames, Touchdevices, 
+		
+		
+		foreach (Selectedtoogle toogle in Toggles) {
+			
+			if (toogle.selectedOption != null){
+				userData = userData + toogle.selectedOption + ",";
+			}
+		}
+		Debug.Log (userData);
+		
+
+			GameObject.Find ("userdata").GetComponent<userdata> ().savepostanswers ();
+			
+}
 }
