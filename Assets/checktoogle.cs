@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class checktoogle : MonoBehaviour {
 	public Selectedtoogle[] Toggles;
-	string userData;
+	public string userData;
 
 
 	// Use this for initialization

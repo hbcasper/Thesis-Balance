@@ -10,7 +10,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UserData.unity
   - enabled: 1
-    path: Assets/Scenes/Pretest.unity
+    path: Assets/Scenes/Pretesthotair.unity
+  - enabled: 1
+    path: Assets/Scenes/Pretestscale.unity
   - enabled: 1
     path: Assets/Scenes/UserInstuction.unity
   - enabled: 1

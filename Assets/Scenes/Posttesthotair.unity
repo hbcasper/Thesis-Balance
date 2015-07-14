@@ -2047,6 +2047,8 @@ MonoBehaviour:
   pressed: 
   answerlog: 
   count: 0
+  exerciselog: 
+  performance: 
   trials: 1
 --- !u!114 &879004809
 MonoBehaviour:
