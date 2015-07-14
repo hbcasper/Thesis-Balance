@@ -44,7 +44,7 @@ LevelGameManager:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -68,7 +68,8 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-  m_LightmapSnapshot: {fileID: 0}
+  m_LightmapSnapshot: {fileID: 112000000, guid: ccb6cea1ac1a88e489169c4d1a19c6bc,
+    type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
 NavMeshSettings:
@@ -1007,7 +1008,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Where should you hang a \n\nBLUE WEIGHT\n\nto balance the hot-air balloon?"
+  m_Text: "Where should you hang a \n\nYELLOW WEIGHT\n\nto balance the hot-air balloon?"
 --- !u!222 &556283413
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3426,8 +3427,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You will do now a short test before the experiment starts.\r\nYou will
-    have 7 seconds to solve each exercise."
+  m_Text: 'You will do now a short test similar to the one that you made in the beggining.
+
+    You will have 7 seconds to solve each exercise.'
 --- !u!222 &1178985670
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5901,8 +5903,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You will see a hot air balloon like the one in the next image.\n\r\nWith
-    a BLUE WEIGHT hanging on it.\n\nYou have to find out in which rope you should
+  m_Text: "You will see a hot air balloon like the one in the next image.\n\r\nNow
+    with a BLUE WEIGHT hanging on it.\n\nYou have to find out in which rope you should
     hang a YELLOW WEIGHT in order to BALANCE\r IT"
 --- !u!222 &1859532532
 CanvasRenderer:

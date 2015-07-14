@@ -44,7 +44,7 @@ LevelGameManager:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -68,7 +68,8 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-  m_LightmapSnapshot: {fileID: 0}
+  m_LightmapSnapshot: {fileID: 112000000, guid: 86611dffae84d2e4b95fa806da792eca,
+    type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
 NavMeshSettings:
@@ -2036,7 +2037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1301170033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2098,8 +2099,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1301170032}
   m_LocalRotation: {x: -5.9604659e-08, y: -.707106829, z: .707106829, w: -1.4901164e-07}
-  m_LocalPosition: {x: -80, y: -52, z: 152}
-  m_LocalScale: {x: 10.5919485, y: 17.6983833, z: 3.71496511}
+  m_LocalPosition: {x: 81, y: 62, z: 152}
+  m_LocalScale: {x: 6.54633331, y: 10.938447, z: 2.29602623}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -3257,8 +3258,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 32, y: 338}
-  m_SizeDelta: {x: 842, y: 168}
+  m_AnchoredPosition: {x: -195, y: 367}
+  m_SizeDelta: {x: 459, y: 168}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1859532531
 MonoBehaviour:
@@ -3285,9 +3286,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'In the following tasks you will see a scale with a configuration of weights.
-    You must decide to which side it will fall, Left or Right, or if it will stay
-    balanced.
+  m_Text: 'You will do now a similar task to the one that you made at the beggining.
+    You will see a scale with a configuration of weights. You must decide to which
+    side it will fall, Left or Right, or if it will stay balanced.
 
     You will have 7 seconds to solve each exercise.
 
@@ -3329,7 +3330,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 6, y: 225}
+  m_AnchoredPosition: {x: 260, y: 370}
   m_SizeDelta: {x: 430, y: 168}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1900805943

@@ -44,7 +44,7 @@ LevelGameManager:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -68,7 +68,8 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-  m_LightmapSnapshot: {fileID: 0}
+  m_LightmapSnapshot: {fileID: 112000000, guid: fcd8a8594045b484b9ef12c7be3fbb93,
+    type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
 NavMeshSettings:
@@ -1724,7 +1725,7 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -216, y: -134}
+  m_AnchoredPosition: {x: -200, y: -160}
   m_SizeDelta: {x: 271, y: 27}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &344203266
@@ -3339,7 +3340,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Which is your highest education degree? *
+  m_Text: 'Which is your highest education degree? '
 --- !u!222 &564024244
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3951,21 +3952,22 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Please read the following text carefully to understand what you will experience
     during the following experiment. The experiment consists of three parts and is
-    aimed at understanding the effect feedback has on learning. \r\nYour anonymity
-    is ensured.\r\n\r\n1. Pre - Questionnaire: You will answer a questionnaire that
-    includes: demographic information, a test for fluid intelligence and a test with
-    questions similar to the once you will answer in the actual experiment.\r\n\r\n2.
-    Experiment: You will play a game that relies on logical rules, which you will
-    try to extract. This experiment is conducted on a tablet and you will have to
-    answer via touch input.  \r\nWe will take a video of your reactions, during the
-    experiment to extract behavioral data. This video is for experimental purposes
-    only and will not be given to third parties.\r\n\r\n3. Post - Questionnaire: You
-    will again be given questions that are similar to the ones in the Pre - Questionnaire.
-    Furhermore you will be asked to answer some questions regarding your experience
-    during the game. \r\n\r\nThe whole experiment will last between 10 - 20 miuntes.
-    \r\n\r\nYou can step back from participation at any moment during the exeriment
-    without any consequences. \r\n\r\nBy checking the box, you state to have read
-    and agreed to the terms stated above. "
+    aimed at explore the way in which we learn.\nYour anonymity is ensured.\r\n\r\n1.
+    Pre - Questionnaire: You will answer a questionnaire that includes: demographic
+    information, a test to measure your physics' background, and a test with questions
+    similar to the once you will answer in the actual experiment.\r\n\r\n2. Experiment:
+    You will play a game using the tablet and a balance, where you will need to deduce
+    to wich side the balance will fall according to the weights on both sides. This
+    experiment is conducted via augmented reality and you will have to answer via
+    touch input.  \r\nWe may take a video of your reactions during the experiment
+    to extract behavioral data. This video is for experimental purposes only and will
+    not be given to third parties.\r\n\r\n3. Post - Questionnaire: You will again
+    be given questions that are similar to the ones in the Pre - Questionnaire. Furthermore
+    you will be asked to answer some questions regarding your experience during the
+    game. \r\n\r\nThe whole experiment will last between 10 - 20 miuntes. \r\n\r\nYou
+    can step back from participation at any moment during the experiment without any
+    consequences. \r\n\r\nBy checking the box, you state to have read and agreed to
+    the terms stated above. "
 --- !u!222 &619040452
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4998,7 +5000,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: What is your experience with tactile devices (smartphone/tablet? *
+  m_Text: 'What is your experience with tactile devices (smartphone/tablet)? '
 --- !u!222 &759761697
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5615,7 +5617,6 @@ MonoBehaviour:
   emailobject: {fileID: 245554062}
   email: 
   usertotaldata: 
-  answer1object: {fileID: 0}
 --- !u!114 &879004808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6921,7 +6922,7 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -208, y: -172}
+  m_AnchoredPosition: {x: -198, y: -190}
   m_SizeDelta: {x: 276, y: 37.9230003}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1071428854
@@ -8376,7 +8377,7 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -264, y: -208}
+  m_AnchoredPosition: {x: -254, y: -226}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1336675615

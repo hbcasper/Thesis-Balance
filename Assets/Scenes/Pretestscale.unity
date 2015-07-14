@@ -44,7 +44,7 @@ LevelGameManager:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -68,7 +68,8 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-  m_LightmapSnapshot: {fileID: 0}
+  m_LightmapSnapshot: {fileID: 112000000, guid: ef8027ea6f253984a84144414dd5f371,
+    type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
 NavMeshSettings:
@@ -1561,6 +1562,8 @@ MonoBehaviour:
   pressed: 
   answerlog: 
   count: 0
+  exerciselog: 
+  performance: 
   trials: 1
 --- !u!114 &879004809
 MonoBehaviour:
@@ -2034,7 +2037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1301170033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2096,8 +2099,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1301170032}
   m_LocalRotation: {x: -5.9604659e-08, y: -.707106829, z: .707106829, w: -1.4901164e-07}
-  m_LocalPosition: {x: -80, y: -52, z: 152}
-  m_LocalScale: {x: 10.5919485, y: 17.6983833, z: 3.71496511}
+  m_LocalPosition: {x: 70, y: 60, z: 152}
+  m_LocalScale: {x: 6.39270639, y: 10.6817474, z: 2.24214387}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -3255,8 +3258,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 32, y: 338}
-  m_SizeDelta: {x: 842, y: 168}
+  m_AnchoredPosition: {x: -213, y: 360}
+  m_SizeDelta: {x: 455, y: 168}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1859532531
 MonoBehaviour:
@@ -3327,7 +3330,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 6, y: 225}
+  m_AnchoredPosition: {x: 226, y: 365}
   m_SizeDelta: {x: 430, y: 168}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1900805943
