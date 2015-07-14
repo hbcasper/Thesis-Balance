@@ -52,15 +52,17 @@ public class testcounter : MonoBehaviour {
 			GameObject.Find ("Counter").GetComponent<showcounter> ().startcounter = true;
 		
 			if (passedTime.Seconds > maxtime) {
+				counterMode = "stop";
 				GameObject.Find ("Counter").GetComponent<showcounter> ().startcounter = false;
 				gameObject.GetComponent<checkifcorrect> ().checkcorrect ();
 				gameObject.GetComponent<randomexercise> ().chooseexercise ();
 				GameObject.Find ("Choose").SetActive(false);
 				GameObject.Find ("Plane").SetActive(false);
 				GameObject.Find ("TaskQuestion").SetActive(false);
-				counterMode = "stop";
+
 				performance.SetActive(true);
 				question.SetActive(true);
+
 				//GameObject.Find ("TaskQuestion").SetActive(true);
 
 				//GameObject.Find ("Plane").GetComponent<changeimage> ().image ();
@@ -72,6 +74,9 @@ public class testcounter : MonoBehaviour {
 			}
 
 		}
+	}
+	public void stopcounter(){
+		counterMode = "stop";
 	}
 
 }

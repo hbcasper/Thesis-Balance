@@ -7,25 +7,23 @@ using UnityEngine.UI;
 public class randomexercise : MonoBehaviour {
 
 	public string exercise;
-	string input = "12345";
-	public int trials;
+	public string input = "12345";
+
 
 
 	// Use this for initialization
 
 	void Start(){
-		trials = 1;
+	
 	}
 
 	public void chooseexercise(){
-	
-		exercise = excercisenumber();
-		trials = trials +1;
-		//Debug.Log (trials);
 
-		if (trials > 5) {
-			Application.LoadLevel("UserInstuction");
+		if (gameObject.GetComponent<checkifcorrect>().trials < 4) {
+	
+			exercise = excercisenumber ();
 		}
+
 
 
 	}

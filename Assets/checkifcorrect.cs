@@ -13,10 +13,11 @@ public class checkifcorrect : MonoBehaviour {
 	public string answerlog;
 	public int count;
 	string performance;
-	public int trials = 0;
+	public int trials;
 	// Use this for initialization
 	void Start () {
 		scene = Application.loadedLevelName;
+		trials = 0;
 
 	
 		exercisenumber = gameObject.GetComponent<randomexercise> ();
@@ -64,20 +65,21 @@ public class checkifcorrect : MonoBehaviour {
 	void correctcount(){
 		answerlog = answerlog + answer.ToString() + ",";
 		count = count + answer;
-		Debug.Log (count);
-		Debug.Log (answerlog);
+		Debug.Log ("correct count" +count);
+		Debug.Log ("answerlog"+answerlog);
 
 	}
 	public void performanceanswer(){
 
 
 		performance = performance + pressed + ",";
-		Debug.Log (performance);
+		Debug.Log ("performance"+performance);
 		
 		trials = trials +1;
+		Debug.Log ("trials"+trials);
 		//Debug.Log (trials);
 		
-		if (trials == 6) {
+		if (trials >4) {
 			Application.LoadLevel("UserInstuction");
 		}
 		
