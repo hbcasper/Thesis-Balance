@@ -2722,7 +2722,7 @@ GameObject:
   - 114: {fileID: 978417538}
   - 114: {fileID: 978417537}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Answer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5369,8 +5369,9 @@ GameObject:
   - 224: {fileID: 2120945129}
   - 222: {fileID: 2120945131}
   - 114: {fileID: 2120945130}
+  - 114: {fileID: 2120945132}
   m_Layer: 5
-  m_Name: Placeholder
+  m_Name: Answer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5425,3 +5426,15 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2120945128}
+--- !u!114 &2120945132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2120945128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abaabaa8ac93cf48afa30650e7e706b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  email: 

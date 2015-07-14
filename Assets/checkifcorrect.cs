@@ -117,14 +117,16 @@ public class checkifcorrect : MonoBehaviour {
 		//Debug.Log (trials);
 		
 		if (trials >4) {
-				if (scene == "Pretesthotair") {
+				
+			GameObject.Find("userdata").GetComponent<userdata>().savetestdata();
 
-				GameObject.Find("userdata").GetComponent<userdata>().savetestdata();
+
+			if (scene == "Pretesthotair") {
 
 			Application.LoadLevel("Pretestscale");
 				}
-				else if (scene == "Pretestscale") {
-					Application.LoadLevel("Userinstuction");
+			else if (scene == "Pretestscale") {
+				Application.LoadLevel("UserInstuction");
 				}
 			else if (scene == "Posttesthotair") {
 				Application.LoadLevel("Posttestscale");

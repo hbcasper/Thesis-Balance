@@ -16,6 +16,10 @@ public class userdata : MonoBehaviour {
 	string AnswerLog;
 	string TotalCorrect;
 	public string usertotaldata;
+	public GameObject answer1object;
+	string answer1;
+	string answer2;
+
 
 
 
@@ -43,16 +47,18 @@ public class userdata : MonoBehaviour {
 		answerdata = toggles.GetComponent<checktoogle> ();
 		
 		user = answerdata.userData;
-	
-		
-		usertotaldata = usertotaldata + user;
+		answer1 = GameObject.Find ("Answer1").GetComponent<Saveemail> ().email;
+		answer2 = GameObject.Find ("Answer2").GetComponent<Saveemail> ().email;
+
+		usertotaldata = usertotaldata + user + "," + answer1+ "," + answer2;
 		SaveUserTotalData ();
+
 		
 	}
 
 	public void savetestdata() {
 		test = GameObject.Find ("testmanager");
-		CorrectLog = test.GetComponent<checkifcorrect> ().answerlog;
+
 		ExerciseLog = test.GetComponent<checkifcorrect> ().exerciselog;
 		PerformanceLog = test.GetComponent<checkifcorrect> ().performance;
 		TotalCorrect = test.GetComponent<checkifcorrect> ().count.ToString();
@@ -62,7 +68,7 @@ public class userdata : MonoBehaviour {
 
 	public void SaveUserTotalData(){
 
-		usertotaldata = usertotaldata + "," + ExerciseLog + "," + AnswerLog + "," + PerformanceLog + "," +TotalCorrect;
+		usertotaldata = usertotaldata + "," + ExerciseLog + "," + PerformanceLog + "," +TotalCorrect;
 		Debug.Log ("usertotaldata: " + usertotaldata);
 	}
 }
