@@ -154,7 +154,7 @@ public class Seecubes : MonoBehaviour {
 	public void DefineCubeColor(){
 		if (cubeIsActive == true) {
 			if (Valores.numberofcolors == 1) {
-				cubeColor = 1;
+				cubeColor = 2;
 			} else if (Valores.numberofcolors == 2) {
 				cubeColor = Random.Range (1, 3);
 			} 
