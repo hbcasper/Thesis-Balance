@@ -22,7 +22,7 @@ public class Restartscene : MonoBehaviour {
 	
 
 		//Readybutton.SetActive(true);	
-		Instructions.SetActive (true);
+		//Instructions.SetActive (true);
 		Scale.transform.rotation = Quaternion.identity;
 
 
