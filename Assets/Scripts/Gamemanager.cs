@@ -93,7 +93,7 @@ public class Gamemanager : MonoBehaviour {
 
 		if(GameConfiguration.ActiveAdaptiveLevels == true) {
 				if (taskCount == 31) {
-				Application.LoadLevel ("FinalScene");
+				Application.LoadLevel ("Posttesthotair");
 				}
 				}
 

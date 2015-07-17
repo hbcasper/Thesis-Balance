@@ -131,44 +131,44 @@ public class Textfile : MonoBehaviour {
 	public void write () {
 		if (TaskCondition.Data == true) {
 			
-			reactionTime1 = readyTime.Subtract (startTask);
-			reactionTime2 = endTime.Subtract (readyTime); 
-			reactionTime3 = endTime.Subtract (startTask);
+
+			reactionTime2 = endTime.Subtract (startTask); 
+
 			Debug.Log(reactionTime2.Seconds);
 			Debug.Log(reactionTime2.Milliseconds);
 			
 			// Date, Time, Participant Number, Condition, Trial# , Level, CorrectFallSide , ChoosedFallSide , IsCorrect? , Score, Time to Set, TimetoChoose, Total Time, LeftRedPos, LeftYellPos, RightRedPos, RightYellPos,TotalWeightLeft, TotalWeightRight,DifferenceOfWeights, side parameter, colors parameter, cubes parameter, colors, cubes, equal side
 			
-//			dataTaskLine = (startTask.Day.ToString () + "/"
-//			                + startTask.Month.ToString () + "/"
-//			                + startTask.Year.ToString () + ","
-//			                + startTask.Hour.ToString () + "."
-//			                + startTask.Minute.ToString () + ","
-//			                + participant.ToString() + ","
-//			                + TaskCondition.condition.ToString () + "," 
-//			                + GameManager.taskCount.ToString () + ","
-//			                + GameManager.levelnumber.ToString () + ","
-//			                + ScaleCalculator.balance.ToString () + "," 
-//			                + Useranswer.whichbutton.ToString () + ","
-//			                + Useranswer.correct.ToString () + ","
-//			                + GameManager.score.ToString () + "," 
-//			                // -----times ----
-//			                + reactionTime1.ToString () + "," 
-//			                + "only1time" + "," 
-//			                + "only1time" + "," 
-//			                /// ------times
-//			                + CubesOrder.activecubes + ","
-//			                + Sidetotal.totalLeft.ToString () + ","   
-//			                + Sidetotal.totalRight.ToString () + ","
-//			                + Sidetotal.difference.ToString () + ","
-//			                + AdaptiveSystem.Parameterside.ToString()+ ","
-//			                +AdaptiveSystem.Parameternumberofcolors.ToString() + ","
-//			                +AdaptiveSystem.Parameternumberofcubes.ToString()+ ","
-//			                +WeightsConfiguration.numberofcolors.ToString() + ","
-//			                +WeightsConfiguration.numberofplaces.ToString() + ","
-//			                +WeightsConfiguration.side.ToString()
-//			                
-//			                );
+			dataTaskLine = (startTask.Day.ToString () + "/"
+			                + startTask.Month.ToString () + "/"
+			                + startTask.Year.ToString () + ","
+			                + startTask.Hour.ToString () + "."
+			                + startTask.Minute.ToString () + ","
+			                + participant.ToString() + ","
+			                + TaskCondition.condition.ToString () + "," 
+			                + GameManager.taskCount.ToString () + ","
+			                + GameManager.levelnumber.ToString () + ","
+			                + ScaleCalculator.balance.ToString () + "," 
+			                + Useranswer.whichbutton.ToString () + ","
+			                + Useranswer.correct.ToString () + ","
+			                + GameManager.score.ToString () + "," 
+			                // -----times ----
+			                + reactionTime2.ToString () + "," 
+			                + "only1time" + "," 
+			                + "only1time" + "," 
+			                /// ------times
+			                + CubesOrder.activecubes + ","
+			                + Sidetotal.totalLeft.ToString () + ","   
+			                + Sidetotal.totalRight.ToString () + ","
+			                + Sidetotal.difference.ToString () + ","
+			                + AdaptiveSystem.Parameterside.ToString()+ ","
+			                +AdaptiveSystem.Parameternumberofcolors.ToString() + ","
+			                +AdaptiveSystem.Parameternumberofcubes.ToString()+ ","
+			                +WeightsConfiguration.numberofcolors.ToString() + ","
+			                +WeightsConfiguration.numberofplaces.ToString() + ","
+			                +WeightsConfiguration.side.ToString()
+			                
+			                );
 			Debug.Log (dataTaskLine);
 			
 			try{
