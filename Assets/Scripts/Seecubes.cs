@@ -39,7 +39,7 @@ public class Seecubes : MonoBehaviour {
 		
 		Valores = Objeto.GetComponent<Instruction> (); 
 		
-		gameObject.GetComponent<Renderer> ().material.color = Color.clear;
+		gameObject.GetComponent<Renderer> ().enabled = false;
 		//gameObject.transform.localScale = new Vector3(1.4f,1.4f,1.4f);
 		
 		GameConfigurationToogles = GameObject.Find ("GameConfiguration");
@@ -51,52 +51,64 @@ public class Seecubes : MonoBehaviour {
 		if (GameConfiguration.ActiveAdaptiveDificulty == false) {
 			
 			ActiveCubesRS ();
-			
-			if (gameObject.GetComponent<Renderer> ().enabled == true) {
-				cubeIsActive = true;
-			} else {
-				cubeIsActive = false;
-			}
-			
-			
+	
 			calculatecubevalue();
+
 		}
 		
 		
 		
 		
 	}
+
+	public void checkRScolors(string color){
+		if (color == "yellow") {
+			cubeColor = 1;
+		} else if (color == "red") {
+			cubeColor = 2;
+		} 
+	}
+
 	
 	public void ActiveCubesRS(){
 		
 		if (((Valores.pnr1 == cubeIndex || Valores.pnr2 == cubeIndex) && gameObject.tag == "Right")||((Valores.pnl1 == cubeIndex || Valores.pnl2 == cubeIndex) && gameObject.tag == "Left"))
 		{
 			gameObject.GetComponent<Collider> ().enabled = true;
+			gameObject.GetComponent<Renderer> ().enabled = true;
+			cubeIsActive = true;
 		} else {
 			gameObject.GetComponent<Collider> ().enabled = false;	
-			gameObject.GetComponent<Renderer> ().material.color = Color.clear;
+			gameObject.GetComponent<Renderer> ().enabled = false;
+			cubeIsActive = false;
 			
 		}
 		
 		if ((Valores.pnr1 == cubeIndex) && gameObject.tag == "Right"){
 			Colorchange (Valores.colorname3);
 			colorName = Valores.colorname3;
+			checkRScolors(Valores.colorname3);
 		}
 		else if 
 		((Valores.pnr2 == cubeIndex)  && gameObject.tag == "Right"){
 			Colorchange (Valores.colorname4);
 			colorName = Valores.colorname4;
+			checkRScolors(Valores.colorname4);
+
 		}
 		else if 
 		((Valores.pnl1 == cubeIndex)  && gameObject.tag == "Left"){
 			Colorchange (Valores.colorname1);
 			colorName = Valores.colorname1;
+			checkRScolors(Valores.colorname1);
 		}
 		else if 
 		((Valores.pnl2 == cubeIndex) && gameObject.tag == "Left"){
 			Colorchange (Valores.colorname2);
 			colorName = Valores.colorname2;
+			checkRScolors(Valores.colorname2);
 		}
+
 		
 		//		GrowCube (colorName); // Only in Virtual Reality
 		
@@ -106,6 +118,7 @@ public class Seecubes : MonoBehaviour {
 		
 		if (color == "red") {
 			gameObject.GetComponent<Renderer> ().material.color = Color.red;
+
 			
 		} else if (color == "yellow") {
 			gameObject.GetComponent<Renderer> ().material.color = Color.yellow;

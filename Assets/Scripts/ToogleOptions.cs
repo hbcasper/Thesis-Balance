@@ -8,7 +8,7 @@ public class ToogleOptions : MonoBehaviour {
 	public bool ActiveAdaptiveDificulty = false;
 	public bool ActiveAdaptiveLevels = false;
 	public bool Data = false;
-	public int condition = 0;
+	public int condition;
 	//public string participantnumber;
 	//public GameObject ParticipantNumberText;
 	//public int HS;
@@ -19,7 +19,7 @@ public class ToogleOptions : MonoBehaviour {
 	
 	void Start(){
 		ActiveAugmentedReality = false;
-		
+		condition = 2;
 		DontDestroyOnLoad (transform.gameObject);
 	}
 	
