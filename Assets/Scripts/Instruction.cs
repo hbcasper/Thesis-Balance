@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Text;
+using System;
 using UnityEngine.UI;
 
 public class Instruction : MonoBehaviour 
@@ -14,11 +15,15 @@ public class Instruction : MonoBehaviour
 	private GameObject GameConfigurationToogles;
 	private GameObject ExcerciseManager;
 	private InputOutputADS ADSystem;
+	public string AdaptiveLevel;
+
 
 	//AD variables
 	public string rightSideAD;
 	public string leftSideAD;
 	public int numberofplaces;
+	public int numberofcolors;
+	public int side;
 
 
 	// number of the active cube (max. 2)
@@ -64,10 +69,7 @@ public class Instruction : MonoBehaviour
 
 		ADSystem = levelcomesfrom.GetComponent<InputOutputADS> (); //Declare ADS variables
 
-		if (GameObject.Find("GameConfiguration") == null){// if the Game configuration is unactive run reactive system
-			level1();
-		}
-		else {                                               // If game configuration is active...
+	
 			GameConfigurationToogles = GameObject.Find ("GameConfiguration");
 			GameConfiguration = GameConfigurationToogles.GetComponent<ToogleOptions>();
 			
@@ -79,7 +81,7 @@ public class Instruction : MonoBehaviour
 			else if(GameConfiguration.ActiveAdaptiveLevels == true){ // If ADLevels is active run Adaptive levels
 				AdaptiveLevels();
 			}
-		}
+
 
 
 
@@ -88,19 +90,18 @@ public class Instruction : MonoBehaviour
 	public void SetInstructions (){
 
 
-		if (GameObject.Find ("GameConfiguration") == true) {
-			if (GameConfiguration.ActiveAdaptiveDificulty == true) {
-				ADSystem.SendOutputADS ();
-			} else if (GameConfiguration.ActiveAdaptiveLevels == true) {
-				AdaptiveLevels ();
+
+		if (GameConfiguration.ActiveAdaptiveDificulty == true) {
+			ADexercise ();
+		} else if (GameConfiguration.ActiveAdaptiveLevels == true) {
+			AdaptiveLevels ();
 			
-			} else {
-				displayinstructions ();
-			}
 		} else {
 			displayinstructions ();
 		}
 	}
+
+
 
 	
 	public void displayinstructions (){ // Run the instructions every time that you press "Next Excercise" button. 
@@ -117,151 +118,6 @@ public class Instruction : MonoBehaviour
 		} 
 	}
 
-	// Behavior of each level in reactive system
-//	public void level5(){
-//		instruction = GetComponent <Text> ();
-//		
-//		numberWeightsRed = 0; 
-//		numberWeightsYellow = 0; 
-//		
-//		positionRedCube1 = 0; 
-//		positionRedCube2 = 0; 
-//		positionYellowCube1 = 0;
-//		positionYellowCube2 = 0;
-//		
-//		positionRedCube3 = 0; 
-//		positionRedCube4 = 0; 
-//		positionYellowCube3 = 0;
-//		positionYellowCube4 = 0;
-//		
-//		pnl1 = Random.Range (1, 7);
-//		pnl2 = Random.Range (1, 7);
-//		pnr1 = Random.Range (1, 7);
-//		pnr2 = Random.Range (1, 7);
-//		pcolor1 = Random.Range (0, 4);
-//		pcolor2 = Random.Range (0, 4);
-//		pcolor3 = Random.Range (0, 4);
-//		pcolor4 = Random.Range (0, 4);
-//		
-//		while (pnl1 == pnl2) {
-//			pnl2 = Random.Range (1, 7);
-//		}
-//		
-//		while (pnr1 == pnr2) {
-//			pnr2 = Random.Range (1, 7);
-//		}
-//		
-//		
-//		// --------------Cube 1
-//		
-//		if (pcolor1 < 2) {
-//			colorname1 = "red";
-//			colorname2 = "yellow";
-//			LeftW1 = 1;
-//			LeftW2 = 2;
-//			numberWeightsRed ++; 
-//			numberWeightsYellow ++;
-//			positionRedCube1 = (pnl1*(-1));
-//			
-//			// Gianna's code for cube of colorname2
-//			
-//			if (positionYellowCube1 != 0){
-//				positionYellowCube2 = (pnl2*(-1));
-//			}
-//			else {
-//				positionYellowCube1 = (pnl2*(-1));
-//			}
-//			
-//			
-//		} else {
-//			colorname1 = "yellow";
-//			colorname2 = "red";
-//			LeftW1 = 2;
-//			LeftW2 = 1;
-//			numberWeightsYellow ++;
-//			numberWeightsRed ++; 
-//			positionYellowCube1 = (pnl1*(-1));
-//			
-//			// Gianna's code for cube of colorname2
-//			
-//			if (positionRedCube1 != 0){
-//				positionRedCube2 = (pnl2*(-1));
-//			}
-//			else {
-//				positionRedCube1 = (pnl2*(-1));
-//			}
-//		}
-//		
-//		if (pcolor3 < 2) {
-//			colorname3 = "red";
-//			RightW1 = 1;
-//			numberWeightsRed ++; 
-//			if (positionRedCube1 != 0) {
-//				if (positionRedCube2 != 0) {
-//					positionRedCube3 = pnr1;
-//				} else {
-//					positionRedCube2 = pnr1;
-//				}
-//			} else {
-//				positionRedCube1 = pnr1;
-//			}
-//			
-//			colorname4 = "yellow";
-//			RightW2 = 2;
-//			numberWeightsYellow ++; 
-//			if (positionYellowCube1 != 0) {
-//				if (positionYellowCube2 != 0) {
-//					if (positionYellowCube3 != 0) {
-//						positionYellowCube4 = pnr2;
-//					} else {
-//						positionYellowCube3 = pnr2;
-//					}
-//				} else {
-//					positionYellowCube2 = pnr2;
-//				}
-//			} else {
-//				positionYellowCube1 = pnr2;
-//			}
-//			
-//		} else {
-//			colorname3 = "yellow";
-//			RightW1 = 2;
-//			numberWeightsYellow ++; 
-//			if (positionRedCube1 != 0) {
-//				if (positionYellowCube2 != 0) {
-//					positionYellowCube3 = pnr1;
-//				} else {
-//					positionYellowCube2 = pnr1;
-//				}
-//			} else {
-//				positionYellowCube1 = pnr1;
-//			}
-//			
-//			colorname4 = "red";
-//			RightW2 = 1;
-//			numberWeightsRed ++; 
-//			if (positionRedCube1 != 0) {
-//				if (positionRedCube2 != 0) {
-//					if (positionRedCube3 != 0) {
-//						positionRedCube4 = pnr2;
-//					} else {
-//						positionRedCube3 = pnr2;
-//					}
-//				} else {
-//					positionRedCube2 = pnr2;
-//				}
-//			} else {
-//				positionRedCube1 = pnr2;
-//			}
-//		}
-//		
-//		{
-//			instruction.text="Place the required weights in the marked places";
-//			//instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname2 + " piece in the left place number " + pnl2 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1 + ".\n1 " + colorname4 + " piece in the right place number " + pnr2;
-//			
-//		}
-//		
-//	}
 	public void level1 (){
 
 		instruction = GetComponent <Text> ();
@@ -269,13 +125,13 @@ public class Instruction : MonoBehaviour
 		numberWeightsRed = 0; 
 		numberWeightsYellow = 0; 
 		
-		pnl1 = Random.Range (1, 7);
+		pnl1 = UnityEngine.Random.Range (1, 7);
 		pnl2 = 0;
 		pnr1 = pnl1; 
 		pnr2 = 0;
-		pcolor1 = Random.Range (0, 4);
+		pcolor1 = UnityEngine.Random.Range (0, 4);
 		pcolor2 = 0;
-		pcolor3 = Random.Range (0, 4);
+		pcolor3 = UnityEngine.Random.Range (0, 4);
 		pcolor4 = 0;
 		
 		positionRedCube1 = 0; 
@@ -286,26 +142,26 @@ public class Instruction : MonoBehaviour
 		
 		if (pcolor1 < 2) {
 			colorname1 = "red";
-			LeftW1 = 1;
+			LeftW1 = 2;
 			numberWeightsRed ++;
 			positionRedCube1 = (pnl1*(-1)); 
 			
 		} else {
 			colorname1 = "yellow";
-			LeftW1 = 2;
+			LeftW1 = 1;
 			numberWeightsYellow ++; 
 			positionYellowCube1 = (pnl1*(-1)); 
 			
 		}
 		if (pcolor3 < 2) {
 			colorname3 = "red";
-			RightW1 = 1;
+			RightW1 = 2;
 			positionRedCube2 = pnr1; 
 			numberWeightsRed ++;
 			
 		} else {
 			colorname3 = "yellow";
-			RightW1 = 2;
+			RightW1 = 1;
 			
 			if (positionYellowCube1 != 0){
 				positionYellowCube2 = pnr1; }
@@ -319,7 +175,7 @@ public class Instruction : MonoBehaviour
 		if (colorname1 == "red" && colorname3== "red")
 		{
 			colorname3 = "yellow";
-			RightW1 = 2;
+			RightW1 = 1;
 			numberWeightsRed --; 
 			numberWeightsYellow ++;
 			if (positionYellowCube1 != 0){
@@ -331,7 +187,7 @@ public class Instruction : MonoBehaviour
 		if (colorname1 == "yellow" && colorname3== "yellow")
 		{
 			colorname3 = "red";
-			RightW1 = 1;
+			RightW1 = 2;
 			numberWeightsRed ++; 
 			numberWeightsYellow --; 
 			if (positionRedCube1 != 0){
@@ -342,7 +198,7 @@ public class Instruction : MonoBehaviour
 		}		
 		
 		{
-		//	instruction.text="Place the required weights in the marked places";
+			instruction.text="Place the required weights in the marked places";
 			//instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1;
 			
 		}
@@ -359,33 +215,33 @@ public class Instruction : MonoBehaviour
 		positionYellowCube1 = 0; 
 		positionYellowCube2 = 0;
 		
-		pnl1 = Random.Range (1, 7);
+		pnl1 = UnityEngine.Random.Range (1, 7);
 		pnl2 = 0;
-		pnr1 = Random.Range (1, 7);
+		pnr1 = UnityEngine.Random.Range (1, 7);
 		pnr2 = 0;
-		pcolor1 = Random.Range (0, 4);
+		pcolor1 = UnityEngine.Random.Range (0, 4);
 		pcolor2 = 0;
-		pcolor3 = Random.Range (0, 4);
+		pcolor3 = UnityEngine.Random.Range (0, 4);
 		pcolor4 = 0;
 		
 		while (pnl1 == pnl2) {
-			pnl2 = Random.Range (1, 7);
+			pnl2 = UnityEngine.Random.Range (1, 7);
 		}
 		
 		while (pnr1 == pnr2) {
-			pnr2 = Random.Range (1, 7);
+			pnr2 = UnityEngine.Random.Range (1, 7);
 		}
 		
 		
 		if (pcolor1 < 2) {
 			colorname1 = "red";
-			LeftW1 = 1;
+			LeftW1 = 2;
 			numberWeightsRed ++; 
 			positionRedCube1 = (pnl1*(-1));
 			
 		} else {
 			colorname1 = "yellow";
-			LeftW1 = 2;
+			LeftW1 = 1;
 			numberWeightsYellow ++; 
 			positionYellowCube1 = (pnl1*(-1));
 		}
@@ -393,7 +249,7 @@ public class Instruction : MonoBehaviour
 		colorname3 = colorname1;
 		RightW1 = LeftW1;
 		
-		if (LeftW1 == 1) {
+		if (LeftW1 == 2) {
 			numberWeightsRed ++; 
 			positionRedCube2 = pnr1; 
 			positionYellowCube1 = 0; 
@@ -406,7 +262,7 @@ public class Instruction : MonoBehaviour
 		
 		{
 			//instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1;
-			//instruction.text="Place the required weights in the marked places";
+			instruction.text="Place the required weights in the marked places";
 		}
 	}
 	
@@ -422,31 +278,35 @@ public class Instruction : MonoBehaviour
 		positionYellowCube1 = 0; 
 		positionYellowCube2 = 0;
 		
-		pnl1 = Random.Range (1, 7);
+		pnl1 = UnityEngine.Random.Range (1, 7);
 		pnl2 = 0;
-		pnr1 = Random.Range (1, 7);
+		pnr1 = UnityEngine.Random.Range (1, 7);
 		pnr2 = 0;
-		pcolor1 = Random.Range (0, 4);
+		pcolor1 = UnityEngine.Random.Range (0, 4);
 		pcolor2 = 0;
-		pcolor3 = Random.Range (0, 4);
+		pcolor3 = UnityEngine.Random.Range (0, 4);
 		pcolor4 = 0;
 		
-		while (pnl1 == pnr1) {
-			pnr1 = Random.Range (1, 7); 
+		while (pnl1 == pnl2) {
+			pnl2 = UnityEngine.Random.Range (1, 7); 
 			
 		}
 		
-
+		while (pnr1 == pnr2) {
+			pnr2 = UnityEngine.Random.Range (1, 7);
+			
+			
+		}
 		
 		if (pcolor1 < 2) {
 			colorname1 = "red";
-			LeftW1 = 1;
+			LeftW1 = 2;
 			numberWeightsRed ++; 
 			positionRedCube1 = (pnl1 * (-1));
 			
 		} else {
 			colorname1 = "yellow";
-			LeftW1 = 2;
+			LeftW1 = 1;
 			numberWeightsYellow ++; 
 			positionYellowCube1 = (pnl1 * (-1));
 		}
@@ -454,20 +314,20 @@ public class Instruction : MonoBehaviour
 		
 		if (pcolor3 < 2) {
 			colorname3 = "red";
-			RightW1 = 1;
+			RightW1 = 2;
 			numberWeightsRed ++; 
 			positionRedCube2 = pnr1; 
 			
 		} else {
 			colorname3 = "yellow";
-			RightW1 = 2;
+			RightW1 = 1;
 			numberWeightsYellow ++; 
 			positionYellowCube2 = pnr1; 
 		}
 		
 		if (colorname1 == "red" && colorname3 == "red") {
 			colorname3 = "yellow";
-			RightW1 = 2;
+			RightW1 = 1;
 			numberWeightsRed --; 
 			numberWeightsYellow ++; 
 			
@@ -484,7 +344,7 @@ public class Instruction : MonoBehaviour
 		
 		if (colorname1 == "yellow" && colorname3 == "yellow") {
 			colorname3 = "red";
-			RightW1 = 1;
+			RightW1 = 2;
 			numberWeightsRed ++; 
 			numberWeightsYellow --; 
 			
@@ -501,7 +361,7 @@ public class Instruction : MonoBehaviour
 		
 		
 		{
-			//instruction.text="Place the required weights in the marked places";
+			instruction.text="Place the required weights in the marked places";
 			//instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1;
 			
 		}
@@ -524,21 +384,21 @@ public class Instruction : MonoBehaviour
 		positionYellowCube3 = 0;
 		positionYellowCube4 = 0;
 		
-		pnl1 = Random.Range (1, 7);
-		pnl2 = Random.Range (1, 7);
-		pnr1 = Random.Range (1, 7);
-		pnr2 = Random.Range (1, 7);
-		pcolor1 = Random.Range (0, 4);
-		pcolor2 = Random.Range (0, 4);
-		pcolor3 = Random.Range (0, 4);
-		pcolor4 = Random.Range (0, 4);
+		pnl1 = UnityEngine.Random.Range (1, 7);
+		pnl2 = UnityEngine.Random.Range (1, 7);
+		pnr1 = UnityEngine.Random.Range (1, 7);
+		pnr2 = UnityEngine.Random.Range (1, 7);
+		pcolor1 = UnityEngine.Random.Range (0, 4);
+		pcolor2 = UnityEngine.Random.Range (0, 4);
+		pcolor3 = UnityEngine.Random.Range (0, 4);
+		pcolor4 = UnityEngine.Random.Range (0, 4);
 		
 		while (pnl1 == pnl2) {
-			pnl2 = Random.Range (1, 7);
+			pnl2 = UnityEngine.Random.Range (1, 7);
 		}
 		
 		while (pnr1 == pnr2) {
-			pnr2 = Random.Range (1, 7);
+			pnr2 = UnityEngine.Random.Range (1, 7);
 		}
 
 
@@ -547,8 +407,8 @@ public class Instruction : MonoBehaviour
 		if (pcolor1 < 2) {
 			colorname1 = "red";
 			colorname2 = "yellow";
-			LeftW1 = 1;
-			LeftW2 = 2;
+			LeftW1 = 2;
+			LeftW2 = 1;
 			numberWeightsRed ++; 
 			numberWeightsYellow ++;
 			positionRedCube1 = (pnl1*(-1));
@@ -566,8 +426,8 @@ public class Instruction : MonoBehaviour
 		} else {
 			colorname1 = "yellow";
 			colorname2 = "red";
-			LeftW1 = 2;
-			LeftW2 = 1;
+			LeftW1 = 1;
+			LeftW2 = 2;
 			numberWeightsYellow ++;
 			numberWeightsRed ++; 
 			positionYellowCube1 = (pnl1*(-1));
@@ -584,7 +444,7 @@ public class Instruction : MonoBehaviour
 		
 		if (pcolor3 < 2) {
 			colorname3 = "red";
-			RightW1 = 1;
+			RightW1 = 2;
 			numberWeightsRed ++; 
 			if (positionRedCube1 != 0) {
 				if (positionRedCube2 != 0) {
@@ -597,7 +457,7 @@ public class Instruction : MonoBehaviour
 			}
 
 			colorname4 = "yellow";
-			RightW2 = 2;
+			RightW2 = 1;
 			numberWeightsYellow ++; 
 			if (positionYellowCube1 != 0) {
 				if (positionYellowCube2 != 0) {
@@ -615,7 +475,7 @@ public class Instruction : MonoBehaviour
 			
 		} else {
 			colorname3 = "yellow";
-			RightW1 = 2;
+			RightW1 = 1;
 			numberWeightsYellow ++; 
 			if (positionRedCube1 != 0) {
 				if (positionYellowCube2 != 0) {
@@ -628,7 +488,7 @@ public class Instruction : MonoBehaviour
 			}
 
 			colorname4 = "red";
-			RightW2 = 1;
+			RightW2 = 2;
 			numberWeightsRed ++; 
 			if (positionRedCube1 != 0) {
 				if (positionRedCube2 != 0) {
@@ -646,27 +506,22 @@ public class Instruction : MonoBehaviour
 		}
 
 		{
-			//instruction.text="Place the required weights in the marked places";
+			instruction.text="Place the required weights in the marked places";
 			//instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname2 + " piece in the left place number " + pnl2 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1 + ".\n1 " + colorname4 + " piece in the right place number " + pnr2;
 			
 		}
 	}
 
-	public void prueba(){
-		Debug.Log ("Prueba");
-	}
 
 	public void ADexercise(){
-		Debug.Log ("GotHere5");
+
 
 		instruction = GetComponent <Text> ();
-	//	instruction.text = "Place the required weights in the marked places";
-		
-		rightSideAD = Generatecubespositions(ADSystem.numberofcubes);
+		instruction.text = "Place the required weights in the marked places";
 
-		leftSideAD = Generatecubespositions(ADSystem.numberofcubes);
-		numberofplaces = ADSystem.numberofcubes;
-		Debug.Log ("Right: " + rightSideAD + " Left: " + leftSideAD);
+		mappedDifficulty ();
+
+
 
 		GameObject Cubes = GameObject.Find ("Invisible Spaces");
 		Cubes.GetComponent<ColorcubesAD> ().ActiveCubesAD ();
@@ -674,45 +529,61 @@ public class Instruction : MonoBehaviour
 		
 	}
 
-		string Generatecubespositions(int Size)  {
+		    public void mappedDifficulty(){
 
-		string input = "123456";
-		StringBuilder activecubes = new StringBuilder();
-				char ch;
-				for (int i = 0; i < Size; i++)
-				{
+		if (ADSystem.Parameternumberofcubes <= .5) {
+			numberofplaces = 1;
+			//rightSideAD = Generatecubespositions(1);
+			//leftSideAD = Generatecubespositions(1);
 
-			ch = input[Random.Range(0, input.Length-1)];
-						activecubes.Append(ch);
-						input = input.Replace(ch.ToString(),string.Empty);
+		} else {
+			numberofplaces = 2;
+			//rightSideAD = Generatecubespositions(2);
+			//leftSideAD = Generatecubespositions(2);
 
-				}
-					return activecubes.ToString();
+		}
+		if (ADSystem.Parameternumberofcolors <= .5) {
+			numberofcolors = 1;
+		} else {
+			numberofcolors = 2;
+		}
 
-			               }
+		if (ADSystem.Parameterside <= .3) {
+			side = 1;
+		} else {
+			side = 2;
+		}
+	}
+
+
+
+		
+
+
+		
 
 
 		  
 	public void AdaptiveLevels(){
-
-		
-		if (levelis.performancelevel >= 60) {
-			if (levelis.levelnumber == 4){
-				levelis.levelnumber = levelis.levelnumber;}
-			else{
-				levelis.levelnumber = levelis.levelnumber + 1;
-			}
-		}
-		if (levelis.performancelevel <= 40) {
-			if (levelis.levelnumber == 1){
-				levelis.levelnumber = levelis.levelnumber;}
-			else {
-				levelis.levelnumber = levelis.levelnumber - 1;}
-		}
-		else {
-			levelis.levelnumber = levelis.levelnumber;
-		}
-		displayinstructions ();
+//
+//		
+//		if (levelis.performancelevel >= 60) {
+//			if (levelis.levelnumber == 4){
+//				levelis.levelnumber = levelis.levelnumber;}
+//			else{
+//				levelis.levelnumber = levelis.levelnumber + 1;
+//			}
+//		}
+//		if (levelis.performancelevel <= 40) {
+//			if (levelis.levelnumber == 1){
+//				levelis.levelnumber = levelis.levelnumber;}
+//			else {
+//				levelis.levelnumber = levelis.levelnumber - 1;}
+//		}
+//		else {
+//			levelis.levelnumber = levelis.levelnumber;
+//		}
+//		displayinstructions ();
 	}
 
 }
