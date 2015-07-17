@@ -192,6 +192,7 @@ public class Seecubes : MonoBehaviour {
 	public void paintcube(){
 		if (cubeIsActive == true) {
 			gameObject.GetComponent<Collider> ().enabled = true;
+			gameObject.GetComponent<Renderer> ().enabled = true;
 			
 			if (cubeColor == 2) {
 				gameObject.GetComponent<Renderer> ().material.color = Color.red;
