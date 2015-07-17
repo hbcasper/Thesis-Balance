@@ -20,6 +20,11 @@ public class RegisterActiveCubes : MonoBehaviour {
 	
 	// Update is called once per frame
 	public void Checkcubes () {
+
+		left1 = "0";
+		left2 = "0";
+		right1 = "0";
+		right2 = "0";
 		
 		foreach (Seecubes script in Cubes) {
 			

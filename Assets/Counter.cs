@@ -77,7 +77,7 @@ public class Counter : MonoBehaviour {
 		Scale.GetComponent<Animate>().animate();
 		
 		
-		GameObject.Find("Invisible Spaces").GetComponent<Registeractivecubes>().Checkcubes();
+		//GameObject.Find("Invisible Spaces").GetComponent<Registeractivecubes>().Checkcubes();
 		GameObject.Find("Invisible Spaces").GetComponent<ColorcubesAD>().CalculateWeight();
 		Log.write();
 

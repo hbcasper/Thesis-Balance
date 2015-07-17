@@ -178,11 +178,13 @@ public class Seecubes : MonoBehaviour {
 		if (cubeColor == 2){
 			//gameObject.GetComponent<Renderer> ().material.color = Color.red;
 			myValue=cubeIndex*2;
+			colorName = "red";
 			
 		}
 		else if (cubeColor == 1){
 			//gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
 			myValue=cubeIndex*1;
+			colorName = "yellow";
 		}
 		//paintcube ();
 		

@@ -50,7 +50,7 @@ public class ColorcubesAD : MonoBehaviour {
 			
 		}
 		CalculateWeight();
-		gameObject.GetComponent<Registeractivecubes> ().Checkcubes ();
+		gameObject.GetComponent<RegisterActiveCubes> ().Checkcubes ();
 		
 		
 	}

@@ -154,8 +154,8 @@ public class Textfile : MonoBehaviour {
 			                + GameManager.score.ToString () + "," 
 			                // -----times ----
 			                + reactionTime2.ToString () + "," 
-			                + "only1time" + "," 
-			                + "only1time" + "," 
+			                + "0" + "," 
+			                + "0" + "," 
 			                /// ------times
 			                + CubesOrder.activecubes + ","
 			                + Sidetotal.totalLeft.ToString () + ","   
