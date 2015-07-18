@@ -82,20 +82,20 @@ public class InputOutputADS : MonoBehaviour {
 			performancecorrect = 100;
 		}
 
-		if (performdata.reactionTime2.Seconds < 1) {
-			performancetime = 100;
-		}
-		else if (performdata.reactionTime2.Seconds == 1 && performdata.reactionTime2.Milliseconds <= 500) {
-				performancetime = 80;
+		if (performdata.reactionTime2.Seconds == 1 && performdata.reactionTime2.Milliseconds <= 500) {
+				performancetime = 100;
 			}
 		 else if (performdata.reactionTime2.Seconds == 1 && performdata.reactionTime2.Milliseconds > 500) {
-			performancetime = 60;
+			performancetime = 80;
 		}
 			else if (performdata.reactionTime2.Seconds == 2 && performdata.reactionTime2.Milliseconds <= 500) {
-		performancetime = 40;}
-		 else if (performdata.reactionTime2.Seconds < 3) {
+		performancetime = 60;}
+		else if (performdata.reactionTime2.Seconds == 2 && performdata.reactionTime2.Milliseconds > 500)  {
+			performancetime = 40;
+		} else if (performdata.reactionTime2.Seconds == 3 && performdata.reactionTime2.Milliseconds <= 500) {
 			performancetime = 20;
-		} else if (performdata.reactionTime2.Seconds >= 3) {
+		}
+		else if ((performdata.reactionTime2.Seconds == 3 && performdata.reactionTime2.Milliseconds > 500)|| (performdata.reactionTime2.Seconds >= 4)){
 			performancetime = 0;
 		}
 
