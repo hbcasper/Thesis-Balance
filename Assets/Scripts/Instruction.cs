@@ -116,6 +116,7 @@ public class Instruction : MonoBehaviour
 		} else if (levelis.levelnumber == 4) {
 			level4 ();
 		} 
+
 	}
 
 	public void level1 (){
@@ -262,6 +263,7 @@ public class Instruction : MonoBehaviour
 			//instruction.text = "Place:\n1 " + colorname1 + " piece in the left place number " + pnl1 + ".\n1 " + colorname3 + " piece in the right place number " + pnr1;
 			instruction.text="";
 		}
+
 	}
 	
 	

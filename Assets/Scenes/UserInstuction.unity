@@ -1533,8 +1533,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 6, y: -70}
-  m_SizeDelta: {x: 1160, y: 710}
+  m_AnchoredPosition: {x: -5, y: -70}
+  m_SizeDelta: {x: 1080, y: 710}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1796546342
 MonoBehaviour:
@@ -1562,8 +1562,9 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "In the following tasks you will see a scale with weights placed on it.\n\nYou
-    must decide to which side it will fall, Left or Right, or if it will stay balanced.\n\n\n\n\n\nConsider
-    that the RED weights are TWICE as heavy as the YELLLOW weights: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    must decide, as soon as possible, to which side it will fall, Left or Right, or
+    if it will stay balanced.\n\n\n\n\n\nConsider that the RED weights are TWICE as
+    heavy as the YELLLOW weights: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 --- !u!222 &1796546343
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2332,7 +2333,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1899193451}
   m_LocalRotation: {x: -.0966076329, y: 0, z: 0, w: .995322585}
-  m_LocalPosition: {x: 17, y: 104, z: -16}
+  m_LocalPosition: {x: 17, y: 65, z: -8}
   m_LocalScale: {x: 4.62408066, y: 4.62408113, z: 4.62408113}
   m_Children:
   - {fileID: 240975199}

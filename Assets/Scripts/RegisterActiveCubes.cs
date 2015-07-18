@@ -19,6 +19,7 @@ public class RegisterActiveCubes : MonoBehaviour {
 	}
 
 
+
 	
 	// Update is called once per frame
 	public void Checkcubes () {
