@@ -13736,7 +13736,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11456550, guid: f6187022eef21b14b9403e76ef680442, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: setValuebalance
+      value: setValueright
       objectReference: {fileID: 0}
     - target: {fileID: 11456550, guid: f6187022eef21b14b9403e76ef680442, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
